@@ -1,0 +1,696 @@
+/* *{
+    outline: 1px solid red;
+} */
+/* screen<=767_Fz */
+h2 {
+    font-size: 1.25rem;
+    color: #f28123;
+}
+
+h2.pageHeader {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: .625rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+.actNowNum {
+    font-size: 1.125rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.bigBtnFz {
+    color: #fff;
+    font-size: 1.125rem;
+}
+
+.btnFz {
+    font-size: 1rem;
+}
+
+.xsFZInfo {
+    line-height: 1.2;
+    font-size: 0.875rem;
+}
+
+.xxsFZinfo {
+    line-height: 1.2;
+    font-size: 0.75rem;
+}
+
+.pethouse-autoplay {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+
+    /*樣品屋 autoplay 開始*/
+    .index-pethouse {
+        position: relative;
+    }
+
+    .pethouse-autoplay {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .pethouse-autoplay .item {
+        position: absolute;
+        top: 20%;
+        left: 24%;
+        z-index: 2;
+    }
+
+    .pethouse-autoplay .mouse {
+        position: absolute;
+        top: -13%;
+        left: -4%;
+    }
+
+    .pethouse-autoplay .item1 {
+        z-index: 4;
+    }
+
+    .pethouse-autoplay .item2 {
+        bottom: -40%;
+        left: 5%;
+        z-index: 3;
+        display: none;
+    }
+
+    .pethouse-autoplay .item2 .mouse {
+        top: 86%;
+        left: -3px;
+        transform: rotate(-90deg);
+    }
+
+    .pethouse-autoplay .item3 {
+        bottom: -40%;
+        left: 13%;
+        z-index: 3;
+        display: none;
+    }
+
+    .pethouse-autoplay .item3 .mouse {
+        top: 86%;
+        left: -3px;
+        transform: rotate(-90deg);
+    }
+
+    .pethouse-autoplay .item4 {
+        bottom: -40%;
+        left: 21%;
+        z-index: 6;
+        display: none;
+    }
+
+    .pethouse-autoplay .item4 .mouse {
+        top: 86%;
+        left: -3px;
+        transform: rotate(-90deg);
+    }
+
+    .pethouse-autoplay .item5 {
+        bottom: -25%;
+        left: 0;
+        right: -12%;
+        display: none;
+        z-index: 4;
+    }
+
+    .pethouse-autoplay .item5 .mouse {
+        top: 86%;
+        left: -3px;
+        transform: rotate(-90deg);
+    }
+
+    .pethouse-autoplay .item6 {
+        bottom: -24%;
+        left: 0;
+        right: -41%;
+        display: none;
+        z-index: 4;
+    }
+
+    .pethouse-autoplay .item6 .mouse {
+        top: 86%;
+        left: -3px;
+        transform: rotate(-90deg);
+    }
+
+    .pethouse-autoplay .item7 {
+        top: 45%;
+        left: 30%;
+        z-index: 3;
+        display: none;
+    }
+
+    .pethouse-autoplay .item8 {
+        top: 45%;
+        left: 45%;
+        z-index: 3;
+        display: none;
+    }
+
+    .pethouse-autoplay .item .contain {
+        background-color: #fff;
+        position: absolute;
+        width: 250px;
+        top: 50%;
+        left: 60%;
+        z-index: -1;
+        box-sizing: border-box;
+        padding: 10px 15px;
+        color: #028090;
+    }
+
+    /*樣品屋 autoplay 結束*/
+    /* screen>=768_Fz */
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .actNowNum {
+        font-size: 1.25rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .bigBtnFz {
+        font-size: 1.25rem;
+    }
+
+    .btnFz {
+        font-size: 1rem;
+    }
+
+    .xsFzInfo {
+        font-size: 0.875rem;
+    }
+
+    .xxsFzInfo {
+        font-size: 0.75rem;
+    }
+
+    .actsName {
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (min-width: 1536px) {
+
+    .ph-mem-text p,
+    .ph-mem-text span,
+    .ph-mem-text b {
+        font-size: 1.25rem;
+    }
+}
+
+/* ---------------- 背包checkbox strat ---------------- */
+
+#bagPag-control {
+    position: fixed;
+    left: -9999px;
+    top: 0px;
+}
+
+.bg-item {
+    display: none;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-item {
+    display: block;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-bgc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 19;
+    background-color: #333;
+    opacity: 0.8;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-item {
+    position: absolute;
+    ;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 20;
+    width: 80%;
+    height: 75%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-title {
+    width: 100%;
+    height: 5%;
+    background-color: #FFC454;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-exit span {
+    background-color: #00848B;
+    width: 2.8%;
+    height: 1%;
+    display: block;
+    position: absolute;
+    top: 2.2%;
+    right: 1%;
+    z-index: 22;
+    border-radius: 5px;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-exit span:nth-of-type(1) {
+    transform: rotate(45deg);
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-exit span:nth-of-type(2) {
+    transform: rotate(135deg);
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul {
+    overflow: auto;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    width: 100%;
+    height: 78%;
+    margin: 4% 0 2%;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li {
+    width: 28%;
+    height: 60%;
+    margin: 2% 2% 2%;
+    background-color: #F0F1F3;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-sh {
+    position: absolute;
+    width: 90%;
+    height: 5%;
+    bottom: 1%;
+    right: 5%;
+    text-align: right;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-sh a:nth-of-type(1) {
+    background-color: #00848B;
+    display: block;
+    width: 3.3%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-sh a:nth-of-type(2) {
+    color: #00848B;
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 5%;
+    line-height: 100%;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr {
+    background-color: #00848B;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr span {
+    background-color: #fff;
+    display: block;
+    width: 41%;
+    height: 10%;
+    position: absolute;
+    left: 35%;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 32%;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr span:nth-of-type(2) {
+    transform: rotate(135deg);
+    top: 58%;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li div {
+    width: 60%;
+    height: 40%;
+    display: block;
+    margin: 8% auto;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li div img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li h5 {
+    font-size: 18px;
+    margin-bottom: 5%;
+    font-weight: bold;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li h6 {
+    font-size: 16px;
+    color: #FB9860;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li span {
+    font-size: 18px;
+    margin-bottom: 5%;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li p img {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li:nth-of-type(6) {
+    visibility: hidden;
+}
+
+
+
+/* ---------------- 背包checkbox end---------------- */
+/* ---------------- 寵物家開始 ---------------- */
+.ph-all {
+    width: 100%;
+    position: relative;
+}
+
+.ph-all img {
+    display: block;
+    width: 100%;
+}
+
+.ph-bgi {
+    width: 100%;
+}
+
+.ph-all-style {
+    width: 20%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.ph-dr {
+    z-index: 2;
+    top: 18.2%;
+    left: 12%;
+}
+
+.ph-dr:hover .ph-dr-cl {
+    display: none;
+}
+
+.ph-dr .ph-dr-op {
+    display: none;
+}
+
+.ph-dr:hover .ph-dr-op {
+    display: block;
+}
+
+.pet-img {
+    bottom: 12%;
+    left: 30%;
+    z-index: 5;
+}
+
+.pet2-img {
+    top: 47%;
+    right: 17%;
+    transform: rotateY(180deg)
+}
+
+.ph-st-box {
+    z-index: 2;
+    right: 10%;
+    bottom: 8%;
+    width: 15%;
+}
+
+.ph-st {
+    z-index: 3;
+    right: 14%;
+    bottom: 15%;
+    width: 6%;
+}
+
+.ph-fd-box {
+    z-index: 2;
+    right: 28%;
+    bottom: 8%;
+    width: 10%;
+}
+
+.ph-fd {
+    z-index: 3;
+    right: 30%;
+    bottom: 13%;
+    width: 6%;
+}
+
+.ph-sd {
+    z-index: 2;
+    right: 2%;
+    width: 6%;
+}
+
+.ph-sd-bp {
+    bottom: 63%;
+}
+
+.ph-sd-sp {
+    bottom: 50%;
+}
+
+.ph-sd-oh {
+    bottom: 37%;
+}
+
+.ph-sw-btn {
+    z-index: 2;
+    bottom: 2%;
+    width: 6%;
+}
+
+.ph-hs-btn {
+    left: 2%;
+}
+
+.ph-fe-btn {
+    left: 10%;
+}
+
+.ph-sv-btn {
+    left: 18%;
+}
+
+.ph-mem-pic {
+    z-index: 4;
+    top: 10%;
+    left: 2%;
+    width: 8%;
+}
+
+.ph-mem-box {
+    z-index: 3;
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 20%;
+    height: 13.3%;
+    border-radius: 10px;
+    background-color: rgba(16, 75, 95, .8);
+}
+
+.ph-mem-text {
+    width: 70%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    right: 0;
+    color: #fff;
+}
+
+.ph-mem-text img {
+    width: 20%;
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 6;
+}
+
+.ph-mem-text .coin {
+    background-color: #fff;
+    position: absolute;
+    left: 10%;
+    bottom: 3%;
+    width: 80%;
+    height: 32%;
+    z-index: 5;
+    border-radius: 5px;
+}
+
+.ph-mem-text .coin b {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #333;
+    text-align: right;
+    padding: 0 10px;
+}
+
+.ph-mem-text .coin b span {
+    font-size: 12px;
+    color: #F38932;
+}
+
+.ph-hg {
+    bottom: 35%;
+    left: 35%;
+    width: 10%;
+    z-index: 4;
+    display: none;
+}
+
+/* ---------------- 寵物家結束 ---------------- */
+/* ---------------- 寵物家 餵食開始 ---------------- */
+.ph-fd-sw .ph-fd-pet {
+    width: 40%;
+    left: 10%;
+}
+
+.ph-fd-sw .ph-fd-box {
+    width: 20%;
+}
+
+.ph-fd-sw .ph-fd {
+    width: 14%;
+    bottom: 18%;
+    right: 31%;
+}
+
+/* ---------------- 寵物家 餵食結束 ---------------- */
+/* ---------------- 寵物家 鏟屎開始 ---------------- */
+.ph-pu-sw .ph-pu-pet {
+    width: 40%;
+    left: 10%;
+    transform: rotateY(180deg);
+}
+
+.ph-pu-sw .ph-st-box {
+    width: 20%;
+    right: 30%;
+}
+
+.ph-pu-sw .ph-st {
+    width: 10%;
+    bottom: 18%;
+    right: 35%;
+}
+
+/* ---------------- 寵物家 鏟屎結束 ---------------- */
+/* ---------------- 別人家 開始 ---------------- */
+.ph-oh-sw .ph-st-box {
+    width: 20%;
+    right: 6%;
+}
+
+.ph-oh-sw .ph-oh-pet {
+    width: 26%;
+    left: 10%;
+}
+
+.ph-oh-safe {
+    z-index: 2;
+    top: 38%;
+    left: 36.5%;
+    width: 13%;
+}
+
+.ph-oh-safe:hover .ph-safe-off {
+    display: none;
+}
+
+.ph-oh-safe .ph-safe-on {
+    display: none;
+}
+
+.ph-oh-safe:hover .ph-safe-on {
+    display: block;
+}
+
+/* ---------------- 別人家 結束 ---------------- */
+/* ---------------- 寵物家 switch結束 ---------------- */
+/* .ph-hs-sw{
+    
+} */
+.ph-fd-sw {
+    display: none;
+}
+
+.ph-pu-sw {
+    display: none;
+}
+
+.ph-oh-sw {
+    display: none;
+}
