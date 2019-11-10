@@ -366,7 +366,7 @@
 .ph-coin-plus{
     width: 10%;
     bottom: 30%;
-    right: 34%;
+    right: 33.5%;
     opacity: 0;
     z-index: 6;
 }
@@ -435,22 +435,6 @@
     right: 35%;
     opacity: 0;
     z-index: 6;
-}
-@keyframes fd-ani{
-    0%{
-        opacity: 0;
-        bottom: 10%;
-    }
-    5%{
-        opacity: 1;
-    }
-    80%{
-        opacity: 1;
-    }
-    100%{
-        bottom: 30%;
-        opacity: 0;
-    }
 }
 /* ---------------- 寵物家 鏟屎結束 ---------------- */
 /* ---------------- 別人家 開始 ---------------- */
@@ -886,3 +870,66 @@
         left: 52%;
     }
 } 
+/* ------------------------------------only for windows------------------------------------- */
+@media screen and (min-width: 768px){
+    .ph-hs-sw .pet-img{
+        animation: pet-ani 5s linear 2;
+    }
+    @keyframes pet-ani{
+        0%{
+            transform: translate(-20%);      
+        }
+        5%{
+            transform: translate(20%,0%);
+        }
+        10%{
+            transform: translate(100%,-120%);
+        }
+        20%{
+            transform: translate(150%,-100%);        
+        }
+        45%{
+            transform: translate(190%,-100%);
+            opacity: 1;
+        }    
+        49%{
+            transform: rotateY(0deg) translate(200%,-100%);
+            opacity: 0;
+        }
+        50%{
+            transform: rotateY(180deg) translate(-200%,-100%);
+            opacity: 0;
+        }
+        51%{
+            transform: rotateY(180deg) translate(-200%,-100%);
+            opacity: 0;
+        }
+        55%{
+            transform: rotateY(180deg) translate(-190%,-100%);
+            opacity: 1;
+        }
+        80%{
+            transform: rotateY(180deg) translate(-120%,-100%);        
+        }
+        90%{
+            transform: rotateY(180deg) translate(-40%,0%);
+        }
+        95%{
+            transform: rotateY(180deg) translate(20%,0%);
+            opacity: 1;
+        }
+    
+        98%{
+            transform: rotateY(180deg) translate(20%,0%);
+            opacity: 0;
+        }
+        99%{
+            transform: rotateY(0deg) translate(-20%,0%);
+            opacity: 0;
+        }
+        100%{
+            transform: translate(-5%); 
+            opacity: 1;
+        }
+    }
+}
