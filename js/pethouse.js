@@ -10,18 +10,32 @@ $(document).ready(function(){
         $(".ph-hs-sw").css("display","none");
         $(".ph-pu-sw").css("display","none");
         $(".ph-oh-sw").css("display","none");
+        $(".ph-fd").removeClass("ph-fd-ani");
+        $(".ph-coin-plus").removeClass("coin-ani");
+        $(".ph-fd-after").css("display","none");
+        $(".ph-fd-before").css("display","block");
+        $(".ph-fd-full").css("display","none");
     });
     $(".ph-sv-btn").click(function(){
         $(".ph-fd-sw").css("display","none");
         $(".ph-hs-sw").css("display","none");
         $(".ph-pu-sw").css("display","block");
         $(".ph-oh-sw").css("display","none");
+        $(".ph-st-before").css("display","block");
+        $(".ph-st-after").css("display","none");
+        $(".ph-coin-plus").removeClass("coin-ani");
+        $(".ph-st").removeClass("ph-fd-ani");
     });
-    $(".ph-fd-box").click(function(){
+    $(".ph-fd-no").click(function(){
         $(".ph-fd-sw").css("display","block");
         $(".ph-hs-sw").css("display","none");
         $(".ph-pu-sw").css("display","none");
         $(".ph-oh-sw").css("display","none");
+        $(".ph-fd").removeClass("ph-fd-ani");
+        $(".ph-coin-plus").removeClass("coin-ani");
+        $(".ph-fd-after").css("display","none");
+        $(".ph-fd-before").css("display","block");
+        $(".ph-fd-full").css("display","none");
     });
     $(".ph-fd").click(function(){
         $(".ph-fd-sw").css("display","block");
@@ -29,11 +43,15 @@ $(document).ready(function(){
         $(".ph-pu-sw").css("display","none");
         $(".ph-oh-sw").css("display","none");
     });
-    $(".ph-st-box").click(function(){
+    $(".ph-st-full").click(function(){
         $(".ph-fd-sw").css("display","none");
         $(".ph-hs-sw").css("display","none");
         $(".ph-pu-sw").css("display","block");
         $(".ph-oh-sw").css("display","none");
+        $(".ph-st-before").css("display","block");
+        $(".ph-st-after").css("display","none");
+        $(".ph-coin-plus").removeClass("coin-ani");
+        $(".ph-st").removeClass("ph-fd-ani");
     });
     $(".ph-st").click(function(){
         $(".ph-fd-sw").css("display","none");
@@ -61,6 +79,8 @@ $(document).ready(function(){
         $(".ph-qa-box").css("display","none");
         $(".ph-qa-bgc").css("display","none");
         $(".ph-qa-topic").css("display","block");
+        $(".ph-qa-wrong").css("display","none");
+        $(".ph-qa-right").css("display","none");
     });
     $(".qa-right").click(function(){
         $(".ph-qa-right").css("display","flex");
@@ -72,6 +92,22 @@ $(document).ready(function(){
         $(".ph-qa-right").css("display","none");
         $(".ph-qa-topic").css("display","none");
     });
-
+    $(".ph-fd-before").click(function(){
+        $(".ph-fd-before").css("display","none");
+        $(".ph-fd-full").css("display","block");
+    });
+    $(".ph-fd-full").click(function(){
+        $(".ph-fd").addClass("ph-fd-ani");
+        $(".ph-coin-plus").addClass("coin-ani");
+        $(".ph-fd-full").css("display","none");
+        $(".ph-fd-after").css("display","block");
+    });
+    $(".ph-st-before").click(function(){
+        $(".ph-st").addClass("ph-fd-ani");
+        $(".ph-coin-plus").addClass("coin-ani");
+        $(".ph-st-before").css("display","none");
+        $(".ph-st-after").css("display","block");
+    });
+    
 
 });

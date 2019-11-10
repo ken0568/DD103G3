@@ -201,7 +201,7 @@
     z-index: 5;
 }
 .ph-st-box{
-    z-index: 2;
+    z-index: 7;
     right: 10%;
     bottom: 8%;
     width: 15%;
@@ -213,16 +213,32 @@
     width: 6%;
 }
 .ph-fd-box{
-    z-index: 2;
+    z-index: 7;
     right: 28%;
     bottom: 8%;
     width: 10%;
 }
-.ph-fd{
-    z-index: 3;
-    right: 30%;
-    bottom: 13%;
-    width: 6%;
+.ph-st-box:hover,
+.ph-fd-box:hover,
+.ph-oh-safe:hover{
+    animation: box-ani 2s linear;
+}
+.ph-fd-box .ph-fd-after{
+    display: none;
+}
+@keyframes box-ani {
+    0% {transform: rotate(0);}
+    5% {transform: rotate(5deg);}
+    10% {transform: rotate(0deg);}
+    15% {transform: rotate(5deg);}
+    20% {transform: rotate(0deg);}
+    100% {transform: rotate(0deg);}
+}
+.ph-st-box .ph-st-no{
+    display: none;
+}
+.ph-fd-box .ph-fd-full{
+    display: none;
 }
 .ph-sd{
     z-index: 2;
@@ -347,10 +363,57 @@
 .ph-fd-sw .ph-fd-box{
     width: 20%;
 }
+.ph-coin-plus{
+    width: 10%;
+    bottom: 30%;
+    right: 34%;
+    opacity: 0;
+    z-index: 6;
+}
+.coin-ani{
+    animation: coin-ani 1s .9s linear;
+}
+@keyframes coin-ani{
+    0%{
+        transform: rotateY(0deg);
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        transform: rotateY(360deg);
+        opacity: 0;
+    }
+}
 .ph-fd-sw .ph-fd{
-    width: 14%;
-    bottom: 18%;
-    right: 31%;
+    width: 8%;
+    bottom: 10%;
+    right: 34%;
+    opacity: 0;
+    z-index: 6; 
+}
+.ph-fd-ani{
+    animation: fd-ani 1s linear;
+}
+@keyframes fd-ani{
+    0%{
+        opacity: 0;
+        bottom: 10%;
+    }
+    5%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        bottom: 30%;
+        opacity: 0;
+    }
 }
 /* ---------------- 寵物家 餵食結束 ---------------- */
 /* ---------------- 寵物家 鏟屎開始 ---------------- */
@@ -358,6 +421,9 @@
     width: 40%;
     left: 10%;
     transform: rotateY(180deg);
+}
+.ph-pu-sw .ph-st-after{
+    display: none;
 }
 .ph-pu-sw .ph-st-box{
     width: 20%;
@@ -367,6 +433,24 @@
     width: 10%;
     bottom: 18%;
     right: 35%;
+    opacity: 0;
+    z-index: 6;
+}
+@keyframes fd-ani{
+    0%{
+        opacity: 0;
+        bottom: 10%;
+    }
+    5%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        bottom: 30%;
+        opacity: 0;
+    }
 }
 /* ---------------- 寵物家 鏟屎結束 ---------------- */
 /* ---------------- 別人家 開始 ---------------- */
@@ -404,9 +488,22 @@
 .ph-safe-tip{
     z-index: 3;
     top: 25%;
-    left: 50%;
+    left: 49%;
     width: 10%;
+    animation: tip-ani 1.5s linear infinite;
 }
+@keyframes tip-ani{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(.9);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
 .ph-oh-safe:hover .ph-safe-off{
     display: none;
 }
@@ -573,7 +670,7 @@
 /* ---------------- 偷錢關卡 switch 開始 ---------------- */
 .ph-qa-wrong{display: none;}
 .ph-qa-right{display: none;}
-/* ---------------- 偷錢關卡 switch 開始 ---------------- */
+/* ---------------- 偷錢關卡 switch 結束 ---------------- */
 /* ---------------- 別人家 結束 ---------------- */
 /* ---------------- 寵物家 switch 開始---------------- */
 .ph-fd-sw{
@@ -608,7 +705,7 @@
         display: none;
     }
     .ph-sw-btn{
-        z-index: 2;
+        z-index: 10;
         bottom: 5.2%;
         width: 18%;
     }
@@ -693,16 +790,39 @@
     .ph-pu-sw .ph-st-box{
         width: 40%;
         bottom: 14%;
+        display: block;
+    }
+    .ph-coin-plus{
+        width: 20%;
+        right: 39%;
     }
     .ph-fd-sw .ph-fd{
-        width: 26%;
-        bottom: 19.5%;
-        right: 37%;
+        width: 15%;
+        bottom: 10%;
+        right: 39%;
+        display: block;
+    }
+    @keyframes fd-ani{
+        0%{
+            opacity: 0;
+            bottom: 20%;
+        }
+        5%{
+            opacity: 1;
+        }
+        80%{
+            opacity: 1;
+        }
+        100%{
+            bottom: 30%;
+            opacity: 0;
+        }
     }
     .ph-pu-sw .ph-st{
         width: 20%;
         bottom: 19%;
         right: 40%;
+        display: block;
     }
     .ph-ac-box{
         right: 70%;
