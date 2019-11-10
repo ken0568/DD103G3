@@ -53,6 +53,25 @@ $(document).ready(function(){
         $(".ph-pu-sw").css("display","none");
         $(".ph-oh-sw").css("display","block");
     });
+    $(".ph-oh-safe").click(function(){
+        $(".ph-qa-box").css("display","block");
+        $(".ph-qa-bgc").css("display","block");
+    });
+    $(".qa-exit").click(function(){
+        $(".ph-qa-box").css("display","none");
+        $(".ph-qa-bgc").css("display","none");
+        $(".ph-qa-topic").css("display","block");
+    });
+    $(".qa-right").click(function(){
+        $(".ph-qa-right").css("display","flex");
+        $(".ph-qa-wrong").css("display","none");
+        $(".ph-qa-topic").css("display","none");
+    });
+    $(".qa-wrong").click(function(){
+        $(".ph-qa-wrong").css("display","flex");
+        $(".ph-qa-right").css("display","none");
+        $(".ph-qa-topic").css("display","none");
+    });
 
 
 });
