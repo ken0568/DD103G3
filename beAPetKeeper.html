@@ -6,10 +6,19 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>鏟屎官-成為飼主</title>
-    <link rel="stylesheet" href="./beAPetKeeperStyle.css">
-    <link rel="stylesheet" href="./header-footer.css">
-    <link rel="stylesheet" href="col.css">
+    <title>鏟屎官--成為飼主</title>
+    <!-- title的小logo -->
+    <link rel="icon" href="img/petKeepersIcon.ico" type="image/x-icon/" />
+    <!-- 以下的link不要刪掉 -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- 把自己負責頁面的css檔案link：css/fontStyle.css前，ex.css/shopStyle.css -->
+    <link rel="stylesheet" href="css/fontStyle.css" />
+    <link rel="stylesheet" href="css/header-footer.css" />
+    <link rel="stylesheet" href="css/beAPetKeeperStyle.css">
+    <link rel="stylesheet" href="css/col.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/burger.js"></script>
+    <script src="js/pethouse.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.js"
         integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 </head>
@@ -17,47 +26,50 @@
 <body>
     <header>
         <div class="index-logo">
-            <div class="logo">
-                <a href="#"><img src="./img/logo.png" alt="" /></a>
-            </div>
+          <div class="logo">
+            <a href="index.html"><img src="./img/logo.png" alt="" /></a>
+          </div>
         </div>
         <div class="menu">
-            <ul class="menu-ul">
-                <li><a href="#">寵物當家</a></li>
-                <li><a href="#">成為飼主</a></li>
-                <li><a href="#">寵物商店</a></li>
-                <li><a href="#">活動專區</a></li>
-                <div class="login">
-                    <div class="login-icon">
-                        <img src="./img/log in.png" alt="" />
-                    </div>
-                    <div class="login-status">
-                        <a href="#">登入</a>
-                        <b>|</b>
-                        <a href="#">註冊</a>
-                    </div>
+          <ul class="menu-ul">
+            <li><a href="pethouse.html">寵物當家</a></li>
+            <li class="landPage"><a href="beAPetKeeper.html">成為飼主</a></li>
+            <li><a href="products.html">寵物商店</a></li>
+            <li ><a href="activities.html">活動專區</a></li>
+            <div class="login">
+                <div class="login-icon">
+                  <img src="./img/log in.png" alt="" />
                 </div>
+                <div class="login-status">
+                  <a href="member.html">登入</a>
+                  <b>|</b>
+                  <a href="member.html">註冊</a>
+                </div>
+              </div>
             </ul>
-        </div>
-        <div class="burger">
+          </div>
+          <div class="burger">
             <span class="bar1" id="bar"></span>
             <span class="bar2" id="bar"></span>
             <span class="bar3" id="bar"></span>
-        </div>
-    </header>
-    <div class="prompt">
+          </div>
+       
+      </header>
+      <div class="prompt">
         <a href="#">
-            <img src="img/catprompt.png" alt="" />
-            <img src="img/footerprint.png" alt="">
+          <img src="img/catprompt.png" alt="" />
+          <img src="img/footerprint.png" alt="">
         </a>
-    </div>
+      </div>
+      
     <div class="pet-wrap">
+
 
         <!-- banner-start -->
         <div class="pet-container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 pet-banner-bgs">
-                    <img class="pet-banner-paper"src="./img/beAPetKeBanner.png" alt="">
+                    <img class="pet-banner-paper" src="./img/beAPetKeBanner.png" alt="">
                     <div class="pet-banner">
                         <img src="./img/beAPetKeBaBlue.png" alt="">
                         <p>成為飼主</p>
@@ -92,24 +104,30 @@
                         <img src="./img/lightRight.png" class="pet-light-right" alt="">
                     </div>
 
-                    <div class="pet-context-pet">
-                        <!-- <img src="./img/modelCaseDog.png" alt=""> -->
 
-                        <div class="pet-model Pets-Color" id="Pet-DogKeeper">
-                            <img class="pet-dress-head" src="./img/pet-stage-dogheadfirst.png" alt="" id="Pet-HeadDog-One">
-                            <img class="pet-dress-body" src="./img/pet-stage-dogbody.png" alt="" id="Pet-BabyDog-One">
-                            <img class="pet-dress-tail" src="./img/pet-stage-dogtailfirst.png" alt="" id="Pet-TailDog-One">
-                        </div>
+                    <div class="pet-context-stage">
+                        <div class="pet-context-pet">
+                            <!-- <img src="./img/modelCaseDog.png" alt=""> -->
+                            <!-- <canvas id="pet-canvas" width="300" height="300" ></canvas> -->
+                            <div class="pet-model Pets-Color" id="Pet-DogKeeper">
+                                <img class="pet-dress-head" src="./img/pet-stage-dogheadfirst.png" alt=""
+                                    id="Pet-HeadDog-One">
+                                <img class="pet-dress-body" src="./img/pet-stage-dogbody.png" alt=""
+                                    id="Pet-BabyDog-One">
+                                <img class="pet-dress-tail" src="./img/pet-stage-dogtailfirst.png" alt=""
+                                    id="Pet-TailDog-One">
+                            </div>
 
-                        <!-- <div class="pet-model Pets-Color" id="Pet-DogKeeper">
+                            <!-- <div class="pet-model Pets-Color" id="Pet-DogKeeper">
                         <img src="./img/pet-stage-catheadfirst.png" alt="">
                         <img src="./img/pet-stage-catbody.png" alt="" class="">
                         <img src="./img/pet-stage-cattailsencon.png" alt="">
                     </div> -->
 
-                    </div>
-                    <div class="pet-context">
-                        <img src="./img/bAPKStage.png" alt="">
+                        </div>
+                        <div class="pet-context">
+                            <img src="./img/bAPKStage.png" alt="">
+                        </div>
                     </div>
                 </div>
 
@@ -217,7 +235,7 @@
         <!-- 第二畫面QA-end -->
         <!-- 第三頁-QA結束打造寵物頁面-start -->
         <div class="pet-container pet-section-three">
-            <div class="row ">
+            <div class="row">
                 <div class="col-sm-12 col-md-12 pet-dress-answer">
                     <p>您適合養</p>
                     <img class="pet-dress-paper" src="./img/pet-dress-paper.png" alt="">
@@ -232,29 +250,34 @@
             </div>
         </div>
         <!-- 第三頁-QA結束打造寵物頁面-end-->
-    </div>
 
-    <!-- <div class="col-sm-6 col-md-8 pet-question">
-            <img src="./img/pet-qa-paper.png" alt="">
-            <div class="pet-qa-answer">
-                <p class="pet-question-title">你適合當狗奴還是貓奴？</p>
-                <div class="pet-question-number">
-                    <img class="" src="./img/pet-circle-1.png" alt="">
+        <!-- 第四頁-客製動物完成-start -->
+        <div class="pet-container pet-section-four">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 pet-answer-pet">
+                    <p>董董</p>
+                    <img class="pet-dress-paper" src="./img/pet-dress-paper.png" alt="">
+
+                    <div class="pet-dress-pet">
+                        <img class="pet-dress-head" src="./img/pet-stage-dogheadfirst.png">
+                        <img class="pet-dress-body" src="./img/pet-stage-dogbody.png">
+                        <img class="pet-dress-tail" src="./img/pet-stage-dogtailfirst.png">
+                    </div>
+                    <div class="pet-go">
+                    <button class="pet-go-shop">前往商店</button>
+                    <button class="pet-go-keeper">開始飼養</button>
                 </div>
-                <p class="pet-qa-title">Q1.請問您的居住空間？</p>
-                <button class="pet-answer" id="SSS" value="cat">小坪數套房</button>
-                <button class="pet-answer" value="dog">透天</button>
+                </div>
             </div>
-        </div> -->
-
-    <!-- 第三頁-QA結束打造寵物頁面End-->
+        </div>
+        <!-- 第四頁-客製動物完成-end-->
+    </div>
     <!-- footer-start-->
     <footer>
         <p>Copyright © 2019 PetKeepers</p>
-    </footer>
+    </footer> 
     <!-- footer-end-->
 
-    </div>
     <!--js-start-->
     <!--頁面切換 Start-->
     <script src="https://code.jquery.com/jquery-2.2.4.js"
@@ -263,21 +286,16 @@
 
     <script>
         $(document).ready(function () {
-            var list = $('ul li');
+            var list = $('#Pet-div1 ul li');
             list.click(function () {
                 $($(this).find('a').attr('href')).show().siblings('.Pet-Content')
                     .hide(); //頁面內容
-                $(this).addClass('active').siblings('.active').removeClass('active'); //步驟顏色
+                $(this).addClass('pet-active-step').siblings('.pet-active-step ').removeClass('pet-active-step'); //步驟顏色
             });
             $('li:nth-child(1)>a').trigger('click');
         });
     </script>
     <!--頁面切換 End-->
-
-
-
-
-
 
     <!-- 左側動物顯示 Start-->
     <script>
@@ -293,8 +311,8 @@
             ['./img/pet-circle-5.png', 'Q5.請問您生活環境的清潔狀態?？', '潔癖', '不拘小節'],
         ];
         var petArr = new Array(4); //動物部位三個元素+顏色
-        var petUnknown = ['./img/pet-qa-cat1.png', './img/pet-qa-cat2.png', './img/pet-qa-dog1.png',
-            './img/pet-qa-dog2.png'
+        var petUnknown = ['./img/pet-test-catfirst.png', './img/pet-test-catsencon.png', './img/pet-test-dogfirst.png',
+            './img/pet-test-dogsencon.png'
         ];
 
 
@@ -478,8 +496,6 @@
         }
     </script>
 
-
-
     <!--  第三頁-QA結束打造寵物頁面-Start-->
     <script>
         $(document).ready(function () {
@@ -506,14 +522,6 @@
         });
     </script>
     <!-- 第三步Color Bar End-->
-
-
-
-
-
-
-
-
 
 </body>
 
