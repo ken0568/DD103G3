@@ -63,476 +63,405 @@
     </a>
   </div>
   <div class="wrap">
-    <!--------------------------------- 背包checkBox  ------------------------------------->
-    <div class="index-pethouse">
-      <input type="checkbox" id="bagPag-control">
-      <!--------------------------------- 寵物家 開始 ------------------------------------->
+    <div class="index-pethouse"><!--------------------------------- 背包checkBox  ------------------------------------->
+    <input type="checkbox" id="bagPag-control">
+    <!--------------------------------- 寵物家 開始 --------------------------------->
+    <div class="ph-hs-sw ph-check">
+      
+    <div id="con" class="pethouse-autoplay">
+        <div class="item item1">
+        <div class="contain">
+        <p><img src="img/mouse.png" alt="" class="mouse">你的名稱、寵物名稱與愛心幣都在這兒!</p>
+        </div>
+        </div>
+        <div class="item item2">
+        <div class="contain">
+        <p><img src="img/mouse.png" alt="" class="mouse">想按這裡可以回家。</p>
+        </div>
+        </div>
+        <div class="item item3">
+        <div class="contain">
+        <p><img src="img/mouse.png" alt="" class="mouse">按這裡可以餵飼料。</p>
+        </div>
+        </div>
+        <div class="item item4">
+        <div class="contain">
+        <p><img src="img/mouse.png" alt="" class="mouse">按這裡可以鏟屎。</p>
+        </div>
+        </div>
+        <div class="item item5">
+        <div class="contain">
+        <p><img src="img/mouse.png" alt="" class="mouse">寵物的食盆。要記得餵食寵物喔。</p>
+        </div>
+        </div>
+        <div class="item item6">
+        <div class="contain">
+        <p><img src="img/mouse.png" alt="" class="mouse">寵物的屎盆。要記得定期清理喔。</p>
+        </div>
+        </div>
+        <div class="item item7">
+        <div class="contain">
+        <p><img src="img/mouse.png" alt="" class="mouse">這扇門可以去參觀別人家，還有賺取愛心幣的小遊戲喔。</p>
+        </div>
+        </div>
+        <div class="item item8">
+        <div class="contain">
+        <p><img src="img/mouse.png" alt="" class="mouse">到別人家會有這個保險箱，會有神秘小遊戲喔。</p>
+        </div>
+        </div>
+        </div>
+    <div class="ph-all">
+    <div class="ph-bgi">
+    <img src="img/ph-oh-bgi.png" alt="bgi">
+    </div>
+    
+    <div class="ph-oh-safe ph-all-style">
+        <img class="ph-safe-off" src="img/ph-safe-off.png" alt="safe-off">
+        <img class="ph-safe-on" src="img/ph-safe-on.png" alt="safe-on">
+      </div>
+    <div class="ph-dr ph-all-style">
+    <img class="ph-dr-cl" src="img/door-close.png" alt="dr-op">
+    <img class="ph-dr-op" src="img/door-open.png" alt="dr-cl">
+    </div>
+    <div class="pet-img ph-all-style">
+    <img src="img/ph-cat.png" alt="pet">
+    </div>
+    <div class="pet-img ph-all-style">
+    <img src="img/ph-dog.png" alt="pet">
+    </div>
+    <div class="ph-st-box ph-all-style">
+    <img src="img/shitbox.png" alt="shitbox">
+    </div>
+    <div class="ph-st ph-all-style">
+    <img src="img/shit.png" alt="shit">
+    </div>
+    <div class="ph-fd-box ph-all-style">
+    <img src="img/foodbox.png" alt="foodbox">
+    </div>
+    <div class="ph-fd ph-all-style">
+    <img src="img/food.png" alt="food">
+    </div>
+    
+    <div class="ph-hs-btn ph-all-style ph-sw-btn">
+    <img src="img/house-on.png" alt="house-on">
+    </div>
+    <div class="ph-fe-btn ph-all-style ph-sw-btn">
+    <img src="img/feed-off.png" alt="feed-off">
+    </div>
+    <div class="ph-sv-btn ph-all-style ph-sw-btn">
+    <img src="img/shovel-off.png" alt="shovel-off">
+    </div>
+    <div class="ph-mem-box">
+    <div class="ph-mem-text">
+    <p id="">SARA1013</p>
+    <!--記得補ID -->
+    <p>寵物:<span id="">董董</span></p>
+    <!--記得補ID -->
+    <img src="img/ph-coin.png" alt="coin">
+    <div class="coin">
+    <p id="">3000<span id="">+100/1s</span></p>
+    <!--記得補ID -->
+    </div>
+    </div>
+    </div>
+    <div class="ph-hg ph-all-style">
+    <!-- 先none,click後加上display:block; -->
+    <img src="img/hungry.png" alt="hungry">
+    </div>
+    <div class="ph-ac-box">
+    <p>推薦活動 | </p>
+    </div>
+    <div class="ph-ac-hide">
+    <p>
+    2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾<span>...</span><a href="activityContent.html">(活動詳情)</a></p>
+    </div>
+    <div class="bg-bgc"></div>
+    <div class="bg-item">
+    <div class="bg-title">
+    <span>背包</span>
+    <label for="bagPag-control" class="bg-exit">
+    <span></span>
+    <span></span>
+    </label>
+    </div>
+    <ul class="bg-list-ul">
+    <li>
+    <div>
+    <img src="img/ph-fd-1.png" alt="">
+    </div>
+    <h5>飼料</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li>
+    <div>
+    <img src="img/ph-fdbox-1.png" alt="">
+    </div>
+    <h5>高級食盆</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li>
+    <div>
+    <img src="img/ph-stbox-1.png" alt="">
+    </div>
+    <h5>高級屎盆</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li>
+    <div>
+    <img src="img/ph-eve.png" alt="">
+    </div>
+    <h5>寵物衣服</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li>
+    <div>
+    <img src="img/ph-diaper-1.png" alt="">
+    </div>
+    <h5>高級尿布</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li></li>
+    </ul>
+    <div class="bg-sh">
+    <a href="products.html">
+    <div class="bg-sh-cr">
+    <span></span>
+    <span></span>
+    </div>
+    </a>
+    <a href="products.html">去商店購物</a>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!--------------------------------- 寵物家 結束 --------------------------------->
+    <!--------------------------------- 寵物家 餵食開始 --------------------------------->
+    <div class="ph-fd-sw ph-check">
+    <div class="ph-all">
+    <div class="ph-bgi">
+    <img src="img/ph-fd-bgi.png" alt="bgi">
+    </div>
+    <div class="pet-img ph-all-style ph-fd-pet">
+    <img src="img/ph-cat.png" alt="pet">
+    </div>
+    <div class="ph-fd-box ph-all-style ph-rwd-show">
+    <img src="img/foodbox.png" alt="foodbox">
+    </div>
+    <div class="ph-fd ph-all-style ph-rwd-show">
+    <img src="img/food.png" alt="food">
+    </div>
+    
+    <div class="ph-hs-btn ph-all-style ph-sw-btn">
+    <img src="img/house-off.png" alt="house-on">
+    </div>
+    <div class="ph-fe-btn ph-all-style ph-sw-btn">
+    <img src="img/feed-on.png" alt="feed-off">
+    </div>
+    <div class="ph-sv-btn ph-all-style ph-sw-btn">
+    <img src="img/shovel-off.png" alt="shovel-off">
+    </div>
+    <div class="ph-mem-box">
+    <div class="ph-mem-text">
+    <p id="">SARA1013</p>
+    <!--記得補ID -->
+    <p>寵物:<span id="">董董</span></p>
+    <!--記得補ID -->
+    <img src="img/ph-coin.png" alt="coin">
+    <div class="coin">
+    <p id="">3000<span id="">+100/1s</span></p>
+    <!--記得補ID -->
+    </div>
+    </div>
+    </div>
+    <div class="ph-ac-box">
+    <p>推薦活動 | </p>
+    </div>
+    <div class="ph-ac-hide">
+    <p>
+    2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾<span>...</span><a href="activityContent.html">(活動詳情)</a></p>
+    </div>
+    <div class="bg-bgc"></div>
+    <div class="bg-item">
+    <div class="bg-title">
+    <span>背包</span>
+    <label for="bagPag-control" class="bg-exit">
+    <span></span>
+    <span></span>
+    </label>
+    </div>
+    <ul class="bg-list-ul">
+    <li>
+    <div>
+    <img src="img/ph-fd-1.png" alt="">
+    </div>
+    <h5>飼料</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li>
+    <div>
+    <img src="img/ph-fdbox-1.png" alt="">
+    </div>
+    <h5>高級食盆</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li>
+    <div>
+    <img src="img/ph-stbox-1.png" alt="">
+    </div>
+    <h5>高級屎盆</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li>
+    <div>
+    <img src="img/ph-eve.png" alt="">
+    </div>
+    <h5>寵物衣服</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li>
+    <div>
+    <img src="img/ph-diaper-1.png" alt="">
+    </div>
+    <h5>高級尿布</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li></li>
+    </ul>
+    <div class="bg-sh">
+    <a href="products.html">
+    <div class="bg-sh-cr">
+    <span></span>
+    <span></span>
+    </div>
+    </a>
+    <a href="products.html">去商店購物</a>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!--------------------------------- 寵物家 餵食結束 --------------------------------->
+    <!--------------------------------- 寵物家 鏟屎開始 --------------------------------->
+    <div class="ph-pu-sw ph-check">
+    <div class="ph-all">
+    <div class="ph-bgi">
+    <img src="img/ph-pu-bgi.png" alt="bgi">
+    </div>
+    <div class="pet-img ph-all-style ph-pu-pet">
+    <img src="img/ph-cat.png" alt="pet">
+    </div>
+    <div class="ph-st-box ph-all-style ph-rwd-show">
+    <img src="img/shitbox.png" alt="shitbox">
+    </div>
+    <div class="ph-st ph-all-style ph-rwd-show">
+    <img src="img/shit.png" alt="shit">
+    </div>
+    
+    <div class="ph-hs-btn ph-all-style ph-sw-btn">
+    <img src="img/house-off.png" alt="house-on">
+    </div>
+    <div class="ph-fe-btn ph-all-style ph-sw-btn">
+    <img src="img/feed-off.png" alt="feed-off">
+    </div>
+    <div class="ph-sv-btn ph-all-style ph-sw-btn">
+    <img src="img/shovel-on.png" alt="shovel-off">
+    </div>
+    <div class="ph-mem-box">
+    <div class="ph-mem-text">
+    <p id="">SARA1013</p>
+    <!--記得補ID -->
+    <p>寵物:<span id="">董董</span></p>
+    <!--記得補ID -->
+    <img src="img/ph-coin.png" alt="coin">
+    <div class="coin">
+    <p id="">3000<span id="">+100/1s</span></p>
+    <!--記得補ID -->
+    </div>
+    </div>
+    </div>
+    <div class="ph-ac-box">
+    <p>推薦活動 | </p>
+    </div>
+    <div class="ph-ac-hide">
+    <p>
+    2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾<span>...</span><a href="activityContent.html">(活動詳情)</a></p>
+    </div>
+    <div class="bg-bgc"></div>
+    <div class="bg-item">
+    <div class="bg-title">
+    <span>背包</span>
+    <label for="bagPag-control" class="bg-exit">
+    <span></span>
+    <span></span>
+    </label>
+    </div>
+    <ul class="bg-list-ul">
+    <li>
+    <div>
+    <img src="img/ph-fd-1.png" alt="">
+    </div>
+    <h5>飼料</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li>
+    <div>
+    <img src="img/ph-fdbox-1.png" alt="">
+    </div>
+    <h5>高級食盆</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li>
+    <div>
+    <img src="img/ph-stbox-1.png" alt="">
+    </div>
+    <h5>高級屎盆</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li>
+    <div>
+    <img src="img/ph-eve.png" alt="">
+    </div>
+    <h5>寵物衣服</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li>
+    <div>
+    <img src="img/ph-diaper-1.png" alt="">
+    </div>
+    <h5>高級尿布</h5>
+    <h6>每秒獲得5個愛心幣</h6>
+    <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+    </li>
+    <li></li>
+    </ul>
+    <div class="bg-sh">
+    <a href="products.html">
+    <div class="bg-sh-cr">
+    <span></span>
+    <span></span>
+    </div>
+    </a>
+    <a href="products.html">去商店購物</a>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!--------------------------------- 寵物家 鏟屎結束 --------------------------------->
+  </div>
 
-      <div class="ph-hs-sw ph-check">
-
-        <div id="con" class="pethouse-autoplay">
-          <div class="item item1">
-            <div class="contain">
-              <p><img src="img/mouse.png" alt="" class="mouse">你的名稱、寵物名稱與愛心幣都在這兒!</p>
-            </div>
-          </div>
-          <div class="item item2">
-            <div class="contain">
-              <p><img src="img/mouse.png" alt="" class="mouse">想按這裡可以回家。</p>
-            </div>
-          </div>
-          <div class="item item3">
-            <div class="contain">
-              <p><img src="img/mouse.png" alt="" class="mouse">按這裡可以餵飼料。</p>
-            </div>
-          </div>
-          <div class="item item4">
-            <div class="contain">
-              <p><img src="img/mouse.png" alt="" class="mouse">按這裡可以鏟屎。</p>
-            </div>
-          </div>
-          <div class="item item5">
-            <div class="contain">
-              <p><img src="img/mouse.png" alt="" class="mouse">寵物的食盆。要記得餵食寵物喔。</p>
-            </div>
-          </div>
-          <div class="item item6">
-            <div class="contain">
-              <p><img src="img/mouse.png" alt="" class="mouse">寵物的屎盆。要記得定期清理喔。</p>
-            </div>
-          </div>
-          <div class="item item7">
-            <div class="contain">
-              <p><img src="img/mouse.png" alt="" class="mouse">這扇門可以去參觀別人家，還有賺取愛心幣的小遊戲喔。</p>
-            </div>
-          </div>
-          <div class="item item8">
-            <div class="contain">
-              <p><img src="img/mouse.png" alt="" class="mouse">到別人家會有這個保險箱，會有神秘小遊戲喔。</p>
-            </div>
-          </div>
-        </div>
-        <div class="ph-all">
-          <div class="ph-bgi">
-            <img src="img/ph-oh-bgi.png" alt="bgi">
-          </div>
-          <div class="ph-dr ph-all-style">
-            <img class="ph-dr-cl" src="img/door-close.png" alt="dr-op">
-            <img class="ph-dr-op" src="img/door-open.png" alt="dr-cl">
-          </div>
-          <div class="pet-img ph-all-style">
-            <img src="img/ph-cat.png" alt="pet">
-          </div>
-          <div class="pet2-img ph-all-style">
-            <img src="img/ph-dog.png" alt="">
-          </div>
-          <div class="ph-st-box ph-all-style">
-            <img src="img/shitbox.png" alt="shitbox">
-          </div>
-          <div class="ph-st ph-all-style">
-            <img src="img/shit.png" alt="shit">
-          </div>
-          <div class="ph-fd-box ph-all-style">
-            <img src="img/foodbox.png" alt="foodbox">
-          </div>
-          <div class="ph-fd ph-all-style">
-            <img src="img/food.png" alt="food">
-          </div>
-          <div class="ph-oh-safe ph-all-style">
-            <img class="ph-safe-off" src="img/ph-safe-off.png" alt="safe-off">
-            <img class="ph-safe-on" src="img/ph-safe-on.png" alt="safe-on">
-          </div>
-          <!-- <label for="bagPag-control" class="bp-btn">
-    <div class="ph-sd-bp ph-all-style ph-sd">
-    <img src="img/bagpag.png" alt="bagpag">
-    </div>
-    </label> -->
-          <!-- <div class="ph-sd-sp ph-all-style ph-sd">
-    <a href="#"><img src="img/shop.png" alt="shop"></a>
-    </div> -->
-          <!-- <div class="ph-sd-oh ph-all-style ph-sd">
-    <img src="img/otherhouse.png" alt="otherhouse">
-    </div> -->
-          <div class="ph-hs-btn ph-all-style ph-sw-btn">
-            <img src="img/house-on.png" alt="house-on">
-          </div>
-          <div class="ph-fe-btn ph-all-style ph-sw-btn">
-            <img src="img/feed-off.png" alt="feed-off">
-          </div>
-          <div class="ph-sv-btn ph-all-style ph-sw-btn">
-            <img src="img/shovel-off.png" alt="shovel-off">
-          </div>
-          <div class="ph-mem-pic ph-all-style">
-            <img src="img/mempic.png" alt="mempic">
-          </div>
-          <div class="ph-mem-box">
-            <div class="ph-mem-text">
-              <p id="">SARA1013</p>
-              <!--記得補ID -->
-              <p>寵物:<span id="">董董</span></p>
-              <!--記得補ID -->
-              <img src="img/ph-coin.png" alt="coin">
-              <div class="coin">
-                <b id="">3000<span id="">+100/1s</span></b>
-                <!--記得補ID -->
-              </div>
-            </div>
-          </div>
-          <div class="ph-hg ph-all-style">
-            <!-- 先none,click後加上display:block; -->
-            <img src="img/hungry.png" alt="hungry">
-          </div>
-          <div class="bg-bgc"></div>
-          <div class="bg-item">
-            <div class="bg-title">
-              <span>背包</span>
-              <label for="bagPag-control" class="bg-exit">
-                <span></span>
-                <span></span>
-              </label>
-            </div>
-            <ul class="bg-list-ul">
-              <li>
-                <div>
-                  <img src="img/ph-fd-1.png" alt="">
-                </div>
-                <h5>飼料</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-fdbox-1.png" alt="">
-                </div>
-                <h5>高級食盆</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-stbox-1.png" alt="">
-                </div>
-                <h5>高級屎盆</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-eve.png" alt="">
-                </div>
-                <h5>寵物衣服</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-diaper-1.png" alt="">
-                </div>
-                <h5>高級尿布</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li></li>
-            </ul>
-            <div class="bg-sh">
-              <a href="#">
-                <div class="bg-sh-cr">
-                  <span></span>
-                  <span></span>
-                </div>
-              </a>
-              <a href="#">去商店購物</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!------------------------------------ 寵物家結束-------------------------------------->
-      <!----------------------------------- 寵物家 餵食開始---------------------------------->
-      <div class="ph-fd-sw ph-check">
-        <div class="ph-all">
-          <div class="ph-bgi">
-            <img src="img/ph-fd-bgi.png" alt="bgi">
-          </div>
-          <div class="pet-img ph-all-style ph-fd-pet">
-            <img src="img/ph-cat.png" alt="pet">
-          </div>
-          <div class="ph-fd-box ph-all-style">
-            <img src="img/foodbox.png" alt="foodbox">
-          </div>
-          <div class="ph-fd ph-all-style">
-            <img src="img/food.png" alt="food">
-          </div>
-          <!-- <label for="bagPag-control" class="bp-btn">
-    <div class="ph-sd-bp ph-all-style ph-sd">
-    <img src="img/bagpag.png" alt="bagpag">
-    </div>
-    </label> -->
-          <!-- <div class="ph-sd-sp ph-all-style ph-sd">
-    <a href="#"><img src="img/shop.png" alt="shop"></a>
-    </div> -->
-          <!-- <div class="ph-sd-oh ph-all-style ph-sd">
-    <img src="img/otherhouse.png" alt="otherhouse">
-    </div> -->
-          <div class="ph-hs-btn ph-all-style ph-sw-btn">
-            <img src="img/house-off.png" alt="house-on">
-          </div>
-          <div class="ph-fe-btn ph-all-style ph-sw-btn">
-            <img src="img/feed-on.png" alt="feed-off">
-          </div>
-          <div class="ph-sv-btn ph-all-style ph-sw-btn">
-            <img src="img/shovel-off.png" alt="shovel-off">
-          </div>
-          <div class="ph-mem-pic ph-all-style">
-            <img src="img/mempic.png" alt="mempic">
-          </div>
-          <div class="ph-mem-box">
-            <div class="ph-mem-text">
-              <p id="">SARA1013</p>
-              <!--記得補ID -->
-              <p>寵物:<span id="">董董</span></p>
-              <!--記得補ID -->
-              <img src="img/ph-coin.png" alt="coin">
-              <div class="coin">
-                <b id="">3000<span id="">+100/1s</span></b>
-                <!--記得補ID -->
-              </div>
-            </div>
-          </div>
-          <div class="bg-bgc"></div>
-          <div class="bg-item">
-            <div class="bg-title">
-              <span>背包</span>
-              <label for="bagPag-control" class="bg-exit">
-                <span></span>
-                <span></span>
-              </label>
-            </div>
-            <ul class="bg-list-ul">
-              <li>
-                <div>
-                  <img src="img/ph-fd-1.png" alt="">
-                </div>
-                <h5>飼料</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-fdbox-1.png" alt="">
-                </div>
-                <h5>高級食盆</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-stbox-1.png" alt="">
-                </div>
-                <h5>高級屎盆</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-eve.png" alt="">
-                </div>
-                <h5>寵物衣服</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-diaper-1.png" alt="">
-                </div>
-                <h5>高級尿布</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li></li>
-            </ul>
-            <div class="bg-sh">
-              <a href="#">
-                <div class="bg-sh-cr">
-                  <span></span>
-                  <span></span>
-                </div>
-              </a>
-              <a href="#">去商店購物</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!------------------------- 寵物家 餵食結束------------------------------>
-      <!------------------------- 寵物家 鏟屎開始------------------------------>
-      <div class="ph-pu-sw ph-check">
-        <div class="ph-all">
-          <div class="ph-bgi">
-            <img src="img/ph-pu-bgi.png" alt="bgi">
-          </div>
-          <div class="pet-img ph-all-style ph-pu-pet">
-            <img src="img/ph-cat.png" alt="pet">
-          </div>
-          <div class="ph-st-box ph-all-style">
-            <img src="img/shitbox.png" alt="shitbox">
-          </div>
-          <div class="ph-st ph-all-style">
-            <img src="img/shit.png" alt="shit">
-          </div>
-          <!-- <label for="bagPag-control" class="bp-btn">
-    <div class="ph-sd-bp ph-all-style ph-sd">
-    <img src="img/bagpag.png" alt="bagpag">
-    </div>
-    </label> -->
-          <!-- <div class="ph-sd-sp ph-all-style ph-sd">
-    <a href="#"><img src="img/shop.png" alt="shop"></a>
-    </div> -->
-          <!-- <div class="ph-sd-oh ph-all-style ph-sd">
-    <img src="img/otherhouse.png" alt="otherhouse">
-    </div> -->
-          <div class="ph-hs-btn ph-all-style ph-sw-btn">
-            <img src="img/house-off.png" alt="house-on">
-          </div>
-          <div class="ph-fe-btn ph-all-style ph-sw-btn">
-            <img src="img/feed-off.png" alt="feed-off">
-          </div>
-          <div class="ph-sv-btn ph-all-style ph-sw-btn">
-            <img src="img/shovel-on.png" alt="shovel-off">
-          </div>
-          <div class="ph-mem-pic ph-all-style">
-            <img src="img/mempic.png" alt="mempic">
-          </div>
-          <div class="ph-mem-box">
-            <div class="ph-mem-text">
-              <p id="">SARA1013</p>
-              <!--記得補ID -->
-              <p>寵物:<span id="">董董</span></p>
-              <!--記得補ID -->
-              <img src="img/ph-coin.png" alt="coin">
-              <div class="coin">
-                <b id="">3000<span id="">+100/1s</span></b>
-                <!--記得補ID -->
-              </div>
-            </div>
-          </div>
-          <div class="bg-bgc"></div>
-          <div class="bg-item">
-            <div class="bg-title">
-              <span>背包</span>
-              <label for="bagPag-control" class="bg-exit">
-                <span></span>
-                <span></span>
-              </label>
-            </div>
-            <ul class="bg-list-ul">
-              <li>
-                <div>
-                  <img src="img/ph-fd-1.png" alt="">
-                </div>
-                <h5>飼料</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-fdbox-1.png" alt="">
-                </div>
-                <h5>高級食盆</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-stbox-1.png" alt="">
-                </div>
-                <h5>高級屎盆</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-eve.png" alt="">
-                </div>
-                <h5>寵物衣服</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-diaper-1.png" alt="">
-                </div>
-                <h5>高級尿布</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li></li>
-            </ul>
-            <div class="bg-sh">
-              <a href="#">
-                <div class="bg-sh-cr">
-                  <span></span>
-                  <span></span>
-                </div>
-              </a>
-              <a href="#">去商店購物</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!------------------------- 寵物家 鏟屎結束------------------------------>
-      <!----------------------------- 別人家 開始-------------------------------->
-      <div class="ph-oh-sw ph-check">
-        <div class="ph-all">
-          <div class="ph-bgi">
-            <img src="img/ph-oh-bgi.png" alt="bgi">
-          </div>
-          <div class="pet-img ph-all-style ph-oh-pet">
-            <img src="img/ph-dog.png" alt="pet">
-          </div>
-          <div class="ph-st-box ph-all-style">
-            <img src="img/ph-diaper-1.png" alt="shitbox">
-          </div>
-          <div class="ph-fd-box ph-all-style">
-            <img src="img/ph-fdbox-1.png" alt="foodbox">
-          </div>
-          <div class="ph-fd ph-all-style">
-            <img src="img/food.png" alt="food">
-          </div>
-          <div class="ph-hs-btn ph-all-style ph-sw-btn">
-            <img src="img/house-on.png" alt="house-on">
-          </div>
-          <div class="ph-oh-safe ph-all-style">
-            <img class="ph-safe-off" src="img/ph-safe-off.png" alt="safe-off">
-            <img class="ph-safe-on" src="img/ph-safe-on.png" alt="safe-on">
-          </div>
-          <div class="ph-mem-pic ph-all-style">
-            <img src="img/mempic.png" alt="mempic">
-          </div>
-          <div class="ph-mem-box">
-            <div class="ph-mem-text">
-              <p id="">HsuHao</p>
-              <!--記得補ID -->
-              <p>寵物:<span id="">提摸摸</span></p>
-              <!--記得補ID -->
-              <img src="img/ph-coin.png" alt="coin">
-              <div class="coin">
-                <b style="text-align: center;" id="">25000</b>
-                <!--記得補ID -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!----------------------------- 別人家 結束-------------------------------->
-      <div class="index-qanda">
-        <div class="index-foot">
-          <img src="img/index-footprint.png" alt="" class="wow fadeIn" data-wow-duration="5s">
-          <img src="img/index-footprint.png" alt="" class="wow fadeIn" data-wow-duration="5s" data-wow-delay="0.5s">
-          <img src="img/index-footprint.png" alt="" class="wow fadeIn" data-wow-duration="5s" data-wow-delay="1s">
-          <img src="img/index-footprint.png" alt="" class="wow fadeIn" data-wow-duration="5s" data-wow-delay="1.5s">
-          <img src="img/index-footprint.png" alt="" class="wow fadeIn" data-wow-duration="5s" data-wow-delay="2s">
-        </div>
-      </div>
-    </div>
     <div class="qanda">
       <div class="qanda-left">
         <img src="img/index_qustion.png" alt="">
@@ -734,95 +663,6 @@
         <!-- 排行榜rankno3 結束 -->
       </div>
     </section>
-    <div class="index-rankform">
-      <div class="rank-formtitle">
-        <div>
-          <h4>排名</h4>
-        </div>
-        <div>
-          <h4>寵物名</h4>
-        </div>
-        <div>
-          <h4>飼主名</h4>
-        </div>
-        <div>
-          <h4>愛心幣</h4>
-        </div>
-      </div>
-      <div class="rank4to8 .clearfix">
-        <div>
-          <p>4</p>
-        </div>
-        <div>
-          <p>正妹</p>
-        </div>
-        <div>
-          <p>正陽</p>
-        </div>
-        <div>
-          <p>10000 <img src="img/coin.png" alt=""></p>
-        </div>
-      </div>
-      <div class="rank4to8 .clearfix">
-        <div>
-          <p>5</p>
-        </div>
-        <div>
-          <p>正妹</p>
-        </div>
-        <div>
-          <p>正陽</p>
-        </div>
-        <div>
-          <p>10000 <img src="img/coin.png" alt=""></p>
-        </div>
-      </div>
-      <div class="rank4to8 .clearfix">
-        <div>
-          <p>6</p>
-        </div>
-        <div>
-          <p>正妹</p>
-        </div>
-        <div>
-          <p>正陽</p>
-        </div>
-        <div>
-          <p>10000 <img src="img/coin.png" alt=""></p>
-        </div>
-      </div>
-      <div class="rank4to8 .clearfix">
-        <div>
-          <p>7</p>
-        </div>
-        <div>
-          <p>正妹</p>
-        </div>
-        <div>
-          <p>正陽</p>
-        </div>
-        <div>
-          <p>10000 <img src="img/coin.png" alt=""></p>
-        </div>
-      </div>
-      <div class="rank4to8 .clearfix">
-        <div>
-          <p>8</p>
-        </div>
-        <div>
-          <p>正妹</p>
-        </div>
-        <div>
-          <p>正陽</p>
-        </div>
-        <div>
-          <p>10000 <img src="img/coin.png" alt=""></p>
-        </div>
-      </div>
-    </div>
-    <!-- 排行榜rankno1~3置中結束 -->
-    <!-- 排行榜rankno4~8置中開始 -->
-
     <footer>
       <p>Copyright © 2019 PetKeepers</p>
     </footer>

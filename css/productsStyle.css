@@ -646,3 +646,55 @@ input[type=text]{
 .landPage a {
     color: #ffc342;
 }
+.ph-mem-box{
+    z-index: 3;
+    position: fixed;
+    top: 15%;
+    left: 3%;
+    width: 15%;
+    height: 13.3%;
+    border-radius: 10px;
+    background-color: rgba(16, 75, 95,.8);
+}
+.ph-mem-text{
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: #fff;
+}
+.ph-mem-text img{
+    width: 17%;
+    opacity: 1;
+    position: absolute;
+    bottom: -3%;
+    left: 0;
+    z-index: 6;
+}
+.ph-mem-text .coin{
+   background-color: #fff;
+   position: absolute;
+   left: 10%;
+   bottom: 0%;
+   width: 85%;
+   height: 32%;
+   z-index: 5;
+   border-radius: 5px;
+}
+.ph-mem-text .coin p{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #333;
+    text-align: center;
+    padding: 0 10px;
+    font-weight: bold;
+}
+.ph-mem-text .coin p span{
+    font-size: 12px;
+    color: #F38932;
+}
