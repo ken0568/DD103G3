@@ -10,12 +10,84 @@
 	<link rel="stylesheet" href="css/member.css">
 	<link rel="stylesheet" href="css/fontStyle.css" />
 	<link rel="stylesheet" href="css/header-footer.css" />
+	<link rel="stylesheet" href="css/login.css">
 	<script src="js/jquery-2.2.4.min.js"></script>
 	<script src="js\burger.js"></script>
+	<script src="js/login.js"></script>
 </head>
 
 
 <body>
+	<!-- 登入 -->
+	<div id="login" class="col-md-12" style="display: ">
+		<!-- loginbox開始 -->
+		<div id="loginbox" class="loginbox col-md-5" style="display: ;">
+			<h6>會員登入</h6>
+			<div class="loginpic">
+				<img src="img/logo-01.png" alt="">
+			</div>
+			<div class="login-input">
+				<div>
+					<span>帳號:</span>
+					<input type="text">
+				</div>
+				<div>
+					<span>密碼:</span>
+					<input type="password">
+				</div>
+				<input type="submit" value="送出" id="login-submit">	
+				<span id="registeredbtn">還沒申請帳號?</span>	
+			</div>
+			<span id="login-close">X</span>	
+		</div><!-- loginbox結束 -->
+
+		<!-- registeredbox開始 -->
+		<div id="registeredbox" class="registeredbox col-md-5" style="display: none;">
+
+			<h6>會員註冊</h6>
+			
+			<div class="login-input">
+				<div>
+					<span>帳號:</span>
+					<input type="text">
+				</div>
+				<div>
+					<span>密碼:</span>
+					<input type="password">
+				</div>
+				<div>
+					<span>姓名:</span>
+					<input type="text">
+				</div>
+				<div>
+					<span>暱稱:</span>
+					<input type="text">
+				</div>
+				<div>
+					<span>性別:</span>
+					<div class="registeredsex">
+						<input type="radio" name="sex" style="width: 20px;">男
+						<input type="radio" name="sex" style="width: 20px;">女
+					</div>
+				</div>
+				<div>
+					<span>信箱:</span>
+					<input type="text">
+				</div>
+				<div>
+					<span>手機:</span>
+					<input type="text">
+				</div>
+				<input type="submit" value="送出" id="login-submit">	
+				<span id="registeredbtn">還沒申請帳號?</span>	
+			</div>
+			<span id="registered-close">X</span>	
+		</div><!-- registeredbox結束 -->
+
+	</div><!-- 登入結束 -->
+
+
+	<!-- header開始 -->
 	<header>
 		<div class="index-logo">
 			<div class="logo">
@@ -46,13 +118,21 @@
 			<span class="bar3" id="bar"></span>
 		</div>
 	</header>
+	<!-- header結束 -->
+
+	<!-- 提醒 -->
 	<div class="prompt">
 		<a href="#">
 			<img src="img/catprompt.png" alt="" />
 			<img src="img/footerprint.png" alt="">
 		</a>
 	</div>
+	<!-- 提醒結束 -->
+
+	<!-- footer開始 -->
 	<div class="wrap">
+
+		<!-- 會員開始 -->
 		<div class="member-wrap">
 			<div class="member">
 
@@ -61,14 +141,14 @@
 
 					<div class="member-left-box">
 						<div class="member-left-bighead">
-							<div class="camera"></div>
+							<img src="img/pet2.png" alt="">
 						</div>
 						<span>可不可紅茶</span>
 	
 						<div class="member-left-page">
-							<a href="">個人資料</a>
-							<a href="">購買紀錄</a>
-							<a href="">活動紀錄</a>
+							<span id="memberbtn1">個人資料</span>
+							<span id="memberbtn2">購買紀錄</span>
+							<span id="memberbtn3">活動紀錄</span>
 						</div>
 					</div>
 
@@ -76,12 +156,13 @@
 
 
 				<div class="member-right col-12 col-md-9">
-					<!-- 右邊 -->
+					<!-- 會員右邊 -->
 
 					<div class="member-right-box col-md-10">
-						<h2>個人資料</h2>
-						<table>
+						<h2 id="member-right-title">個人資料</h2>
 
+						<!-- 個人資料 -->
+						<table id="member1" style="display: ;">
 							<tr>
 								<td>姓名:</td>
 								<td>李可懷</td>
@@ -103,24 +184,139 @@
 								<td>麗春紅茶</td>
 							</tr>
 							<tr>
-								<td>email:</td>
+								<td>信箱:</td>
 								<td>kebuke@gmail.com</td>
 							</tr>
+							<tr>
+								<td>愛心幣:</td>
+								<td>5000</td>
+							</tr>
+							<tr>
+								<td>愛心幣排名:</td>
+								<td>103名</td>
+							</tr>
+							<tr>
+								<td>最後登入:</td>
+								<td>2019/11/08-20:15</td>
+							</tr>						
+						</table>
+						<button id="reset">修改</button>
 
+
+						<!-- 購買紀錄 -->
+						<table id="member2" style="display: none">
+
+							<thead>
+								<tr>
+									<td>商品名稱</td>
+									<td>愛心幣</td>
+									<td>購買時間</td>
+								</tr>
+							</thead>
+							<tr>
+								<td>商品1</td>
+								<td>500</td>
+								<td>2019/11/10-23:29</td>
+							</tr>
+							<tr>
+								<td>商品1</td>
+								<td>500</td>
+								<td>2019/11/10-23:29</td>
+							</tr>
+							<tr>
+								<td>商品1</td>
+								<td>500</td>
+								<td>2019/11/10-23:29</td>
+							</tr>
 						</table>
 
-						<button id="reset">修改</button>
+						<!-- 活動紀錄 -->
+						<table id="member3" style="display: none;">
+							<thead>
+								<td>活動名稱</td>
+								<td>活動日期</td>
+								<td>活動狀態</td>
+							</thead>
+							<tr>
+								<td>名稱1</td>
+								<td>2019/11/10</td>
+								<td>取消報名</td>
+							</tr>
+							<tr>
+								<td>名稱2</td>
+								<td>2019/11/10</td>
+								<td>已結束</td>
+							</tr>
+							<tr>
+								<td>名稱3</td>
+								<td>2019/11/10</td>
+								<td>已結束</td>
+							</tr>
+						</table>
 					</div>
 
 
 				</div><!-- 右邊結束 -->
 			</div>
 		</div>
+		<!-- 會員結束 -->
+
 		<footer>
 			<p>Copyright © 2019 PetKeepers</p>
 
 		</footer>
 	</div>
+	<!-- footer結束 -->
+
+
+	<script>
+
+		// 個人資料
+		function member1(){
+			document.getElementById("member1").style.display="";
+			document.getElementById("member2").style.display="none";
+			document.getElementById("member3").style.display="none";
+			document.getElementById("member-right-title").innerText="個人資料"
+			document.getElementById("reset").style.display="";
+		};
+		// 購買紀錄
+		function member2(){
+			document.getElementById("member1").style.display="none";
+			document.getElementById("member2").style.display="";
+			document.getElementById("member3").style.display="none";
+			document.getElementById("member-right-title").innerText="購買紀錄"
+			document.getElementById("reset").style.display="none";
+		};
+		// 活動紀錄
+		function member3(){
+			document.getElementById("member1").style.display="none";
+			document.getElementById("member2").style.display="none";
+			document.getElementById("member3").style.display="";
+			document.getElementById("member-right-title").innerText="活動紀錄"
+			document.getElementById("reset").style.display="none";
+		};
+
+		// (個人資料，購買紀錄，活動紀錄)按鈕
+		function memberbtn(){
+			document.getElementById("memberbtn1").onclick=member1;
+			document.getElementById("memberbtn2").onclick=member2;
+			document.getElementById("memberbtn3").onclick=member3;
+		};
+
+		// window.onload=memberbtn;
+		// window.onload=loginclosebtn;
+		// window.onload=registeredclosebtn;
+		// window.onload=registeredbtn;
+
+		window.onload=function(){
+			memberbtn();// (個人資料，購買紀錄，活動紀錄)按鈕
+			loginclosebtn();// 關閉登入燈箱按鈕
+			registeredclosebtn();// 關閉註冊燈箱按鈕
+			registeredbtn();// 開啟註冊燈箱按鈕
+		};
+
+
+	</script>
 </body>
 
 

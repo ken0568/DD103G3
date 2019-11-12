@@ -83,6 +83,8 @@ body{
 @media screen and (min-width: 768px){
 	.member{
 		display: flex;
+
+		background-color: #ccc;
 	}
 }
 
@@ -92,7 +94,7 @@ body{
 	margin: auto;
 	background-color: #4a6e70;
 
-	padding-top: 80px;
+	padding-top: 50px;
 }
 
 .member-left span{
@@ -103,28 +105,23 @@ body{
 .member-left-bighead{
 	width: 150px;
 	height: 150px;
-	position: relative;
 	background-color: #f8f8f8;
-	background-image: url('../img/member-member.png');
 	background-size: cover;
 	border-radius: 50%;
 
 	margin: auto;
-
-	text-align: center;
-	line-height: 150px;
-	font-size: 20px;
-	cursor: pointer;
+	position: relative;
 }
 
-.member-left-bighead .camera{
-	width: 32.5px;
-	height: 24.5px;
+.member-left-bighead img{
+	width: 120px;
+	
 	position: absolute;
+	top: 0;
+	left: 0;
 	right: 0;
 	bottom: 0;
-	background-image: url('../img/member-camera.png');
-	background-size: cover;
+	margin: auto;
 }
 
 .member-left span{
@@ -142,64 +139,60 @@ body{
 	flex-direction: row;
 	justify-content: center;
 
-	padding: 50px 0;
+	padding: 25px 0;
 }
 
-/*.member-left-page a:nth-of-type(1){
-	background-color: darkorange;
-	color: #114b5f;
-}*/
-
-.member-left-page a{
-
+.member-left-page span{
+	
 	font-size: 1rem;
-	line-height: 50px;
+	color: #fff;
+	font-weight: normal;
+	display: block;
+	cursor: pointer;
 
 	display: block;
 	width: 130px;
 	height: 50px;
-	transition: .25s;
-	/* background-color: #028090; */
-	color: #fff;
+
+	margin: 0 auto;
 	
-	margin: 0 15px;
 }
 
 @media screen and (min-width: 768px){
 	.member-left{
-		/*margin-top: 25px;*/
-		padding-top: 110px;
+		height: 100vh;
+		padding-top: 100px;
+		position: relative;
 	}
 	
 	.member-left-page{
+		margin-top: 50px;
 		display: flex;
 		flex-direction: column;
 	}
-
-	.member-left-page a{
-		margin: auto;
-		margin-bottom: 25px;
-	}
-
-	.member-left-page a:hover{
+	
+	/*---按鈕效果---*/
+	.member-left-page span:hover{
+		border-radius: 5px;
 		background-color: #114b5f;
 	}
 }
 
+
+
 /*===會員右邊===*/
 .member-right{
 	background-color: #fff;
-	padding-top: 50px;
-	padding-bottom: 50px;
+/*	padding-top: 25px;
+	padding-bottom: 25px;*/
 	position: relative;
 }
 
 .member-right h2{
 	text-align: center;
 	font-weight: 700;
-	/*margin: 15px 0;*/
-	padding: 15px 0;
 	color: #f28123;
+	padding-bottom: 15px;
 }
 
 
@@ -216,6 +209,14 @@ body{
 	/*padding: 0 25px;*/
 }
 
+#member1{
+	margin-bottom: 25px;
+}
+
+#member2,#member3{
+	margin-bottom: 50px;
+}
+
 .member-right table tr{
 	height: 50px;
 	border-bottom: 1px dotted #4a6e70;
@@ -223,23 +224,21 @@ body{
 
 .member-right table td{
 	width: 100px;
-	/*padding-left: 25px;*/
-	/*padding: 0 25px;*/
 }
 
 .member-right table td:nth-of-type(1){
 	text-align: left;
 }
 
-/* .member-right table td:nth-of-type(2){
-	padding-left: 15px;
-	padding-right: 25px; 
-} */
+#member2,#member3{
+	text-align: center;
+}
+
 
 #reset{
 	display: block;
 	margin: auto;
-	padding: 25px 10px;
+	padding: 0 10px 25px 10px;
 	
 	font-family: 'Noto Sans TC',
 	'Roboto Condensed',
@@ -249,49 +248,33 @@ body{
 	border: none;
 	background-color: transparent;
 	color: #f28123;
-	transition: .25s; 
+	/*transition: .25s;*/ 
 	font-size: 1rem;
 
 	cursor: pointer;
 }
 
-#reset:hover{
+/*#reset:hover{
 	text-decoration: underline;
 	color: #f28123;
 }
-
+*/
 @media screen and (min-width: 768px){
-
-	.member-left{
-		height: 80vh;
-		position: relative;
-	}
-
-	.member-left-box{
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		left: 0;
-		right: 0;
-		margin: auto;
-	}
-
-	.member-rightmember-wrap{
-		padding-top: 100px;
-		padding-bottom: 0px;
-		height: 80vh;
-	}
 
 	.member-right{
 		position: relative;
 	}
 
+	.member-right h2{
+		padding-top: 100px;
+	}
+
 	.member-right-box {
-		position: absolute;
+		/*position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
 		left: 0;
-		right: 0;
+		right: 0;*/
 		margin: auto;
 	}
 
@@ -301,12 +284,12 @@ body{
 		font-size: 20px;
 	}
 
-	.member-right table td:nth-of-type(1){
+	#member1 td:nth-of-type(1){
 		/* text-align: right; */
 		padding-left: 150px;
 	}
 
 	#reset{
-		margin-bottom: 25px;
+		
 	}
 }
