@@ -19,7 +19,7 @@
 
 <body>
 	<!-- 登入 -->
-	<div id="login" class="col-md-12" style="display: ">
+	<div id="login" class="col-md-12" style="display: none;">
 		<!-- loginbox開始 -->
 		<div id="loginbox" class="loginbox col-md-5" style="display: ;">
 			<h6>會員登入</h6>
@@ -79,7 +79,6 @@
 					<input type="text">
 				</div>
 				<input type="submit" value="送出" id="login-submit">	
-				<span id="registeredbtn">還沒申請帳號?</span>	
 			</div>
 			<span id="registered-close">X</span>	
 		</div><!-- registeredbox結束 -->
@@ -101,13 +100,11 @@
 				<li><a href="products.html">寵物商店</a></li>
 				<li><a href="activities.html">活動專區</a></li>
 				<div class="login">
-					<div class="login-icon">
-						<img src="./img/log in.png" alt="" />
-					</div>
+
 					<div class="login-status">
-						<a href="member.html">登入</a>
+						<a id="loginopenbtn">登入</a>
 						<b>|</b>
-						<a href="member.html">註冊</a>
+						<a id="registeredopenbtn">註冊</a>
 					</div>
 				</div>
 			</ul>
@@ -312,6 +309,8 @@
 			memberbtn();// (個人資料，購買紀錄，活動紀錄)按鈕
 			loginclosebtn();// 關閉登入燈箱按鈕
 			registeredclosebtn();// 關閉註冊燈箱按鈕
+			loginopenbtn();//開啟登入燈箱
+			registeredopenbtn();//header開啟登入燈箱
 			registeredbtn();// 開啟註冊燈箱按鈕
 		};
 

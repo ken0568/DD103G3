@@ -209,6 +209,7 @@ footer p {
     .menu a {
         color: #fff;
         transition: all .3s;
+        cursor: pointer;
     }
 
     .menu a:hover {
