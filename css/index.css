@@ -8,6 +8,10 @@ h2 {
     font-weight: 700;
 }
 
+button {
+    font-family: 'Noto Sans TC', 'Roboto Condensed', 'Roboto', sans-serif;
+}
+
 .index-qanda {
     position: relative;
     width: 80%;
@@ -136,7 +140,7 @@ h2 {
     text-align: center;
     background-color: #fff;
 
-    margin: -100px auto 0;
+    margin: -50px auto 0;
     position: relative;
     z-index: 33;
 }
@@ -188,6 +192,10 @@ h2 {
     margin: 20px 0;
 }
 
+.index-shop {
+    margin-top: 110%;
+}
+
 .shop-text .btn img {
     margin-left: 5px;
     box-sizing: border-box;
@@ -197,6 +205,7 @@ h2 {
 .shop-contain {
     border: 1px solid #ccc;
     box-shadow: 2px 4px 3px 1px #ddd;
+    width: 90%;
 }
 
 .index-activity {
@@ -204,7 +213,7 @@ h2 {
     text-align: center;
     position: relative;
     overflow: hidden;
-    width: 80%;
+    width: 90%;
 }
 
 .index-cloud {
@@ -343,15 +352,16 @@ h2 {
 .index-skyline img {
     width: 100%;
 }
+
 .pethouse-autoplay {
-        display: none;
-    }
+    display: none;
+}
 
 @media screen and (min-width: 768px) {
-     /*樣品屋 autoplay 開始*/
-     
-    
-     .index-pethouse {
+    /*樣品屋 autoplay 開始*/
+
+
+    .index-pethouse {
         position: relative;
     }
 
@@ -514,6 +524,10 @@ h2 {
     .anser {
         width: 50%;
         margin: 0 auto;
+    }
+
+    .index-shop {
+        margin-top: 0;
     }
 
     .shop-contain {
