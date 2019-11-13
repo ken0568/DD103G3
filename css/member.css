@@ -209,6 +209,10 @@ body{
 	/*padding: 0 25px;*/
 }
 
+.member-right thead{
+	background-color: darkorange;
+}
+
 #member1{
 	margin-bottom: 25px;
 }
