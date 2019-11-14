@@ -14,23 +14,93 @@
   <!-- 把自己負責頁面的css檔案link：css/fontStyle.css前，ex.css/shopStyle.css -->
   <link rel="stylesheet" href="css/fontStyle.css" />
   <link rel="stylesheet" href="css/header-footer.css" />
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/home.css" />
   <link rel="stylesheet" href="css/rankingStyle.css">
   <link rel="stylesheet" href="css/index-ph-style.css">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/beAPetKeeperStyle.css">
   <link rel="stylesheet" href="css/col.css">
+  <link rel="stylesheet" href="css/ph-style.css">
+  <link rel="stylesheet" href="css/login.css">
   <script src=" js/jquery-3.4.1.min.js"> </script>
   <script src="js\burger.js"></script>
   <script src="js/pethouse.js"></script>
+  <script src="js/login.js"></script>
   <script src="js/wow.min.js"></script>
 </head>
 
 <body>
+  <!-- 登入 -->
+  <div id="login" class="col-md-12" style="display: none;">
+    <!-- loginbox開始 -->
+    <div id="loginbox" class="loginbox col-md-5" style="display: ;">
+      <h6>會員登入</h6>
+      <div class="loginpic">
+        <img src="img/logo-01.png" alt="">
+      </div>
+      <div class="login-input">
+        <div>
+          <span>帳號:</span>
+          <input type="text">
+        </div>
+        <div>
+          <span>密碼:</span>
+          <input type="password">
+        </div>
+        <input type="submit" value="送出" id="login-submit">
+        <span id="registeredbtn">還沒申請帳號?</span>
+      </div>
+      <span id="login-close">X</span>
+    </div><!-- loginbox結束 -->
+
+    <!-- registeredbox開始 -->
+    <div id="registeredbox" class="registeredbox col-md-5" style="display: none;">
+
+      <h6>會員註冊</h6>
+
+      <div class="login-input">
+        <div>
+          <span>帳號:</span>
+          <input type="text">
+        </div>
+        <div>
+          <span>密碼:</span>
+          <input type="password">
+        </div>
+        <div>
+          <span>姓名:</span>
+          <input type="text">
+        </div>
+        <div>
+          <span>暱稱:</span>
+          <input type="text">
+        </div>
+        <div>
+          <span>性別:</span>
+          <div class="registeredsex">
+            <input type="radio" name="sex" style="width: 20px;">男
+            <input type="radio" name="sex" style="width: 20px;">女
+          </div>
+        </div>
+        <div>
+          <span>信箱:</span>
+          <input type="text">
+        </div>
+        <div>
+          <span>手機:</span>
+          <input type="text">
+        </div>
+        <input type="submit" value="送出" id="login-submit">
+      </div>
+      <span id="registered-close">X</span>
+    </div><!-- registeredbox結束 -->
+
+  </div><!-- 登入結束 -->
+
   <header>
     <div class="index-logo">
       <div class="logo">
-        <a href="index.html"><img src="./img/logo.png" alt="" /></a>
+        <a href="home.html"><img src="./img/logo.png" alt="" /></a>
       </div>
     </div>
     <div class="menu">
@@ -40,11 +110,10 @@
         <li><a href="products.html">寵物商店</a></li>
         <li><a href="activities.html">活動專區</a></li>
         <div class="login">
-
           <div class="login-status">
-            <a href="member.html">登入</a>
+            <a id="loginopenbtn">登入</a>
             <b>|</b>
-            <a href="member.html">註冊</a>
+            <a id="registeredopenbtn">註冊</a>
           </div>
         </div>
       </ul>
@@ -56,19 +125,12 @@
     </div>
   </header>
 
-  <div class="prompt">
-    <a href="#">
-      <img src="img/catprompt.png" alt="" />
-      <img src="img/footerprint.png" alt="">
-    </a>
-  </div>
   <div class="wrap">
-    <div class="index-pethouse">
-      <!--------------------------------- 背包checkBox  ------------------------------------->
-      <input type="checkbox" id="bagPag-control">
+    <div class="index-pethouse"">
+      <!--------------------------------- 背包checkBox --------------------------------->
+      <input type=" checkbox" id="bagPag-control">
       <!--------------------------------- 寵物家 開始 --------------------------------->
       <div class="ph-hs-sw ph-check">
-
         <div id="con" class="pethouse-autoplay">
           <div class="item item1">
             <div class="contain">
@@ -113,12 +175,7 @@
         </div>
         <div class="ph-all">
           <div class="ph-bgi">
-            <img src="img/ph-oh-bgi.png" alt="bgi">
-          </div>
-
-          <div class="ph-oh-safe ph-all-style">
-            <img class="ph-safe-off" src="img/ph-safe-off.png" alt="safe-off">
-            <img class="ph-safe-on" src="img/ph-safe-on.png" alt="safe-on">
+            <img src="img/house.png" alt="bgi">
           </div>
           <div class="ph-dr ph-all-style">
             <img class="ph-dr-cl" src="img/door-close.png" alt="dr-op">
@@ -131,18 +188,16 @@
             <img src="img/ph-dog.png" alt="pet">
           </div>
           <div class="ph-st-box ph-all-style">
-            <img src="img/shitbox.png" alt="shitbox">
-          </div>
-          <div class="ph-st ph-all-style">
-            <img src="img/ph-shit.png" alt="shit">
+            <img class="ph-st-full" src="img/shitbox-full.png" alt="shitbox-full">
+            <img class="ph-st-no" src="img/shitbox.png" alt="shitbox">
           </div>
           <div class="ph-fd-box ph-all-style">
-            <img src="img/foodbox.png" alt="foodbox">
+            <img class="ph-fd-no" src="img/foodbox.png" alt="foodbox">
           </div>
-          <div class="ph-fd ph-all-style">
-            <img src="img/food.png" alt="food">
+          <div class="ph-oh-safe ph-all-style">
+            <img class="ph-safe-off" src="img/ph-safe-off.png" alt="safe-off">
+            <img class="ph-safe-on" src="img/ph-safe-on.png" alt="safe-on">
           </div>
-
           <div class="ph-hs-btn ph-all-style ph-sw-btn">
             <img src="img/house-on.png" alt="house-on">
           </div>
@@ -160,7 +215,7 @@
               <!--記得補ID -->
               <img src="img/ph-coin.png" alt="coin">
               <div class="coin">
-                <p id="">3000<span id="">+100/1s</span></p>
+                <p id="">3000</p>
                 <!--記得補ID -->
               </div>
             </div>
@@ -173,8 +228,16 @@
             <p>推薦活動 | </p>
           </div>
           <div class="ph-ac-hide">
-            <p>
-              2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾<span>...</span><a href="activityContent.html">(活動詳情)</a></p>
+            <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
+              <ul>
+                <li>
+                  <a href=" activityContent.html">2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾。</a>
+                </li>
+                <li>
+                  <a href=" activityContent.html">2019.11.12 「韓總雞總統背後重要的三個女人」公仔製作計畫，無預警取消。</a>
+                </li>
+              </ul>
+            </marquee>
           </div>
           <div class="bg-bgc"></div>
           <div class="bg-item">
@@ -185,49 +248,7 @@
                 <span></span>
               </label>
             </div>
-            <ul class="bg-list-ul">
-              <li>
-                <div>
-                  <img src="img/ph-fd-1.png" alt="">
-                </div>
-                <h5>飼料</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-fdbox-1.png" alt="">
-                </div>
-                <h5>高級食盆</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-stbox-1.png" alt="">
-                </div>
-                <h5>高級屎盆</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-eve.png" alt="">
-                </div>
-                <h5>寵物衣服</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-diaper-1.png" alt="">
-                </div>
-                <h5>高級尿布</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li></li>
-            </ul>
+
             <div class="bg-sh">
               <a href="products.html">
                 <div class="bg-sh-cr">
@@ -250,11 +271,16 @@
           <div class="pet-img ph-all-style ph-fd-pet">
             <img src="img/ph-cat.png" alt="pet">
           </div>
-          <div class="ph-fd-box ph-all-style ph-rwd-show">
-            <img src="img/foodbox.png" alt="foodbox">
+          <div class="ph-fd-box ph-all-style">
+            <img class="ph-fd-before" src="img/ph-fd-before.png" alt="ph-fd-before">
+            <img class="ph-fd-full" src="img/foodbox-full.png" alt="foodbox-full">
+            <img class="ph-fd-after" src="img/foodbox.png" alt="ph-fd-after">
           </div>
-          <div class="ph-fd ph-all-style ph-rwd-show">
-            <img src="img/food.png" alt="food">
+          <div class="ph-coin-plus ph-all-style">
+            <img class="coin-plus" src="img/ph-coin-plus.png" alt="ph-coin-plus">
+          </div>
+          <div class="ph-fd ph-all-style">
+            <img src="img/ph-fd-feed.png" alt="ph-fd-feed">
           </div>
 
           <div class="ph-hs-btn ph-all-style ph-sw-btn">
@@ -274,7 +300,7 @@
               <!--記得補ID -->
               <img src="img/ph-coin.png" alt="coin">
               <div class="coin">
-                <p id="">3000<span id="">+100/1s</span></p>
+                <p id="">3000</p>
                 <!--記得補ID -->
               </div>
             </div>
@@ -283,8 +309,8 @@
             <p>推薦活動 | </p>
           </div>
           <div class="ph-ac-hide">
-            <p>
-              2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾<span>...</span><a href="activityContent.html">(活動詳情)</a></p>
+            <marquee height="50" direction="up" scrollamount="2">
+              <a href=" activityContent.html">2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾。</a></marquee>
           </div>
           <div class="bg-bgc"></div>
           <div class="bg-item">
@@ -295,49 +321,7 @@
                 <span></span>
               </label>
             </div>
-            <ul class="bg-list-ul">
-              <li>
-                <div>
-                  <img src="img/ph-fd-1.png" alt="">
-                </div>
-                <h5>飼料</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-fdbox-1.png" alt="">
-                </div>
-                <h5>高級食盆</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-stbox-1.png" alt="">
-                </div>
-                <h5>高級屎盆</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-eve.png" alt="">
-                </div>
-                <h5>寵物衣服</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-diaper-1.png" alt="">
-                </div>
-                <h5>高級尿布</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li></li>
-            </ul>
+
             <div class="bg-sh">
               <a href="products.html">
                 <div class="bg-sh-cr">
@@ -360,11 +344,15 @@
           <div class="pet-img ph-all-style ph-pu-pet">
             <img src="img/ph-cat.png" alt="pet">
           </div>
-          <div class="ph-st-box ph-all-style ph-rwd-show">
-            <img src="img/shitbox.png" alt="shitbox">
+          <div class="ph-st-box ph-all-style">
+            <img class="ph-st-before" src="img/shitbox-full.png" alt="shitbox-full">
+            <img class="ph-st-after" src="img/shitbox.png" alt="shitbox">
           </div>
-          <div class="ph-st ph-all-style ph-rwd-show">
-            <img src="img/ph-shit.png" alt="shit">
+          <div class="ph-coin-plus ph-all-style">
+            <img class="coin-plus" src="img/ph-coin-plus.png" alt="ph-coin-plus">
+          </div>
+          <div class="ph-st ph-all-style">
+            <img src="img/ph-shit.png" alt="ph-shit">
           </div>
 
           <div class="ph-hs-btn ph-all-style ph-sw-btn">
@@ -384,7 +372,7 @@
               <!--記得補ID -->
               <img src="img/ph-coin.png" alt="coin">
               <div class="coin">
-                <p id="">3000<span id="">+100/1s</span></p>
+                <p id="">3000</p>
                 <!--記得補ID -->
               </div>
             </div>
@@ -393,74 +381,102 @@
             <p>推薦活動 | </p>
           </div>
           <div class="ph-ac-hide">
-            <p>
-              2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾<span>...</span><a href="activityContent.html">(活動詳情)</a></p>
-          </div>
-          <div class="bg-bgc"></div>
-          <div class="bg-item">
-            <div class="bg-title">
-              <span>背包</span>
-              <label for="bagPag-control" class="bg-exit">
-                <span></span>
-                <span></span>
-              </label>
-            </div>
-            <ul class="bg-list-ul">
-              <li>
-                <div>
-                  <img src="img/ph-fd-1.png" alt="">
-                </div>
-                <h5>飼料</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-fdbox-1.png" alt="">
-                </div>
-                <h5>高級食盆</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-stbox-1.png" alt="">
-                </div>
-                <h5>高級屎盆</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-eve.png" alt="">
-                </div>
-                <h5>寵物衣服</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li>
-                <div>
-                  <img src="img/ph-diaper-1.png" alt="">
-                </div>
-                <h5>高級尿布</h5>
-                <h6>每秒獲得5個愛心幣</h6>
-                <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
-              </li>
-              <li></li>
-            </ul>
-            <div class="bg-sh">
-              <a href="products.html">
-                <div class="bg-sh-cr">
-                  <span></span>
-                  <span></span>
-                </div>
-              </a>
-              <a href="products.html">去商店購物</a>
-            </div>
+            <marquee height="50" direction="up" scrollamount="2">
+              <a href=" activityContent.html">2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾。</a></marquee>
           </div>
         </div>
       </div>
       <!--------------------------------- 寵物家 鏟屎結束 --------------------------------->
+      <!--------------------------------- 別人家 開始 --------------------------------->
+      <div class="ph-oh-sw ph-check">
+        <div class="ph-all">
+          <div class="ph-bgi">
+            <img src="img/ph-oh-bgi.png" alt="bgi">
+          </div>
+          <div class="pet-img ph-all-style ph-oh-pet">
+            <img src="img/ph-dog.png" alt="pet">
+          </div>
+          <div class="ph-oh-st-box ph-all-style">
+            <img src="img/ph-diaper-1.png" alt="shitbox">
+          </div>
+          <div class="ph-oh-fd-box ph-all-style">
+            <img src="img/ph-fdbox-1.png" alt="foodbox">
+          </div>
+          <div class="ph-hs-btn ph-all-style ph-sw-btn">
+            <img src="img/house-on.png" alt="house-on">
+          </div>
+          <div class="ph-oh-safe ph-all-style">
+            <img class="ph-safe-off" src="img/ph-safe-off.png" alt="safe-off">
+            <img class="ph-safe-on" src="img/ph-safe-on.png" alt="safe-on">
+          </div>
+          <div class="ph-safe-tip ph-all-style">
+            <img src="img/ph-safe-tip.png" alt="">
+          </div>
+          <div class="ph-mem-box">
+            <div class="ph-mem-text">
+              <p id="">HsuHao</p>
+              <!--記得補ID -->
+              <p>寵物:<span id="">提摸摸</span></p>
+              <!--記得補ID -->
+              <img src="img/ph-coin.png" alt="coin">
+              <div class="coin">
+                <p style="text-align: center;" id="">25000</p>
+                <!--記得補ID -->
+              </div>
+            </div>
+          </div>
+          <div class="ph-ac-box">
+            <p>推薦活動 | </p>
+          </div>
+          <div class="ph-ac-hide">
+            <marquee height="50" direction="up" scrollamount="2">
+              <a href="activityContent.html">2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾。</a></marquee>
+          </div>
+          <div class="ph-qa-bgc"></div>
+          <div class="ph-qa-box">
+            <div class="ph-qa-title">
+              <span>偷錢關卡</span>
+              <div class="qa-exit">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="ph-qa-topic">
+              <div class="ph-qa-content">
+                <span class="qa-topic">狗不適合吃哪種東西？</span>
+              </div>
+              <div class="ph-qa-choose">
+                <span class="qa-right">巧克力</span>
+                <span class="qa-wrong">牛肉乾</span>
+              </div>
+            </div>
+            <div class="ph-qa-right">
+              <h4>偷竊成功！！！</h4>
+              <img src="img/ph-qa-right.png" alt="">
+              <div>
+                <hr>
+                <p>Ｑ：<span class="qa-topic">狗不適合吃哪種東西？</span></p>
+                <p>Ａ：<span class="qa-right">巧克力</span></p>
+                <p>
+                  巧克力含有可可鹼(Theobromine)，人體平均要花6-12小時代謝掉可可鹼，但是狗狗對可可鹼要花很久的時間才能代謝(研究顯示可能要長達72小時)。
+                </p>
+              </div>
+            </div>
+            <div class="ph-qa-wrong">
+              <h4>偷竊失敗！！！</h4>
+              <img src="img/ph-qa-wrong.png" alt="">
+              <div>
+                <hr>
+                <p>Ｑ：<span class="qa-topic">狗不適合吃哪種東西？</span></p>
+                <p>Ａ：<span class="qa-wrong">巧克力</span></p>
+                <p>
+                  巧克力含有可可鹼(Theobromine)，人體平均要花6-12小時代謝掉可可鹼，但是狗狗對可可鹼要花很久的時間才能代謝(研究顯示可能要長達72小時)。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- 第二畫面QA-start -->
 
@@ -539,7 +555,6 @@
             <div class="shop-text">
               <h4>商品名稱</h4>
               <p>功能｜功能敘述功能敘述功能敘述功能敘述</p>
-              <p>使用即每秒獲得5個愛心幣！</p>
               <a href="#" class="btn">
                 <p class="btnFz">500</p>
                 <img src="img/coin.png" alt="" />
@@ -551,7 +566,6 @@
             <div class="shop-text">
               <h4>高級食盆</h4>
               <p>功能｜功能敘述功能敘述功能敘述功能敘述</p>
-              <p>使用即每秒獲得5個愛心幣！</p>
               <a href="#" class="btn">
                 <p class="btnFz">500</p>
                 <img src="img/coin.png" alt="" />
@@ -563,7 +577,6 @@
             <div class="shop-text">
               <h4>高級貓砂</h4>
               <p>功能｜功能敘述功能敘述功能敘述功能敘述</p>
-              <p>使用即每秒獲得5個愛心幣！</p>
               <a href="#" class="btn">
                 <p class="btnFz">500</p>
                 <img src="img/coin.png" alt="" />
@@ -875,6 +888,15 @@
       }, speed);
     }
     myPlayer('con', 'item', 3000);
+  </script>
+  <script>
+    window.onload = function () {
+      loginclosebtn(); // 關閉登入燈箱按鈕
+      registeredclosebtn(); // 關閉註冊燈箱按鈕
+      loginopenbtn(); //開啟登入燈箱
+      registeredopenbtn(); //header開啟登入燈箱
+      registeredbtn(); // 開啟註冊燈箱按鈕
+    };
   </script>
 </body>
 

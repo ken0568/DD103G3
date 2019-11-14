@@ -423,6 +423,7 @@
     color: #fff;
     opacity: 0.9;
 }
+
 /* ---------------- 寵物家結束 ---------------- */
 /* ---------------- 寵物家 餵食開始 ---------------- */
 .ph-fd-sw .ph-fd-pet {
@@ -977,6 +978,7 @@
     .ph-ac-hide {
         width: 60%;
     }
+
     @keyframes text-auto {
         0% {
             left: 200px;
@@ -1008,15 +1010,17 @@
     .ph-qa-wrong img {
         width: 80%;
     }
+
     .ph-qa-wrong div,
-    .ph-qa-right div{
+    .ph-qa-right div {
         overflow: auto;
     }
+
     .ph-qa-box {
         width: 80%;
         height: 75%;
     }
-    
+
 }
 
 @media screen and (max-width: 414px) and (max-height: 760px) {

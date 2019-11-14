@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>會員專區--鏟屎官</title>
@@ -35,17 +37,17 @@
 					<span>密碼:</span>
 					<input type="password">
 				</div>
-				<input type="submit" value="送出" id="login-submit">	
-				<span id="registeredbtn">還沒申請帳號?</span>	
+				<input type="submit" value="送出" id="login-submit">
+				<span id="registeredbtn">還沒申請帳號?</span>
 			</div>
-			<span id="login-close">X</span>	
+			<span id="login-close">X</span>
 		</div><!-- loginbox結束 -->
 
 		<!-- registeredbox開始 -->
 		<div id="registeredbox" class="registeredbox col-md-5" style="display: none;">
 
 			<h6>會員註冊</h6>
-			
+
 			<div class="login-input">
 				<div>
 					<span>帳號:</span>
@@ -78,9 +80,9 @@
 					<span>手機:</span>
 					<input type="text">
 				</div>
-				<input type="submit" value="送出" id="login-submit">	
+				<input type="submit" value="送出" id="login-submit">
 			</div>
-			<span id="registered-close">X</span>	
+			<span id="registered-close">X</span>
 		</div><!-- registeredbox結束 -->
 
 	</div><!-- 登入結束 -->
@@ -90,7 +92,7 @@
 	<header>
 		<div class="index-logo">
 			<div class="logo">
-				<a href="index.html"><img src="./img/logo.png" alt="" /></a>
+				<a href="home.html"><img src="./img/logo.png" alt="" /></a>
 			</div>
 		</div>
 		<div class="menu">
@@ -117,14 +119,7 @@
 	</header>
 	<!-- header結束 -->
 
-	<!-- 提醒 -->
-	<div class="prompt">
-		<a href="#">
-			<img src="img/catprompt.png" alt="" />
-			<img src="img/footerprint.png" alt="">
-		</a>
-	</div>
-	<!-- 提醒結束 -->
+
 
 	<!-- footer開始 -->
 	<div class="wrap">
@@ -141,7 +136,7 @@
 							<img src="img/pet2.png" alt="">
 						</div>
 						<span>可不可紅茶</span>
-	
+
 						<div class="member-left-page">
 							<span id="memberbtn1">個人資料</span>
 							<span id="memberbtn2">購買紀錄</span>
@@ -195,7 +190,7 @@
 							<tr>
 								<td>最後登入:</td>
 								<td>2019/11/08-20:15</td>
-							</tr>						
+							</tr>
 						</table>
 						<button id="reset">修改</button>
 
@@ -267,37 +262,36 @@
 
 
 	<script>
-
 		// 個人資料
-		function member1(){
-			document.getElementById("member1").style.display="";
-			document.getElementById("member2").style.display="none";
-			document.getElementById("member3").style.display="none";
-			document.getElementById("member-right-title").innerText="個人資料"
-			document.getElementById("reset").style.display="";
+		function member1() {
+			document.getElementById("member1").style.display = "";
+			document.getElementById("member2").style.display = "none";
+			document.getElementById("member3").style.display = "none";
+			document.getElementById("member-right-title").innerText = "個人資料"
+			document.getElementById("reset").style.display = "";
 		};
 		// 購買紀錄
-		function member2(){
-			document.getElementById("member1").style.display="none";
-			document.getElementById("member2").style.display="";
-			document.getElementById("member3").style.display="none";
-			document.getElementById("member-right-title").innerText="購買紀錄"
-			document.getElementById("reset").style.display="none";
+		function member2() {
+			document.getElementById("member1").style.display = "none";
+			document.getElementById("member2").style.display = "";
+			document.getElementById("member3").style.display = "none";
+			document.getElementById("member-right-title").innerText = "購買紀錄"
+			document.getElementById("reset").style.display = "none";
 		};
 		// 活動紀錄
-		function member3(){
-			document.getElementById("member1").style.display="none";
-			document.getElementById("member2").style.display="none";
-			document.getElementById("member3").style.display="";
-			document.getElementById("member-right-title").innerText="活動紀錄"
-			document.getElementById("reset").style.display="none";
+		function member3() {
+			document.getElementById("member1").style.display = "none";
+			document.getElementById("member2").style.display = "none";
+			document.getElementById("member3").style.display = "";
+			document.getElementById("member-right-title").innerText = "活動紀錄"
+			document.getElementById("reset").style.display = "none";
 		};
 
 		// (個人資料，購買紀錄，活動紀錄)按鈕
-		function memberbtn(){
-			document.getElementById("memberbtn1").onclick=member1;
-			document.getElementById("memberbtn2").onclick=member2;
-			document.getElementById("memberbtn3").onclick=member3;
+		function memberbtn() {
+			document.getElementById("memberbtn1").onclick = member1;
+			document.getElementById("memberbtn2").onclick = member2;
+			document.getElementById("memberbtn3").onclick = member3;
 		};
 
 		// window.onload=memberbtn;
@@ -305,16 +299,14 @@
 		// window.onload=registeredclosebtn;
 		// window.onload=registeredbtn;
 
-		window.onload=function(){
-			memberbtn();// (個人資料，購買紀錄，活動紀錄)按鈕
-			loginclosebtn();// 關閉登入燈箱按鈕
-			registeredclosebtn();// 關閉註冊燈箱按鈕
-			loginopenbtn();//開啟登入燈箱
-			registeredopenbtn();//header開啟登入燈箱
-			registeredbtn();// 開啟註冊燈箱按鈕
+		window.onload = function () {
+			memberbtn(); // (個人資料，購買紀錄，活動紀錄)按鈕
+			loginclosebtn(); // 關閉登入燈箱按鈕
+			registeredclosebtn(); // 關閉註冊燈箱按鈕
+			loginopenbtn(); //開啟登入燈箱
+			registeredopenbtn(); //header開啟登入燈箱
+			registeredbtn(); // 開啟註冊燈箱按鈕
 		};
-
-
 	</script>
 </body>
 
