@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>鏟屎官後台</title>
+
+  <!-- Icons-->
+  <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+  <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+  <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <!-- Main styles for this application-->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+ <!-- top_header -->
+ <header class="app-header navbar">
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <img class="navbar-brand-full" src="img/logo.png" width="119" height="33" alt="CoreUI Logo">
+    </a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+
+    <!-- 歡迎，登出 -->
+    <ul class="nav navbar-nav ml-auto">
+     
+    </ul>
+
+  </header>
+
+
+  <div class="app-body">
+    <div class="sidebar">
+       <!-- sidebar  menu -->
+      <nav class="sidebar-nav">
+    <ul class="nav">
+
+      <li class="nav-title">後台管理</li>
+      <!-- 管理員管理 -->
+      <li class="nav-item">
+        <a class="nav-link" href="admin.html">
+          <i class="nav-icon icon-key"></i>管理員管理</a>
+      </li>
+
+      <li class="nav-title">前台管理</li>    
+      <!-- 會員管理 -->
+      <li class="nav-item">
+        <a class="nav-link" href="member.html">
+          <i class="nav-icon icon-people"></i>會員管理</a>
+      </li>
+      <!-- 問答題庫管理 -->
+      <li class="nav-item">
+        <a class="nav-link" href="question.html">
+          <i class="nav-icon icon-people"></i>問答題庫管理</a>
+      </li>
+      <!-- 活動區管理 -->
+      <li class="nav-item">
+        <a class="nav-link" href="act.html">
+          <i class="nav-icon icon-calendar"></i>活動區管理</a>
+      </li>
+      <!-- 商品管理 -->
+      <li class="nav-item">
+        <a class="nav-link" href="product.html">
+          <i class="nav-icon icon-people"></i>商品管理</a>
+      </li>
+      <!-- 寵物元件管理 -->
+      <li class="nav-item">
+        <a class="nav-link" href="petcom.html">
+          <i class="nav-icon icon-wrench"></i>寵物元件管理</a>
+      </li> 
+      <!-- <li class="divider"></li> -->
+      
+    </ul>
+  </nav>
+      <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+    </div>
+
+
+    <main class="main">
+
+
+      <!-- 中間內容 -->
+      <div class="container-fluid">
+   
+       <!-- 中間內容 -->
+       <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            
+            <!-- card-header -->
+            <div class="card-header justify-content-end d-flex">
+
+            </div>
+
+            <div class="card-body">
+              
+              <div class="row">
+
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-header">活動編號1</div>
+                    <div class="card-body">
+                      <form action="">
+                        <table class="table">
+                          <tr>
+                            <th>活動類別</th>
+                            <td>
+                              <select class="form-control equipClass">
+                                <option value="0">活動類別1</option>
+                                <option value="1">活動類別2</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>活動名稱</th>
+                            <td><input type="text"></td>
+                          </tr>
+                          <tr>
+                            <th>活動圖片</th>
+                            <td>
+                              <img src="">
+                              <input type="file" class="equipSrc">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>活動日期</th>
+                            <td><input type="date"></td>
+                          </tr>
+                          <tr>
+                            <th>活動人數</th>
+                            <td><input type="text"></td>
+                          </tr>
+                          <tr>
+                            <th>截止日期</th>
+                            <td><input type="date"></td>
+                          </tr>
+                          <tr>
+                            <th>經度</th>
+                            <td><input type="text"></td>
+                          </tr>
+                          <tr>
+                            <th>緯度</th>
+                            <td><input type="text"></td>
+                          </tr>
+                          <tr>
+                            <th>活動狀態</th>
+                            <td>
+                              <label class="switch switch-3d switch-success">
+                                <input class="switch-input" type="checkbox">
+                                <span class="switch-slider"></span>
+                              </label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>活動說明</th>
+                            <td>
+                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod hic voluptatum animi doloribus blanditiis, veritatis voluptate inventore asperiores ullam esse.
+                              </textarea>
+                            </td>
+                          </tr>
+                        </table>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-header">活動編號1</div>
+                    <div class="card-body">
+                      <form action="">
+                        <table class="table">
+                          <tr>
+                            <th>活動類別</th>
+                            <td>
+                              <select class="form-control equipClass">
+                                <option value="0">活動類別1</option>
+                                <option value="1">活動類別2</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>活動名稱</th>
+                            <td><input type="text"></td>
+                          </tr>
+                          <tr>
+                            <th>活動圖片</th>
+                            <td>
+                              <img src="">
+                              <input type="file" class="equipSrc">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>活動日期</th>
+                            <td><input type="date"></td>
+                          </tr>
+                          <tr>
+                            <th>活動人數</th>
+                            <td><input type="text"></td>
+                          </tr>
+                          <tr>
+                            <th>截止日期</th>
+                            <td><input type="date"></td>
+                          </tr>
+                          <tr>
+                            <th>經度</th>
+                            <td><input type="text"></td>
+                          </tr>
+                          <tr>
+                            <th>緯度</th>
+                            <td><input type="text"></td>
+                          </tr>
+                          <tr>
+                            <th>活動狀態</th>
+                            <td>
+                              <label class="switch switch-3d switch-success">
+                                <input class="switch-input" type="checkbox">
+                                <span class="switch-slider"></span>
+                              </label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>活動說明</th>
+                            <td>
+                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolor consequuntur a veritatis nemo nam magni quasi voluptas ut laboriosam.
+                              </textarea>
+                            </td>
+                          </tr>
+                        </table>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-header">活動編號1</div>
+                    <div class="card-body">
+                      <form action="">
+                        <table class="table">
+                          <tr>
+                            <th>活動類別</th>
+                            <td>
+                              <select class="form-control equipClass">
+                                <option value="0">活動類別1</option>
+                                <option value="1">活動類別2</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>活動名稱</th>
+                            <td><input type="text"></td>
+                          </tr>
+                          <tr>
+                            <th>活動圖片</th>
+                            <td>
+                              <img src="">
+                              <input type="file" class="equipSrc">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>活動日期</th>
+                            <td><input type="date"></td>
+                          </tr>
+                          <tr>
+                            <th>活動人數</th>
+                            <td><input type="text"></td>
+                          </tr>
+                          <tr>
+                            <th>截止日期</th>
+                            <td><input type="date"></td>
+                          </tr>
+                          <tr>
+                            <th>經度</th>
+                            <td><input type="text"></td>
+                          </tr>
+                          <tr>
+                            <th>緯度</th>
+                            <td><input type="text"></td>
+                          </tr>
+                          <tr>
+                            <th>活動狀態</th>
+                            <td>
+                              <label class="switch switch-3d switch-success">
+                                <input class="switch-input" type="checkbox">
+                                <span class="switch-slider"></span>
+                              </label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>活動說明</th>
+                            <td>
+                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque quod voluptatem, ipsam optio eveniet harum porro quibusdam nulla sunt!
+                              </textarea>
+                            </td>
+                          </tr>
+                        </table>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+       
+      </div><!-- 中間內容end -->
+    </main>
+    
+  </div>
+
+  
+  <footer class="app-footer">
+    <div>
+      <span>&copy; 2019 Copyright PetKeepers</span>
+    </div>
+  </footer>
+  <!-- CoreUI and necessary plugins-->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/pace-progress/pace.min.js"></script>
+  <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+  <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+</body>
+</html>
