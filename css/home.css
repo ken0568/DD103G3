@@ -12,6 +12,10 @@ button {
     font-family: 'Noto Sans TC', 'Roboto Condensed', 'Roboto', sans-serif;
 }
 
+.pet-img+.pet-img {
+    display: none;
+}
+
 .index-qanda {
     position: relative;
     width: 80%;
@@ -21,6 +25,10 @@ button {
 .qanda {
     text-align: center;
     margin: 80px 0;
+}
+
+.pet-section-two {
+    background-color: #fff;
 }
 
 .index-foot {
@@ -135,7 +143,6 @@ button {
 }
 
 .shop-contain {
-    width: 80%;
     margin: 0 auto;
     text-align: center;
     background-color: #fff;
@@ -152,7 +159,7 @@ button {
 
 .shop-cards {
     box-sizing: border-box;
-    padding: 10px;
+    padding: 5px;
 }
 
 .shop-card {
@@ -192,9 +199,6 @@ button {
     margin: 20px 0;
 }
 
-.index-shop {
-    margin-top: 110%;
-}
 
 .shop-text .btn img {
     margin-left: 5px;
@@ -357,12 +361,24 @@ button {
     display: none;
 }
 
+.pet-dress {
+    top: 0
+}
+
 @media screen and (min-width: 768px) {
     /*樣品屋 autoplay 開始*/
 
 
     .index-pethouse {
         position: relative;
+    }
+
+    .pet-img+.pet-img {
+        display: block;
+    }
+
+    .ph-hs-sw .pet-img {
+        animation: ani 5s linear 2;
     }
 
     .pethouse-autoplay {
@@ -531,7 +547,6 @@ button {
     }
 
     .shop-contain {
-        width: 80%;
         margin: -30% auto 0;
     }
 
