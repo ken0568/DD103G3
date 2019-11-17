@@ -1062,7 +1062,9 @@
     .ph-hs-sw .pet-img {
         animation: pet-ani 5s linear 2;
     }
-
+    .ph-click-run {
+        animation: pet-ani 5s linear 1;
+    }
     @keyframes pet-ani {
         0% {
             transform: translate(-20%);
