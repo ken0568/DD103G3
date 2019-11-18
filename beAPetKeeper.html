@@ -12,9 +12,9 @@
     <!-- 以下的link不要刪掉 -->
     <link rel="stylesheet" href="css/reset.css" />
     <!-- 把自己負責頁面的css檔案link：css/fontStyle.css前，ex.css/shopStyle.css -->
+    <link rel="stylesheet" href="css/beAPetKeeperStyle.css">
     <link rel="stylesheet" href="css/fontStyle.css" />
     <link rel="stylesheet" href="css/header-footer.css" />
-    <link rel="stylesheet" href="css/beAPetKeeperStyle.css">
     <link rel="stylesheet" href="css/col.css">
     <link rel="stylesheet" href="css/login.css">
     <script src="js/jquery-3.4.1.min.js"></script>
@@ -160,6 +160,9 @@
         <div class="pet-container pet-section-one">
             <div class="row Pet-Section">
                 <div class="col-sm-12 col-md-6  pet-customize pet-customize-pet pet-section-onebox ">
+                        <div class="pet-context">
+                                <!-- <img src="./img/bAPKStage.png" alt=""> -->
+                            </div>
                     <div class="pet-light">
                         <img src="./img/lightLeft.png" class="pet-light-left" alt="">
                         <img src="./img/lightRight.png" class="pet-light-right" alt="">
@@ -171,11 +174,11 @@
                             <!-- <img src="./img/modelCaseDog.png" alt=""> -->
                             <!-- <canvas id="pet-canvas" width="300" height="300" ></canvas> -->
                             <div class="pet-model Pets-Color" id="Pet-DogKeeper">
-                                <img class="pet-dress-head" src="./img/pet-stage-dogheadfirst.png" alt=""
+                                <img class="pet-dress-head" src="/DD103G3/backStage/images/pet-stage-dogheadfirst.png" alt=""
                                     id="Pet-HeadDog-One">
-                                <img class="pet-dress-body" src="./img/pet-stage-dogbody.png" alt=""
+                                <img class="pet-dress-body" src="/DD103G3/backStage/images/pet-stage-dogbody.png" alt=""
                                     id="Pet-BabyDog-One">
-                                <img class="pet-dress-tail" src="./img/pet-stage-dogtailfirst.png" alt=""
+                                <img class="pet-dress-tail" src="/DD103G3/backStage/images/pet-stage-dogtailfirst.png" alt=""
                                     id="Pet-TailDog-One">
                             </div>
 
@@ -186,9 +189,7 @@
                     </div> -->
 
                         </div>
-                        <div class="pet-context">
-                            <img src="./img/bAPKStage.png" alt="">
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -223,22 +224,19 @@
                             <div class="pet-dogheads">
                                 <p class="pet-doghead-two">頭部</p>
                                 <div class="pet-dogheads-pic">
-                                    <img src="./img/pet-stage-dogheadfirst.png" alt="" class="Pet-Dog-HeardOne">
-                                    <img src="./img/pet-stage-dogheadsencon.png" alt="" class="Pet-Dog-HeardSencon">
+                                    <img src="/DD103G3/backStage/images/pet-stage-dogheadfirst.png" alt="" class="Pet-Dog-HeardOne">
+                                    <img src="/DD103G3/backStage/images/pet-stage-dogheadsencon.png" alt="" class="Pet-Dog-HeardSencon">
                                 </div>
                             </div>
                             <div class="pet-dogtails">
                                 <p class="pet-dogtail-two">尾巴</p>
                                 <div class="pet-dogtails-pic">
-                                    <img src="./img/pet-stage-dogtailfirst.png" alt="" class="Pet-Dog-TailOne">
-                                    <img src="./img/pet-stage-dogtailsencon.png" alt="" class="Pet-Dog-TailSencon">
+                                    <img src="/DD103G3/backStage/images/pet-stage-dogtailfirst.png" alt="" class="Pet-Dog-TailOne">
+                                    <img src="/DD103G3/backStage/images/pet-stage-dogtailsencon.png" alt="" class="Pet-Dog-TailSencon">
                                 </div>
                             </div>
                         </div>
-
                         <!-- Step2第二步替換部位-end -->
-
-
 
                         <!-- Step3選顏色-start-->
 
@@ -302,9 +300,9 @@
                     <img class="pet-dress-paper" src="./img/pet-dress-paper.png" alt="">
 
                     <div class="pet-dress-pet">
-                        <img class="pet-dress-head" src="./img/pet-stage-dogheadfirst.png">
-                        <img class="pet-dress-body" src="./img/pet-stage-dogbody.png">
-                        <img class="pet-dress-tail" src="./img/pet-stage-dogtailfirst.png">
+                        <img class="pet-dress-head" src="/DD103G3/backStage/images/pet-stage-dogheadfirst.png">
+                        <img class="pet-dress-body" src="/DD103G3/backStage/images/pet-stage-dogbody.png">
+                        <img class="pet-dress-tail" src="/DD103G3/backStage/images/pet-stage-dogtailfirst.png">
                     </div>
                     <button class="pet-dress">去打造你的寵物</button>
                 </div>
@@ -320,9 +318,9 @@
                     <img class="pet-dress-paper" src="./img/pet-dress-paper.png" alt="">
 
                     <div class="pet-dress-pet">
-                        <!-- <img class="pet-dress-head" src="./img/pet-stage-dogheadfirst.png"> -->
-                        <img class="pet-dress-body" src="./img/pet-stage-dogbody.png">
-                        <!-- <img class="pet-dress-tail" src="./img/pet-stage-dogtailfirst.png"> -->
+                        <!-- <img class="pet-dress-head" src="/DD103G3/backStage/images/pet-stage-dogheadfirst.png"> -->
+                        <img class="pet-dress-body" src="/DD103G3/backStage/images/pet-stage-dogbody.png">
+                        <!-- <img class="pet-dress-tail" src="/DD103G3/backStage/images/pet-stage-dogtailfirst.png"> -->
                     </div>
                     <div class="pet-go">
                         <button class="pet-go-shop">前往商店</button>
@@ -447,12 +445,12 @@
             //替換頭
             $('.Pet-Dog-HeardOne').click(function () {
                 if (pet == 'dog') {
-                    set(null, './img/pet-stage-dogheadfirst.png');
+                    set(null, '/DD103G3/backStage/images/pet-stage-dogheadfirst.png');
                     show();
 
                     return;
                 }
-                set(null, './img/pet-stage-catheadfirst.png');
+                set(null, '/DD103G3/backStage/images/pet-stage-catheadfirst.png');
                 show();
 
 
@@ -460,36 +458,37 @@
 
             $('.Pet-Dog-HeardSencon').click(function () {
                 if (pet == 'dog') {
-                    set(null, './img/pet-stage-dogheadsencon.png');
+                    set(null, '/DD103G3/backStage/images/pet-stage-dogheadsencon.png');
                     show();
 
                     return;
                 }
-                set(null, './img/pet-stage-catheadsencon.png');
+                set(null, '/DD103G3/backStage/images/pet-stage-catheadsencon.png');
                 show();
 
             });
 
             //替換尾巴
             $('.Pet-Dog-TailOne').click(function () {
+                
                 if (pet == 'dog') {
-                    set(null, null, './img/pet-stage-dogtailfirst.png');
+                    set(null, null, '/DD103G3/backStage/images/pet-stage-dogtailfirst.png');
                     show();
 
                     return;
                 }
-                $('#Pet-TailDog-One').prop('src', './img/pet-stage-cattailsencon.png');
+                set(null, null, '/DD103G3/backStage/images/pet-stage-cattailsencon.png');
                 show();
 
             });
             $('.Pet-Dog-TailSencon').click(function () {
                 if (pet == 'dog') {
-                    set(null, null, './img/pet-stage-dogtailsencon.png');
+                    set(null, null, '/DD103G3/backStage/images/pet-stage-dogtailsencon.png');
                     show();
 
                     return;
                 }
-                set(null, null, './img/pet-stage-cattailfirst.png');
+                set(null, null, '/DD103G3/backStage/images/pet-stage-cattailfirst.png');
                 show();
 
             });
@@ -541,12 +540,12 @@
 
                 if (pet == 'dog') {
 
-                    // $('.pet-dress-head').prop('src', './img/pet-stage-dogtailfirst.png');
-                    // $('.pet-dress-body').prop('src', './img/pet-stage-dogbody.png');
-                    // $('.pet-dress-tail').prop('src', './img/pet-stage-dogheadfirst.png');
-                    petArr[0] = './img/pet-stage-dogheadfirst.png';
-                    petArr[1] = './img/pet-stage-dogbody.png';
-                    petArr[2] = './img/pet-stage-dogtailfirst.png';
+                    // $('.pet-dress-head').prop('src', '/DD103G3/backStage/images/pet-stage-dogtailfirst.png');
+                    // $('.pet-dress-body').prop('src', '/DD103G3/backStage/images/pet-stage-dogbody.png');
+                    // $('.pet-dress-tail').prop('src', '/DD103G3/backStage/images/pet-stage-dogheadfirst.png');
+                    petArr[0] = '/DD103G3/backStage/images/pet-stage-dogheadfirst.png';
+                    petArr[1] = '/DD103G3/backStage/images/pet-stage-dogbody.png';
+                    petArr[2] = '/DD103G3/backStage/images/pet-stage-dogtailfirst.png';
                     petArr[3] = -1;
                     $('.Pets-Color').css('filter', 'none');
                     $('.Pet-Dog-HeardOne').prop('src', './img/pet-step2-dogheadsecon.png');
@@ -555,12 +554,12 @@
                     $('.Pet-Dog-TailSencon').prop('src', './img/pet-step2-dogtailsecon.png');
                     return;
                 }
-                // $('.pet-dress-head').prop('src', './img/pet-stage-dogtailfirst.png');
-                // $('.pet-dress-body').prop('src', './img/pet-stage-dogbody.png');
-                // $('.pet-dress-tail').prop('src', './img/pet-stage-dogheadfirst.png');
-                petArr[0] = './img/pet-stage-catheadfirst.png';
-                petArr[1] = './img/pet-stage-catbody.png';
-                petArr[2] = './img/pet-stage-cattailsencon.png';
+                // $('.pet-dress-head').prop('src', '/DD103G3/backStage/images/pet-stage-dogtailfirst.png');
+                // $('.pet-dress-body').prop('src', '/DD103G3/backStage/images/pet-stage-dogbody.png');
+                // $('.pet-dress-tail').prop('src', '/DD103G3/backStage/images/pet-stage-dogheadfirst.png');
+                petArr[0] = '/DD103G3/backStage/images/pet-stage-catheadfirst.png';
+                petArr[1] = '/DD103G3/backStage/images/pet-stage-catbody.png';
+                petArr[2] = '/DD103G3/backStage/images/pet-stage-cattailsencon.png';
                 petArr[3] = -1;
                 $('.Pets-Color').css('filter', 'none');
                 $('.Pet-Dog-HeardOne').prop('src', './img/pet-step2-catheadfirst.png');
