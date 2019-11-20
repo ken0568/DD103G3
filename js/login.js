@@ -78,7 +78,7 @@ function loginopen() {
 	}else{
 		/** 會員登入 **/
 		//跳轉到會員頁面
-		location.href = "./member.html";
+		location.href = "./member.php";
 	}
 } // 開啟登入燈箱End
 
