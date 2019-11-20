@@ -5,10 +5,8 @@ function init() {
   function product() {
     function showAllproduct(jsonStr) {
       var products = JSON.parse(jsonStr);
-
       let allprodHTML = "";
       let prodCardSection = document.querySelector('.shop-cards');
-      console.log(prodCardSection);
 
       //產生商品卡片
       for (var i = 0; i < products.length; i++) {
@@ -18,7 +16,7 @@ function init() {
                 <div class="shop-text">
                   <h4>${products[i].prodName}</h4>
                   <p>功能｜${products[i].prodText}</p>
-                  <a href="#" class="btn">
+                  <a href="products.html" class="btn">
                     <p class="btnFz">${products[i].price}</p>
                     <img src="img/coin.png" alt="" />
                   </a>
@@ -88,5 +86,8 @@ function init() {
 
   };
   showActivity();
+
+
+
 }
 window.addEventListener("load", init, false);

@@ -119,6 +119,17 @@
 
 /* 桌機 */
 @media screen and (min-width: 768px) {
+    .ph-mem-box {
+        z-index: 3;
+        position: fixed;
+        top: 14%;
+        left: 3%;
+        width: 20%;
+        height: 150px;
+        border-radius: 10px;
+        background-color: rgba(16, 75, 95, .8);
+    }
+
     .product-cards {
         display: flex;
         flex-wrap: wrap;
