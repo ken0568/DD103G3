@@ -174,6 +174,33 @@ $(document).ready(function () {
     $(".ph-oh-safe").click(function () {
         $(".ph-qa-box").css("display", "block");
         $(".ph-qa-bgc").css("display", "block");
+        $.ajax({
+            url: "./php/pethouse-other-QA.php",
+
+            datType: "json",
+
+            type: "GET",
+
+            success: function (data) {
+                console.log(data);
+
+
+                let result = JSON.parse(data);
+                $("#ph-qa-text-1").text(result[0].quesText);
+                $("#ph-qa-text-2").text(result[0].quesText);
+                $("#ph-qa-text-3").text(result[0].quesText);
+
+                $("#ph-qa-texta-1").text(result[0].ansAText);
+                $("#ph-qa-texta-2").text(result[0].ansAText);
+                $("#ph-qa-texta-3").text(result[0].ansAText);
+
+                $("#ph-qa-textb-1").text(result[0].ansBText);
+
+                $("#ph-qa-ans-1").text(result[0].rightAns);
+                $("#ph-qa-ans-2").text(result[0].rightAns);
+
+            }
+        });
     });
     $(".qa-exit").click(function () {
         $(".ph-qa-box").css("display", "none");
@@ -225,12 +252,17 @@ $(document).ready(function () {
             $(".ph-st-full").css("display", "block");
             $(".ph-st-no").css("display", "none");},6000); 
     });
-    $("#pet-click").click(function () {        
-        $("#pet-img").addClass("ph-click-run");
+    setTimeout(function () {
+        $("#pet-click").click(function () {        
+        $("#pet-click").addClass("ph-click-run");
+        $(".ph-hg").css("display", "none");
         setTimeout(function(){ 
-            $('#pet-img').removeClass('ph-click-run');
+            $('#pet-click').removeClass('ph-click-run');
+            $(".ph-hg").css("display", "block");
         }, 5000);
         
     });
+    }, 10000);
+    
     
 });
