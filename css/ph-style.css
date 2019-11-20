@@ -395,11 +395,11 @@
 }
 
 .ph-hg {
-    bottom: 35%;
-    left: 35%;
-    width: 10%;
-    z-index: 4;
-    display: none;
+    bottom: 98%;
+    left: 25%;
+    width: 50%;
+    z-index: 5;
+    animation: tip-ani 1.5s linear infinite;
 }
 
 .ph-ac-box {
