@@ -1,11 +1,12 @@
 <?php
+session_start();
 $errMsg="";
 
 try{
 
     require_once("phMysql.php");
     
-    $sql="select * from `member`";
+    $sql="select * from `member` where memNO = {$_SESSION["memNo"]}";
     $product=$pdo->query($sql);
 
     if($product->rowCount()==0){

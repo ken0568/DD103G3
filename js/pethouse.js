@@ -244,6 +244,7 @@ $(document).ready(function () {
         $(".ph-st-after").css("display", "block");
         $(".ph-st-full").css("display", "none");
         $(".ph-st-no").css("display", "block");
+        
         setTimeout(function(){ 
             $(".ph-st").removeClass("ph-fd-ani");
             $(".ph-coin-plus").removeClass("coin-ani");
