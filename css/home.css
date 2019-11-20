@@ -16,6 +16,7 @@ button {
     display: none;
 }
 
+
 .index-qanda {
     position: relative;
     width: 80%;
@@ -375,10 +376,73 @@ button {
 
     .pet-img+.pet-img {
         display: block;
+        transform: rotateY(180deg);
+        animation: dog 10s infinite;
     }
 
-    .ph-hs-sw .pet-img {
-        animation: ani 5s linear 2;
+    @keyframes dog {
+        0% {
+            transform: translate(-40%) rotateY(180deg);
+        }
+
+        5% {
+            transform: translate(-60%, 100%) rotateY(180deg);
+        }
+
+        10% {
+            transform: translate(-100%, 100%) rotateY(180deg);
+        }
+
+        20% {
+            transform: translate(-150%, 100%) rotateY(180deg);
+        }
+
+        45% {
+            transform: translate(-190%, 100%) rotateY(180deg);
+        }
+
+        49% {
+            transform: translate(-190%, 100%);
+            opacity: 1;
+        }
+
+        50% {
+            transform: rotateY(180deg) translate(-200%, 100%);
+            opacity: 0;
+        }
+
+        51% {
+            transform: rotateY(180deg) translate(-200%, 100%);
+        }
+
+        55% {
+            transform: rotateY(180deg) translate(-190%, 100%);
+        }
+
+        80% {
+            transform: rotateY(180deg) translate(-120%, 100%);
+        }
+
+        90% {
+            transform: translate(-100%, 100%);
+        }
+
+        95% {
+            transform: translate(-50%, 80%);
+        }
+
+        98% {
+            transform: translate(-20%, 50%);
+        }
+
+        99% {
+            transform: translate(0%, 0%);
+        }
+
+        100% {
+            transform: translate(-5%);
+        }
+
     }
 
     .pethouse-autoplay {
@@ -400,6 +464,7 @@ button {
         position: absolute;
         top: -30%;
         left: -4%;
+        animation: mouse-ani 1s infinite;
     }
 
     .pethouse-autoplay .item1 {
@@ -498,6 +563,10 @@ button {
         padding: 10px 15px;
         color: #028090;
     }
+
+    /* .contain p img {
+        animation: mouse-ani 1s infinite;
+    } */
 
     /*樣品屋 autoplay 結束*/
     .qanda {
@@ -601,4 +670,7 @@ button {
     .activity-card:hover .signup p {
         color: #f28123;
     }
+
+
+
 }

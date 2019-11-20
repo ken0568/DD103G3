@@ -1,7 +1,7 @@
 <?php
   $errMsg="";
   try{
-    require_once("connectDatabase.php");
+    require_once("home-connect.php");
     $sql = "select * from product where prodType != 1";
     $products = $pdo->query($sql);
     $arr=[];
