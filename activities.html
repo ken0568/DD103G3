@@ -18,17 +18,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+  <script src="js/login.js"></script>
   <script src="js/jquery-2.2.4.min.js"></script>
   <script src="js/activities-main.js"></script>
   <script src="js\burger.js"></script>
-  <script src="js/login.js"></script>
 </head>
 
 <body>
   <!-- 登入 -->
   <div id="login" class="col-md-12" style="display: none;">
     <!-- loginbox開始 -->
-    <form id="loginbox" class="loginbox col-md-5">
+    <div id="loginbox" class="loginbox col-md-5">
       <h6>會員登入</h6>
       <div class="loginpic">
         <img src="img/logo-01.png" alt="">
@@ -36,17 +36,17 @@
       <div class="login-input">
         <div>
           <span>帳號:</span>
-          <input type="text">
+          <input type="text" id="memIdInput" maxlength="10">
         </div>
         <div>
           <span>密碼:</span>
-          <input type="password">
+          <input type="password" id="memPswInput" maxlength="10">
         </div>
         <input type="submit" value="送出" id="login-submit">
         <span id="registeredbtn">還沒申請帳號?</span>
       </div>
       <span id="login-close">X</span>
-    </form><!-- loginbox結束 -->
+    </div><!-- loginbox結束 -->
 
     <!-- registeredbox開始 -->
     <form id="registeredbox" class="registeredbox col-md-5" style="display: none;">
@@ -91,7 +91,6 @@
     </form><!-- registeredbox結束 -->
 
   </div><!-- 登入結束 -->
-
   <header>
     <div class="index-logo">
       <div class="logo">
@@ -100,12 +99,11 @@
     </div>
     <div class="menu">
       <ul class="menu-ul">
-        <li><a href="pethouse.html">寵物當家</a></li>
+        <li><a id="enterPethouse">寵物當家</a></li>
         <li><a href="beAPetKeeper.html">成為飼主</a></li>
         <li><a href="products.html">寵物商店</a></li>
         <li class="landPage"><a href="activities.html">活動專區</a></li>
         <div class="login">
-
           <div class="login-status">
             <a id="loginopenbtn">登入</a>
             <b>|</b>
@@ -142,20 +140,17 @@
           <div class="bannerWrap clearFix">
             <div id="banner" class="banner clearFix boxShdow">
               <ul id="pics" class="pics clearFix">
-                <li>
+                <!-- <li>
                   <a href="activityContent.html" class="pic"><img src="img/activities_01_正向行為禮貌養成班.jpg"></a>
-                </li>
-                <li>
-                  <a href="activityContent.html" class="pic"><img src="img/activities_02_健康態度看健檢.jpg"></a>
-                </li>
-                <li>
-                  <a href="activityContent.html" class="pic"><img src="img/activities_03_毛孩居家芳療按摩.jpg"></a>
-                </li>
+                </li> -->
               </ul>
             </div>
             <!-- header-dotted -->
             <div class="header-dots">
               <ul class="dotsWrap">
+                <!-- <li class="clickDot"></li>
+                <li></li>
+                <li></li> -->
               </ul>
             </div>
           </div>
@@ -188,37 +183,7 @@
         <!-------- middle -------->
         <div class="middle">
           <!-- act-card -->
-          <div id="act-card" class="act-card newTag">
-            <a href="activityContent.html" class="cardImg">
-              <img src="img/activities_01_正向行為禮貌養成班.jpg">
-            </a>
-            <a href="activityContent.html" class="cardInfo inner_px">
-              <p id="actsDate" class="actsDate">2019-12-14</p>
-              <p id="actsName" class="actsName">正向行為禮貌養成班</p>
-              <div class="cardBottom clearFix">
-                <div id="actsSort" class="actsSort">#飼養課程</div>
-                <div id="actsNowNum" class="actsNowNum">19人已報名</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- act-card -->
-          <div id="act-card" class="act-card newTag">
-            <a href="activityContent.html" class="cardImg">
-              <img src="img/activities_02_健康態度看健檢.jpg">
-            </a>
-            <a href="activityContent.html" class="cardInfo inner_px">
-              <p id="actsDate" class="actsDate">2019-12-08</p>
-              <p id="actsName" class="actsName">健康態度看健檢</p>
-              <div class="cardBottom clearFix">
-                <div id="actsSort" class="actsSort">#分享講座</div>
-                <div id="actsNowNum" class="actsNowNum">15人已報名</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- act-card -->
-          <div id="act-card" class="act-card newTag">
+          <!-- <div id="act-card" class="act-card">
             <a href="activityContent.html" class="cardImg">
               <img src="img/activities_03_毛孩居家芳療按摩.jpg">
             </a>
@@ -230,150 +195,15 @@
                 <div id="actsNowNum" class="actsNowNum">18人已報名</div>
               </div>
             </a>
-          </div>
-
-          <!-- act-card -->
-          <div id="act-card" class="act-card">
-            <a href="activityContent.html" class="cardImg">
-              <img src="img/activities_01_正向行為禮貌養成班.jpg">
-            </a>
-            <a href="activityContent.html" class="cardInfo inner_px">
-              <p id="actsDate" class="actsDate">2019-12-14</p>
-              <p id="actsName" class="actsName">正向行為禮貌養成班</p>
-              <div class="cardBottom clearFix">
-                <div id="actsSort" class="actsSort">#飼養課程</div>
-                <div id="actsNowNum" class="actsNowNum">19人已報名</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- act-card -->
-          <div id="act-card" class="act-card">
-            <a href="activityContent.html" class="cardImg">
-              <img src="img/activities_02_健康態度看健檢.jpg">
-            </a>
-            <a href="activityContent.html" class="cardInfo inner_px">
-              <p id="actsDate" class="actsDate">2019-12-08</p>
-              <p id="actsName" class="actsName">健康態度看健檢</p>
-              <div class="cardBottom clearFix">
-                <div id="actsSort" class="actsSort">#分享講座</div>
-                <div id="actsNowNum" class="actsNowNum">15人已報名</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- act-card -->
-          <div id="act-card" class="act-card">
-            <a href="activityContent.html" class="cardImg">
-              <img src="img/activities_03_毛孩居家芳療按摩.jpg">
-            </a>
-            <a href="activityContent.html" class="cardInfo inner_px">
-              <p id="actsDate" class="actsDate">2019-12-09</p>
-              <p id="actsName" class="actsName">毛孩居家芳療按摩</p>
-              <div class="cardBottom clearFix">
-                <div id="actsSort" class="actsSort">#分享講座</div>
-                <div id="actsNowNum" class="actsNowNum">18人已報名</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- act-card -->
-          <div id="act-card" class="act-card">
-            <a href="activityContent.html" class="cardImg">
-              <img src="img/activities_01_正向行為禮貌養成班.jpg">
-            </a>
-            <a href="activityContent.html" class="cardInfo inner_px">
-              <p id="actsDate" class="actsDate">2019-12-14</p>
-              <p id="actsName" class="actsName">正向行為禮貌養成班</p>
-              <div class="cardBottom clearFix">
-                <div id="actsSort" class="actsSort">#飼養課程</div>
-                <div id="actsNowNum" class="actsNowNum">19人已報名</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- act-card -->
-          <div id="act-card" class="act-card">
-            <a href="activityContent.html" class="cardImg">
-              <img src="img/activities_02_健康態度看健檢.jpg">
-            </a>
-            <a href="activityContent.html" class="cardInfo inner_px">
-              <p id="actsDate" class="actsDate">2019-12-08</p>
-              <p id="actsName" class="actsName">健康態度看健檢</p>
-              <div class="cardBottom clearFix">
-                <div id="actsSort" class="actsSort">#分享講座</div>
-                <div id="actsNowNum" class="actsNowNum">15人已報名</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- act-card -->
-          <div id="act-card" class="act-card">
-            <a href="activityContent.html" class="cardImg">
-              <img src="img/activities_03_毛孩居家芳療按摩.jpg">
-            </a>
-            <a href="activityContent.html" class="cardInfo inner_px">
-              <p id="actsDate" class="actsDate">2019-12-09</p>
-              <p id="actsName" class="actsName">毛孩居家芳療按摩</p>
-              <div class="cardBottom clearFix">
-                <div id="actsSort" class="actsSort">#分享講座</div>
-                <div id="actsNowNum" class="actsNowNum">18人已報名</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- act-card -->
-          <div id="act-card" class="act-card">
-            <a href="activityContent.html" class="cardImg">
-              <img src="img/activities_01_正向行為禮貌養成班.jpg">
-            </a>
-            <a href="activityContent.html" class="cardInfo inner_px">
-              <p id="actsDate" class="actsDate">2019-12-14</p>
-              <p id="actsName" class="actsName">正向行為禮貌養成班</p>
-              <div class="cardBottom clearFix">
-                <div id="actsSort" class="actsSort">#飼養課程</div>
-                <div id="actsNowNum" class="actsNowNum">19人已報名</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- act-card -->
-          <div id="act-card" class="act-card">
-            <a href="activityContent.html" class="cardImg">
-              <img src="img/activities_02_健康態度看健檢.jpg">
-            </a>
-            <a href="activityContent.html" class="cardInfo inner_px">
-              <p id="actsDate" class="actsDate">2019-12-08</p>
-              <p id="actsName" class="actsName">健康態度看健檢</p>
-              <div class="cardBottom clearFix">
-                <div id="actsSort" class="actsSort">#分享講座</div>
-                <div id="actsNowNum" class="actsNowNum">15人已報名</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- act-card -->
-          <div id="act-card" class="act-card">
-            <a href="activityContent.html" class="cardImg">
-              <img src="img/activities_03_毛孩居家芳療按摩.jpg">
-            </a>
-            <a href="activityContent.html" class="cardInfo inner_px">
-              <p id="actsDate" class="actsDate">2019-12-09</p>
-              <p id="actsName" class="actsName">毛孩居家芳療按摩</p>
-              <div class="cardBottom clearFix">
-                <div id="actsSort" class="actsSort">#分享講座</div>
-                <div id="actsNowNum" class="actsNowNum">18人已報名</div>
-              </div>
-            </a>
-          </div>
+          </div> -->
         </div>
         <!-------- middleEnd -------->
         <!-------- bottom -------->
         <div class="bottom">
           <div class="acts-pages">
-            <a href="#" class="page nowPage">1</a>
-            <a href="#" class="page">2</a>
-            <a href="#" class="page">3</a>
+            <!-- <div class="page nowPage">1</div>
+            <div class="page">2</div>
+            <div class="page">3</div> -->
           </div>
         </div>
         <!-------- bottomEnd -------->
@@ -395,16 +225,5 @@
     </footer>
   </div>
   <!-- wrapEnd -->
-
-  <script>
-    window.onload = function () {
-      loginclosebtn(); // 關閉登入燈箱按鈕
-      registeredclosebtn(); // 關閉註冊燈箱按鈕
-      loginopenbtn(); //開啟登入燈箱
-      registeredopenbtn(); //header開啟登入燈箱
-      registeredbtn(); // 開啟註冊燈箱按鈕
-    };
-  </script>
 </body>
-
 </html>

@@ -16,105 +16,106 @@
   <link rel="stylesheet" href="css/header-footer.css" />
   <link rel="stylesheet" href="css/ph-style.css">
   <link rel="stylesheet" href="css/login.css">
+  <script src="js/login.js"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/burger.js"></script>
   <script src="js/pethouse.js"></script>
-  <script src="js/login.js"></script>
 </head>
 
 <body>
-  <!-- 登入 -->
-  <div id="login" class="col-md-12" style="display: none;">
-    <!-- loginbox開始 -->
-    <form id="loginbox" class="loginbox col-md-5">
-      <h6>會員登入</h6>
-      <div class="loginpic">
-        <img src="img/logo-01.png" alt="">
-      </div>
-      <div class="login-input">
-        <div>
-          <span>帳號:</span>
-          <input type="text">
+    <!-- 登入 -->
+    <div id="login" class="col-md-12" style="display: none;">
+      <!-- loginbox開始 -->
+      <div id="loginbox" class="loginbox col-md-5">
+        <h6>會員登入</h6>
+        <div class="loginpic">
+          <img src="img/logo-01.png" alt="">
         </div>
-        <div>
-          <span>密碼:</span>
-          <input type="password">
-        </div>
-        <input type="submit" value="送出" id="login-submit">
-        <span id="registeredbtn">還沒申請帳號?</span>
-      </div>
-      <span id="login-close">X</span>
-    </form><!-- loginbox結束 -->
-
-    <!-- registeredbox開始 -->
-    <form id="registeredbox" class="registeredbox col-md-5" style="display: none;">
-
-      <h6>會員註冊</h6>
-
-      <div class="login-input">
-        <div>
-          <span>帳號:</span>
-          <input type="text">
-        </div>
-        <div>
-          <span>密碼:</span>
-          <input type="password">
-        </div>
-        <div>
-          <span>姓名:</span>
-          <input type="text">
-        </div>
-        <div>
-          <span>暱稱:</span>
-          <input type="text">
-        </div>
-        <div>
-          <span>性別:</span>
-          <div class="registeredsex">
-            <input type="radio" name="sex" style="width: 20px;">男
-            <input type="radio" name="sex" style="width: 20px;">女
+        <div class="login-input">
+          <div>
+            <span>帳號:</span>
+            <input type="text" id="memIdInput" maxlength="10">
           </div>
+          <div>
+            <span>密碼:</span>
+            <input type="password" id="memPswInput" maxlength="10">
+          </div>
+          <input type="submit" value="送出" id="login-submit">
+          <span id="registeredbtn">還沒申請帳號?</span>
         </div>
-        <div>
-          <span>信箱:</span>
-          <input type="text">
-        </div>
-        <div>
-          <span>手機:</span>
-          <input type="text">
-        </div>
-        <input type="submit" value="送出" id="login-submit">
-      </div>
-      <span id="registered-close">X</span>
-    </form><!-- registeredbox結束 -->
+        <span id="login-close">X</span>
+      </div><!-- loginbox結束 -->
 
-  </div><!-- 登入結束 -->
+      <!-- registeredbox開始 -->
+      <form id="registeredbox" class="registeredbox col-md-5" style="display: none;">
 
-  <header>
-    <div class="index-logo">
-      <div class="logo">
-        <a href="home.html"><img src="./img/logo.png" alt="" /></a>
+        <h6>會員註冊</h6>
+
+        <div class="login-input">
+          <div>
+            <span>帳號:</span>
+            <input type="text">
+          </div>
+          <div>
+            <span>密碼:</span>
+            <input type="password">
+          </div>
+          <div>
+            <span>姓名:</span>
+            <input type="text">
+          </div>
+          <div>
+            <span>暱稱:</span>
+            <input type="text">
+          </div>
+          <div>
+            <span>性別:</span>
+            <div class="registeredsex">
+              <input type="radio" name="sex" style="width: 20px;">男
+              <input type="radio" name="sex" style="width: 20px;">女
+            </div>
+          </div>
+          <div>
+            <span>信箱:</span>
+            <input type="text">
+          </div>
+          <div>
+            <span>手機:</span>
+            <input type="text">
+          </div>
+          <input type="submit" value="送出" id="login-submit">
+        </div>
+        <span id="registered-close">X</span>
+      </form><!-- registeredbox結束 -->
+
+    </div><!-- 登入結束 -->
+    <header>
+      <div class="index-logo">
+        <div class="logo">
+          <a href="home.html"><img src="./img/logo.png" alt="" /></a>
+        </div>
       </div>
-    </div>
-    <div class="menu">
-      <ul class="menu-ul">
-        <li class="landPage"><a href="pethouse.html">寵物當家</a></li>
-        <li><a href="beAPetKeeper.html">成為飼主</a></li>
-        <li><a href="products.html">寵物商店</a></li>
-        <li><a href="activities.html">活動專區</a></li>
-        <div class="login">
-          <div class="login-status">
-            <a id="loginopenbtn">登入</a>
-            <b>|</b>
-            <a id="registeredopenbtn">註冊</a>
-      </ul>
-    </div>
-    <div class="burger">
-      <span class="bar1" id="bar"></span>
-      <span class="bar2" id="bar"></span>
-      <span class="bar3" id="bar"></span>
-    </div>
-  </header>
+      <div class="menu">
+        <ul class="menu-ul">
+          <li class="landPage"><a id="enterPethouse">寵物當家</a></li>
+          <li><a href="beAPetKeeper.html">成為飼主</a></li>
+          <li><a href="products.html">寵物商店</a></li>
+          <li><a href="activities.html">活動專區</a></li>
+          <div class="login">
+            <div class="login-status">
+              <a id="loginopenbtn">登入</a>
+              <b>|</b>
+              <a id="registeredopenbtn">註冊</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+      <div class="burger">
+        <span class="bar1" id="bar"></span>
+        <span class="bar2" id="bar"></span>
+        <span class="bar3" id="bar"></span>
+      </div>
+    </header>
 
   <div class="wrap">
     <!--------------------------------- 背包checkBox --------------------------------->
@@ -628,15 +629,6 @@
       <p>Copyright © 2019 PetKeepers</p>
     </footer>
   </div>
-  <script>
-    window.onload = function () {
-      loginclosebtn(); // 關閉登入燈箱按鈕
-      registeredclosebtn(); // 關閉註冊燈箱按鈕
-      loginopenbtn(); //開啟登入燈箱
-      registeredopenbtn(); //header開啟登入燈箱
-      registeredbtn(); // 開啟註冊燈箱按鈕
-    };
-  </script>
 </body>
 
 </html>
