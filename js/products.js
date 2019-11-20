@@ -1,4 +1,3 @@
-//燈箱結束
 function init() {
     //產生商品卡片 start
     function product() {
@@ -61,18 +60,28 @@ function init() {
             </a>
         </div>
     </div>
-    <div id="myModal2" class="modal">
+        <div id="myModal2" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h4>成功購入!</h4>
                 <p> 已扣除<label >${products[i].price}</label>愛心幣，現在就到背包看看吧！</p>
             </div>
-
-        </div>
+            </div>
+            <div id="myModal3" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h4>購入失敗!</h4>
+                <p> 愛心幣不足!</p>
+            </div>
+            </div>
             `;
                 };
                 prodCardSection.innerHTML = allprodHTML;
             };
+            //產生商品卡片End
+
+
+
             //數量加減與總和 開始
             $(function () {
                 $(".add").click(function () {
@@ -103,28 +112,22 @@ function init() {
             });
             //數量加減與總和 結束
 
+
+
+
             //燈箱開始
-            $(document).ready(function () {
-                $('.button').click(function () {
-                    $('#myModal').css('display', 'block');
-                });
-                $('.close').click(function () {
-                    $('#myModal').css('display', 'none');
-                });
-            });
-            $(document).ready(function () {
-                $('.getPrice').click(function () {
-                    var btn = $(this).find('label').text();
-                    $('.modal-content label').text(btn);
-                    console.log(btn);
-                    $('#myModal2').css('display', 'block');
-                });
-                $('.close').click(function () {
-                    $('#myModal2').css('display', 'none');
-                });
-            });
+            //$(document).ready(function () {
+
+            //});
+
+
+
+
         }
-        //產生商品卡片End
+        //燈箱結束
+
+
+
         var xhr = new XMLHttpRequest();
         xhr.onload = function () {
             if (xhr.status == 200) {
@@ -138,6 +141,92 @@ function init() {
         xhr.send(null);
     }
     product();
+
+
+    function showMembers() {
+        function showMem(jsonStr) {
+            var members = JSON.parse(jsonStr);
+            let memberHTML = "";
+            let memMiddleSection = document.querySelector('.ph-mem-box');
+            //產生卡片
+
+            memberHTML += `
+            <div class="ph-mem-text">
+            <p id="">${members[0].memName}</p>
+            <p>寵物:<span id="">${members[0].petName}</span></p>
+            <img src="img/ph-coin.png" alt="coin">
+            <div class="coin">
+                <p>${members[0].coin}</p>
+                <input type='text' hidden value='' name='henry' id='henry'>
+            </div>
+            </div>
+                  `;
+
+            memMiddleSection.innerHTML = memberHTML;
+
+
+
+            //愛心幣 開始
+            $('.button').click(function () {
+                //check money is ok?
+                var money = parseInt($('.coin').find('p').text());
+                var price = parseInt($(this).find('label').text());
+                var total = money - price;
+                if (money >= price) {
+                    console.log(total);
+                    $('#henry').val(total);
+                    $('.coin').find('p').text(total);
+                    $('#myModal').css('display', 'block');
+                } else {
+                    $('#myModal3').css('display', 'block');
+                };
+
+            });
+
+            $('.getPrice').click(function () {
+                var money = parseInt($('.coin').find('p').text());
+                var price = parseInt($(this).find('label').text());
+                var total = money - price;
+
+                if (money >= price) {
+                    $('#henry').val(total);
+                    $('.coin').find('p').text(total);
+                    var btn = $(this).find('label').text();
+                    $('.modal-content label').text(btn);
+                    $('#myModal2').css('display', 'block');
+                } else {
+                    $('#myModal3').css('display', 'block');
+                };
+
+            });
+            $('.close').click(function () {
+                $('#myModal2').css('display', 'none');
+                $('#myModal3').css('display', 'none');
+            });
+
+
+            $('.close').click(function () {
+                $('#myModal').css('display', 'none');
+                $('#myModa3').css('display', 'none');
+            });
+            //愛心幣結束    
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                showMem(xhr.responseText);
+            } else {
+                alert(xhr.status);
+            }
+        }
+
+
+        xhr.open("get", "./php/product-member.php", true);
+        xhr.send(null);
+
+    };
+    showMembers();
 
 };
 
