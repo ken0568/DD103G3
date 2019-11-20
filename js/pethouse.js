@@ -108,6 +108,11 @@ $(document).ready(function () {
         $(".ph-st-before").css("display", "none");
         $(".ph-st-after").css("display", "block");
     });
-
-
+    $("#pet-click").click(function () {        
+        $("#pet-click").addClass("ph-click-run");
+        setTimeout(function(){ 
+            $('#pet-click').removeClass('ph-click-run'); },5000); 
+        
+    });
+    
 });

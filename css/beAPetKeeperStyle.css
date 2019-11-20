@@ -15,12 +15,11 @@ html {
     /* outline: 1px solid red; */
 }
 
-
 html,
 body {
     margin: 0;
     padding: 0;
-    
+    overflow-x: hidden;  
 }
 
 *,
@@ -46,17 +45,40 @@ button:hover {
 a {
     text-decoration: none;
 }
+input,button,a {
+    border:0px #028090 solid;
+    outline:0 none !important;
+    }
 
 /**** 共用設定-end *****/
 
-.pet-wrap {
-    /* margin: 0 20px;
-    border:20px;
-    border-color:rgb(255, 25, 255); */
-    /* position: relative; */
-    overflow: hidden;
-    border: 10px solid rgb(255, 255, 255);
+/*---------開始--------------桌機 header 設定*/
+/*桌機 header 設定，此為header設定的寬度，各自頁面請各自設定寬度*/
+@media screen and (min-width: 997px) {
+    header{
+        margin-left: 0;
+        border-top: 10px solid #fff; 
+        border-left: 10px solid #fff; 
+        border-right: 10px solid #fff;
+    }
+    .pet-wrap {
+        border: 10px solid #fff;
+        overflow: hidden;
+    }
+    .index-logo {
+        width: 15%;
+        border-radius: 0 0 15px;
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 100%;
+        display: block;
+    }
 }
+
+    /* ----------開始-----桌機選單設定-------------- */
+
 
 /**** banner-start *****/
 .pet-banner-bgs {
@@ -65,7 +87,6 @@ a {
     align-items: center;
     z-index: 0;
     position: relative;
-
 }
 
 .pet-banner-bgs img {
@@ -88,7 +109,6 @@ a {
 .pet-banner img {
     max-width: 100%;
     height: auto;
-
 }
 
 .pet-banner p {
@@ -150,7 +170,6 @@ a {
 
     .pet-banner img {
         width: 40%;
-
     }
 
     .pet-banner-paper {
@@ -182,6 +201,9 @@ a {
     .pet-title p {
         font-size: 24px;
     }
+    .pet-title {
+        margin: 0;
+    }
 }
 
 /****  打造專屬寵物-title-end *****/
@@ -191,8 +213,6 @@ a {
     display: flex;
     flex-direction: row;
 }
-
-
 
 /****  客製化左邊Start *****/
 
@@ -208,9 +228,19 @@ a {
     width: 63%;
     padding: 23% 0;
     margin-right: 10px;
-    height: 520px;
+    height: 73vh;
     position: absolute;
-    z-index: -2;
+    z-index: -200;
+}
+.pet-context{
+    background-image: url(../img/bAPKStage.png); 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 60vh;
+    position: absolute;
+    z-index: -111;
+    top: 54.7%;
+    margin-left: 17%;
 }
 
 .pet-light {
@@ -218,13 +248,14 @@ a {
     flex-direction: row;
     justify-content: space-evenly;
     position: relative;
-    margin-top: -43%;
+    margin-top: 5%;
     /* position: absolute;
     z-index: 1007;  */
     -webkit-animation: fadeinout 4s linear;
     animation: fadeinout 4s linear;
     animation-iteration-count: infinite;
 }
+
 @-webkit-keyframes fadeinout {
     0%,100% { opacity: 0; }
     50% { opacity: 1; }
@@ -239,12 +270,10 @@ a {
     width: 100%;
     height: auto;
     margin: 0 129%;
-    
 }
 
 .pet-light .pet-light-right {
-    margin-left: 325%;
-   
+    margin-left: 325%; 
 }
 
 .pet-context-pet {
@@ -259,16 +288,23 @@ a {
     height: auto;
 }
 
-.pet-context img {
+/* .pet-context img {
     width: 60%;
     height: auto;
     position: absolute;
     z-index: -1;
     top: 54.7%;
     margin-left: -29%;
-}
+} */
 
 @media screen and (max-width:768px) {
+    .pet-context{
+    width: 100%;
+    height: 60vh;
+    top: 54.7%;
+    margin-left:7%;
+
+    }
     .pet-light img {
         width: 26%;
         height: auto;
@@ -379,6 +415,7 @@ a {
         width: 100%;
         height: 300px;
         margin-top: 12.4%;
+       margin-bottom: 5%;
     }
 
     .pet-box a {
@@ -504,8 +541,6 @@ a {
     .Pet-Step-OneCat {
         margin-top: 5%
     }
-
-
 }
 
 
@@ -572,11 +607,11 @@ a {
     }
 
     .pet-dogheads-pic img {
-        width: 25%;
+        width: 20%;
     }
 
     .pet-dogtails-pic img {
-        width: 11%;
+        width: 8%;
     }
 
     .pet-dogtails,
@@ -599,7 +634,7 @@ a {
     display: flex;
     flex-direction: column;
     color: #028090;
-    margin: 12% 17% 4% 17%;
+    margin: 4% 17% 4% 17%;
     border: solid 1.5px #028090;
     padding: 10px 10px;
     text-align: center;
@@ -648,24 +683,19 @@ a {
     border-radius: 10px;
     -webkit-appearance: none;
     box-shadow: 0 .125em .125em #3b4547;
-    /*新增底部陰影*/
     background-image: linear-gradient(to right, #F00, #FF0, #0F0, #0FF, #00F, #F0F, #F00);
 }
 
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     position: relative;
-    /* 設為相對位置，為了前後區塊的絕對位置而設定 */
     width: 25px;
     height: 25px;
     background: #028090;
     border-radius: 50%;
     border: solid 0.225em #ffc342;
-    /*設定邊框*/
     box-shadow: 0 .225em .225em #3b4547;
-    /*新增底部陰影*/
     transition: .1s;
-    /* 點選放大時候的漸變時間 */
 }
 
 @media screen and (max-width:768px) {
@@ -703,8 +733,6 @@ input[type="range"]::-webkit-slider-thumb {
     .pet-stepthree-color form {
         margin-top: -15%;
     }
-
-
 }
 
 /***** colorbar-end *****/
@@ -824,7 +852,7 @@ input[type="range"]::-webkit-slider-thumb {
     }
 
     .pet-question-title {
-        font-size: 26px;
+        font-size: 23px;
     }
 
     .pet-question img {
@@ -834,13 +862,13 @@ input[type="range"]::-webkit-slider-thumb {
         top: 0;
         right: 0;
         bottom: 0;
-        left: -3px;
+        left: 3%;
         background-size: cover;
 
     }
 
     .pet-qa-title {
-        font-size: 15px;
+        font-size: 12px;
         margin: 11% 0 26% 0;
     }
 
@@ -908,21 +936,12 @@ input[type="range"]::-webkit-slider-thumb {
 .pet-dress-paper {
     width: 106%;
     height: auto;
-    z-index: 0;
-    /* position: relative;
-    z-index: 20000; */
+    z-index: 0; 
     padding: 2%;
-    /* margin: auto; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-/* .pet-dress-pet {
-    display: flex;
-    justify-content: center;
-   
-} */
 
 .pet-dress-pet img {
     position: absolute;
@@ -938,7 +957,7 @@ input[type="range"]::-webkit-slider-thumb {
     color: #fff;
     font-size: 20px;
     margin-top: 11%;
-    z-index: 10000;
+    z-index: 900;
     position: absolute;
     margin: 32% 3% 0 3%;
 }
@@ -963,16 +982,15 @@ input[type="range"]::-webkit-slider-thumb {
     .pet-dress-paper {
         width: 100%;
         height: 100vh;
-
     }
     .pet-qa-answer {
-        margin: 36% 0% 0 0 ;
+        margin: 36% 0% 0 5% ;
     }
     .pet-dress-pet img {
         position: absolute;
         z-index: 222;
         width: 70%;
-        margin: -93% -30%;
+        margin: -74% -30%;
     }
 
 }
@@ -1035,19 +1053,32 @@ input[type="range"]::-webkit-slider-thumb {
         width: 66%;
         height: 30px;
         font-size: 16px;
-        margin: 112% 3% 0 3%;
+        margin: 80% 3% 0 3%;
     }
 
-    .pet-section-four {
+    /* .pet-section-four {
         width: 100%;
         height: 100vh;
-    }
+    } */
 
     .pet-dress-paper {
         width: 100%;
         height: 61vh;
-
     }
+    .pet-go{
+        margin: 81% 3% 0 3%;
+        width: 85%;
+    }
+    .pet-go-shop ,.pet-go-keeper{
+        width: 60%;
+        height: 40px;
+        background-color: #028090;
+        color: #fff;
+        font-size: 13px;
+        margin: 0% 3% 0 -2%;
+    }
+
+
 
 }
 
@@ -1061,21 +1092,16 @@ input[type="range"]::-webkit-slider-thumb {
 .pet-container {
     margin-bottom: 5%;
 }
+@media screen and (max-width:768px) {
+.pet-container {
+    margin-bottom: 11%;
+}
+}
 
 /**** 設定區-end *****/
 
 /**** 動畫區-start *****/
-/* .SSS{
-  
-    background-image: url(./img/pet-bodyCat.png), linear-gradient(#f00, #00f);
- 
-    background-blend-mode: lighten;
-    background-size: cover;
-    position:absolute;
-    left:47%;
-    animation-name:DDD;
-    animation-duration:2s;
-} */
+
 .SSS {
     position: absolute;
     left: 47%;
@@ -1093,32 +1119,8 @@ input[type="range"]::-webkit-slider-thumb {
         left: 55%;
     }
 }
+    
 
 
 
-/* @keyframes DDD{
-    0%{
-        left:47%;
-        background-image: url(./img/pet-bodyCat.png);
-        background-image: linear-gradient(to right, #F00, #FF0, #0F0, #0FF, #00F, #F0F, #F00);
-    }
-    25%{
-        left:48%;
-        background-image: url(./img/pet-bodyCat.png);
-        background-color:#0f0;
-    }
-    50%{
-        left:49%;
-        background:#00f;
-    }
-    75%{
-        left:50%;
-        background:#ff0;
-    }
-    100%{
-        left:55%;
-        background:#000;
-    }
-} */
 
-/**** 動畫區-end *****/
