@@ -20,10 +20,30 @@
 
 
 <body>
+
+	<?php
+	session_start();
+		require_once('php/saru.php');
+
+		// $sql="select * from `member` where memNo=4";
+		$sql="select * from `member` where memNo={$_SESSION['memNo']}";
+
+		$member = $pdo->query($sql);
+
+		$member->bindColumn("memName", $memName);
+		$member->bindColumn("memTel", $memTel);
+		$member->bindColumn("sex", $sex);
+		$member->bindColumn("petName", $petName);
+		$member->bindColumn("memNick", $memNick);
+		$member->bindColumn("email", $email);
+		$member->bindColumn("coin", $coin);
+		
+	?>
+
 	<!-- 登入 -->
 	<div id="login" class="col-md-12" style="display: none;">
 		<!-- loginbox開始 -->
-		<form id="loginbox" class="loginbox col-md-5" style="display: none;">
+		<form action="php/loginin.php" method="POST" id="loginbox" class="loginbox col-md-5" style="display: none;">
 			<h6>會員登入</h6>
 			<div class="loginpic">
 				<img src="img/logo-01.png" alt="">
@@ -31,11 +51,11 @@
 			<div class="login-input">
 				<div>
 					<span>帳號:</span>
-					<input type="text">
+					<input type="text" name="loginId">
 				</div>
 				<div>
 					<span>密碼:</span>
-					<input type="password">
+					<input type="password" name="loginPsw">
 				</div>
 				<input type="submit" value="送出" id="login-submit">
 				<span id="registeredbtn">還沒申請帳號?</span>
@@ -44,43 +64,43 @@
 		</form><!-- loginbox結束 -->
 
 		<!-- registeredbox開始 -->
-		<form id="registeredbox" class="registeredbox col-md-5" style="display: none;">
+		<form action="php/registered.php" method="GET" id="registeredbox" class="registeredbox col-md-5" style="display: none;">
 
 			<h6>會員註冊</h6>
 
 			<div class="login-input">
 				<div>
 					<span>帳號:</span>
-					<input type="text">
+					<input type="text" name="mid">
 				</div>
 				<div>
 					<span>密碼:</span>
-					<input type="password">
+					<input type="password" name="mpsw">
 				</div>
 				<div>
 					<span>姓名:</span>
-					<input type="text">
+					<input type="text" name="mname">
 				</div>
 				<div>
 					<span>暱稱:</span>
-					<input type="text">
+					<input type="text" name="mnick">
 				</div>
 				<div>
 					<span>性別:</span>
 					<div class="registeredsex">
-						<input type="radio" name="sex" style="width: 20px;">男
-						<input type="radio" name="sex" style="width: 20px;">女
+						<input type="radio" name="sex[]" value="0" style="width: 20px;">男
+						<input type="radio" name="sex[]" value="1" style="width: 20px;">女
 					</div>
 				</div>
 				<div>
 					<span>信箱:</span>
-					<input type="text">
+					<input type="text" name="memail">
 				</div>
 				<div>
 					<span>手機:</span>
-					<input type="text">
+					<input type="text" name="mphone">
 				</div>
-				<input type="submit" value="送出" id="login-submit">
+				<input type="submit" value="送出" id="registered-submit">
 			</div>
 			<span id="registered-close">X</span>
 		</form><!-- registeredbox結束 -->
@@ -155,44 +175,63 @@
 
 						<!-- 個人資料 -->
 						<table id="member1">
+							
+							<?php
+								while($member->fetch(PDO::FETCH_ASSOC)){
+									$sexturn="";
+									if($sex==true){
+										$sexturn="女";
+									}else{
+										$sexturn="男";
+									}
+
+									$petNameturn="";
+									if($petName==null){
+										$petNameturn="尚未遊玩";
+									}else{
+										$petNameturn=$petName;
+									}
+							?>
+
 							<tr>
 								<td>姓名:</td>
-								<td>李可懷</td>
+								<td><?=$memName?></td>
 							</tr>
 							<tr>
 								<td>暱稱:</td>
-								<td>可不可紅茶</td>
+								<td><?=$memNick?></td>
 							</tr>
 							<tr>
 								<td>電話:</td>
-								<td>0912345678</td>
+								<td><?=$memTel?></td>
 							</tr>
 							<tr>
 								<td>性別:</td>
-								<td>男</td>
+								<td><?=$sexturn?></td>
 							</tr>
 							<tr>
 								<td>寵物:</td>
-								<td>麗春紅茶</td>
+								<td><?=$petNameturn?></td>
 							</tr>
 							<tr>
 								<td>信箱:</td>
-								<td>kebuke@gmail.com</td>
+								<td><?=$email?></td>
 							</tr>
 							<tr>
 								<td>愛心幣:</td>
-								<td>5000</td>
+								<td><?=$coin?></td>
 							</tr>
 							<tr>
 								<td>愛心幣排名:</td>
 								<td>103名</td>
 							</tr>
-							<tr>
-								<td>最後登入:</td>
-								<td>2019/11/08-20:15</td>
-							</tr>
+							
+							<?php
+								}
+							?>
+
 						</table>
-						<button id="reset">修改</button>
+						<!-- <button id="reset">修改</button> -->
 
 
 						<!-- 購買紀錄 -->
@@ -222,15 +261,38 @@
 							</tr>
 						</table>
 
+						<?php
+
+						// session_start();
+						// 	require_once('php/saru.php');
+
+						// 	$sql="select * from `member` where memNo=4";
+							$sql="select * from `participate` where memNo={$_SESSION['memNo']}";
+							// $sql="select * from `activity` where actNo=$actNo";
+							$meact = $pdo->query($sql);
+
+							$meact->bindColumn("actNo", $actNo);
+							$a=$actNo;
+
+							$sql="select * from `activity` where actNo=1";
+							$meact = $pdo->query($sql);
+							$meact->bindColumn("actName", $actName);
+							
+						?>
+					
+
 						<!-- 活動紀錄 -->
 						<table id="member3" style="display: none;">
+							<?php
+								while($meact->fetch(PDO::FETCH_ASSOC)){
+							?>
 							<thead>
 								<td>活動名稱</td>
 								<td>活動日期</td>
 								<td>活動狀態</td>
 							</thead>
 							<tr>
-								<td>名稱1</td>
+								<td><?=$actName?></td>
 								<td>2019/11/10</td>
 								<td>取消報名</td>
 							</tr>
@@ -244,6 +306,9 @@
 								<td>2019/11/10</td>
 								<td>已結束</td>
 							</tr>
+							<?php
+								}
+							?>
 						</table>
 					</div>
 

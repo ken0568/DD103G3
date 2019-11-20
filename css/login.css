@@ -196,12 +196,26 @@ h6{
 	margin-left: 25px; 
 }
 
+#registered-submit{
+	display: block;
+	width: 80%;
+	height: 40px;
+
+	font-size: 24px;
+
+	border: none;
+	border-radius: 5px;
+	background-color: #4a6e70;
+	
+	margin: 15px auto;
+}
+
 @media screen and (min-width: 768px){
 	.registeredbox{
 		margin: 5% auto;
 	}
 
-	#login-submit{
+	#registered-submit{
 		cursor: pointer;
 	}
 
