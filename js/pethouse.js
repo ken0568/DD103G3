@@ -221,19 +221,17 @@ $(document).ready(function () {
     });
     $(".ph-fd-before").click(function () {
         $(".ph-fd-before").css("display", "none");
-        $(".ph-fd-full").css("display", "block");
-    });
-    $(".ph-fd-full").click(function () {
         $(".ph-fd").addClass("ph-fd-ani");
         $(".ph-coin-plus").addClass("coin-ani");
-        $(".ph-fd-full").css("display", "none");
         $(".ph-fd-after").css("display", "block");
+        $(".ph-fd-no").css("display", "none")
         $(".ph-hg").css("display", "none");
         setTimeout(function () {
             $(".ph-fd").removeClass("ph-fd-ani");
             $(".ph-coin-plus").removeClass("coin-ani");
             $(".ph-fd-after").css("display", "none");
             $(".ph-fd-before").css("display", "block");
+            $(".ph-fd-no").css("display", "block");
             $(".ph-hg").css("display", "block");
         }, 6000);
     });
@@ -251,34 +249,128 @@ $(document).ready(function () {
             $(".ph-st-before").css("display", "block");
             $(".ph-st-after").css("display", "none"); 
             $(".ph-st-full").css("display", "block");
-            $(".ph-st-no").css("display", "none");},6000); 
+            $(".ph-st-no").css("display", "none");
+        },6000); 
     });
     setTimeout(function () {
         $("#pet-click").click(function () {        
         $("#pet-click").addClass("ph-click-run");
         $(".ph-hg").css("display", "none");
-        setTimeout(function(){ 
-            $('#pet-click').removeClass('ph-click-run');
-            $(".ph-hg").css("display", "block");
-        }, 5000);
-        
-    });
+            setTimeout(function(){ 
+                $('#pet-click').removeClass('ph-click-run');
+                $(".ph-hg").css("display", "block");
+            }, 5000);
+        });
     }, 10000);
-    $(".bg-li-eve").click(function () {
-        $(".bg-all-lightbox").css("display", "block");
-    });
     $(".bg-exit").click(function () {
         $(".bg-all-lightbox").css("display", "none");
     });
-    $(".bg-eve-off").click(function () {
-        $(".ph-clothes").css("display", "none");
-        $(".bg-all-lightbox").css("display", "none");
-        $('.bg-li-eve').removeClass('bg-used');
+
+    $(".bg-li-eve").click(function () {
+        $(".bg-all-lightbox").css("display", "block");
+        $(".bg-on").addClass("bg-eve-on");
+        $(".bg-off").addClass("bg-eve-off");
+
+        $(".bg-eve-off").click(function () {
+            $(".ph-clothes").css("display", "none");
+            $(".bg-all-lightbox").css("display", "none");
+            $('.bg-li-eve').removeClass('bg-used');
+            $(".bg-on").removeClass("bg-eve-on");
+            $(".bg-off").removeClass("bg-eve-off"); 
+        });
+
+        $(".bg-eve-on").click(function () {
+            $(".ph-clothes").css("display", "block");
+            $(".bg-all-lightbox").css("display", "none");
+            $('.bg-li-eve').addClass('bg-used');
+            $(".bg-on").removeClass("bg-eve-on");
+            $(".bg-off").removeClass("bg-eve-off"); 
+        });
+    });   
+
+    $(".bg-li-foodBox").click(function () {
+        $(".bg-all-lightbox").css("display", "block");
+        $(".bg-on").addClass("bg-foodBox-on");
+        $(".bg-off").addClass("bg-foodBox-off");
+
+        $(".bg-foodBox-off").click(function () {
+            $(".ph-fd-no").attr("src","img/foodbox.png");
+            $(".ph-fd-before").attr("src","img/foodbox.png");
+            $(".ph-fd-after").attr("src","img/foodbox-full.png");
+            $(".bg-all-lightbox").css("display", "none");
+            $('.bg-li-foodBox').removeClass('bg-used'); 
+            $(".bg-on").removeClass("bg-foodBox-on");
+            $(".bg-off").removeClass("bg-foodBox-off"); 
+        });
+
+        $(".bg-foodBox-on").click(function () {
+            $(".ph-fd-no").attr("src","img/shop-foodBowl.png");
+            $(".ph-fd-before").attr("src","img/shop-foodBowl.png");
+            $(".ph-fd-after").attr("src","img/ph-fdbox-1.png");
+            $(".bg-all-lightbox").css("display", "none");
+            $('.bg-li-foodBox').addClass('bg-used');
+            $(".bg-on").removeClass("bg-foodBox-on");
+            $(".bg-off").removeClass("bg-foodBox-off"); 
+        });
     });
-    $(".bg-eve-on").click(function () {
-        $(".ph-clothes").css("display", "block");
-        $(".bg-all-lightbox").css("display", "none");
-        $('.bg-li-eve').addClass('bg-used');
+
+    $(".bg-li-shitBox").click(function () {
+        $(".bg-all-lightbox").css("display", "block");
+        $(".bg-on").addClass("bg-shitBox-on");
+        $(".bg-off").addClass("bg-shitBox-off");
+
+        $(".bg-shitBox-off").click(function () {
+            $(".ph-st-full").attr("src","img/shitbox-full.png");
+            $(".ph-st-before").attr("src","img/shitbox-full.png");
+            $(".ph-st-after").attr("src","img/shitbox.png");
+            $(".ph-st-no").attr("src","img/shitbox.png");
+            $(".bg-all-lightbox").css("display", "none");
+            $('.bg-li-shitBox').removeClass('bg-used'); 
+            $(".bg-on").removeClass("bg-shitBox-on");
+            $(".bg-off").removeClass("bg-shitBox-off"); 
+        });
+
+        $(".bg-shitBox-on").click(function () {
+            $(".ph-st-full").attr("src","img/shitBox-h-full.png");
+            $(".ph-st-before").attr("src","img/shitBox-h-full.png");
+            $(".ph-st-after").attr("src","img/shop-catLitter.png");
+            $(".ph-st-no").attr("src","img/shop-catLitter.png");
+            $(".bg-all-lightbox").css("display", "none");
+            $('.bg-li-shitBox').addClass('bg-used');
+            $(".bg-on").removeClass("bg-shitBox-on");
+            $(".bg-off").removeClass("bg-shitBox-off"); 
+        });
     });
+    $(".bg-li-shitBu").click(function () {
+        $(".bg-all-lightbox").css("display", "block");
+        $(".bg-on").addClass("bg-shitBu-on");
+        $(".bg-off").addClass("bg-shitBu-off");
+
+        $(".bg-shitBu-off").click(function () {
+            $(".ph-st-full").attr("src","img/ph-shitBu-full.png");
+            $(".ph-st-before").attr("src","img/ph-shitBu-full.png");
+            $(".ph-st-after").attr("src","img/ph-shitBu.png");
+            $(".ph-st-no").attr("src","img/ph-shitBu.png");
+            $(".bg-all-lightbox").css("display", "none");
+            $('.bg-li-shitBu').removeClass('bg-used'); 
+            $(".bg-on").removeClass("bg-shitBu-on");
+            $(".bg-off").removeClass("bg-shitBu-off"); 
+        });
+
+        $(".bg-shitBu-on").click(function () {
+            $(".ph-st-full").attr("src","img/ph-shitBu-h.png");
+            $(".ph-st-before").attr("src","img/ph-shitBu-h.png");
+            $(".ph-st-after").attr("src","img/ph-diaper-1.png");
+            $(".ph-st-no").attr("src","img/ph-diaper-1.png");
+            $(".bg-all-lightbox").css("display", "none");
+            $('.bg-li-shitBu').addClass('bg-used');
+            $(".bg-on").removeClass("bg-shitBu-on");
+            $(".bg-off").removeClass("bg-shitBu-off"); 
+        });
+    });
+    
     // $(".ph-fd-no").attr("src","img/shop-foodBowl.png");
+    // bg-li-foodBox
+    // bg-li-shitBox
+    // bg-li-shitBu
 });
