@@ -3,7 +3,7 @@
 	$errMsg="";
 
 	try{
-		require_once('saru.php');
+		require_once('../connectdd103g3.php');
 
 		$findId=$pdo->prepare("select * from `member` where memId=:midd");
 	    $findId->bindValue(":midd",$_GET['mid']);

@@ -1,7 +1,7 @@
 <?php
   $errMsg="";
   try{
-    require_once("home-connect.php");
+    require_once("../connectdd103g3.php");
     $sql = "select * from activity order by actDate desc";
     $activities = $pdo->query($sql);
     $arr=[];

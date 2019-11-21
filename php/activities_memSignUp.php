@@ -5,7 +5,7 @@
   $memNo = $_SESSION['memNo'];
 
   try{
-    require_once("share_connectDatabase.php");
+    require_once("../connectdd103g3.php");
 
     $sql = "insert into participate (memNo, actNo) value (:memNo, :actNo);";
     $addAct = $pdo->prepare($sql);

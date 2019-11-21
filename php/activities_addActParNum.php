@@ -4,7 +4,7 @@
   $actNo = $_SESSION['actNo'];
 
   try{
-    require_once("share_connectDatabase.php");
+    require_once("../connectdd103g3.php");
 
     $sql = "update activity set parNum=parNum+1 where actNo=:actNo";
     $isAct = $pdo->prepare($sql);

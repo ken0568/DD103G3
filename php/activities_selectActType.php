@@ -2,7 +2,7 @@
   $errMsg="";
   $actType = $_GET["actType"];
   try{
-    require_once("share_connectDatabase.php");
+    require_once("../connectdd103g3.php");
     if($actType == "全部活動"){
       $sql = "select * from activity where actStatus != 1 order by actDate desc";
 		  $activities = $pdo->query($sql);

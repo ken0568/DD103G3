@@ -1,16 +1,34 @@
-<?php 
-// $dsn = "mysql:dbname=dd103g3;host=140.115.236.71;charset=utf8";
-$dsn = "mysql:dbname=dd103g31117;host=localhost;charset=utf8";
-// $user = "dd103g3";
-// $password = "dd103g3";
+<?php
+    // 學校
+    // $dsn = "mysql:dbname=dd103g3;host=140.115.236.71;charset=utf8";
+    // $user = "dd103g3";
+    // $password = "dd103g3";
 
-// 高測試
-$user = "root";
-$password = "root";
+    // 可懷
+    // $dsn = "mysql:host=localhost;port=3306;dbname=dd103g3;charset=utf8";
+    // $user = "root";
+    // $password = "qwe123456";
 
-try {
-    $db = new PDO($dsn, $user, $password);
-    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );//Error Handling
-} catch (PDOException $e) {
-    exit();
-}
+    // 高
+    // $dsn = "mysql:dbname=dd103g31117;host=localhost;charset=utf8";
+    // $user = "root";
+    // $password = "root";
+
+    // 齊豪
+    // $dsn = "mysql:host=localhost;port=3306;dbname=dd103g3;charset=utf8";
+	// $user = "root";
+    // $password = "root";
+
+    // 徐浩
+    // $dsn="mysql:host=localhost;port=3306;dbname=dd103g3;charest=utf8";
+	// $user="root";
+	// $password="henry830122";
+    
+    // 安
+	$dsn="mysql:host=localhost;port=3306;dbname=dd103g3;charest=utf8";
+	$user="root";
+    $password="h83510";
+
+	$options=array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_CASE=>PDO::CASE_NATURAL);
+	$pdo=new PDO($dsn,$user,$password,$options);
+?>

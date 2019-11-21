@@ -3,7 +3,7 @@ $errMsg="";
 
 try{
 
-    require_once("phMysql.php");
+    require_once("../connectdd103g3.php");
     
     $sql="select * from `questionandlibrary`";
     $product=$pdo->query($sql);

@@ -5,7 +5,7 @@
   $memNo = $_SESSION['memNo'];
 
   try{
-    require_once("share_connectDatabase.php");
+    require_once("../connectdd103g3.php");
 
     $sql = "select * from participate where actNo = :actNo and memNo = :memNo";
     $isAct = $pdo->prepare($sql);

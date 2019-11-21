@@ -3,7 +3,7 @@ $errMsg="";
 
 try{
 
-    require_once("phMysql.php");
+    require_once("../connectdd103g3.php");
     
     $sql="select * from `member` where memId != 'text123'";
     $product=$pdo->query($sql);

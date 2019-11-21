@@ -9,4 +9,6 @@
   unset($_SESSION["sex"]);
   unset($_SESSION["email"]);
   unset($_SESSION["coin"]);
+  unset($_SESSION["petName"]);
+  unset($_SESSION["petPic"]);
 ?>

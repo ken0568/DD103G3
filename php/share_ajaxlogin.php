@@ -5,7 +5,7 @@
   $memPswValue = $_GET['memPsw'];
   $memArr=[];
   try{
-    require_once("share_connectDatabase.php");//直接改這支PHP的帳密
+    require_once("../connectdd103g3.php");
     $sql = "select * from `member` where memId=:memId and memPsw=:memPsw";
     $member = $pdo->prepare($sql);
     $member->bindValue(":memId",$memIdValue);
@@ -29,7 +29,9 @@
         $_SESSION["sex"] = $memRow["sex"];
         $_SESSION["email"] = $memRow["email"];
         $_SESSION["coin"] = $memRow["coin"];
-        
+        $_SESSION["memNo"] = $memRow["memNo"];
+        $_SESSION["petName"] = $memRow["petName"];
+        $_SESSION["petName"] = $memRow["petPic"];
         //送回前端資料
         $logInResult = array("memName"=>$memRow["memName"],"memId"=>$memRow["memId"],"memNick"=>$memRow["memNick"]);
         echo json_encode($logInResult);

@@ -20,105 +20,9 @@
 
 
 <body>
-<<<<<<< HEAD:member.html
-  <!-- 登入 -->
-  <div id="login" class="col-md-12" style="display: none;">
-  	<!-- loginbox開始 -->
-  	<div id="loginbox" class="loginbox col-md-5">
-  		<h6>會員登入</h6>
-  		<div class="loginpic">
-  			<img src="img/logo-01.png" alt="">
-  		</div>
-  		<div class="login-input">
-  			<div>
-  				<span>帳號:</span>
-  				<input type="text" id="memIdInput" maxlength="10">
-  			</div>
-  			<div>
-  				<span>密碼:</span>
-  				<input type="password" id="memPswInput" maxlength="10">
-  			</div>
-  			<input type="submit" value="送出" id="login-submit">
-  			<span id="registeredbtn">還沒申請帳號?</span>
-  		</div>
-  		<span id="login-close">X</span>
-  	</div><!-- loginbox結束 -->
-
-  	<!-- registeredbox開始 -->
-  	<form id="registeredbox" class="registeredbox col-md-5" style="display: none;">
-
-  		<h6>會員註冊</h6>
-
-  		<div class="login-input">
-  			<div>
-  				<span>帳號:</span>
-  				<input type="text">
-  			</div>
-  			<div>
-  				<span>密碼:</span>
-  				<input type="password">
-  			</div>
-  			<div>
-  				<span>姓名:</span>
-  				<input type="text">
-  			</div>
-  			<div>
-  				<span>暱稱:</span>
-  				<input type="text">
-  			</div>
-  			<div>
-  				<span>性別:</span>
-  				<div class="registeredsex">
-  					<input type="radio" name="sex" style="width: 20px;">男
-  					<input type="radio" name="sex" style="width: 20px;">女
-  				</div>
-  			</div>
-  			<div>
-  				<span>信箱:</span>
-  				<input type="text">
-  			</div>
-  			<div>
-  				<span>手機:</span>
-  				<input type="text">
-  			</div>
-  			<input type="submit" value="送出" id="login-submit">
-  		</div>
-  		<span id="registered-close">X</span>
-  	</form><!-- registeredbox結束 -->
-
-  </div><!-- 登入結束 -->
-  <header>
-  	<div class="index-logo">
-  		<div class="logo">
-  			<a href="home.html"><img src="./img/logo.png" alt="" /></a>
-  		</div>
-  	</div>
-  	<div class="menu">
-  		<ul class="menu-ul">
-  			<li><a id="enterPethouse">寵物當家</a></li>
-  			<li><a href="beAPetKeeper.html">成為飼主</a></li>
-  			<li><a href="products.html">寵物商店</a></li>
-  			<li><a href="activities.html">活動專區</a></li>
-  			<div class="login">
-  				<div class="login-status">
-  					<a id="loginopenbtn">登入</a>
-  					<b>|</b>
-  					<a id="registeredopenbtn">註冊</a>
-  				</div>
-  			</div>
-  		</ul>
-  	</div>
-  	<div class="burger">
-  		<span class="bar1" id="bar"></span>
-  		<span class="bar2" id="bar"></span>
-  		<span class="bar3" id="bar"></span>
-  	</div>
-  </header>
-=======
-
 	<?php
 	session_start();
-		require_once('php/saru.php');
+		require_once('connectdd103g3.php');
 
 		// $sql="select * from `member` where memNo=4";
 		$sql="select * from `member` where memNo={$_SESSION['memNo']}";
@@ -138,25 +42,25 @@
 	<!-- 登入 -->
 	<div id="login" class="col-md-12" style="display: none;">
 		<!-- loginbox開始 -->
-		<form action="php/loginin.php" method="POST" id="loginbox" class="loginbox col-md-5" style="display: none;">
-			<h6>會員登入</h6>
-			<div class="loginpic">
-				<img src="img/logo-01.png" alt="">
-			</div>
-			<div class="login-input">
-				<div>
-					<span>帳號:</span>
-					<input type="text" name="loginId">
-				</div>
-				<div>
-					<span>密碼:</span>
-					<input type="password" name="loginPsw">
-				</div>
-				<input type="submit" value="送出" id="login-submit">
-				<span id="registeredbtn">還沒申請帳號?</span>
-			</div>
-			<span id="login-close">X</span>
-		</form><!-- loginbox結束 -->
+  	<div id="loginbox" class="loginbox col-md-5">
+  		<h6>會員登入</h6>
+  		<div class="loginpic">
+  			<img src="img/logo-01.png" alt="">
+  		</div>
+  		<div class="login-input">
+  			<div>
+  				<span>帳號:</span>
+  				<input type="text" id="memIdInput" maxlength="10">
+  			</div>
+  			<div>
+  				<span>密碼:</span>
+  				<input type="password" id="memPswInput" maxlength="10">
+  			</div>
+  			<input type="submit" value="送出" id="login-submit">
+  			<span id="registeredbtn">還沒申請帳號?</span>
+  		</div>
+  		<span id="login-close">X</span>
+  	</div><!-- loginbox結束 -->
 
 		<!-- registeredbox開始 -->
 		<form action="php/registered.php" method="GET" id="registeredbox" class="registeredbox col-md-5" style="display: none;">
@@ -204,38 +108,36 @@
 
 
 	<!-- header開始 -->
-	<header>
-		<div class="index-logo">
-			<div class="logo">
-				<a href="home.html"><img src="./img/logo.png" alt="" /></a>
-			</div>
-		</div>
-		<div class="menu">
-			<ul class="menu-ul">
-				<li><a href="pethouse.html">寵物當家</a></li>
-				<li><a href="beAPetKeeper.html">成為飼主</a></li>
-				<li><a href="products.html">寵物商店</a></li>
-				<li><a href="activities.html">活動專區</a></li>
-				<div class="login">
-
-					<div class="login-status">
-						<a id="loginopenbtn">登入</a>
-						<b>|</b>
-						<a id="registeredopenbtn">註冊</a>
-					</div>
-				</div>
-			</ul>
-		</div>
-		<div class="burger">
-			<span class="bar1" id="bar"></span>
-			<span class="bar2" id="bar"></span>
-			<span class="bar3" id="bar"></span>
-		</div>
-	</header>
+  <header>
+  	<div class="index-logo">
+  		<div class="logo">
+  			<a href="home.html"><img src="./img/logo.png" alt="" /></a>
+  		</div>
+  	</div>
+  	<div class="menu">
+  		<ul class="menu-ul">
+  			<li><a id="enterPethouse">寵物當家</a></li>
+  			<li><a href="beAPetKeeper.html">成為飼主</a></li>
+  			<li><a href="products.html">寵物商店</a></li>
+  			<li><a href="activities.html">活動專區</a></li>
+  			<div class="login">
+  				<div class="login-status">
+  					<a id="loginopenbtn">登入</a>
+  					<b>|</b>
+  					<a id="registeredopenbtn">註冊</a>
+  				</div>
+  			</div>
+  		</ul>
+  	</div>
+  	<div class="burger">
+  		<span class="bar1" id="bar"></span>
+  		<span class="bar2" id="bar"></span>
+  		<span class="bar3" id="bar"></span>
+  	</div>
+  </header>
 	<!-- header結束 -->
 
 
->>>>>>> saru:member.php
 
 	<!-- footer開始 -->
 	<div class="wrap">

@@ -4,7 +4,7 @@ $errMsg="";
 
 try{
 
-    require_once("phMysql.php");
+    require_once("../connectdd103g3.php");
     
     $sql="select * from `member` where memNO = {$_SESSION["memNo"]}";
     $product=$pdo->query($sql);

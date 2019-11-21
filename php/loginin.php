@@ -2,7 +2,7 @@
 	session_start();
 
 	try{
-	    require_once("saru.php");
+	    require_once("../connectdd103g3.php");
 
 	    if(isset($_POST["loginId"])){
 	        $sql='select * from `member` where memId=:loginId and memPsw=:loginPsw and status=1';

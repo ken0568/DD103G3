@@ -3,7 +3,7 @@
   $errMsg="";
   $actNo = $_SESSION['actNo'];
   try{
-    require_once("share_connectDatabase.php");
+    require_once("../connectdd103g3.php");
 
     $sql = "select * from activity where actNo = :actNo";
     $activity = $pdo->prepare($sql);
