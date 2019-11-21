@@ -29,6 +29,18 @@
 	// $user="root";
  //    $password="h83510";
 
-	$options=array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_CASE=>PDO::CASE_NATURAL);
+ try{
+    $options=array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_CASE=>PDO::CASE_NATURAL);
 	$pdo=new PDO($dsn,$user,$password,$options);
+ }catch(PDOException $e){
+    echo json_encode(
+        [
+            'error' => [
+                'msg' => "資料庫連線失敗：".$e->getMessage()
+            ]
+        ]
+    );
+    exit();
+ }
+	
 ?>
