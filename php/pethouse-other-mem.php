@@ -1,13 +1,14 @@
 <?php
+session_start();
 $errMsg="";
 
 try{
 
     require_once("phMysql.php");
     
-    $sql="select * from `member` where memId != 'text123'";
-    $product=$pdo->query($sql);
-
+    $sql="select * from `member` where memNo != {$_SESSION["memNo"]}";
+    $product=$pdo->prepare($sql);
+    $product->execute();
     if($product->rowCount()==0){
           echo "找不到資料";
     }else{
@@ -21,6 +22,7 @@ try{
             $i++;
 
         };
+        
         shuffle($arr);
     echo json_encode( $arr,JSON_UNESCAPED_UNICODE);
 

@@ -264,6 +264,21 @@ $(document).ready(function () {
         
     });
     }, 10000);
-    
-    
+    $(".bg-li-eve").click(function () {
+        $(".bg-all-lightbox").css("display", "block");
+    });
+    $(".bg-exit").click(function () {
+        $(".bg-all-lightbox").css("display", "none");
+    });
+    $(".bg-eve-off").click(function () {
+        $(".ph-clothes").css("display", "none");
+        $(".bg-all-lightbox").css("display", "none");
+        $('.bg-li-eve').removeClass('bg-used');
+    });
+    $(".bg-eve-on").click(function () {
+        $(".ph-clothes").css("display", "block");
+        $(".bg-all-lightbox").css("display", "none");
+        $('.bg-li-eve').addClass('bg-used');
+    });
+    // $(".ph-fd-no").attr("src","img/shop-foodBowl.png");
 });
