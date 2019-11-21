@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['petType'])) {
   $sql = "Select elePic FROM petcomponent WHERE eleName LIKE CONCAT(?,'%')";
 
   try {
-      $stmt = $db->prepare($sql);
+      $stmt = $pdo->prepare($sql);
       $stmt->execute([$_GET['petType']]);
       $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
   } catch (Exception $e) {
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $sql = "Select memId FROM member WHERE memNo=?";
     
     try {
-        $stmt = $db->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->execute([1]);
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $sql = "UPDATE member SET petName=?, petType=?, petPic=?, petColor=? WHERE memNo=?";
 
     try {
-        $stmt = $db->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->execute([$_POST["petName"], $petType, $picPath, $_POST["petColor"], 1]);
     } catch (PDOException $e) {
         exit();

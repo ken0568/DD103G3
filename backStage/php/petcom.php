@@ -3,13 +3,13 @@ header('Content-Type: application/json');
 require_once("../../connectdd103g3.php");
 
 //查詢欄位
-function loadComponents($db, $id = null)
+function loadComponents($pdo, $id = null)
 {
     if(isset($id)){
         $sql = "Select * FROM petcomponent WHERE eleNo=?";
     
         try {
-            $stmt = $db->prepare($sql);
+            $stmt = $pdo->prepare($sql);
             $stmt->execute([$_POST["pet-no"]]);
             $data = $stmt->fetch(PDO::FETCH_NUM);
             return $data;
@@ -20,7 +20,7 @@ function loadComponents($db, $id = null)
         $sql = "Select * FROM petcomponent WHERE 1";
     
         try {
-            $stmt = $db->query($sql);
+            $stmt = $pdo->query($sql);
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $data;
         } catch (Exception $e) {
@@ -30,7 +30,7 @@ function loadComponents($db, $id = null)
     
 }
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
-    $data = loadComponents($db);
+    $data = loadComponents($pdo);
     echo json_encode($data);
 }
 
@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && count($_POST)!==1 && isset($_POST["pe
         
         $sql = "UPDATE petcomponent SET eleType=?, eleName=?, eleStatus=?, elePic=? WHERE eleNo=?"; 
         try {
-            $stmt = $db->prepare($sql);
+            $stmt = $pdo->prepare($sql);
             $stmt->execute([$_POST["pet-type"], $_POST["pet-name"], $_POST["pet-status"], $imgTragetPath, $_POST["pet-no"]]);
         } catch (Exception $e) {
             exit();
@@ -74,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && count($_POST)!==1 && isset($_POST["pe
     }else{
         $sql = "UPDATE petcomponent SET eleType=?, eleName=?, eleStatus=? WHERE eleNo=?"; 
         try {
-            $stmt = $db->prepare($sql);
+            $stmt = $pdo->prepare($sql);
             $stmt->execute([$_POST["pet-type"], $_POST["pet-name"], $_POST["pet-status"], $_POST["pet-no"]]);
         } catch (Exception $e) {
             exit();
@@ -99,7 +99,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && !isset($_POST["pet-no"])){
   
     $sql = "INSERT petcomponent (eleType, eleName, eleStatus, elePic) VALUES (?, ?, ?, ?)"; 
     try {
-        $stmt = $db->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->execute([$_POST["pet-type"], $_POST["pet-name"], 0, $imgTragetPath]);
     } catch (Exception $e) {
         exit();
@@ -113,7 +113,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && count($_POST)===1 && isset($_POST["pe
   
     $sql = "DELETE FROM petcomponent WHERE eleNo=?"; 
     try {
-        $stmt = $db->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->execute([$_POST["pet-no"]]);
     } catch (Exception $e) {
         exit();
