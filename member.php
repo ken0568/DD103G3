@@ -365,22 +365,29 @@
 						// 	$sql="select * from `member` where memNo=4";
 							$sql="select * from `participate` where memNo={$_SESSION['memNo']}";
 							// $sql="select * from `activity` where actNo=$actNo";
-							$meact = $pdo->query($sql);
+							$mempart = $pdo->query($sql);
 
-							$meact->bindColumn("actNo", $actNo);
+							$mempart->bindColumn("actNo", $actNo);
 							$a=$actNo;
 
-							$sql="select * from `activity` where actNo=1";
-							$meact = $pdo->query($sql);
-							$meact->bindColumn("actName", $actName);
 							
+							
+						?>
+
+						<?php
+
+							$sql="select * from `activity` where actNo=1";
+							$memact = $pdo->query($sql);
+							$memact->bindColumn("actName", $actName);
+
 						?>
 					
 
 						<!-- 活動紀錄 -->
 						<table id="member3" style="display: none;">
 							<?php
-								while($meact->fetch(PDO::FETCH_ASSOC)){
+								while($mempart->fetch(PDO::FETCH_ASSOC)){
+									while($memact->fetch(PDO::FETCH_ASSOC)){
 							?>
 							<thead>
 								<td>活動名稱</td>
@@ -389,7 +396,7 @@
 							</thead>
 							<tr>
 								<td><?=$actName?></td>
-								<td>2019/11/10</td>
+								<td><?=$actNo?></td>
 								<td>取消報名</td>
 							</tr>
 							<tr>
@@ -403,7 +410,7 @@
 								<td>已結束</td>
 							</tr>
 							<?php
-								}
+								}}
 							?>
 						</table>
 					</div>
