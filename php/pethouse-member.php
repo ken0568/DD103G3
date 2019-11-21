@@ -6,7 +6,7 @@ try{
 
     require_once("../connectdd103g3.php");
     
-    $sql="select * from `member` where memNO = {$_SESSION["memNo"]}";
+    $sql="select * from `member` where memNo = {$_SESSION["memNo"]}";
     $product=$pdo->query($sql);
 
     if($product->rowCount()==0){
