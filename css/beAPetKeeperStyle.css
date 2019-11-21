@@ -77,7 +77,7 @@ input,button,a {
     }
 }
 
-    /* ----------開始-----桌機選單設定-------------- */
+/* ----------開始-----桌機選單設定-------------- */
 
 
 /**** banner-start *****/
@@ -188,7 +188,7 @@ input,button,a {
 /**** 打造專屬寵物-title-start *****/
 .pet-title {
     text-align: center;
-    margin: 5% 0;
+    margin: 2% 0;
 }
 
 .pet-title p {
@@ -224,24 +224,34 @@ input,button,a {
 }
 
 .pet-customize-pet {
-    background-color: #028090;
-    width: 63%;
+    /* background-color: #eff1f3; */
+    background-image: url(../img/pet-stage.png); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 60vh;
+    margin-right: 10px;
+    /* width: 63%;
     padding: 23% 0;
     margin-right: 10px;
-    height: 73vh;
+    height: 73vh; */
     position: absolute;
     z-index: -200;
 }
+/* 
 .pet-context{
-    background-image: url(../img/bAPKStage.png); 
+    background-color: green; */
+    /* background-image: url(../img/guide-backgrand.png); 
     background-repeat: no-repeat;
+    
     width: 100%;
     height: 60vh;
     position: absolute;
-    z-index: -111;
-    top: 54.7%;
-    margin-left: 17%;
-}
+    z-index: -111; */
+    /* top: 54.7%;
+    margin-left: 17%; 
+    
+}*/
 
 .pet-light {
     display: flex;
@@ -312,7 +322,6 @@ input,button,a {
 
     .pet-light .pet-light-right {
         margin-left: 46%;
-
     }
 
     .pet-customize-pet {
@@ -331,7 +340,6 @@ input,button,a {
 
     .pet-light-left {
         margin-left: -1%;
-
     }
 
     .pet-light-right {
@@ -443,14 +451,14 @@ input,button,a {
 }
 
 /**** Step1選擇動物-start *****/
-#Pet-StepOne {
+#pet-stepone {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-#Pet-StepOne img {
-    margin: 10% 2%;
+#pet-stepone img {
+    margin: 4% 2%;
     width: 40%;
 }
 
@@ -479,9 +487,9 @@ input,button,a {
     cursor: pointer;
 }
 
-#Pet-StepOne p {
+#pet-stepone p {
     color: #e77d28;
-    font-size: 16px;
+    font-size: 14px;
     padding: 1% 0;
 }
 
@@ -489,7 +497,7 @@ input,button,a {
     width: 50%;
     margin-top: 20px;
     position: absolute;
-    top: 23%;
+    top: 56%;
     left: 26%;
     display: none;
     padding: 20px;
@@ -548,7 +556,7 @@ input,button,a {
 /****  Step1選擇動物-end *****/
 
 /****  Step2第二步替換部位-start *****/
-.Pet-Select {
+.pet-select {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -565,9 +573,9 @@ input,button,a {
     background-color: #fff
 }
 
-.Pet-Select p {
+.pet-select p {
     padding: 1% 1%;
-    margin: 0 37% 4% 37%;
+    margin: 0 37% 2% 37%;
 }
 
 .pet-dogheads,
@@ -591,12 +599,18 @@ input,button,a {
 .pet-dogheads-pic img {
     cursor: pointer;
     margin: 2% 10%;
+    width: 15%;
 }
 
 .pet-dogtails-pic img {
-    margin: 2% 14%;
+    margin: 2% 10%;
     cursor: pointer;
+    width: 4%;
 }
+.pet-dogtails-pic img:hover,.pet-dogheads-pic img:hover{
+    filter:drop-shadow(1px 1px 15px #11495d);
+}
+
 
 @media screen and (max-width:768px) {
 
@@ -634,7 +648,7 @@ input,button,a {
     display: flex;
     flex-direction: column;
     color: #028090;
-    margin: 4% 17% 4% 17%;
+    margin: 4.5% 17% 4% 17%;
     border: solid 1.5px #028090;
     padding: 10px 10px;
     text-align: center;
@@ -654,7 +668,7 @@ input,button,a {
 
 }
 
-.Pet-StepThree-Ok {
+.pet-stepthree-Ok {
     background: #028090;
     border: none;
     outline: medium;
@@ -934,7 +948,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .pet-dress-paper {
-    width: 106%;
+    width: 100%;
     height: auto;
     z-index: 0; 
     padding: 2%;
@@ -990,7 +1004,7 @@ input[type="range"]::-webkit-slider-thumb {
         position: absolute;
         z-index: 222;
         width: 70%;
-        margin: -74% -30%;
+        margin: -84% -30%;
     }
 
 }
@@ -1028,20 +1042,29 @@ input[type="range"]::-webkit-slider-thumb {
 .pet-go{
     display: flex;
     flex-direction: row;
+    justify-content:center;
     margin-top: 11%;
     z-index: 100;
     position: absolute;
-    margin: 34% 3% 0 3%;
-    width: 60%;
-    height: 70px;
+    margin: 34% 0%;
+    width:70%;
 }
 .pet-go-shop ,.pet-go-keeper{
-    width: 60%;
+    
     background-color: #028090;
-    color: #fff;
+    width: 33%;
+    height: 65px;
     font-size: 20px;
-    margin: 0% 3% ;
+    color: #fff;
+    cursor: pointer;
+    margin: auto;
+    display: flex;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 @media screen and (max-width:768px) {
     .pet-dress-answer p {
@@ -1100,17 +1123,15 @@ input[type="range"]::-webkit-slider-thumb {
 
 /**** 設定區-end *****/
 
-/**** 動畫區-start *****/
+/**** banner動畫區-start *****/
 
-.SSS {
+.pet-banner-cat {
     position: absolute;
     left: 47%;
-    animation-name: DDD;
-    animation-duration: 2s;
-
+    animation:pet-banner-cat 0.8s 1.3s infinite alternate linear;
 }
 
-@keyframes DDD {
+@keyframes pet-banner-cat {
     from {
         left: 47%;
     }
@@ -1119,7 +1140,33 @@ input[type="range"]::-webkit-slider-thumb {
         left: 55%;
     }
 }
-    
+.pet-banner-dog {
+    position: absolute;
+    margin: -14% 11%;
+    animation:pet-banner-dog 0.8s 1.3s infinite alternate linear;
+}
+
+@keyframes pet-banner-dog {
+    0%{
+        transform: translateY(0%);
+    }
+    25%{
+        transform: translateY(-15%);
+    }
+    50%{
+        transform: translateY(0%);
+    }
+    75%{
+        transform: translateY(-15%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+
+/**** banner動畫區-end *****/
+
 
 
 

@@ -8,11 +8,11 @@
   <title>鏟屎官後台</title>
 
   <!-- Icons-->
-  <!-- <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+ <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
   <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
   <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet"> -->
-  <!-- Main styles for this application-->
+ Main styles for this application
   <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/petcom.css">
 </head>
@@ -316,14 +316,14 @@
         });
       });
 
-      function loadComponents($components) {
+      function loadComponents(components) {
         let htmlStr = "";
         htmlStr += "<div class='col-lg-6'>";
-        htmlStr += "<div class='card'><div class='card-header'>元件" + $components.eleNo +
+        htmlStr += "<div class='card'><div class='card-header'>元件" + components.eleNo +
           "<input type='checkbox'></div>";
         htmlStr += "<div class='card-body'><form action='./php/petcom.php'><table class='table'>";
-        htmlStr += "<input type='text' class='pet-no' name='pet-no' value='" + $components.eleNo + "' hidden>";
-        if ($components.eleType == 0) {
+        htmlStr += "<input type='text' class='pet-no' name='pet-no' value='" + components.eleNo + "' hidden>";
+        if (components.eleType == 0) {
           htmlStr += "<tr><th>元件類別</th><td>";
           htmlStr += "<select class='form-control equipClass' name='pet-type'>";
           htmlStr += "<option value='0' selected>狗</option><option value='1'>貓</option>";
@@ -335,11 +335,11 @@
           htmlStr += "</select></td></tr>";
         }
 
-        htmlStr += "<tr><th>元件名稱</th><td><input type='text' name='pet-name' value=" + $components.eleName + "></td></tr>";
-        htmlStr += "<tr><th>元件圖片</th><td><div class='petimg' style='background-image:url(" + $components.elePic +
+        htmlStr += "<tr><th>元件名稱</th><td><input type='text' name='pet-name' value=" + components.eleName + "></td></tr>";
+        htmlStr += "<tr><th>元件圖片</th><td><div class='petimg' style='background-image:url(" + components.elePic +
           ")'></div><input type='file' class='equipSrc'></td></tr>";
 
-        if ($components.eleStatus == 0) {
+        if (components.eleStatus == 0) {
           htmlStr += "<tr><th>元件狀態</th><td>";
           htmlStr += "<label class='switch switch-3d switch-success'>";
           htmlStr += "<input class='switch-input'  type='checkbox' name='pet-status' ><span class='switch-slider'></span>";
