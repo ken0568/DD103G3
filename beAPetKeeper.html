@@ -330,13 +330,13 @@
             </div>
         </div>
         <!-- 第四頁-客製動物完成-end-->
-    </div>
+    
     <!-- footer-start-->
     <footer>
         <p>Copyright © 2019 PetKeepers</p>
     </footer>
     <!-- footer-end-->
-
+</div>
 
 
 
@@ -441,11 +441,11 @@
                 $('.pet-section-two').show();
             });
 
-            //左側動物顯示-end
+            ////////////////////////////////////////////左側動物顯示-end
 
 
 
-            ///////第二步替換部位-star
+            ////////////////////////////////////////////第二步替換部位-star
 
 
             //替換頭
@@ -484,7 +484,7 @@
                 drawPet(pet, petArr[3]);
             });
         });
-        /////// 輸入部位值  QA結束打造寵物頁面與第二步
+        ///////////////////////////////////////////////// 輸入部位值  QA結束打造寵物頁面與第二步
         function set(petType, head = null, tail = null, color = null) { //petType:狗貓種類
             if (petType !== null) {
                 loadPetComponents(petType);
@@ -520,7 +520,7 @@
 
         }
 
-        //讀取寵物元件
+        //////////////////////////////////////////////////讀取寵物元件
         function loadPetComponents(petType) {
             $('.pet-dogheads-pic').text("");
             $('.pet-dogtails-pic').text("");
@@ -559,7 +559,7 @@
                 $('.pet-dogtails-pic').append("<p hidden>" + components.elePic + "</p>");
             }
         }
-        /////// 做完題目顯示寵物
+        ///////////////////////////////////////////////// 做完題目顯示寵物
         function show() {
             $('.pet-dress-head').prop('src', petArr[0]);
             $('.pet-dress-body').prop('src', petArr[1]);
@@ -665,28 +665,7 @@
             });
         });
     </script>
-<<<<<<< HEAD
-    <!-- 第三步Color Bar End-->
-=======
-    <!-------------------- 第三步color-bar -end ---------------------------->
-
-
-
-    <!-------------------- 共用燈箱-start ---------------------------------->
-    <script>
-        window.onload = function () {
-            loginclosebtn(); // 關閉登入燈箱按鈕
-            registeredclosebtn(); // 關閉註冊燈箱按鈕
-            loginopenbtn(); //開啟登入燈箱
-            registeredopenbtn(); //header開啟登入燈箱
-            registeredbtn(); // 開啟註冊燈箱按鈕
-        };
-    </script>
-    <!-------------------- 共用燈箱-end ------------------------------------>
-
-
-
->>>>>>> kao
+    <!------------------------- 第三步color- bar - end ------------------------->
 </body>
 
 </html>
