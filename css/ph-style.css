@@ -472,6 +472,11 @@
     color: #fff;
     opacity: 0.9;
 }
+.ph-ac-hide li:hover,
+.ph-ac-hide li:hover a
+    {
+    color: #f28123;
+}
 .ph-clothes{
     top: 29%;
     left: 8%;

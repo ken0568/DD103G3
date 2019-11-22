@@ -23,6 +23,10 @@ $(document).ready(function () {
             $("#ph-memName-1").text(result[0].petName);
             $("#ph-memName-2").text(result[0].petName);
             $("#ph-memName-3").text(result[0].petName);
+            
+            $("#ph-feedNum-1").text(result[0].feedNum);
+            $("#ph-feedNum-2").text(result[0].feedNum);
+            $("#ph-feedNum-3").text(result[0].feedNum);
         }
     });
     $.ajax({
@@ -62,6 +66,19 @@ $(document).ready(function () {
             $("#ph-act-text-10").text(result[0].actName);
             $("#ph-act-text-11").text(result[1].actName);
             $("#ph-act-text-12").text(result[2].actName);
+            
+            $("#ph-act-type-1").text(result[0].actType);
+            $("#ph-act-type-2").text(result[1].actType);
+            $("#ph-act-type-3").text(result[2].actType);
+            $("#ph-act-type-4").text(result[0].actType);
+            $("#ph-act-type-5").text(result[1].actType);
+            $("#ph-act-type-6").text(result[2].actType);
+            $("#ph-act-type-7").text(result[0].actType);
+            $("#ph-act-type-8").text(result[1].actType);
+            $("#ph-act-type-9").text(result[2].actType);
+            $("#ph-act-type-10").text(result[0].actType);
+            $("#ph-act-type-11").text(result[1].actType);
+            $("#ph-act-type-12").text(result[2].actType);
         }
     });
 
@@ -70,6 +87,8 @@ $(document).ready(function () {
         $(".ph-hs-sw").css("display", "block");
         $(".ph-pu-sw").css("display", "none");
         $(".ph-oh-sw").css("display", "none");
+        $(".ph-safe-tip").css("display", "block");
+        $(".ph-oh-safe").css("display", "block");
     });
     $(".ph-fe-btn").click(function () {
         $(".ph-fd-sw").css("display", "block");
@@ -150,12 +169,13 @@ $(document).ready(function () {
 
             success: function (data) {
                 console.log(data);
-
                 
                 let result = JSON.parse(data);
                 $("#ph-other-coin").text(result[0].coin);
                 $("#ph-other-memId").text(result[0].memNick);
                 $("#ph-other-memName").text(result[0].petName);
+                sessionStorage["otherNo"]=result[0].memNo;
+                console.log(otherNo);
             }
         });
     });
@@ -224,6 +244,8 @@ $(document).ready(function () {
         $(".ph-qa-right").css("display", "flex");
         $(".ph-qa-wrong").css("display", "none");
         $(".ph-qa-topic").css("display", "none");
+        $(".ph-safe-tip").css("display", "none");
+        $(".ph-oh-safe").css("display", "none");
         var money1 = parseInt($('#ph-coin-1').text());
         var money2 = parseInt($('#ph-other-coin').text());
         var price = parseInt("300");
@@ -233,11 +255,35 @@ $(document).ready(function () {
             $('#ph-coin-2').text(total1);
             $('#ph-coin-3').text(total1);
             $('#ph-other-coin').text(total2);
+
+        var coin = parseInt($('#ph-coin-1').text());
+        $.ajax({
+            type: 'GET',
+            url: `./php/pethouse-coin.php?type=${coin}`,
+            datatype: 'json',
+            success: function () {
+                console.log('送出成功');
+            },
+        })
+
+        sessionStorage["other"] = parseInt($('#ph-other-coin').text());
+        console.log("other");
+        $.ajax({
+            type: 'GET',
+            url: `./php/pethouse-other-coin.php?type=${sessionStorage["other"]} & other=${sessionStorage["otherNo"]}`,
+            datatype: 'json',
+            success: function () {
+                console.log('送出成功');
+            },
+        })
+
     });
     $(".qa-wrong").click(function () {
         $(".ph-qa-wrong").css("display", "flex");
         $(".ph-qa-right").css("display", "none");
         $(".ph-qa-topic").css("display", "none");
+        $(".ph-safe-tip").css("display", "none");
+        $(".ph-oh-safe").css("display", "none");
     });
     $(".ph-fd-before").click(function () {
         $(".ph-fd-before").css("display", "none");
@@ -253,6 +299,30 @@ $(document).ready(function () {
             $('#ph-coin-1').text(total);
             $('#ph-coin-2').text(total);
             $('#ph-coin-3').text(total);
+
+        var coin = parseInt($('#ph-coin-1').text());
+        $.ajax({
+            type: 'GET',
+            url: `./php/pethouse-coin.php?type=${coin}`,
+            datatype: 'json',
+            success: function () {
+                console.log('送出成功');
+            },
+        })
+        var amount = parseInt($('#ph-feedNum-1').text());
+        var num = parseInt('1');
+        var feedNum = amount - num;
+        $('#ph-feedNum-1').text(feedNum);
+        $('#ph-feedNum-2').text(feedNum);
+        $('#ph-feedNum-3').text(feedNum);
+        $.ajax({
+            type: 'GET',
+            url: `./php/pethouse-feedNum.php?type=${feedNum}`,
+            datatype: 'json',
+            success: function () {
+                console.log('送出成功');
+            },
+        })
 
         setTimeout(function () {
             $(".ph-fd").removeClass("ph-fd-ani");
@@ -277,6 +347,16 @@ $(document).ready(function () {
         $('#ph-coin-1').text(total);
         $('#ph-coin-2').text(total);
         $('#ph-coin-3').text(total);
+        
+        var coin1 = parseInt($('#ph-coin-1').text());
+        $.ajax({
+            type: 'GET',
+            url: `./php/pethouse-coin.php?type=${coin1}`,
+            datatype: 'json',
+            success: function () {
+                console.log('送出成功');
+            },
+        })
 
         setTimeout(function(){ 
             $(".ph-st").removeClass("ph-fd-ani");
@@ -420,5 +500,5 @@ $(document).ready(function () {
             $('.bg-li-shitBu').addClass('bg-used');
         });
     });
-    
+
 });
