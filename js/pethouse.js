@@ -103,6 +103,17 @@ $(document).ready(function () {
         $(".ph-fd-before").css("display", "block");
         $(".ph-fd-full").css("display", "none");
     });
+    $(".bg-li-feed").click(function () {
+        $(".ph-fd-sw").css("display", "block");
+        $(".ph-hs-sw").css("display", "none");
+        $(".ph-pu-sw").css("display", "none");
+        $(".ph-oh-sw").css("display", "none");
+        $(".ph-fd").removeClass("ph-fd-ani");
+        $(".ph-coin-plus").removeClass("coin-ani");
+        $(".ph-fd-after").css("display", "none");
+        $(".ph-fd-before").css("display", "block");
+        $(".ph-fd-full").css("display", "none");
+    });    
     $(".ph-fd").click(function () {
         $(".ph-fd-sw").css("display", "block");
         $(".ph-hs-sw").css("display", "none");
@@ -214,18 +225,14 @@ $(document).ready(function () {
         $(".ph-qa-wrong").css("display", "none");
         $(".ph-qa-topic").css("display", "none");
         var money1 = parseInt($('#ph-coin-1').text());
-        var money2 = parseInt($('#ph-coin-2').text());
-        var money3 = parseInt($('#ph-coin-3').text());
-        var money4 = parseInt($('#ph-other-coin').text());
+        var money2 = parseInt($('#ph-other-coin').text());
         var price = parseInt("300");
         var total1 = money1 + price;
-        var total2 = money2 + price;
-        var total3 = money3 + price;
-        var total4 = money4 - price;
+        var total2 = money2- price;
             $('#ph-coin-1').text(total1);
-            $('#ph-coin-2').text(total2);
-            $('#ph-coin-3').text(total3);
-            $('#ph-other-coin').text(total4);
+            $('#ph-coin-2').text(total1);
+            $('#ph-coin-3').text(total1);
+            $('#ph-other-coin').text(total2);
     });
     $(".qa-wrong").click(function () {
         $(".ph-qa-wrong").css("display", "flex");
@@ -240,16 +247,12 @@ $(document).ready(function () {
         $(".ph-fd-no").css("display", "none")
         $(".ph-hg").css("display", "none");
         
-        var money1 = parseInt($('#ph-coin-1').text());
-        var money2 = parseInt($('#ph-coin-2').text());
-        var money3 = parseInt($('#ph-coin-3').text());
+        var money = parseInt($('#ph-coin-1').text());
         var price = parseInt("500");
-        var total1 = money1 + price;
-        var total2 = money2 + price;
-        var total3 = money3 + price;
-            $('#ph-coin-1').text(total1);
-            $('#ph-coin-2').text(total2);
-            $('#ph-coin-3').text(total3);
+        var total = money + price;
+            $('#ph-coin-1').text(total);
+            $('#ph-coin-2').text(total);
+            $('#ph-coin-3').text(total);
 
         setTimeout(function () {
             $(".ph-fd").removeClass("ph-fd-ani");
@@ -268,16 +271,12 @@ $(document).ready(function () {
         $(".ph-st-full").css("display", "none");
         $(".ph-st-no").css("display", "block");
         
-        var money1 = parseInt($('#ph-coin-1').text());
-        var money2 = parseInt($('#ph-coin-2').text());
-        var money3 = parseInt($('#ph-coin-3').text());
-        var price = parseInt("150");
-        var total1 = money1 + price;
-        var total2 = money2 + price;
-        var total3 = money3 + price;
-        $('#ph-coin-1').text(total1);
-        $('#ph-coin-2').text(total2);
-        $('#ph-coin-3').text(total3);
+        var money = parseInt($('#ph-coin-1').text());
+        var price = parseInt("250");
+        var total = money + price;
+        $('#ph-coin-1').text(total);
+        $('#ph-coin-2').text(total);
+        $('#ph-coin-3').text(total);
 
         setTimeout(function(){ 
             $(".ph-st").removeClass("ph-fd-ani");

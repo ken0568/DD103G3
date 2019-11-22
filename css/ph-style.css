@@ -1,6 +1,7 @@
-/* * {
-    outline: 1px solid red;
-} */
+* {
+    /* outline: 1px solid red; */
+    box-sizing: border-box;
+}
 
 /* ---------------- 背包checkbox strat ---------------- */
 #bagPag-control {
@@ -169,14 +170,12 @@
     font-weight: bold;
 }
 
-#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li h6 {
-    font-size: 16px;
-    color: #FB9860;
-}
-
 #bagPag-control:checked~.ph-check .ph-all .bg-list-ul li span {
     font-size: 18px;
     margin-bottom: 5%;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li b {
+    color: #FB9860;
 }
 
 #bagPag-control:checked~.ph-check .ph-all .bg-list-ul li p img {
@@ -201,7 +200,7 @@
     height: 20%;
     background-color: #fff;
     border-radius: 10px;
-    border:1px solid #333;
+    border:1px solid #aaa;
     display: none;
 }
 .bg-all-title{
@@ -234,7 +233,6 @@
 .bg-used{
     opacity: 0.4;
     border: 1px solid #02808F;
-    box-sizing: border-box;
 }
 .display-n{
     display: none;
