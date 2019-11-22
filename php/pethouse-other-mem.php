@@ -24,7 +24,7 @@ try{
         };
         
         shuffle($arr);
-    echo json_encode( $arr,JSON_UNESCAPED_UNICODE);
+        echo json_encode( $arr,JSON_UNESCAPED_UNICODE);
 
     }
 

@@ -16,13 +16,13 @@ $(document).ready(function () {
             $("#ph-coin-2").text(result[0].coin);
             $("#ph-coin-3").text(result[0].coin);
 
-            $("#ph-memId-1").text(result[0].memId);
-            $("#ph-memId-2").text(result[0].memId);
-            $("#ph-memId-3").text(result[0].memId);
+            $("#ph-memId-1").text(result[0].memNick);
+            $("#ph-memId-2").text(result[0].memNick);
+            $("#ph-memId-3").text(result[0].memNick);
 
-            $("#ph-memName-1").text(result[0].memName);
-            $("#ph-memName-2").text(result[0].memName);
-            $("#ph-memName-3").text(result[0].memName);
+            $("#ph-memName-1").text(result[0].petName);
+            $("#ph-memName-2").text(result[0].petName);
+            $("#ph-memName-3").text(result[0].petName);
         }
     });
     $.ajax({
@@ -143,8 +143,8 @@ $(document).ready(function () {
                 
                 let result = JSON.parse(data);
                 $("#ph-other-coin").text(result[0].coin);
-                $("#ph-other-memId").text(result[0].memId);
-                $("#ph-other-memName").text(result[0].memName);
+                $("#ph-other-memId").text(result[0].memNick);
+                $("#ph-other-memName").text(result[0].petName);
             }
         });
     });
@@ -166,8 +166,8 @@ $(document).ready(function () {
 
                 let result = JSON.parse(data);
                 $("#ph-other-coin").text(result[0].coin);
-                $("#ph-other-memId").text(result[0].memId);
-                $("#ph-other-memName").text(result[0].memName);
+                $("#ph-other-memId").text(result[0].memNick);
+                $("#ph-other-memName").text(result[0].petName);
             }
         });
     });
@@ -213,6 +213,19 @@ $(document).ready(function () {
         $(".ph-qa-right").css("display", "flex");
         $(".ph-qa-wrong").css("display", "none");
         $(".ph-qa-topic").css("display", "none");
+        var money1 = parseInt($('#ph-coin-1').text());
+        var money2 = parseInt($('#ph-coin-2').text());
+        var money3 = parseInt($('#ph-coin-3').text());
+        var money4 = parseInt($('#ph-other-coin').text());
+        var price = parseInt("300");
+        var total1 = money1 + price;
+        var total2 = money2 + price;
+        var total3 = money3 + price;
+        var total4 = money4 - price;
+            $('#ph-coin-1').text(total1);
+            $('#ph-coin-2').text(total2);
+            $('#ph-coin-3').text(total3);
+            $('#ph-other-coin').text(total4);
     });
     $(".qa-wrong").click(function () {
         $(".ph-qa-wrong").css("display", "flex");
@@ -226,6 +239,18 @@ $(document).ready(function () {
         $(".ph-fd-after").css("display", "block");
         $(".ph-fd-no").css("display", "none")
         $(".ph-hg").css("display", "none");
+        
+        var money1 = parseInt($('#ph-coin-1').text());
+        var money2 = parseInt($('#ph-coin-2').text());
+        var money3 = parseInt($('#ph-coin-3').text());
+        var price = parseInt("500");
+        var total1 = money1 + price;
+        var total2 = money2 + price;
+        var total3 = money3 + price;
+            $('#ph-coin-1').text(total1);
+            $('#ph-coin-2').text(total2);
+            $('#ph-coin-3').text(total3);
+
         setTimeout(function () {
             $(".ph-fd").removeClass("ph-fd-ani");
             $(".ph-coin-plus").removeClass("coin-ani");
@@ -243,6 +268,17 @@ $(document).ready(function () {
         $(".ph-st-full").css("display", "none");
         $(".ph-st-no").css("display", "block");
         
+        var money1 = parseInt($('#ph-coin-1').text());
+        var money2 = parseInt($('#ph-coin-2').text());
+        var money3 = parseInt($('#ph-coin-3').text());
+        var price = parseInt("150");
+        var total1 = money1 + price;
+        var total2 = money2 + price;
+        var total3 = money3 + price;
+        $('#ph-coin-1').text(total1);
+        $('#ph-coin-2').text(total2);
+        $('#ph-coin-3').text(total3);
+
         setTimeout(function(){ 
             $(".ph-st").removeClass("ph-fd-ani");
             $(".ph-coin-plus").removeClass("coin-ani");
@@ -264,34 +300,51 @@ $(document).ready(function () {
     }, 10000);
     $(".bg-exit").click(function () {
         $(".bg-all-lightbox").css("display", "none");
+        $(".bg-eve-on").addClass("display-n");
+        $(".bg-eve-off").addClass("display-n");
+        $(".bg-foodBox-on").addClass("display-n");
+        $(".bg-foodBox-off").addClass("display-n");
+        $(".bg-shitBox-on").addClass("display-n");
+        $(".bg-shitBox-off").addClass("display-n");
+        $(".bg-shitBu-on").addClass("display-n");
+        $(".bg-shitBu-off").addClass("display-n");
     });
 
     $(".bg-li-eve").click(function () {
         $(".bg-all-lightbox").css("display", "block");
-        $(".bg-on").addClass("bg-eve-on");
-        $(".bg-off").addClass("bg-eve-off");
+        $(".bg-eve-on").removeClass("display-n");
+        $(".bg-eve-off").removeClass("display-n");
+        $(".bg-foodBox-on").addClass("display-n");
+        $(".bg-foodBox-off").addClass("display-n");
+        $(".bg-shitBox-on").addClass("display-n");
+        $(".bg-shitBox-off").addClass("display-n");
+        $(".bg-shitBu-on").addClass("display-n");
+        $(".bg-shitBu-off").addClass("display-n"); 
 
         $(".bg-eve-off").click(function () {
             $(".ph-clothes").css("display", "none");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-eve').removeClass('bg-used');
-            $(".bg-on").removeClass("bg-eve-on");
-            $(".bg-off").removeClass("bg-eve-off"); 
         });
 
         $(".bg-eve-on").click(function () {
             $(".ph-clothes").css("display", "block");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-eve').addClass('bg-used');
-            $(".bg-on").removeClass("bg-eve-on");
-            $(".bg-off").removeClass("bg-eve-off"); 
         });
     });   
 
     $(".bg-li-foodBox").click(function () {
         $(".bg-all-lightbox").css("display", "block");
-        $(".bg-on").addClass("bg-foodBox-on");
-        $(".bg-off").addClass("bg-foodBox-off");
+        $(".bg-eve-on").addClass("display-n");
+        $(".bg-eve-off").addClass("display-n");
+        $(".bg-foodBox-on").removeClass("display-n");
+        $(".bg-foodBox-off").removeClass("display-n");
+        $(".bg-shitBox-on").addClass("display-n");
+        $(".bg-shitBox-off").addClass("display-n");
+        $(".bg-shitBu-on").addClass("display-n");
+        $(".bg-shitBu-off").addClass("display-n");
+         
 
         $(".bg-foodBox-off").click(function () {
             $(".ph-fd-no").attr("src","img/foodbox.png");
@@ -299,8 +352,6 @@ $(document).ready(function () {
             $(".ph-fd-after").attr("src","img/foodbox-full.png");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-foodBox').removeClass('bg-used'); 
-            $(".bg-on").removeClass("bg-foodBox-on");
-            $(".bg-off").removeClass("bg-foodBox-off"); 
         });
 
         $(".bg-foodBox-on").click(function () {
@@ -309,15 +360,19 @@ $(document).ready(function () {
             $(".ph-fd-after").attr("src","img/ph-fdbox-1.png");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-foodBox').addClass('bg-used');
-            $(".bg-on").removeClass("bg-foodBox-on");
-            $(".bg-off").removeClass("bg-foodBox-off"); 
         });
     });
 
     $(".bg-li-shitBox").click(function () {
         $(".bg-all-lightbox").css("display", "block");
-        $(".bg-on").addClass("bg-shitBox-on");
-        $(".bg-off").addClass("bg-shitBox-off");
+        $(".bg-eve-on").addClass("display-n");
+        $(".bg-eve-off").addClass("display-n");
+        $(".bg-foodBox-on").addClass("display-n");
+        $(".bg-foodBox-off").addClass("display-n");
+        $(".bg-shitBox-on").removeClass("display-n");
+        $(".bg-shitBox-off").removeClass("display-n");
+        $(".bg-shitBu-on").addClass("display-n");
+        $(".bg-shitBu-off").addClass("display-n");
 
         $(".bg-shitBox-off").click(function () {
             $(".ph-st-full").attr("src","img/shitbox-full.png");
@@ -326,8 +381,6 @@ $(document).ready(function () {
             $(".ph-st-no").attr("src","img/shitbox.png");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-shitBox').removeClass('bg-used'); 
-            $(".bg-on").removeClass("bg-shitBox-on");
-            $(".bg-off").removeClass("bg-shitBox-off"); 
         });
 
         $(".bg-shitBox-on").click(function () {
@@ -337,14 +390,18 @@ $(document).ready(function () {
             $(".ph-st-no").attr("src","img/shop-catLitter.png");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-shitBox').addClass('bg-used');
-            $(".bg-on").removeClass("bg-shitBox-on");
-            $(".bg-off").removeClass("bg-shitBox-off"); 
         });
     });
     $(".bg-li-shitBu").click(function () {
         $(".bg-all-lightbox").css("display", "block");
-        $(".bg-on").addClass("bg-shitBu-on");
-        $(".bg-off").addClass("bg-shitBu-off");
+        $(".bg-eve-on").addClass("display-n");
+        $(".bg-eve-off").addClass("display-n");
+        $(".bg-foodBox-on").addClass("display-n");
+        $(".bg-foodBox-off").addClass("display-n");
+        $(".bg-shitBox-on").addClass("display-n");
+        $(".bg-shitBox-off").addClass("display-n");
+        $(".bg-shitBu-on").removeClass("display-n");
+        $(".bg-shitBu-off").removeClass("display-n"); 
 
         $(".bg-shitBu-off").click(function () {
             $(".ph-st-full").attr("src","img/ph-shitBu-full.png");
@@ -353,8 +410,6 @@ $(document).ready(function () {
             $(".ph-st-no").attr("src","img/ph-shitBu.png");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-shitBu').removeClass('bg-used'); 
-            $(".bg-on").removeClass("bg-shitBu-on");
-            $(".bg-off").removeClass("bg-shitBu-off"); 
         });
 
         $(".bg-shitBu-on").click(function () {
@@ -364,13 +419,7 @@ $(document).ready(function () {
             $(".ph-st-no").attr("src","img/ph-diaper-1.png");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-shitBu').addClass('bg-used');
-            $(".bg-on").removeClass("bg-shitBu-on");
-            $(".bg-off").removeClass("bg-shitBu-off"); 
         });
     });
     
-    // $(".ph-fd-no").attr("src","img/shop-foodBowl.png");
-    // bg-li-foodBox
-    // bg-li-shitBox
-    // bg-li-shitBu
 });
