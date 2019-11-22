@@ -1,19 +1,18 @@
 <?php
+  session_start();
   $errMsg="";
+  $memNo = $_SESSION['memNo'];
   try{
     require_once("home-connect.php");
-    $sql = "select * from `member`";
-    $members = $pdo->query($sql);
+    $sql = "select * from `member` where memNo=:memNo";
+    $member = $pdo->prepare($sql);
+    $member->bindValue(':memNo',$memNo);
+    $member->execute();
     $arr=[];
-
-    while($memberRow=$members->fetch(PDO::FETCH_ASSOC)){
-      //會員狀態不是停權才放入陣列 status==0
-      if($memberRow["status"] == 1){
+    while($memberRow=$member->fetch(PDO::FETCH_ASSOC)){
         array_push($arr,$memberRow);
-      }
     };
     echo json_encode($arr);
-
   }catch(PDOException $e){
     $errMsg .="錯誤原因: ".$e->getMessage()."<br>";
     $errMsg .="錯誤行號: ".$e->getLine()."<br>";

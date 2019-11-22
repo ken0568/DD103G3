@@ -6,7 +6,7 @@ $dsn = "mysql:dbname=dd103g31117;host=localhost;charset=utf8";
 
 // 高測試
 $user = "root";
-$password = "root";
+$password = "henry830122";
 
 try {
     $db = new PDO($dsn, $user, $password);
@@ -14,3 +14,4 @@ try {
 } catch (PDOException $e) {
     exit();
 }
+?>
