@@ -29,10 +29,10 @@ function init() {
                                 </td>
                             </tr>
                         </table>
-                        <a class="button">
+                        <button class="button" data-prodno="${products[i].prodNo}" id='foodBtn'>
                             <label>${products[i].price}</label>
                             <img src="img/shop-dollars.png" alt=" myBtn">
-                        </a>
+                        </button>
                     </div>
                     </div>
                     <div id="myModal" class="modal">
@@ -54,10 +54,10 @@ function init() {
         <div class="product-text">
             <h3>${products[i].prodName}</h3>
             <p>功能 | ${products[i].prodText}</p>
-            <a class="getPrice">
+            <button  class="getPrice" data-prodno="${products[i].prodNo}">
                 <label class="prodPrice">${products[i].price}</label>
                 <img src=" img/shop-dollars.png" alt=" myBtn">
-            </a>
+            </button>
         </div>
     </div>
         <div id="myModal2" class="modal">
@@ -79,94 +79,10 @@ function init() {
                 prodCardSection.innerHTML = allprodHTML;
             };
             //產生商品卡片End
-
-
-
-            //數量加減與總和 開始
-            $(function () {
-                $(".add").click(function () {
-                    var t = $(this).parent().find('input[class*=text_box]');
-                    t.val(parseInt(t.val()) + 1)
-                    setTotal();
-                })
-                $(".min").click(function () {
-                    var t = $(this).parent().find('input[class*=text_box]');
-                    t.val(parseInt(t.val()) - 1)
-                    if (parseInt(t.val()) < 1) {
-                        t.val(1);
-                    }
-                    setTotal();
-                })
-
-                function setTotal() {
-                    var s = 0;
-                    $("#tab td").each(function () {
-                        s += parseInt($(this).find('input[class*=text_box]').val()) * parseInt($(this)
-                            .find('span[class*=price]').text());
-                    });
-                    $(".button label").text(s.toFixed());
-                    $(".modal-content label").text(s.toFixed());
-                }
-                setTotal();
-
-            });
-            //數量加減與總和 結束
-
-
-
-
-            //燈箱開始
-            //$(document).ready(function () {
-
-            //});
-
-
-
-
-        }
-        //燈箱結束
-
-
-
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function () {
-            if (xhr.status == 200) {
-                showAllproduct(xhr.responseText);
-            } else {
-                alert(xhr.status);
-            }
-        }
-
-        xhr.open("get", "./php/product-showdata.php", true);
-        xhr.send(null);
-    }
-    product();
-
-
-    function showMembers() {
-        function showMem(jsonStr) {
-            var members = JSON.parse(jsonStr);
-            let memberHTML = "";
-            let memMiddleSection = document.querySelector('.ph-mem-box');
-            //產生卡片
-
-            memberHTML += `
-            <div class="ph-mem-text">
-            <p id="">${members[0].memName}</p>
-            <p>寵物:<span id="">${members[0].petName}</span></p>
-            <img src="img/ph-coin.png" alt="coin">
-            <div class="coin">
-                <p>${members[0].coin}</p>
-                <input type='text' hidden value='' name='henry' id='henry'>
-            </div>
-            </div>
-                  `;
-
-            memMiddleSection.innerHTML = memberHTML;
-
-
-
+            confirmLogin();
+            showMembers();
             //愛心幣 開始
+            console.log(111);
             $('.button').click(function () {
                 //check money is ok?
                 var money = parseInt($('.coin').find('p').text());
@@ -180,7 +96,6 @@ function init() {
                 } else {
                     $('#myModal3').css('display', 'block');
                 };
-
             });
 
             $('.getPrice').click(function () {
@@ -197,7 +112,6 @@ function init() {
                 } else {
                     $('#myModal3').css('display', 'block');
                 };
-
             });
             $('.close').click(function () {
                 $('#myModal2').css('display', 'none');
@@ -209,24 +123,119 @@ function init() {
                 $('#myModal').css('display', 'none');
                 $('#myModa3').css('display', 'none');
             });
-            //愛心幣結束    
-        }
+            //愛心幣結束 
 
+            //數量加減與總和 開始
+
+            $(".add").click(function () {
+                var t = $(this).parent().find('input[class*=text_box]');
+                t.val(parseInt(t.val()) + 1)
+                setTotal();
+            })
+            $(".min").click(function () {
+                var t = $(this).parent().find('input[class*=text_box]');
+                t.val(parseInt(t.val()) - 1)
+                if (parseInt(t.val()) < 1) {
+                    t.val(1);
+                }
+                setTotal();
+            })
+
+            function setTotal() {
+                var s = 0;
+                $("#tab td").each(function () {
+                    s += parseInt($(this).find('input[class*=text_box]').val()) * parseInt($(this)
+                        .find('span[class*=price]').text());
+                });
+                $(".button label").text(s.toFixed());
+                $(".modal-content label").text(s.toFixed());
+            }
+            setTotal();
+            //數量加減與總和 結束
+
+
+        }
         var xhr = new XMLHttpRequest();
         xhr.onload = function () {
             if (xhr.status == 200) {
-                showMem(xhr.responseText);
+                showAllproduct(xhr.responseText);
             } else {
                 alert(xhr.status);
             }
         }
 
-
-        xhr.open("get", "./php/product-member.php", true);
+        xhr.open("get", "./php/product-showdata.php", true);
         xhr.send(null);
-
     };
-    showMembers();
+
+    product();
+
+
+
+
+
+
+
+    //會員盒子START
+    function showMembers() {
+        function showMem(jsonStr) {
+            var members = JSON.parse(jsonStr);
+            console.log(members);
+            let memberHTML = "";
+            let memMiddleSection = document.querySelector('.ph-mem-box');
+            //產生BOX裡的資訊END
+
+            memberHTML += `
+            <div class="ph-mem-text">
+            <p id="">${members[0].memName}</p>
+            <p>寵物:<span id="">${members[0].petName}</span></p>
+            <img src="img/ph-coin.png" alt="coin">
+            <div class="coin">
+                <p>${members[0].coin}</p>
+                <input type='text' hidden value='' name='henry' id='henry'>
+            </div>
+            </div>
+                  `;
+
+            memMiddleSection.innerHTML = memberHTML;
+            //產生BOX裡的資訊END
+        };
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                showMem(xhr.responseText);
+            };
+        };
+        xhr.open("get", "./php/product-memberSession.php", true);
+        xhr.send(null);
+    };
+    //會員盒子END
+    //判斷登入狀態，改變購買按鍵START
+    function confirmLogin() {
+        var signBoxText = document.querySelector('#loginopenbtn').text;
+        var signStatus = document.getElementsByClassName('getPrice');
+        var memBox = document.querySelector('.ph-mem-box');
+        var foodBtn = document.getElementById('foodBtn');
+
+        if (signBoxText == '登入') {
+            //未登入時
+            for (i = 0; i < signStatus.length; i++) {
+                signStatus[i].disabled = true;
+                signStatus[i].style.backgroundColor = '#888';
+                signStatus[i].style.cursor = 'default';
+            };
+            memBox.style.display = 'none';
+
+            foodBtn.disabled = true;
+            foodBtn.style.backgroundColor = '#888';
+            foodBtn.style.cursor = 'default';
+        } else {
+            memBox.style.display = '';
+        };
+    };
+    //判斷登入狀態，改變購買按鍵END
+
+
 
 };
 

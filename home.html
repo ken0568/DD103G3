@@ -615,10 +615,10 @@
         <!-- 排行榜rankno2 開始-->
         <div class="rankno2">
           <a href="#">
-            <div class="rankno2_1">
+            <div class="rankno2_1 petPic">
               <img src="img/rank2.png">
             </div>
-            <div class="rankno2_2">
+            <div class="rankno2_2 memberInfo">
               <P>寵物 : Sara</P>
               <P>飼主 : 莎拉</P>
               <P>愛心幣 : 30000</P>
@@ -636,10 +636,10 @@
         <!-- 排行榜rankno1 開始 -->
         <div class="rankno1">
           <a href="#">
-            <div class="rankno1_1">
+            <div class="rankno1_1 petPic">
               <img src="img/rank1.png">
             </div>
-            <div class="rankno1_2">
+            <div class="rankno1_2 memberInfo">
               <P>寵物 : Alan</P>
               <P>飼主 : 艾倫</P>
               <P>愛心幣 : 70000</P>
@@ -657,10 +657,10 @@
         <!-- 排行榜rankno3 開始 -->
         <div class="rankno3">
           <a href="#">
-            <div class="rankno3_1">
+            <div class="rankno3_1 petPic">
               <img src="img/rank3.png">
             </div>
-            <div class="rankno3_2">
+            <div class="rankno3_2 memberInfo">
               <P>寵物 : Marco</P>
               <P>飼主 : 馬克</P>
               <P>愛心幣 : 45000</P>
@@ -840,6 +840,48 @@
       }, speed);
     }
     myPlayer('con', 'item', 3000);
+  </script>
+
+
+  <script type="text/javascript">
+    window.addEventListener("load", function () {
+      console.log("--------this is a book------------")
+      //----------------取回排行榜資料
+      let xhr = new XMLHttpRequest();
+      xhr.onload = function () {
+        if (xhr.responseText.indexOf("error") == -1) {
+          let member = JSON.parse(xhr.responseText);
+          showRanking(member);
+        }
+
+        console.log("--------this is a book again------------")
+      }
+      xhr.open("get", "php/ranking.php");
+      xhr.send(null);
+    })
+
+    function showRanking(member) {
+      console.log("--------this is a book again 2------------")
+      let petPics = document.querySelectorAll(".petPic");
+      let memInfos = document.querySelectorAll(".memberInfo");
+
+      petPics[0].getElementsByTagName("img")[0].src = member[1].petPic;
+      memInfos[0].innerHTML = `<P>寵物 : ${member[1].petName}</P>
+                            <P>飼主 : ${member[1].memName}</P>
+                            <P>愛心幣 : ${member[1].coin}</P>`;
+      //--------------------------------------------------------------
+      petPics[1].getElementsByTagName("img")[0].src = member[0].petPic;
+      memInfos[1].innerHTML = `<P>寵物 : ${member[0].petName}</P>
+                            <P>飼主 : ${member[0].memName}</P>
+                            <P>愛心幣 : ${member[0].coin}</P>`;
+      //--------------------------------------------------------------                             
+      petPics[2].getElementsByTagName("img")[0].src = member[2].petPic;
+      memInfos[2].innerHTML = `<P>寵物 : ${member[2].petName}</P>
+                            <P>飼主 : ${member[2].memName}</P>
+                            <P>愛心幣 : ${member[2].coin}</P>`;
+      //--------------------------------------------------------------
+      console.log("--------this is a book again 3------------")
+    }
   </script>
 </body>
 

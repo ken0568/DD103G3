@@ -7,7 +7,7 @@
     $arr=[];
 
     while($memberRow=$members->fetch(PDO::FETCH_ASSOC)){
-      //有上架的商品才放入陣列 prodStatus==0
+      //會員狀態不是停權才放入陣列 status==0
       if($memberRow["status"] == 1){
         array_push($arr,$memberRow);
       }
