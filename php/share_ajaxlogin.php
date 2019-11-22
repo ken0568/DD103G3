@@ -31,9 +31,9 @@
         $_SESSION["coin"] = $memRow["coin"];
         $_SESSION["memNo"] = $memRow["memNo"];
         $_SESSION["petName"] = $memRow["petName"];
-        $_SESSION["petName"] = $memRow["petPic"];
+        $_SESSION["petPic"] = $memRow["petPic"];
         //送回前端資料
-        $logInResult = array("memName"=>$memRow["memName"],"memId"=>$memRow["memId"],"memNick"=>$memRow["memNick"]);
+        $logInResult = array("memName"=>$memRow["memName"],"memId"=>$memRow["memId"],"petName"=>$memRow["petName"],"memNick"=>$memRow["memNick"]);
         echo json_encode($logInResult);
       }
     }

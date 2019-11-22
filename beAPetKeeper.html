@@ -20,9 +20,7 @@
     <script src="js/login.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/burger.js"></script>
-    <script src="js/pethouse.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.4.js"
-        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <!-- <script src="js/pethouse.js"></script> -->
 </head>
 
 <body>
@@ -344,10 +342,6 @@
 
     <!------------------------------------------ js-start ------------------------------------------>
     <!-------------------- 頁面切換-start -------------------->
-    <script src="https://code.jquery.com/jquery-2.2.4.js"
-        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
-    </script>
-
     <script>
         $(document).ready(function () {
             var list = $('#Pet-div1 ul li');
@@ -381,13 +375,12 @@
             './img/pet-test-dogsencon.png'
         ];
 
+        
 
-
-
+        
         //按鈕事件        
         $(document).ready(function () {
-            // alert($('.pet-answer:first-child').text());
-
+            
             set('dog');
             $('.pet-answer').click(function () {
                 //step1.偵測答案根據狗或貓 step2.加分
@@ -481,9 +474,14 @@
                     alert("請輸入暱稱");
                     return;
                 }
+                if (window.sessionStorage.getItem('memId') === null) {
+                    $('#loginopenbtn').trigger('click');
+                    return;
+                }
                 drawPet(pet, petArr[3]);
             });
         });
+        
         ///////////////////////////////////////////////// 輸入部位值  QA結束打造寵物頁面與第二步
         function set(petType, head = null, tail = null, color = null) { //petType:狗貓種類
             if (petType !== null) {
@@ -606,6 +604,7 @@
 
 
         function savePet(pet, color) {
+
             var canvas = document.getElementById("pet-canvas");
             var dataURL = canvas.toDataURL("image/png");
 
@@ -625,8 +624,10 @@
                         var jsonResponse = JSON.parse(data);
 
                         $('.pet-answer-pet p').text(jsonResponse["petName"]);
+                        window.sessionStorage.setItem('petName', jsonResponse["petName"]);
                         $('#pet-pet').prop('src', jsonResponse["petPic"]);
                         $('#pet-pet').css('filter', 'hue-rotate(' + jsonResponse["petColor"] + 'deg)');
+                        
                         $('.pet-section-one').hide();
                         $('.pet-section-four').show();
                     }
