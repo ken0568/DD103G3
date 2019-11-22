@@ -10,9 +10,9 @@
     $password = "qwe123456";
 
     // 高
-    // $dsn = "mysql:dbname=dd103g31117;host=localhost;charset=utf8";
-    // $user = "root";
-    // $password = "root";
+    $dsn = "mysql:dbname=dd103g31117;host=localhost;charset=utf8";
+    $user = "root";
+    $password = "root";
 
     // 齊豪
     // $dsn = "mysql:host=localhost;port=3306;dbname=dd103g3;charset=utf8";
