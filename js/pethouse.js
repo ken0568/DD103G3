@@ -27,6 +27,8 @@ $(document).ready(function () {
             $("#ph-feedNum-1").text(result[0].feedNum);
             $("#ph-feedNum-2").text(result[0].feedNum);
             $("#ph-feedNum-3").text(result[0].feedNum);
+            
+            $("#ph-times").text(result[0].times);
         }
     });
     $.ajax({
@@ -89,6 +91,7 @@ $(document).ready(function () {
         $(".ph-oh-sw").css("display", "none");
         $(".ph-safe-tip").css("display", "block");
         $(".ph-oh-safe").css("display", "block");
+        $(".ph-other-lightbox").css("display", "none");
     });
     $(".ph-fe-btn").click(function () {
         $(".ph-fd-sw").css("display", "block");
@@ -155,11 +158,43 @@ $(document).ready(function () {
         $(".ph-pu-sw").css("display", "block");
         $(".ph-oh-sw").css("display", "none");
     });
-    $(".ph-dr").click(function () {
-        $(".ph-fd-sw").css("display", "none");
-        $(".ph-hs-sw").css("display", "none");
-        $(".ph-pu-sw").css("display", "none");
-        $(".ph-oh-sw").css("display", "block");
+    $(".ph-dr").click(function() {
+        $(".ph-other-lightbox").css("display", "block");
+    });
+    $(".ph-sd-oh").click(function () {
+        $(".ph-other-lightbox").css("display", "block");
+    });
+    $(".ph-tip-off").click(function () {
+        $(".ph-other-lightbox").css("display", "none");
+    });
+    $(".ph-tip-on").click(function () {
+        
+        var now = parseInt($('#ph-times').text());
+        var minus = parseInt("1");
+        if (now>=1) {
+            var after = now - minus;
+            $('#ph-times').text(after);
+
+            $(".ph-fd-sw").css("display", "none");
+            $(".ph-hs-sw").css("display", "none");
+            $(".ph-pu-sw").css("display", "none");
+            $(".ph-oh-sw").css("display", "block");
+
+            var times = parseInt($('#ph-times').text());
+            
+            $.ajax({
+                type: 'GET',
+                url: `./php/pethouse-times.php?type=${times}`,
+                datatype: 'json',
+                success: function () {
+                    console.log('送出成功');
+                },
+            });
+        }else{
+            $(".ph-other-lightbox").css("display", "none");
+            alert("次數不足");
+        };
+        
         $.ajax({
             url: "./php/pethouse-other-mem.php",
 
@@ -178,30 +213,8 @@ $(document).ready(function () {
                 console.log(otherNo);
             }
         });
-    });
-    $(".ph-sd-oh").click(function () {
-        $(".ph-fd-sw").css("display", "none");
-        $(".ph-hs-sw").css("display", "none");
-        $(".ph-pu-sw").css("display", "none");
-        $(".ph-oh-sw").css("display", "block");
-        $.ajax({
-            url: "./php/pethouse-other-mem.php",
-
-            datType: "json",
-
-            type: "GET",
-
-            success: function (data) {
-                console.log(data);
-
-
-                let result = JSON.parse(data);
-                $("#ph-other-coin").text(result[0].coin);
-                $("#ph-other-memId").text(result[0].memNick);
-                $("#ph-other-memName").text(result[0].petName);
-            }
-        });
-    });
+    });    
+    
     $(".ph-oh-safe").click(function () {
         $(".ph-qa-box").css("display", "block");
         $(".ph-qa-bgc").css("display", "block");
