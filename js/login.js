@@ -33,6 +33,8 @@ function registered(){
 		id("registeredopenbtn").innerText = "註冊";
 		id("loginopenbtn").innerText = "登入";
 		//--------------------回Server端清除session資料
+		window.sessionStorage.removeItem('memId');
+		window.sessionStorage.removeItem('petName');
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function () {
 			if (xhr.status == 200) {
@@ -103,6 +105,8 @@ function sendLoginForm(){
 				//將登入面板上資料全清空
 				//關閉燈箱
 				var loginMember = JSON.parse(xhr.responseText);
+				window.sessionStorage.setItem('memId', loginMember.memId);
+				window.sessionStorage.setItem('petName', loginMember.petName);
 				id("loginopenbtn").innerText = loginMember.memNick;//放入會員暱稱
 				id("registeredopenbtn").innerText = "登出";
 				id("memIdInput").value = "";
@@ -132,10 +136,17 @@ function isLoginIn(){
 	xhr.onload = function(){
 		if (xhr.status == 200){
 			var loginMemberSession = JSON.parse(xhr.responseText);
-			if(loginMemberSession.memId){
+			if(loginMemberSession.memName){
 				/** 已登入 **/
 				id("loginopenbtn").innerText = loginMemberSession.memNick; //放入會員暱稱
-				id("registeredopenbtn").innerText = "登出";
+				id("registeredopenbtn").innerText = "登出"
+				
+				if(window.sessionStorage.getItem('petName')){
+					$('.menu-ul>li:nth-child(2)>a').addClass('disabled');
+					if(location.href.indexOf('beAPetKeeper.html')>0){
+						location.href = "./pethouse.html";
+					}
+				}
 			}
 		} else {
 			alert(xhr.status);

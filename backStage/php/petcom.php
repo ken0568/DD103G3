@@ -43,7 +43,7 @@ function uploadImage()
             throw new Exception("請選取圖片");
         }
 
-        return "/DD103G3/backStage/img/".$_FILES["img"]["name"];
+        return "/DD103G3/backStage/images/".$_FILES["img"]["name"];
     } catch (Exception $e) {
         echo json_encode([
                 'error' => [
@@ -121,3 +121,4 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && count($_POST)===1 && isset($_POST["pe
     
     echo json_encode("success");
 }
+?>
