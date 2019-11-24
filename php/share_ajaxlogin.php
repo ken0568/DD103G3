@@ -33,7 +33,7 @@
         $_SESSION["petName"] = $memRow["petName"];
         $_SESSION["petPic"] = $memRow["petPic"];
         //送回前端資料
-        $logInResult = array("memName"=>$memRow["memName"],"memId"=>$memRow["memId"],"memNick"=>$memRow["memNick"]);
+        $logInResult = array("memName"=>$memRow["memName"],"memId"=>$memRow["memId"],"memNick"=>$memRow["memNick"],"petName"=>$memRow["petName"]);
         echo json_encode($logInResult);
       }
     }
