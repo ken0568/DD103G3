@@ -25,86 +25,75 @@
 		require_once('connectdd103g3.php');
 
 		// $sql="select * from `member` where memNo=4";
-		$sql="select * from `member` where memNo={$_SESSION['memNo']}";
-
-		$member = $pdo->query($sql);
-
-		$member->bindColumn("memName", $memName);
-		$member->bindColumn("memTel", $memTel);
-		$member->bindColumn("sex", $sex);
-		$member->bindColumn("petName", $petName);
-		$member->bindColumn("memNick", $memNick);
-		$member->bindColumn("email", $email);
-		$member->bindColumn("coin", $coin);
+		
 		
 	?>
 
 	<!-- 登入 -->
-	<div id="login" class="col-md-12" style="display: none;">
-		<!-- loginbox開始 -->
-  	<div id="loginbox" class="loginbox col-md-5">
-  		<h6>會員登入</h6>
-  		<div class="loginpic">
-  			<img src="img/logo-01.png" alt="">
-  		</div>
-  		<div class="login-input">
-  			<div>
-  				<span>帳號:</span>
-  				<input type="text" id="memIdInput" maxlength="10">
-  			</div>
-  			<div>
-  				<span>密碼:</span>
-  				<input type="password" id="memPswInput" maxlength="10">
-  			</div>
-  			<input type="submit" value="送出" id="login-submit">
-  			<span id="registeredbtn">還沒申請帳號?</span>
-  		</div>
-  		<span id="login-close">X</span>
-  	</div><!-- loginbox結束 -->
+  <div id="login" class="col-md-12" style="display: none;">
+    <!-- loginbox開始 -->
+    <div id="loginbox" class="loginbox col-md-5">
+      <h6>會員登入</h6>
+      <div class="loginpic">
+        <img src="img/logo-01.png" alt="">
+      </div>
+      <div class="login-input">
+        <div>
+          <span>帳號:</span>
+          <input type="text" id="memIdInput" maxlength="10">
+        </div>
+        <div>
+          <span>密碼:</span>
+          <input type="password" id="memPswInput" maxlength="10">
+        </div>
+        <input type="submit" value="送出" id="login-submit">
+        <span id="registeredbtn">還沒申請帳號?</span>
+      </div>
+      <span id="login-close">X</span>
+    </div><!-- loginbox結束 -->
 
-		<!-- registeredbox開始 -->
-		<form action="php/registered.php" method="GET" id="registeredbox" class="registeredbox col-md-5" style="display: none;">
+    <!-- registeredbox開始 -->
+    <div id="registeredbox" class="registeredbox col-md-5" style="display: none;">
+      <h6>會員註冊</h6>
+      <div class="login-input">
+        <div>
+          <span>帳號:</span>
+          <input type="text" name="mid" id="memIdValue" maxlength="10">
+        </div>
+        <div>
+          <span>密碼:</span>
+          <input type="password" name="mpsw" id="memPswValue" maxlength="10">
+        </div>
+        <div>
+          <span>姓名:</span>
+          <input type="text" name="mname" id="memNameValue" maxlength="10">
+        </div>
+        <div>
+          <span>暱稱:</span>
+          <input type="text" name="mnick" id="memNickValue" maxlength="10">
+        </div>
+        <div>
+          <span>性別:</span>
+          <div class="registeredsex">
+            <input type="radio" name="sex" value="0" style="width: 20px;" checked>男
+            <input type="radio" name="sex" value="1" style="width: 20px;">女
+          </div>
+        </div>
+        <div>
+          <span>信箱:</span>
+          <input type="text" name="memail" id="memMailValue" maxlength="50">
+        </div>
+        <div>
+          <span>手機:</span>
+          <input type="text" name="mphone" id="memPhoneValue" maxlength="10">
+        </div>
+        <p class="logInAlert">※以上欄位都必須填寫</p>
+        <input type="submit" value="送出" id="registered-submit">
+      </div>
+      <span id="registered-close">X</span>
+    </div><!-- registeredbox結束 -->
 
-			<h6>會員註冊</h6>
-
-			<div class="login-input">
-				<div>
-					<span>帳號:</span>
-					<input type="text" name="mid">
-				</div>
-				<div>
-					<span>密碼:</span>
-					<input type="password" name="mpsw">
-				</div>
-				<div>
-					<span>姓名:</span>
-					<input type="text" name="mname">
-				</div>
-				<div>
-					<span>暱稱:</span>
-					<input type="text" name="mnick">
-				</div>
-				<div>
-					<span>性別:</span>
-					<div class="registeredsex">
-						<input type="radio" name="sex[]" value="0" style="width: 20px;">男
-						<input type="radio" name="sex[]" value="1" style="width: 20px;">女
-					</div>
-				</div>
-				<div>
-					<span>信箱:</span>
-					<input type="text" name="memail">
-				</div>
-				<div>
-					<span>手機:</span>
-					<input type="text" name="mphone">
-				</div>
-				<input type="submit" value="送出" id="registered-submit">
-			</div>
-			<span id="registered-close">X</span>
-		</form><!-- registeredbox結束 -->
-
-	</div><!-- 登入結束 -->
+  </div><!-- 登入結束 -->
 
 
 	<!-- header開始 -->
@@ -171,6 +160,30 @@
 					<div class="member-right-box col-md-10">
 						<h2 id="member-right-title">個人資料</h2>
 
+						<?php
+
+							$sql="select * from `member` where memNo={$_SESSION['memNo']}";
+
+							$member = $pdo->query($sql);
+
+							$member->bindColumn("memName", $memName);
+							$member->bindColumn("memTel", $memTel);
+							$member->bindColumn("sex", $sex);
+							$member->bindColumn("petName", $petName);
+							$member->bindColumn("memNick", $memNick);
+							$member->bindColumn("email", $email);
+							$member->bindColumn("coin", $coin);
+
+						?>
+
+						<?php
+							$sql="SELECT COUNT(*) FROM `member` WHERE `coin`> (SELECT `coin` FROM `member` WHERE memNo={$_SESSION['memNo']});";
+
+							$memcount=$pdo->query($sql);
+							$memcount->bindColumn(1, $count);
+
+						?>
+
 						<!-- 個人資料 -->
 						<table id="member1">
 							
@@ -189,6 +202,8 @@
 									}else{
 										$petNameturn=$petName;
 									}
+
+									$memcount->fetch(PDO::FETCH_ASSOC);
 							?>
 
 							<tr>
@@ -221,7 +236,7 @@
 							</tr>
 							<tr>
 								<td>愛心幣排名:</td>
-								<td>103名</td>
+								<td>第<?=$count+1?>名</td>
 							</tr>
 							
 							<?php
@@ -232,6 +247,19 @@
 						<!-- <button id="reset">修改</button> -->
 
 
+
+						<?php
+							$sql="SELECT `backpack`.`memNo`,`backpack`.`date`,`product`.`prodName`,`product`.`price` FROM `backpack`,`product` WHERE `backpack`.`memNo`={$_SESSION['memNo']} AND `product`.`prodNo`=`backpack`.`prodNo` ORDER BY `backpack`.`date` DESC;";
+
+							$memproduct = $pdo->query($sql);
+
+
+							$memproduct->bindColumn("prodName", $prodName);
+							$memproduct->bindColumn("price", $price);
+							$memproduct->bindColumn("date", $date);
+						?>
+
+
 						<!-- 購買紀錄 -->
 						<table id="member2" style="display: none">
 
@@ -239,80 +267,68 @@
 								<tr>
 									<td>商品名稱</td>
 									<td>愛心幣</td>
-									<td>購買時間</td>
+									<td>購買日期</td>
 								</tr>
 							</thead>
+
+							<?php
+								while($memproduct->fetch(PDO::FETCH_ASSOC)){
+								// 	while($memact->fetch(PDO::FETCH_ASSOC)){
+							?>
 							<tr>
-								<td>商品1</td>
-								<td>500</td>
-								<td>2019/11/10-23:29</td>
+								<td><?=$prodName?></td>
+								<td><?=$price?></td>
+								<td><?=$date?></td>
 							</tr>
-							<tr>
-								<td>商品1</td>
-								<td>500</td>
-								<td>2019/11/10-23:29</td>
-							</tr>
-							<tr>
-								<td>商品1</td>
-								<td>500</td>
-								<td>2019/11/10-23:29</td>
-							</tr>
+							<?php
+								}
+							?>
+
 						</table>
 
 						<?php
 
-						// session_start();
-						// 	require_once('php/saru.php');
-
-						// 	$sql="select * from `member` where memNo=4";
-							$sql="select * from `participate` where memNo={$_SESSION['memNo']}";
-							// $sql="select * from `activity` where actNo=$actNo";
-							$mempart = $pdo->query($sql);
-
-							$mempart->bindColumn("actNo", $actNo);
-							$a=$actNo;
-
+							// $sql="select * from `participate` where memNo={$_SESSION['memNo']}";
+							// $mempart = $pdo->query($sql);
+							// $mempart->bindColumn("actNo", $actNo);
 							
+
+							// $sql="select * from `activity` where actNo={$_SESSION['memNo']}";
+							// $memact = $pdo->query($sql);
+							// $memact->bindColumn("actName", $actName);
+
+						$sql="SELECT `participate`.`memNo`,`participate`.`actNo`,`activity`.`actDate`,`activity`.`actName` FROM `participate`,`activity` WHERE   `participate`.`memNo`={$_SESSION['memNo']} AND `participate`.actNo=`activity`.actNo ORDER BY `activity`.`actDate` desc;";
+						$mempart = $pdo->query($sql);
+						// $mempart->bindValue(":memNo",$_SESSION['memNo']);
+						// $mempart->execute();
+
+						$mempart->bindColumn("actName", $actName);
+						$mempart->bindColumn("actDate", $actDate);
 							
-						?>
-
-						<?php
-
-							$sql="select * from `activity` where actNo=1";
-							$memact = $pdo->query($sql);
-							$memact->bindColumn("actName", $actName);
-
 						?>
 					
 
 						<!-- 活動紀錄 -->
 						<table id="member3" style="display: none;">
-							<?php
-								while($mempart->fetch(PDO::FETCH_ASSOC)){
-									while($memact->fetch(PDO::FETCH_ASSOC)){
-							?>
 							<thead>
 								<td>活動名稱</td>
 								<td>活動日期</td>
 								<td>活動狀態</td>
 							</thead>
+
+							<?php
+								while($mempart->fetch(PDO::FETCH_ASSOC)){
+								// 	while($memact->fetch(PDO::FETCH_ASSOC)){
+							?>
+							
 							<tr>
 								<td><?=$actName?></td>
-								<td><?=$actNo?></td>
-								<td>取消報名</td>
+								<td><?=$actDate?></td>
+								<td>尚未開始</td>
 							</tr>
-							<tr>
-								<td>名稱2</td>
-								<td>2019/11/10</td>
-								<td>已結束</td>
-							</tr>
-							<tr>
-								<td>名稱3</td>
-								<td>2019/11/10</td>
-								<td>已結束</td>
-							</tr>
+		
 							<?php
-								}}
+								}
 							?>
 						</table>
 					</div>
