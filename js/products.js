@@ -80,19 +80,20 @@ function init() {
             };
             //產生商品卡片End
             confirmLogin();
+            foodNumUpdate();
             showMembers();
-            //愛心幣 開始
-            console.log(111);
+            //購買按鍵事件 愛心幣 開始
             $('.button').click(function () {
                 //check money is ok?
                 var money = parseInt($('.coin').find('p').text());
                 var price = parseInt($(this).find('label').text());
                 var total = money - price;
                 if (money >= price) {
-                    console.log(total);
                     $('#henry').val(total);
                     $('.coin').find('p').text(total);
                     $('#myModal').css('display', 'block');
+                    coinUpdate();
+                    foodNumUpdate();
                 } else {
                     $('#myModal3').css('display', 'block');
                 };
@@ -102,13 +103,18 @@ function init() {
                 var money = parseInt($('.coin').find('p').text());
                 var price = parseInt($(this).find('label').text());
                 var total = money - price;
-
+                var prodNo = $(this).data('prodno');
                 if (money >= price) {
                     $('#henry').val(total);
                     $('.coin').find('p').text(total);
                     var btn = $(this).find('label').text();
                     $('.modal-content label').text(btn);
                     $('#myModal2').css('display', 'block');
+                    coinUpdate();
+                    //get button reference, btn_parent_parent
+                    // backpackInsert(prodNo, btn_parent_parent);
+                    var card = $(this).parent().parent();
+                    backpackInsert(prodNo, card);
                 } else {
                     $('#myModal3').css('display', 'block');
                 };
@@ -123,7 +129,7 @@ function init() {
                 $('#myModal').css('display', 'none');
                 $('#myModa3').css('display', 'none');
             });
-            //愛心幣結束 
+            //購買按鍵事件 愛心幣結束 
 
             //數量加減與總和 開始
 
@@ -131,6 +137,7 @@ function init() {
                 var t = $(this).parent().find('input[class*=text_box]');
                 t.val(parseInt(t.val()) + 1)
                 setTotal();
+                //foodNumUpdate();
             })
             $(".min").click(function () {
                 var t = $(this).parent().find('input[class*=text_box]');
@@ -139,6 +146,7 @@ function init() {
                     t.val(1);
                 }
                 setTotal();
+                //foodNumUpdate();
             })
 
             function setTotal() {
@@ -199,6 +207,8 @@ function init() {
 
             memMiddleSection.innerHTML = memberHTML;
             //產生BOX裡的資訊END
+
+
         };
         var xhr = new XMLHttpRequest();
         xhr.onload = function () {
@@ -235,7 +245,48 @@ function init() {
     };
     //判斷登入狀態，改變購買按鍵END
 
+    //把錢寫入資料庫start
+    function coinUpdate() {
+        var coin = parseInt($('.coin').find('p').text());
+        $.ajax({
+            type: 'GET',
+            url: `./php/product-coinupdate.php?type=${coin}`,
+            datatype: 'json',
+            success: function () {
+                console.log('送出成功');
+            },
+        })
+    };
+    //把錢寫入資料庫end
 
+    function foodNumUpdate() {
+        var foodNum = $('.text_box').val();
+        console.log(foodNum);
+        $.ajax({
+            type: 'GET',
+            url: `./php/product-foodNumUpdate.php?type=${foodNum}`,
+            datatype: 'json',
+            success: function () {
+                console.log('送出成功');
+            },
+        })
+    };
+
+    function backpackInsert(prodNo, card) {
+
+        console.log(prodNo);
+        $.ajax({
+            type: 'GET',
+            url: `./php/product-backpackInsert.php?type=${prodNo}`,
+            datatype: 'json',
+            success: function () {
+                console.log('送出成功');
+                card.remove();
+                // document.querySelector(".product-cards").removeChild(card);
+                // return true;
+            },
+        })
+    };
 
 };
 
