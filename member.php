@@ -140,12 +140,12 @@
 
 					<div class="member-left-box">
 						<div class="member-left-bighead">
-							<img src="img/pet2.png" alt="">
+							<img src="img/catprompt.png" alt="">
 						</div>
 						<span>可不可紅茶</span>
 
 						<div class="member-left-page">
-							<span id="memberbtn1">個人資料</span>
+							<span id="memberbtn1" style="color:#ffc342">個人資料</span>
 							<span id="memberbtn2">購買紀錄</span>
 							<span id="memberbtn3">活動紀錄</span>
 						</div>
@@ -353,6 +353,11 @@
 			document.getElementById("member1").style.display = "";
 			document.getElementById("member2").style.display = "none";
 			document.getElementById("member3").style.display = "none";
+
+			document.getElementById("memberbtn1").style.color = "#ffc342";
+			document.getElementById("memberbtn2").style.color = "#fff";
+			document.getElementById("memberbtn3").style.color = "#fff";
+
 			document.getElementById("member-right-title").innerText = "個人資料"
 			document.getElementById("reset").style.display = "";
 		};
@@ -361,6 +366,11 @@
 			document.getElementById("member1").style.display = "none";
 			document.getElementById("member2").style.display = "";
 			document.getElementById("member3").style.display = "none";
+
+			document.getElementById("memberbtn1").style.color = "#fff";
+			document.getElementById("memberbtn2").style.color = "#ffc342";
+			document.getElementById("memberbtn3").style.color = "#fff";
+
 			document.getElementById("member-right-title").innerText = "購買紀錄"
 			document.getElementById("reset").style.display = "none";
 		};
@@ -369,6 +379,11 @@
 			document.getElementById("member1").style.display = "none";
 			document.getElementById("member2").style.display = "none";
 			document.getElementById("member3").style.display = "";
+
+			document.getElementById("memberbtn1").style.color = "#fff";
+			document.getElementById("memberbtn2").style.color = "#fff";
+			document.getElementById("memberbtn3").style.color = "#ffc342";
+
 			document.getElementById("member-right-title").innerText = "活動紀錄"
 			document.getElementById("reset").style.display = "none";
 		};

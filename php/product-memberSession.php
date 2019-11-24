@@ -3,7 +3,7 @@
   $errMsg="";
   $memNo = $_SESSION['memNo'];
   try{
-    require_once("home-connect.php");
+    require_once("../connectdd103g3.php");
     $sql = "select * from `member` where memNo=:memNo";
     $member = $pdo->prepare($sql);
     $member->bindValue(':memNo',$memNo);

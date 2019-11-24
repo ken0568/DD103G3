@@ -98,8 +98,9 @@ body{
 }
 
 .member-left span{
-	padding-top: 15px;
-	font-size: 20px;
+	/*padding-top: 15px;*/
+	margin-top: 15px;
+	font-size: 24px;
 }
 
 .member-left-bighead{
@@ -111,6 +112,7 @@ body{
 
 	margin: auto;
 	position: relative;
+	overflow: hidden;
 }
 
 .member-left-bighead img{
@@ -122,6 +124,35 @@ body{
 	right: 0;
 	bottom: 0;
 	margin: auto;
+
+	animation: bighead 8s linear infinite;
+}
+
+@keyframes bighead {
+	0%{
+		transform:translate(0px);
+	}
+	24.99%{
+		transform:translate(-150px);
+	}
+	25%{
+		transform:translate(-150px) scaleX(-1);
+	}
+	25.01%{
+		transform:translate(-150px) scaleX(-1);
+	}
+	50%{
+		transform:translate(0px) scaleX(-1);
+	}
+	74.99%{
+		transform:translate(150px) scaleX(-1);
+	}
+	75%{
+		transform:translate(150px);
+	}
+	100%{
+		transform:translate(0px);
+	}
 }
 
 .member-left span{
@@ -144,7 +175,7 @@ body{
 
 .member-left-page span{
 	
-	font-size: 1rem;
+	font-size: 1.2rem;
 	color: #fff;
 	font-weight: normal;
 	display: block;
@@ -153,8 +184,9 @@ body{
 	display: block;
 	width: 130px;
 	height: 50px;
+	line-height: 50px;
 
-	margin: 0 auto;
+	margin: 0 auto 15px;
 	
 }
 
@@ -173,8 +205,10 @@ body{
 	
 	/*---按鈕效果---*/
 	.member-left-page span:hover{
-		border-radius: 5px;
-		background-color: #114b5f;
+		/*border-radius: 5px;
+		background-color: #114b5f;*/
+
+		animation: hovertwo 1s;
 	}
 }
 
@@ -201,7 +235,7 @@ body{
 	width: 83.333333%;
 	margin: 0 auto;
 	/*background-color: #114b5f;*/
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 
 	color: #114b5f;
 	
@@ -211,6 +245,7 @@ body{
 
 .member-right thead{
 	background-color: darkorange;
+	/*box-shadow: 1px 5px 1px #fff;*/
 }
 
 #member1{
@@ -230,9 +265,9 @@ body{
 	width: 100px;
 }
 
-.member-right table td:nth-of-type(1){
+/*.member-right table td:nth-of-type(1){
 	text-align: left;
-}
+}*/
 
 #member2,#member3{
 	text-align: center;
@@ -296,4 +331,40 @@ body{
 	#reset{
 		
 	}
+
+	@keyframes hovertwo{
+		0%{
+			border-radius: 25px;
+			width:100px;
+			background-color: rgba(0,0,0,.5);
+		}
+		100%{
+			border-radius: 5px;
+			width: 130px;
+			background-color: #114b5f;
+			color:#ffc342; 
+		}
+	}
+
+	#member1,#member2,#member3{
+		animation: member 1s;
+	}
+
+	@keyframes member{
+		0%{
+			opacity: 0;
+			transform:translate(-1000px);	
+		}
+		50%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+			transform:translate(0px);		
+		}
+	}
+
 }
+
+
+
