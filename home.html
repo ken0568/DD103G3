@@ -519,7 +519,7 @@
             <img class="pet-dress-body" src="./img/pet-stage-dogbody.png">
             <img class="pet-dress-tail" src="./img/pet-stage-dogtailfirst.png">
           </div>
-          <a href="beAPetKeeper.html#Pet-StepTwo">去打造你的寵物</a>
+          <button class="pet-dress">去打造你的寵物</button>
         </div>
       </div>
     </div>
@@ -742,51 +742,32 @@
 
 
       /////第三部確定送出
-      $('.Pet-StepThree-Ok').click(function () {
-        alert('name:' + $('.pet-name').val() + '種類：' + pet + '寵物圖：' + petArr);
-      });
+      // $('.Pet-StepThree-Ok').click(function () {
+      //   alert('name:' + $('.pet-name').val() + '種類：' + pet + '寵物圖：' + petArr);
+      // });
     });
     ///////輸入部位值  QA結束打造寵物頁面與第二步
-    function set(petType, head = null, tail = null, color = null) { //petType:狗貓種類
+    function set(petType) { //petType:狗貓種類
       if (petType !== null) {
         pet = petType;
 
         if (pet == 'dog') {
 
-
-          petArr[0] = './img/pet-stage-dogheadfirst.png';
-          petArr[1] = './img/pet-stage-dogbody.png';
-          petArr[2] = './img/pet-stage-dogtailfirst.png';
+          petArr[0] = '/DD103G3/backStage/images/pet-stage-dogheadfirst.png';
+          petArr[1] = '/DD103G3/backStage/images/pet-stage-dogbody.png';
+          petArr[2] = '/DD103G3/backStage/images/pet-stage-dogtailfirst.png';
           petArr[3] = -1;
           $('.Pets-Color').css('filter', 'none');
-          $('.Pet-Dog-HeardOne').prop('src', './img/pet-step2-dogheadsecon.png');
-          $('.Pet-Dog-HeardSencon').prop('src', './img/pet-step2-dogheadfirst.png');
-          $('.Pet-Dog-TailOne').prop('src', './img/pet-step2-dogtailfirst.png');
-          $('.Pet-Dog-TailSencon').prop('src', './img/pet-step2-dogtailsecon.png');
+
           return;
         }
 
-        petArr[0] = './img/pet-stage-catheadfirst.png';
-        petArr[1] = './img/pet-stage-catbody.png';
-        petArr[2] = './img/pet-stage-cattailsencon.png';
+        petArr[0] = '/DD103G3/backStage/images/pet-stage-catheadfirst.png';
+        petArr[1] = '/DD103G3/backStage/images/pet-stage-catbody.png';
+        petArr[2] = '/DD103G3/backStage/images/pet-stage-cattailfirst.png';
         petArr[3] = -1;
         $('.Pets-Color').css('filter', 'none');
-        $('.Pet-Dog-HeardOne').prop('src', './img/pet-step2-catheadfirst.png');
-        $('.Pet-Dog-HeardSencon').prop('src', './img/pet-step2-catheadsencon.png');
-        $('.Pet-Dog-TailOne').prop('src', './img/pet-step2-cattailfirst.png');
-        $('.Pet-Dog-TailSencon').prop('src', './img/pet-step2-cattailsencon.png');
         return;
-      }
-
-      if (head !== null) {
-        petArr[0] = head;
-      }
-
-      if (tail !== null) {
-        petArr[2] = tail;
-      }
-      if (color !== null) {
-        petArr[3] = color;
       }
 
     }
@@ -803,12 +784,10 @@
   <!--  第三頁-QA結束打造寵物頁面-Start-->
   <script>
     $(document).ready(function () {
-      //    alert($('li:nth-child(2)>a').text());
       $('.pet-dress').click(function () {
-        $('.pet-section-three').hide();
-        $('.pet-section-one').show();
-        $('li:nth-child(2)>a').trigger('click');
-
+        if(window.sessionStorage.getItem('petName')==="null"||!window.sessionStorage.getItem('petName')){
+          location.href = "./beAPetKeeper.html?petType="+pet;
+				}
       });
     });
   </script>
