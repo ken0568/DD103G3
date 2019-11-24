@@ -210,6 +210,12 @@ h6{
 	margin: 15px auto;
 }
 
+.logInAlert{
+	font-size: 0.875rem;
+	text-align: center;
+	color: #f28123;
+}
+
 @media screen and (min-width: 768px){
 	.registeredbox{
 		margin: 5% auto;
@@ -219,10 +225,4 @@ h6{
 		cursor: pointer;
 	}
 
-}
-
-.disabled{
-	pointer-events: none !important;
-	cursor: default !important;
-	color: gray !important;
 }

@@ -49,47 +49,49 @@
     </div><!-- loginbox結束 -->
 
     <!-- registeredbox開始 -->
-    <form action="php/registered.php" method="GET" id="registeredbox" class="registeredbox col-md-5"
-      style="display: none;">
-
+    <div id="registeredbox" class="registeredbox col-md-5" style="display: none;">
       <h6>會員註冊</h6>
-
       <div class="login-input">
         <div>
           <span>帳號:</span>
-          <input type="text" name="mid">
+          <input type="text" name="mid" id="memIdValue" maxlength="10">
         </div>
         <div>
           <span>密碼:</span>
-          <input type="password" name="mpsw">
+          <input type="password" name="mpsw" id="memPswValue" maxlength="10">
         </div>
         <div>
           <span>姓名:</span>
-          <input type="text" name="mname">
+          <input type="text" name="mname" id="memNameValue" maxlength="10">
         </div>
         <div>
           <span>暱稱:</span>
-          <input type="text" name="mnick">
+          <input type="text" name="mnick" id="memNickValue" maxlength="10">
         </div>
         <div>
           <span>性別:</span>
           <div class="registeredsex">
+<<<<<<< HEAD
             <input type="radio" name="sex" value="0" style="width: 20px;">男
+=======
+            <input type="radio" name="sex" value="0" style="width: 20px;" checked>男
+>>>>>>> 19f6149459c990d9e3f92db560b3c46a75b214d0
             <input type="radio" name="sex" value="1" style="width: 20px;">女
           </div>
         </div>
         <div>
           <span>信箱:</span>
-          <input type="text" name="memail">
+          <input type="text" name="memail" id="memMailValue" maxlength="50">
         </div>
         <div>
           <span>手機:</span>
-          <input type="text" name="mphone">
+          <input type="text" name="mphone" id="memPhoneValue" maxlength="10">
         </div>
+        <p class="logInAlert">※以上欄位都必須填寫</p>
         <input type="submit" value="送出" id="registered-submit">
       </div>
       <span id="registered-close">X</span>
-    </form><!-- registeredbox結束 -->
+    </div><!-- registeredbox結束 -->
 
   </div><!-- 登入結束 -->
   <header>
