@@ -1,6 +1,6 @@
 <?php
     // 學校
-    // $dsn = "mysql:host=140.115.236.71;port=3306;dbname=dd103g3;charset=utf8";
+    // $dsn = "mysql:dbname=dd103g3;host=140.115.236.71;charset=utf8";
     // $user = "dd103g3";
     // $password = "dd103g3";
 
@@ -10,9 +10,9 @@
     // $password = "qwe123456";
 
     // 高
-    $dsn = "mysql:dbname=dd103g31117;host=localhost;charset=utf8";
-    $user = "root";
-    $password = "root";
+    // $dsn = "mysql:dbname=dd103g31117;host=localhost;charset=utf8";
+    // $user = "root";
+    // $password = "root";
 
     // 齊豪
     // $dsn = "mysql:host=localhost;port=3306;dbname=dd103g3;charset=utf8";
@@ -25,9 +25,9 @@
 	// $password="henry830122";
     
     // 安
-	// $dsn="mysql:host=localhost;port=3306;dbname=dd103g3;charest=utf8";
-	// $user="root";
-    // $password="h83510";
+	$dsn="mysql:host=localhost;port=3306;dbname=dd103g3;charest=utf8";
+	$user="root";
+    $password="h83510";
 
  try{
     $options=array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_CASE=>PDO::CASE_NATURAL);

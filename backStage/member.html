@@ -17,12 +17,6 @@
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-
-  <?php
-  session_start();
-    require_once('../connectdd103g3.php');
-  ?>
-
  <!-- top_header -->
  <header class="app-header navbar">
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
@@ -60,7 +54,7 @@
       <li class="nav-title">前台管理</li>    
       <!-- 會員管理 -->
       <li class="nav-item">
-        <a class="nav-link" href="member.php">
+        <a class="nav-link" href="member.html">
           <i class="nav-icon icon-people"></i>會員管理</a>
       </li>
       <!-- 問答題庫管理 -->
@@ -107,27 +101,6 @@
             </div>
 
             <div class="card-body">
-
-              <?php
-              
-
-                $sql="SELECT * FROM `member`;";
-
-                $memback = $pdo->query($sql);
-
-                $memback->bindColumn("memNo", $memNo);
-                $memback->bindColumn("memId", $memId);
-                $memback->bindColumn("memName", $memName);
-                $memback->bindColumn("memTel", $memTel);
-                // $memback->bindColumn("sex", $sex);
-                $memback->bindColumn("petName", $petName);
-                $memback->bindColumn("memNick", $memNick);
-                $memback->bindColumn("email", $email);
-                $memback->bindColumn("coin", $coin);
-                $memback->bindColumn("status", $status);
-
-
-              ?>
               
               <table class="table text-center">
                 <thead>
@@ -143,53 +116,61 @@
                     <th>狀態</th>
                   </tr>
                 </thead>
-
                 <tbody>
-                  <?php
-                    while($memback->fetch(PDO::FETCH_ASSOC)){
-                      $checktype="";
-                      if($status==1){
-                        $checktype="checked";
-                      }else{
-                        $checktype="";
-                      }
-                  ?>
                   <tr>
-                    <td><?=$memNo?></td>
-                    <td><?=$memId?></td>
-                    <td><?=$memName?></td>
-                    <td><?=$memNick?></td>
-                    <td><?=$memTel?></td>
-                    <td><?=$email?></td>
-                    <td><?=$petName?></td>
-                    <td><?=$coin?></td>
+                    <td>1</td>
+                    <td>member</td>
+                    <td>hello</td>
+                    <td>world</td>
+                    <td>0912345678</td>
+                    <td>test@gmail.com</td>
+                    <td>dog</td>
+                    <td>2000</td>
                     <td>
-                      <label class="switch switch-3d switch-success">
-                        <input id="status<?=$memNo?>" type="checkbox" class="switch-input" <?=$checktype?> onclick="updateMem(<?=$memNo?>, this.checked)">
-                        <span class="switch-slider" data-checked="" data-unchecked=""></span>
+                      <label class="switch switch-3d switch-success"><input type="checkbox" class="switch-input"><span class="switch-slider" data-checked="" data-unchecked=""></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>member</td>
+                    <td>hello</td>
+                    <td>world</td>
+                    <td>0912345678</td>
+                    <td>test@gmail.com</td>
+                    <td>dog</td>
+                    <td>2000</td>
+                    <td>
+                      <label class="switch switch-3d switch-success"><input type="checkbox" class="switch-input"><span class="switch-slider" data-checked="" data-unchecked=""></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>member</td>
+                    <td>hello</td>
+                    <td>world</td>
+                    <td>0912345678</td>
+                    <td>test@gmail.com</td>
+                    <td>dog</td>
+                    <td>2000</td>
+                    <td>
+                      <label class="switch switch-3d switch-success"><input type="checkbox" class="switch-input"><span class="switch-slider" data-checked="" data-unchecked=""></span>
                       </label>
                     </td>
                   </tr>
 
-                  <?php
-                    }
-                  ?>
-
                 </tbody>
               </table>
-              <script>
-                function updateMem(memNo, status){
-                  status = status==false? 0 : 1;
-                  location.href="updateMem.php?memNo="+memNo+"&status="+status;
-                }
 
-              </script>
 
             </div>
           </div>
         </div>
       </div>
-      
+
+
+       
       </div><!-- 中間內容end -->
     </main>
     
