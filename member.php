@@ -25,17 +25,7 @@
 		require_once('connectdd103g3.php');
 
 		// $sql="select * from `member` where memNo=4";
-		$sql="select * from `member` where memNo={$_SESSION['memNo']}";
-
-		$member = $pdo->query($sql);
-
-		$member->bindColumn("memName", $memName);
-		$member->bindColumn("memTel", $memTel);
-		$member->bindColumn("sex", $sex);
-		$member->bindColumn("petName", $petName);
-		$member->bindColumn("memNick", $memNick);
-		$member->bindColumn("email", $email);
-		$member->bindColumn("coin", $coin);
+		
 		
 	?>
 
@@ -87,8 +77,8 @@
 				<div>
 					<span>性別:</span>
 					<div class="registeredsex">
-						<input type="radio" name="sex[]" value="0" style="width: 20px;">男
-						<input type="radio" name="sex[]" value="1" style="width: 20px;">女
+						<input type="radio" name="sex" value="0" style="width: 20px;">男
+						<input type="radio" name="sex" value="1" style="width: 20px;">女
 					</div>
 				</div>
 				<div>
@@ -171,6 +161,30 @@
 					<div class="member-right-box col-md-10">
 						<h2 id="member-right-title">個人資料</h2>
 
+						<?php
+
+							$sql="select * from `member` where memNo={$_SESSION['memNo']}";
+
+							$member = $pdo->query($sql);
+
+							$member->bindColumn("memName", $memName);
+							$member->bindColumn("memTel", $memTel);
+							$member->bindColumn("sex", $sex);
+							$member->bindColumn("petName", $petName);
+							$member->bindColumn("memNick", $memNick);
+							$member->bindColumn("email", $email);
+							$member->bindColumn("coin", $coin);
+
+						?>
+
+						<?php
+							$sql="SELECT COUNT(*) FROM `member` WHERE `coin`> (SELECT `coin` FROM `member` WHERE memNo={$_SESSION['memNo']});";
+
+							$memcount=$pdo->query($sql);
+							$memcount->bindColumn(1, $count);
+
+						?>
+
 						<!-- 個人資料 -->
 						<table id="member1">
 							
@@ -189,6 +203,8 @@
 									}else{
 										$petNameturn=$petName;
 									}
+
+									$memcount->fetch(PDO::FETCH_ASSOC);
 							?>
 
 							<tr>
@@ -221,7 +237,7 @@
 							</tr>
 							<tr>
 								<td>愛心幣排名:</td>
-								<td>103名</td>
+								<td>第<?=$count+1?>名</td>
 							</tr>
 							
 							<?php
@@ -232,6 +248,19 @@
 						<!-- <button id="reset">修改</button> -->
 
 
+
+						<?php
+							$sql="SELECT `backpack`.`memNo`,`backpack`.`date`,`product`.`prodName`,`product`.`price` FROM `backpack`,`product` WHERE `backpack`.`memNo`={$_SESSION['memNo']} AND `product`.`prodNo`=`backpack`.`prodNo` ORDER BY `backpack`.`date` DESC;";
+
+							$memproduct = $pdo->query($sql);
+
+
+							$memproduct->bindColumn("prodName", $prodName);
+							$memproduct->bindColumn("price", $price);
+							$memproduct->bindColumn("date", $date);
+						?>
+
+
 						<!-- 購買紀錄 -->
 						<table id="member2" style="display: none">
 
@@ -239,80 +268,68 @@
 								<tr>
 									<td>商品名稱</td>
 									<td>愛心幣</td>
-									<td>購買時間</td>
+									<td>購買日期</td>
 								</tr>
 							</thead>
+
+							<?php
+								while($memproduct->fetch(PDO::FETCH_ASSOC)){
+								// 	while($memact->fetch(PDO::FETCH_ASSOC)){
+							?>
 							<tr>
-								<td>商品1</td>
-								<td>500</td>
-								<td>2019/11/10-23:29</td>
+								<td><?=$prodName?></td>
+								<td><?=$price?></td>
+								<td><?=$date?></td>
 							</tr>
-							<tr>
-								<td>商品1</td>
-								<td>500</td>
-								<td>2019/11/10-23:29</td>
-							</tr>
-							<tr>
-								<td>商品1</td>
-								<td>500</td>
-								<td>2019/11/10-23:29</td>
-							</tr>
+							<?php
+								}
+							?>
+
 						</table>
 
 						<?php
 
-						// session_start();
-						// 	require_once('php/saru.php');
-
-						// 	$sql="select * from `member` where memNo=4";
-							$sql="select * from `participate` where memNo={$_SESSION['memNo']}";
-							// $sql="select * from `activity` where actNo=$actNo";
-							$mempart = $pdo->query($sql);
-
-							$mempart->bindColumn("actNo", $actNo);
-							$a=$actNo;
-
+							// $sql="select * from `participate` where memNo={$_SESSION['memNo']}";
+							// $mempart = $pdo->query($sql);
+							// $mempart->bindColumn("actNo", $actNo);
 							
+
+							// $sql="select * from `activity` where actNo={$_SESSION['memNo']}";
+							// $memact = $pdo->query($sql);
+							// $memact->bindColumn("actName", $actName);
+
+						$sql="SELECT `participate`.`memNo`,`participate`.`actNo`,`activity`.`actDate`,`activity`.`actName` FROM `participate`,`activity` WHERE   `participate`.`memNo`={$_SESSION['memNo']} AND `participate`.actNo=`activity`.actNo ORDER BY `activity`.`actDate` desc;";
+						$mempart = $pdo->query($sql);
+						// $mempart->bindValue(":memNo",$_SESSION['memNo']);
+						// $mempart->execute();
+
+						$mempart->bindColumn("actName", $actName);
+						$mempart->bindColumn("actDate", $actDate);
 							
-						?>
-
-						<?php
-
-							$sql="select * from `activity` where actNo=1";
-							$memact = $pdo->query($sql);
-							$memact->bindColumn("actName", $actName);
-
 						?>
 					
 
 						<!-- 活動紀錄 -->
 						<table id="member3" style="display: none;">
-							<?php
-								while($mempart->fetch(PDO::FETCH_ASSOC)){
-									while($memact->fetch(PDO::FETCH_ASSOC)){
-							?>
 							<thead>
 								<td>活動名稱</td>
 								<td>活動日期</td>
 								<td>活動狀態</td>
 							</thead>
+
+							<?php
+								while($mempart->fetch(PDO::FETCH_ASSOC)){
+								// 	while($memact->fetch(PDO::FETCH_ASSOC)){
+							?>
+							
 							<tr>
 								<td><?=$actName?></td>
-								<td><?=$actNo?></td>
-								<td>取消報名</td>
+								<td><?=$actDate?></td>
+								<td>尚未開始</td>
 							</tr>
-							<tr>
-								<td>名稱2</td>
-								<td>2019/11/10</td>
-								<td>已結束</td>
-							</tr>
-							<tr>
-								<td>名稱3</td>
-								<td>2019/11/10</td>
-								<td>已結束</td>
-							</tr>
+		
 							<?php
-								}}
+								}
 							?>
 						</table>
 					</div>

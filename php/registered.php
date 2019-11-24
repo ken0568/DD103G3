@@ -26,7 +26,7 @@
 			$statement->bindValue(":mnick",$_GET["mnick"]);
 			$statement->bindValue(":memail",$_GET["memail"]);
 			$statement->bindValue(":mphone",$_GET["mphone"]);
-			$statement->bindValue(":sex",1);
+			$statement->bindValue(":sex",$_GET["sex"]);
 
 
 
