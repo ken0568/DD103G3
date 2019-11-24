@@ -6,7 +6,7 @@ try{
 
     require_once("../connectdd103g3.php");
     
-    $sql="select * from `member` where memNo != {$_SESSION["memNo"]}";
+    $sql="select * from `member` where memNo != {$_SESSION["memNo"]} and coin >=300";
     $product=$pdo->prepare($sql);
     $product->execute();
     if($product->rowCount()==0){

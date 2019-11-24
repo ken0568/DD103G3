@@ -47,57 +47,45 @@
       </div><!-- loginbox結束 -->
 
       <!-- registeredbox開始 -->
-      <form action="php/registered.php" method="GET" id="registeredbox" class="registeredbox col-md-5"
-        style="display: none;">
-
-      <h6>會員註冊</h6>
-
+      <div id="registeredbox" class="registeredbox col-md-5" style="display: none;">
+        <h6>會員註冊</h6>
         <div class="login-input">
           <div>
             <span>帳號:</span>
-            <input type="text" name="mid">
+            <input type="text" name="mid" id="memIdValue" maxlength="10">
           </div>
           <div>
             <span>密碼:</span>
-            <input type="password" name="mpsw">
+            <input type="password" name="mpsw" id="memPswValue" maxlength="10">
           </div>
           <div>
             <span>姓名:</span>
-            <input type="text" name="mname">
+            <input type="text" name="mname" id="memNameValue" maxlength="10">
           </div>
           <div>
             <span>暱稱:</span>
-            <input type="text" name="mnick">
+            <input type="text" name="mnick" id="memNickValue" maxlength="10">
           </div>
           <div>
             <span>性別:</span>
             <div class="registeredsex">
-              <input type="radio" name="sex[]" value="0" style="width: 20px;">男
-              <input type="radio" name="sex[]" value="1" style="width: 20px;">女
+              <input type="radio" name="sex" value="0" style="width: 20px;" checked>男
+              <input type="radio" name="sex" value="1" style="width: 20px;">女
             </div>
           </div>
           <div>
             <span>信箱:</span>
-            <input type="text" name="memail">
+            <input type="text" name="memail" id="memMailValue" maxlength="50">
           </div>
           <div>
             <span>手機:</span>
-            <input type="text" name="mphone">
+            <input type="text" name="mphone" id="memPhoneValue" maxlength="10">
           </div>
+          <p class="logInAlert">※以上欄位都必須填寫</p>
           <input type="submit" value="送出" id="registered-submit">
         </div>
-        <div>
-          <span>信箱:</span>
-          <input type="text" name="memail">
-        </div>
-        <div>
-          <span>手機:</span>
-          <input type="text" name="mphone">
-        </div>
-        <input type="submit" value="送出" id="registered-submit">
-      </div>
-      <span id="registered-close">X</span>
-    </form><!-- registeredbox結束 -->
+        <span id="registered-close">X</span>
+      </div><!-- registeredbox結束 -->
 
     </div><!-- 登入結束 -->
     <header>
@@ -183,13 +171,10 @@
         <div class="ph-mem-box">
           <div class="ph-mem-text">
             <p id="ph-memId-1"></p>
-            <!--記得補ID -->
             <p>寵物:<span id="ph-memName-1"></span></p>
-            <!--記得補ID -->
             <img src="img/ph-coin.png" alt="coin">
             <div class="coin">
               <p id="ph-coin-1"></p>
-              <!--記得補ID -->
             </div>
           </div>
         </div>
@@ -200,16 +185,29 @@
           <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
             <ul>
               <li>
-                <a id="ph-act-date-1" href=" activityContent.html"></a> --- <a href=" activityContent.html" id="ph-act-text-1" ></a>
+                <a id="ph-act-date-1" href=" activityContent.html"></a> -- (<a id="ph-act-type-1" href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-1" ></a> -- View more
               </li>
               <li>
-                <a id="ph-act-date-2" href=" activityContent.html"></a> --- <a href=" activityContent.html" id="ph-act-text-2" ></a>
+                <a id="ph-act-date-2" href=" activityContent.html"></a> -- (<a id="ph-act-type-2"
+                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-2"></a> -- View
+                more
               </li>
               <li>
-                <a id="ph-act-date-3" href=" activityContent.html"></a> --- <a href=" activityContent.html" id="ph-act-text-3" ></a>
+                <a id="ph-act-date-3" href=" activityContent.html"></a> -- (<a id="ph-act-type-3"
+                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-3"></a> -- View
+                more
               </li>
             </ul>
           </marquee>
+        </div>
+        <div class="ph-other-lightbox">
+          <div class="ph-other-title"></div>
+          <div class="ph-other-box">
+            <h5>將扣除車馬費100愛心幣</h5>
+            <h5>剩餘次數(<span id="ph-times"></span>/3)次</h5>
+            <div class="ph-tip-on">確定</div>
+            <div class="ph-tip-off">取消</div>
+          </div>
         </div>
         <div class="bg-all-lightbox">
           <div class="bg-all-title"></div>
@@ -235,12 +233,13 @@
             </label>
           </div>
           <ul class="bg-list-ul">
-            <li>
+            <li class="bg-li-feed">
               <div>
                 <img src="img/ph-fd-1.png" alt="">
               </div>
-              <h5>飼料</h5>
+              <h5>飼料-<b>數量:<span id="ph-feedNum-1"></span>個</b></h5>
               <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+
             </li>
             <li class="bg-li-foodBox">
               <div>
@@ -330,13 +329,10 @@
         <div class="ph-mem-box">
           <div class="ph-mem-text">
             <p id="ph-memId-2"></p>
-            <!--記得補ID -->
             <p>寵物:<span id="ph-memName-2"></span></p>
-            <!--記得補ID -->
             <img src="img/ph-coin.png" alt="coin">
             <div class="coin">
               <p id="ph-coin-2"></p>
-              <!--記得補ID -->
             </div>
           </div>
         </div>
@@ -347,16 +343,19 @@
           <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
             <ul>
               <li>
-                <a id="ph-act-date-4" href=" activityContent.html"></a> --- <a href=" activityContent.html"
-                  id="ph-act-text-4"></a>
+                <a id="ph-act-date-4" href=" activityContent.html"></a> -- (<a id="ph-act-type-4"
+                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-4"></a> -- View
+                more
               </li>
               <li>
-                <a id="ph-act-date-5" href=" activityContent.html"></a> --- <a href=" activityContent.html"
-                  id="ph-act-text-5"></a>
+                <a id="ph-act-date-5" href=" activityContent.html"></a> -- (<a id="ph-act-type-5"
+                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-5"></a> -- View
+                more
               </li>
               <li>
-                <a id="ph-act-date-6" href=" activityContent.html"></a> --- <a href=" activityContent.html"
-                  id="ph-act-text-6"></a>
+                <a id="ph-act-date-6" href=" activityContent.html"></a> -- (<a id="ph-act-type-6"
+                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-6"></a> -- View
+                more
               </li>
             </ul>
           </marquee>
@@ -385,12 +384,13 @@
             </label>
           </div>
           <ul class="bg-list-ul">
-            <li>
+            <li class="bg-li-feed">
               <div>
                 <img src="img/ph-fd-1.png" alt="">
               </div>
-              <h5>飼料</h5>
+              <h5>飼料-<b>數量:<span id="ph-feedNum-2"></span>個</b></h5>
               <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+              
             </li>
             <li class="bg-li-foodBox">
               <div>
@@ -480,13 +480,10 @@
         <div class="ph-mem-box">
           <div class="ph-mem-text">
             <p id="ph-memId-3"></p>
-            <!--記得補ID -->
             <p>寵物:<span id="ph-memName-3"></span></p>
-            <!--記得補ID -->
             <img src="img/ph-coin.png" alt="coin">
             <div class="coin">
               <p id="ph-coin-3"></p>
-              <!--記得補ID -->
             </div>
           </div>
         </div>
@@ -497,16 +494,19 @@
           <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
             <ul>
               <li>
-                <a id="ph-act-date-7" href=" activityContent.html"></a> --- <a href=" activityContent.html"
-                  id="ph-act-text-7"></a>
+                <a id="ph-act-date-7" href=" activityContent.html"></a> -- (<a id="ph-act-type-7"
+                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-7"></a> -- View
+                more
               </li>
               <li>
-                <a id="ph-act-date-8" href=" activityContent.html"></a> --- <a href=" activityContent.html"
-                  id="ph-act-text-8"></a>
+                <a id="ph-act-date-8" href=" activityContent.html"></a> -- (<a id="ph-act-type-8"
+                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-8"></a> -- View
+                more
               </li>
               <li>
-                <a id="ph-act-date-9" href=" activityContent.html"></a> --- <a href=" activityContent.html"
-                  id="ph-act-text-9"></a>
+                <a id="ph-act-date-9" href=" activityContent.html"></a> -- (<a id="ph-act-type-9"
+                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-9"></a> -- View
+                more
               </li>
             </ul>
           </marquee>
@@ -535,12 +535,13 @@
             </label>
           </div>
           <ul class="bg-list-ul">
-            <li>
+            <li class="bg-li-feed">
               <div>
                 <img src="img/ph-fd-1.png" alt="">
               </div>
-              <h5>飼料</h5>
+              <h5>飼料-<b>數量:<span id="ph-feedNum-3"></span>個</b></h5>
               <p>價格：<span>500</span><img src="img/ph-coin.png" alt=""></p>
+
             </li>
             <li class="bg-li-foodBox">
               <div>
@@ -613,13 +614,10 @@
         <div class="ph-mem-box">
           <div class="ph-mem-text">
             <p id="ph-other-memId"></p>
-            <!--記得補ID -->
             <p>寵物:<span id="ph-other-memName"></span></p>
-            <!--記得補ID -->
             <img src="img/ph-coin.png" alt="coin">
             <div class="coin">
               <p style="text-align: center;" id="ph-other-coin"></p>
-              <!--記得補ID -->
             </div>
           </div>
         </div>
@@ -630,16 +628,19 @@
           <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
             <ul>
               <li>
-                <a id="ph-act-date-10" href=" activityContent.html"></a> --- <a href=" activityContent.html"
-                  id="ph-act-text-10"></a>
-               </li>
-              <li>
-                <a id="ph-act-date-11" href=" activityContent.html"></a> --- <a href=" activityContent.html"
-                  id="ph-act-text-11"></a>
+                <a id="ph-act-date-10" href=" activityContent.html"></a> -- (<a id="ph-act-type-10"
+                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-10"></a> -- View
+                more
               </li>
               <li>
-                <a id="ph-act-date-12" href=" activityContent.html"></a> --- <a href=" activityContent.html"
-                  id="ph-act-text-12"></a>
+                <a id="ph-act-date-11" href=" activityContent.html"></a> -- (<a id="ph-act-type-11"
+                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-11"></a> -- View
+                more
+              </li>
+              <li>
+                <a id="ph-act-date-12" href=" activityContent.html"></a> -- (<a id="ph-act-type-12"
+                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-12"></a> -- View
+                more
               </li>
             </ul>
           </marquee>

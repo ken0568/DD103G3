@@ -20,9 +20,7 @@
     <script src="js/login.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/burger.js"></script>
-    <script src="js/pethouse.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.4.js"
-        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <!-- <script src="js/pethouse.js"></script> -->
 </head>
 
 <body>
@@ -50,47 +48,45 @@
         </div><!-- loginbox結束 -->
 
         <!-- registeredbox開始 -->
-        <form action="php/registered.php" method="GET" id="registeredbox" class="registeredbox col-md-5"
-            style="display: none;">
-
-      <h6>會員註冊</h6>
-
+        <div id="registeredbox" class="registeredbox col-md-5" style="display: none;">
+            <h6>會員註冊</h6>
             <div class="login-input">
                 <div>
                     <span>帳號:</span>
-                    <input type="text" name="mid">
+                    <input type="text" name="mid" id="memIdValue" maxlength="10">
                 </div>
                 <div>
                     <span>密碼:</span>
-                    <input type="password" name="mpsw">
+                    <input type="password" name="mpsw" id="memPswValue" maxlength="10">
                 </div>
                 <div>
                     <span>姓名:</span>
-                    <input type="text" name="mname">
+                    <input type="text" name="mname" id="memNameValue" maxlength="10">
                 </div>
                 <div>
                     <span>暱稱:</span>
-                    <input type="text" name="mnick">
+                    <input type="text" name="mnick" id="memNickValue" maxlength="10">
                 </div>
                 <div>
                     <span>性別:</span>
                     <div class="registeredsex">
-                        <input type="radio" name="sex[]" value="0" style="width: 20px;">男
-                        <input type="radio" name="sex[]" value="1" style="width: 20px;">女
+                        <input type="radio" name="sex" value="0" style="width: 20px;" checked>男
+                        <input type="radio" name="sex" value="1" style="width: 20px;">女
                     </div>
                 </div>
                 <div>
                     <span>信箱:</span>
-                    <input type="text" name="memail">
+                    <input type="text" name="memail" id="memMailValue" maxlength="50">
                 </div>
                 <div>
                     <span>手機:</span>
-                    <input type="text" name="mphone">
+                    <input type="text" name="mphone" id="memPhoneValue" maxlength="10">
                 </div>
+                <p class="logInAlert">※以上欄位都必須填寫</p>
                 <input type="submit" value="送出" id="registered-submit">
             </div>
             <span id="registered-close">X</span>
-        </form><!-- registeredbox結束 -->
+        </div><!-- registeredbox結束 -->
 
     </div><!-- 登入結束 -->
     <header>
@@ -330,13 +326,13 @@
             </div>
         </div>
         <!-- 第四頁-客製動物完成-end-->
-    </div>
+    
     <!-- footer-start-->
     <footer>
         <p>Copyright © 2019 PetKeepers</p>
     </footer>
     <!-- footer-end-->
-
+</div>
 
 
 
@@ -344,10 +340,6 @@
 
     <!------------------------------------------ js-start ------------------------------------------>
     <!-------------------- 頁面切換-start -------------------->
-    <script src="https://code.jquery.com/jquery-2.2.4.js"
-        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
-    </script>
-
     <script>
         $(document).ready(function () {
             var list = $('#Pet-div1 ul li');
@@ -381,13 +373,12 @@
             './img/pet-test-dogsencon.png'
         ];
 
+        
 
-
-
+        
         //按鈕事件        
         $(document).ready(function () {
-            // alert($('.pet-answer:first-child').text());
-
+            
             set('dog');
             $('.pet-answer').click(function () {
                 //step1.偵測答案根據狗或貓 step2.加分
@@ -441,11 +432,11 @@
                 $('.pet-section-two').show();
             });
 
-            //左側動物顯示-end
+            ////////////////////////////////////////////左側動物顯示-end
 
 
 
-            ///////第二步替換部位-star
+            ////////////////////////////////////////////第二步替換部位-star
 
 
             //替換頭
@@ -481,10 +472,15 @@
                     alert("請輸入暱稱");
                     return;
                 }
+                if (window.sessionStorage.getItem('memId') === null) {
+                    $('#loginopenbtn').trigger('click');
+                    return;
+                }
                 drawPet(pet, petArr[3]);
             });
         });
-        /////// 輸入部位值  QA結束打造寵物頁面與第二步
+        
+        ///////////////////////////////////////////////// 輸入部位值  QA結束打造寵物頁面與第二步
         function set(petType, head = null, tail = null, color = null) { //petType:狗貓種類
             if (petType !== null) {
                 loadPetComponents(petType);
@@ -520,7 +516,7 @@
 
         }
 
-        //讀取寵物元件
+        //////////////////////////////////////////////////讀取寵物元件
         function loadPetComponents(petType) {
             $('.pet-dogheads-pic').text("");
             $('.pet-dogtails-pic').text("");
@@ -559,7 +555,7 @@
                 $('.pet-dogtails-pic').append("<p hidden>" + components.elePic + "</p>");
             }
         }
-        /////// 做完題目顯示寵物
+        ///////////////////////////////////////////////// 做完題目顯示寵物
         function show() {
             $('.pet-dress-head').prop('src', petArr[0]);
             $('.pet-dress-body').prop('src', petArr[1]);
@@ -606,6 +602,7 @@
 
 
         function savePet(pet, color) {
+
             var canvas = document.getElementById("pet-canvas");
             var dataURL = canvas.toDataURL("image/png");
 
@@ -625,8 +622,10 @@
                         var jsonResponse = JSON.parse(data);
 
                         $('.pet-answer-pet p').text(jsonResponse["petName"]);
+                        window.sessionStorage.setItem('petName', jsonResponse["petName"]);
                         $('#pet-pet').prop('src', jsonResponse["petPic"]);
                         $('#pet-pet').css('filter', 'hue-rotate(' + jsonResponse["petColor"] + 'deg)');
+                        
                         $('.pet-section-one').hide();
                         $('.pet-section-four').show();
                     }
@@ -665,28 +664,7 @@
             });
         });
     </script>
-<<<<<<< HEAD
-    <!-- 第三步Color Bar End-->
-=======
-    <!-------------------- 第三步color-bar -end ---------------------------->
-
-
-
-    <!-------------------- 共用燈箱-start ---------------------------------->
-    <script>
-        window.onload = function () {
-            loginclosebtn(); // 關閉登入燈箱按鈕
-            registeredclosebtn(); // 關閉註冊燈箱按鈕
-            loginopenbtn(); //開啟登入燈箱
-            registeredopenbtn(); //header開啟登入燈箱
-            registeredbtn(); // 開啟註冊燈箱按鈕
-        };
-    </script>
-    <!-------------------- 共用燈箱-end ------------------------------------>
-
-
-
->>>>>>> kao
+    <!------------------------- 第三步color- bar - end ------------------------->
 </body>
 
 </html>

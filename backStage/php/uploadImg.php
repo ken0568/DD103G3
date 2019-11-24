@@ -1,5 +1,5 @@
 <?php
-$targetDir = $_SERVER['DOCUMENT_ROOT']."/DD103G3/backStage/img/";
+$targetDir = $_SERVER['DOCUMENT_ROOT']."/DD103G3/backStage/images/";
 $targetFile = $targetDir . basename($_FILES["img"]["name"]);
 
 $imageFileType = strtolower(pathinfo($targetFile,PATHINFO_EXTENSION));
@@ -28,3 +28,4 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 if (!move_uploaded_file($_FILES["img"]["tmp_name"], $targetFile)) {
     throw new Exception("檔案上傳失敗");
 }
+?>

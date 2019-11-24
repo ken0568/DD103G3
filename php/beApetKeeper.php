@@ -19,20 +19,24 @@ function saveImg($imgData, $userId)
         throw new Exception("請重新打造寵物");
     }
   
-    return "/DD103G3/img/user/".$fileName;
+    return $fileName;
 }
-// session_start();
-// $_SESSION['memNo'] = 1;
+
+//讀取頁面
+
 
 //取得寵物元件
 if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['petType'])) {
 
-  $sql = "Select elePic FROM petcomponent WHERE eleName LIKE CONCAT(?,'%')";
+  $sql = "Select elePic FROM petcomponent WHERE eleName LIKE CONCAT(?,'%') AND (eleStatus = '1')";
 
   try {
-      $stmt = $pdo->prepare($sql);
-      $stmt->execute([$_GET['petType']]);
-      $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$_GET['petType']]);
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach($data as $key => $arr){
+        $data[$key]['elePic'] =  "/DD103G3/backStage/images/".$data[$key]['elePic'];
+        }
   } catch (Exception $e) {
       exit();
   }
@@ -42,11 +46,12 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['petType'])) {
 
 //創造寵物
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    session_start();
     $sql = "Select memId FROM member WHERE memNo=?";
     
     try {
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([1]);
+        $stmt->execute([$_SESSION['memNo']]);
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
         exit();
@@ -72,16 +77,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     try {
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$_POST["petName"], $petType, $picPath, $_POST["petColor"], 1]);
+        $stmt->execute([$_POST["petName"], $petType, $picPath, $_POST["petColor"], $_SESSION['memNo']]);
     } catch (PDOException $e) {
         exit();
     }
 
     $data = [
       'petName' => $_POST["petName"],
-      'petPic' => $picPath,
+      'petPic' => "/DD103G3/img/user/".$picPath,
       'petColor' => $_POST["petColor"],
   ];
 
     echo json_encode($data);
 }
+?>

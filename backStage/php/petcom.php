@@ -3,31 +3,22 @@ header('Content-Type: application/json');
 require_once("../../connectdd103g3.php");
 
 //查詢欄位
-function loadComponents($pdo, $id = null)
+function loadComponents($pdo)
 {
-    if(isset($id)){
-        $sql = "Select * FROM petcomponent WHERE eleNo=?";
+    $sql = "Select * FROM petcomponent WHERE 1";
     
-        try {
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute([$_POST["pet-no"]]);
-            $data = $stmt->fetch(PDO::FETCH_NUM);
-            return $data;
-        } catch (Exception $e) {
-            exit();
+    try {
+        $stmt = $pdo->query($sql);
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach($data as $key => $arr){
+            $data[$key]['elePic'] =  "/DD103G3/backStage/images/".$data[$key]['elePic'];
         }
-    }else{
-        $sql = "Select * FROM petcomponent WHERE 1";
-    
-        try {
-            $stmt = $pdo->query($sql);
-            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $data;
-        } catch (Exception $e) {
-            exit();
-        }
+
+        return $data;
+    } catch (Exception $e) {
+        exit();
     }
-    
 }
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
     $data = loadComponents($pdo);
@@ -43,7 +34,7 @@ function uploadImage()
             throw new Exception("請選取圖片");
         }
 
-        return "/DD103G3/backStage/img/".$_FILES["img"]["name"];
+        return $_FILES["img"]["name"];
     } catch (Exception $e) {
         echo json_encode([
                 'error' => [
@@ -121,3 +112,4 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && count($_POST)===1 && isset($_POST["pe
     
     echo json_encode("success");
 }
+?>
