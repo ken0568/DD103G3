@@ -28,7 +28,29 @@ $(document).ready(function () {
             $("#ph-feedNum-2").text(result[0].feedNum);
             $("#ph-feedNum-3").text(result[0].feedNum);
             
-            $("#ph-times").text(result[0].times);
+            $("#ph-times-1").text(result[0].times);
+            $("#ph-times-2").text(result[0].times);
+            $("#ph-times-3").text(result[0].times);
+
+            // $("#pet-style-1").text(`../result[0].petPic`);
+            // $("#pet-style-2").text(`../result[0].petPic`);
+            // $("#pet-style-3").text(`../result[0].petPic`);
+
+            if (result[0].petType == 0) {
+                $(".ph-st-full").attr("src", "img/ph-shitBu-full.png");
+                $(".ph-st-before").attr("src", "img/ph-shitBu-full.png");
+                $(".ph-st-after").attr("src", "img/ph-shitBu.png");
+                $(".ph-st-no").attr("src", "img/ph-shitBu.png");
+                $(".bg-li-shitBox").css("visibility", "hidden");
+                $(".bg-li-shitBox").css("order", "1");
+            }else{
+                $(".ph-st-full").attr("src", "img/shitbox-full.png");
+                $(".ph-st-before").attr("src", "img/shitbox-full.png");
+                $(".ph-st-after").attr("src", "img/shitbox.png");
+                $(".ph-st-no").attr("src", "img/shitbox.png");
+                $(".bg-li-shitBu").css("visibility", "hidden");
+                $(".bg-li-shitBu").css("order", "1");
+            };
         }
     });
     $.ajax({
@@ -169,18 +191,18 @@ $(document).ready(function () {
     });
     $(".ph-tip-on").click(function () {
         
-        var now = parseInt($('#ph-times').text());
+        var now = parseInt($('#ph-times-1').text());
         var minus = parseInt("1");
         if (now>=1) {
             var after = now - minus;
-            $('#ph-times').text(after);
+            $('#ph-times-1').text(after);
 
             $(".ph-fd-sw").css("display", "none");
             $(".ph-hs-sw").css("display", "none");
             $(".ph-pu-sw").css("display", "none");
             $(".ph-oh-sw").css("display", "block");
 
-            var times = parseInt($('#ph-times').text());
+            var times = parseInt($('#ph-times-1').text());
             
             $.ajax({
                 type: 'GET',
@@ -192,7 +214,10 @@ $(document).ready(function () {
             });
         }else{
             $(".ph-other-lightbox").css("display", "none");
-            alert("次數不足");
+            $(".ph-tips-lightBox").css("display", "block");
+            $(".ph-tips-bgc").removeClass("display-n");
+            $(".ph-amount-notEnough").removeClass("display-n");
+            $(".ph-feedNum-notEnough").addClass("display-n");
         };
         
         $.ajax({
@@ -209,6 +234,7 @@ $(document).ready(function () {
                 $("#ph-other-coin").text(result[0].coin);
                 $("#ph-other-memId").text(result[0].memNick);
                 $("#ph-other-memName").text(result[0].petName);
+                // $("#pet-style-4").text(`../result[0].petPic`);
                 sessionStorage["otherNo"]=result[0].memNo;
                 console.log(otherNo);
             }
@@ -218,6 +244,12 @@ $(document).ready(function () {
     $(".ph-oh-safe").click(function () {
         $(".ph-qa-box").css("display", "block");
         $(".ph-qa-bgc").css("display", "block");
+        var x = Math.floor(Math.random()*10+1);
+        if (x>=5) {
+            $(".qa-right").css("order", "1");
+        }else{
+            $(".qa-right").css("order", "0");
+        }
         $.ajax({
             url: "./php/pethouse-other-QA.php",
 
@@ -298,53 +330,69 @@ $(document).ready(function () {
         $(".ph-safe-tip").css("display", "none");
         $(".ph-oh-safe").css("display", "none");
     });
+    
     $(".ph-fd-before").click(function () {
-        $(".ph-fd-before").css("display", "none");
-        $(".ph-fd").addClass("ph-fd-ani");
-        $(".ph-coin-plus").addClass("coin-ani");
-        $(".ph-fd-after").css("display", "block");
-        $(".ph-fd-no").css("display", "none")
-        $(".ph-hg").css("display", "none");
+        var amount = parseInt($("#ph-feedNum-1").text());
+        if (amount >= 1) {
+            $(".ph-fd-before").css("display", "none");
+            $(".ph-fd").addClass("ph-fd-ani");
+            $(".ph-coin-plus").addClass("coin-ani");
+            $(".ph-fd-after").css("display", "block");
+            $(".ph-fd-no").css("display", "none");
+            $(".ph-hg").css("display", "none");
+
+            var money = parseInt($("#ph-coin-1").text());
+            var price = parseInt("500");
+            var total = money + price;
+            $("#ph-coin-1").text(total);
+            $("#ph-coin-2").text(total);
+            $("#ph-coin-3").text(total);
+
+            var coin = parseInt($("#ph-coin-1").text());
+            $.ajax({
+              type: "GET",
+              url: `./php/pethouse-coin.php?type=${coin}`,
+              datatype: "json",
+              success: function() {
+                console.log("送出成功");
+              }
+            });
+
+            var num = parseInt("1");
+            var feedNum = amount - num;
+            $("#ph-feedNum-1").text(feedNum);
+            $("#ph-feedNum-2").text(feedNum);
+            $("#ph-feedNum-3").text(feedNum);
+            $.ajax({
+              type: "GET",
+              url: `./php/pethouse-feedNum.php?type=${feedNum}`,
+              datatype: "json",
+              success: function() {
+                console.log("送出成功");
+              }
+            });
+
+            setTimeout(function() {
+              $(".ph-fd").removeClass("ph-fd-ani");
+              $(".ph-coin-plus").removeClass("coin-ani");
+              $(".ph-fd-after").css("display", "none");
+              $(".ph-fd-before").css("display", "block");
+              $(".ph-fd-no").css("display", "block");
+              $(".ph-hg").css("display", "block");
+            }, 6000);
+        } else {
+            $(".ph-tips-lightBox").css("display", "block");
+            $(".ph-tips-bgc").removeClass("display-n");
+            $(".ph-feedNum-notEnough").removeClass("display-n");
+            $(".ph-amount-notEnough").addClass("display-n");
+        };
         
-        var money = parseInt($('#ph-coin-1').text());
-        var price = parseInt("500");
-        var total = money + price;
-            $('#ph-coin-1').text(total);
-            $('#ph-coin-2').text(total);
-            $('#ph-coin-3').text(total);
-
-        var coin = parseInt($('#ph-coin-1').text());
-        $.ajax({
-            type: 'GET',
-            url: `./php/pethouse-coin.php?type=${coin}`,
-            datatype: 'json',
-            success: function () {
-                console.log('送出成功');
-            },
-        })
-        var amount = parseInt($('#ph-feedNum-1').text());
-        var num = parseInt('1');
-        var feedNum = amount - num;
-        $('#ph-feedNum-1').text(feedNum);
-        $('#ph-feedNum-2').text(feedNum);
-        $('#ph-feedNum-3').text(feedNum);
-        $.ajax({
-            type: 'GET',
-            url: `./php/pethouse-feedNum.php?type=${feedNum}`,
-            datatype: 'json',
-            success: function () {
-                console.log('送出成功');
-            },
-        })
-
-        setTimeout(function () {
-            $(".ph-fd").removeClass("ph-fd-ani");
-            $(".ph-coin-plus").removeClass("coin-ani");
-            $(".ph-fd-after").css("display", "none");
-            $(".ph-fd-before").css("display", "block");
-            $(".ph-fd-no").css("display", "block");
-            $(".ph-hg").css("display", "block");
-        }, 6000);
+    });
+    $(".ph-tips-exit").click(function () {
+        $(".ph-tips-lightBox").css("display", "none");
+        $(".ph-tips-bgc").addClass("display-n");
+        $(".ph-feedNum-notEnough").addClass("display-n");
+        $(".ph-amount-notEnough").addClass("display-n");
     });
     $(".ph-st-before").click(function () {
         $(".ph-st").addClass("ph-fd-ani");
