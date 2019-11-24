@@ -226,3 +226,11 @@ h6{
 	}
 
 }
+
+/**成為飼主 不要再刪掉！！！**/
+
+.disabled{
+	pointer-events: none !important;
+	cursor: default !important;
+	color: gray !important;
+}
