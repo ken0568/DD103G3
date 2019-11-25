@@ -17,7 +17,6 @@
   <script src="js/share_BSLogin.js"></script>
   <link href="css/style.css" rel="stylesheet">
   <script src="../js/jquery-3.4.1.min.js"></script>
-  <script src="./js/question.js"></script>
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -116,51 +115,6 @@
             <div class="card-body">              
               <div class="row">
 
-<<<<<<< HEAD:backStage/question.html
-                <div class="col-lg-6">
-                  <div class="card">
-                    <form action="question.php">
-                    <div class="card-header">新增題目</div>
-                    <div class="card-body">                      
-                        <table class="table">
-                          <tr>
-                            <th>題目內容</th>
-                            <td>
-                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod hic voluptatum animi doloribus blanditiis, veritatis voluptate inventore asperiores ullam esse.
-                              </textarea>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>選項A敘述</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>選項B敘述</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>題庫狀態</th>
-                            <td>
-                              <label class="switch switch-3d switch-success">
-                                <input class="switch-input" type="checkbox">
-                                <span class="switch-slider"></span>
-                              </label>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>正確答案</th>
-                            <td>
-                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod hic voluptatum animi doloribus blanditiis, veritatis voluptate inventore asperiores ullam esse.
-                              </textarea>
-                            </td>
-                          </tr>
-                        </table> 
-                    </div>                    
-                  </div>
-                  <input type="submit" value="確定新增"  ></input>
-                  </form>
-                </div>
-=======
                 <?php
               
 
@@ -178,7 +132,6 @@
 
               ?>
 
->>>>>>> d2e4eafe4e3aef86b9f09f1d8bccbf4be72708cf:backStage/question.php
 
                 <!-- <div class="col-lg-6">
                   <div class="card">
@@ -186,9 +139,7 @@
                     <div class="card-body">
                       <form action="php/questAdd.php" method="GET">
                         <table class="table">
-<<<<<<< HEAD:backStage/question.html
-=======
-                          <!-- <tr>
+                           <tr>
                             <th>題目類別</th>
                             <td>
                               <select class="form-control equipClass">
@@ -197,7 +148,6 @@
                               </select>
                             </td>
                           </tr> -->
->>>>>>> d2e4eafe4e3aef86b9f09f1d8bccbf4be72708cf:backStage/question.php
                           <tr>
                             <th>題目內容</th>
                             <td>
@@ -206,11 +156,11 @@
                             </td>
                           </tr>
                           <tr>
-                            <th>選項A敘述</th>
+                            <th>正確選項</th>
                             <td><input type="text" name="ansAText"></td>
                           </tr>
                           <tr>
-                            <th>選項B敘述</th>
+                            <th>錯誤選項</th>
                             <td><input type="text" name="ansBText"></td>
                           </tr>
                           <!-- <tr>
@@ -253,12 +203,10 @@
 
                 <div class="col-lg-6">
                   <div class="card">
-                    <div class="card-header">題目編號<?=$quesNo?></div>
+                    <div class="card-header">題目編號#<?=$quesNo?></div>
                     <div class="card-body">
                       <form action="">
                         <table class="table">
-<<<<<<< HEAD:backStage/question.html
-=======
                           <!-- <tr>
                             <th>題目類別</th>
                             <td>
@@ -268,7 +216,6 @@
                               </select>
                             </td>
                           </tr> -->
->>>>>>> d2e4eafe4e3aef86b9f09f1d8bccbf4be72708cf:backStage/question.php
                           <tr>
                             <th>題目內容</th>
                             <td>
@@ -277,11 +224,11 @@
                             </td>
                           </tr>
                           <tr>
-                            <th>選項A敘述</th>
+                            <th>正確選項</th>
                             <td><input type="text" value="<?=$ansAText?>"></td>
                           </tr>
                           <tr>
-                            <th>選項B敘述</th>
+                            <th>錯誤選項</th>
                             <td><input type="text" value="<?=$ansBText?>"></td>
                           </tr>
                           <tr>
@@ -308,11 +255,6 @@
                     </div>
                   </div>
                 </div>
-<<<<<<< HEAD:backStage/question.html
-              </div> -->
-
-=======
->>>>>>> d2e4eafe4e3aef86b9f09f1d8bccbf4be72708cf:backStage/question.php
 
                 <?php
                   }
