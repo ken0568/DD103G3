@@ -655,6 +655,90 @@ button {
   width: 100%;
   top: 0; }
 
+/* --------------- backStageLogin.html --------------- */
+.BSLainding-loginBox {
+  width: 100%;
+  background-image: url("../img/activities_header-bgi.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; }
+  .BSLainding-loginBox .loginbox {
+    top: 0;
+    bottom: 0;
+    width: 91.666666%;
+    margin: auto;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px #d8d8d8;
+    transition: 0.5s; }
+
+/* loginbox-top*/
+.BSLainding-loginBox .loginbox-top {
+  background-color: #ffc342; }
+  .BSLainding-loginBox .loginbox-top h6 {
+    font-size: 1.125rem;
+    text-align: center; }
+
+/* loginbox-pic*/
+.BSLainding-loginBox .loginbox-pic {
+  padding-left: 25%;
+  padding-right: 25%;
+  margin-top: 25px; }
+  .BSLainding-loginBox .loginbox-pic img {
+    width: 100%; }
+
+/* loginbox-input */
+.BSLainding-loginBox .loginbox-input {
+  padding-left: 8.33333%;
+  padding-right: 8.33333%; }
+  .BSLainding-loginBox .loginbox-input .inputWrap {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%; }
+  .BSLainding-loginBox .loginbox-input span {
+    font-size: 1rem;
+    line-height: 30px;
+    margin-right: 5px;
+    display: inline-block; }
+  .BSLainding-loginBox .loginbox-input #adminIdInput,
+  .BSLainding-loginBox .loginbox-input #adminPswInput {
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    float: right;
+    width: 80%;
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', 'Roboto Condensed', 'Roboto', sans-serif; }
+  .BSLainding-loginBox .loginbox-input #adminLogin {
+    width: 100%;
+    height: 40px;
+    background-color: #028090;
+    display: block;
+    cursor: pointer;
+    transition: 0.5s;
+    border: none;
+    margin: 20px 0px 25px 0px;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.125rem;
+    font-family: 'Noto Sans TC', 'Roboto Condensed', 'Roboto', sans-serif; }
+    .BSLainding-loginBox .loginbox-input #adminLogin p {
+      font-size: 1rem;
+      text-align: center;
+      color: #fff;
+      line-height: 40px;
+      letter-spacing: 0.125rem;
+      font-family: 'Noto Sans TC', 'Roboto Condensed', 'Roboto', sans-serif; }
+    .BSLainding-loginBox .loginbox-input #adminLogin:hover {
+      background-color: #2e5c6d; }
+
 /* ========================= @media_md768 ========================= */
 @media screen and (min-width: 768px) {
   /* ========================= activities.html ========================= */
@@ -765,7 +849,10 @@ button {
         top: 120px; }
   /* -------- signSuccess燈箱 -------- */
   .activityContent-sign .sign-success {
-    width: 30%; } }
+    width: 30%; }
+  /* --------------- backStageLogin.html --------------- */
+  .BSLainding-loginBox .loginbox {
+    width: 41.666666%; } }
 
 /* ========================= @media_lg_992 ========================= */
 @media screen and (min-width: 992px) {
@@ -785,7 +872,10 @@ button {
   /* ========================= activities.html ========================= */
   /* --------------- activities-header --------------- */
   .activities-header {
-    padding-bottom: 57.3275862068966%; } }
+    padding-bottom: 57.3275862068966%; }
+  /* --------------- backStageLogin.html --------------- */
+  .BSLainding-loginBox .loginbox {
+    width: 25%; } }
 
 /* ========================= @media_xxl_1536 ========================= */
 @media screen and (min-width: 1536px) {
