@@ -13,6 +13,8 @@
   <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
   <!-- Main styles for this application-->
+  <script src="js/main.js"></script>
+  <script src="js/share_BSLogin.js"></script>
   <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -40,7 +42,8 @@
 
     <!-- 歡迎，登出 -->
     <ul class="nav navbar-nav ml-auto">
-     
+      <li id="adminName" class="nav-item mr-3"></li>
+      <a id="adminLogout" class="nav-item mr-3" href="../backStageLogin.html">登出</a>
     </ul>
 
   </header>
