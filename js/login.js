@@ -141,6 +141,8 @@ function sendRegisteredbtn() {
 				},
 				type: 'POST',
 				success: function () {
+					window.sessionStorage.setItem('memId', memIdValue); //成為飼主新增 不要再刪掉！！
+					window.sessionStorage.setItem('petName', "null");//成為飼主新增 不要再刪掉！！
 					window.location.reload(); //重新刷新頁面
 				},
 			});
