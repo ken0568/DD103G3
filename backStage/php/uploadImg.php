@@ -1,5 +1,5 @@
 <?php
-$targetDir = $_SERVER['DOCUMENT_ROOT']."/DD103G3/backStage/images/";
+$targetDir = dirname(__DIR__)."\\images\\";
 $targetFile = $targetDir . basename($_FILES["img"]["name"]);
 
 $imageFileType = strtolower(pathinfo($targetFile,PATHINFO_EXTENSION));
@@ -11,10 +11,10 @@ if(isset($_POST["submit"])) {
     }
 }
 // Check if file already exists
-if (file_exists($targetFile)) {
-    unlink($targetFile);
-    // throw new Exception("檔案名稱相同");
-}
+// if (file_exists($targetFile)) {
+//     unlink($targetFile);
+//     // throw new Exception("檔案名稱相同");
+// }
 // Check file size
 if ($_FILES["img"]["size"] > 500000) {
     throw new Exception("檔案太大");

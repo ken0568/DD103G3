@@ -73,7 +73,7 @@ a {
     justify-content: center;
     align-items: center;
     position: absolute;
-    z-index: 20;
+    z-index: 100;
     top: 0;
     right: 0;
     bottom: 0;
@@ -215,7 +215,7 @@ a {
 
 .guide-dog-sencon {
     position: absolute;
-    z-index: 200;
+    z-index: 300;
     top: -2%;
     right: 0;
     bottom: 0;
@@ -462,6 +462,7 @@ a {
     
 }
 }
+
 
 
 /**** 手機版導引頁-end *****/
