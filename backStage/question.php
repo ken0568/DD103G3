@@ -17,6 +17,14 @@
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+
+
+  <?php
+  session_start();
+    require_once('../connectdd103g3.php');
+  ?>
+
+
  <!-- top_header -->
  <header class="app-header navbar">
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
@@ -59,7 +67,7 @@
       </li>
       <!-- 問答題庫管理 -->
       <li class="nav-item">
-        <a class="nav-link" href="question.html">
+        <a class="nav-link" href="question.php">
           <i class="nav-icon icon-people"></i>問答題庫管理</a>
       </li>
       <!-- 活動區管理 -->
@@ -100,17 +108,34 @@
 
             </div>
 
-            <div class="card-body">
-              
+            <div class="card-body">              
               <div class="row">
 
+                <?php
+              
+
+                $sql="SELECT * FROM `questionandlibrary`";
+
+                $memback = $pdo->query($sql);
+
+                $memback->bindColumn("quesNo", $quesNo);
+                $memback->bindColumn("quesText", $quesText);
+                $memback->bindColumn("ansAText", $ansAText);
+                $memback->bindColumn("ansBText", $ansBText);
+                $memback->bindColumn("quesStatus", $quesStatus);
+                $memback->bindColumn("rightAns", $rightAns);
+
+
+              ?>
+
+
                 <div class="col-lg-6">
                   <div class="card">
-                    <div class="card-header">題目編號1</div>
+                    <div class="card-header">新增題目</div>
                     <div class="card-body">
-                      <form action="">
+                      <form action="php/questAdd.php" method="GET">
                         <table class="table">
-                          <tr>
+                          <!-- <tr>
                             <th>題目類別</th>
                             <td>
                               <select class="form-control equipClass">
@@ -118,23 +143,23 @@
                                 <option value="1">貓</option>
                               </select>
                             </td>
-                          </tr>
+                          </tr> -->
                           <tr>
                             <th>題目內容</th>
                             <td>
-                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod hic voluptatum animi doloribus blanditiis, veritatis voluptate inventore asperiores ullam esse.
+                              <textarea class="form-control" rows="3" value="" name="quesText">
                               </textarea>
                             </td>
                           </tr>
                           <tr>
                             <th>選項A敘述</th>
-                            <td><input type="text"></td>
+                            <td><input type="text" name="ansAText"></td>
                           </tr>
                           <tr>
                             <th>選項B敘述</th>
-                            <td><input type="text"></td>
+                            <td><input type="text" name="ansBText"></td>
                           </tr>
-                          <tr>
+                          <!-- <tr>
                             <th>題庫狀態</th>
                             <td>
                               <label class="switch switch-3d switch-success">
@@ -142,27 +167,43 @@
                                 <span class="switch-slider"></span>
                               </label>
                             </td>
-                          </tr>
+                          </tr> -->
                           <tr>
                             <th>正確答案</th>
                             <td>
-                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod hic voluptatum animi doloribus blanditiis, veritatis voluptate inventore asperiores ullam esse.
+                              <textarea class="form-control" rows="3" value="" name="rightAns">
                               </textarea>
                             </td>
                           </tr>
+
                         </table>
+                        <div class="col-xl-4 mb-3 mb-xl-0">
+                          <submit>
+                            <button class="btn btn-pill btn-block btn-primary" type="submit">確認新增</button>
+                          </submit>
+                        </div>
                       </form>
                     </div>
                   </div>
                 </div>
 
+                <?php
+                  while($memback->fetch(PDO::FETCH_ASSOC)){
+                    $checktype="";
+                    if($quesStatus==0){
+                      $checktype="checked";
+                    }else{
+                      $checktype="";
+                    }
+                ?>
+
                 <div class="col-lg-6">
                   <div class="card">
-                    <div class="card-header">題目編號1</div>
+                    <div class="card-header">題目編號<?=$quesNo?></div>
                     <div class="card-body">
                       <form action="">
                         <table class="table">
-                          <tr>
+                          <!-- <tr>
                             <th>題目類別</th>
                             <td>
                               <select class="form-control equipClass">
@@ -170,105 +211,63 @@
                                 <option value="1">貓</option>
                               </select>
                             </td>
-                          </tr>
+                          </tr> -->
                           <tr>
                             <th>題目內容</th>
                             <td>
-                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod hic voluptatum animi doloribus blanditiis, veritatis voluptate inventore asperiores ullam esse.
+                              <textarea class="form-control" rows="3" value=""><?=$quesText?>
                               </textarea>
                             </td>
                           </tr>
                           <tr>
                             <th>選項A敘述</th>
-                            <td><input type="text"></td>
+                            <td><input type="text" value="<?=$ansAText?>"></td>
                           </tr>
                           <tr>
                             <th>選項B敘述</th>
-                            <td><input type="text"></td>
+                            <td><input type="text" value="<?=$ansBText?>"></td>
                           </tr>
                           <tr>
                             <th>題庫狀態</th>
                             <td>
                               <label class="switch switch-3d switch-success">
-                                <input class="switch-input" type="checkbox">
-                                <span class="switch-slider"></span>
-                              </label>
+                                <input type="checkbox" class="switch-input" <?=$checktype?> onclick="updateQues(<?=$quesNo?>, this.checked)">
+                              <span class="switch-slider" data-checked="" data-unchecked=""></span>
+                            </label>
                             </td>
                           </tr>
                           <tr>
                             <th>正確答案</th>
                             <td>
-                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolor consequuntur a veritatis nemo nam magni quasi voluptas ut laboriosam.
+                              <textarea class="form-control" rows="3" value=""><?=$rightAns?>
                               </textarea>
                             </td>
                           </tr>
                         </table>
+                        <!-- <div class="col-xl-4 mb-3 mb-xl-0">
+                          <button class="btn btn-pill btn-block btn-warning" type="button" onclick="updateQues(<?=$quesNo?>, this.checked)">修改</button>
+                        </div> -->
                       </form>
                     </div>
                   </div>
                 </div>
 
-                <div class="col-lg-6">
-                  <div class="card">
-                    <div class="card-header">題目編號1</div>
-                    <div class="card-body">
-                      <form action="">
-                        <table class="table">
-                          <tr>
-                            <th>題目類別</th>
-                            <td>
-                              <select class="form-control equipClass">
-                                <option value="0">狗</option>
-                                <option value="1">貓</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>題目內容</th>
-                            <td>
-                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod hic voluptatum animi doloribus blanditiis, veritatis voluptate inventore asperiores ullam esse.
-                              </textarea>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>選項A敘述</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>選項B敘述</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>題庫狀態</th>
-                            <td>
-                              <label class="switch switch-3d switch-success">
-                                <input class="switch-input" type="checkbox">
-                                <span class="switch-slider"></span>
-                              </label>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>正確答案</th>
-                            <td>
-                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque quod voluptatem, ipsam optio eveniet harum porro quibusdam nulla sunt!
-                              </textarea>
-                            </td>
-                          </tr>
-                        </table>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
+                <?php
+                  }
+                ?>
             </div>
           </div>
         </div>
       </div>
 
+      <script>
+        function updateQues(quesNo, quesStatus){
+          quesStatus = quesStatus==false? 1 : 0;
+          location.href="updateQuestStatus.php?quesNo="+quesNo+"&quesStatus="+quesStatus;
+        }
 
-       
+      </script>
+     
       </div><!-- 中間內容end -->
     </main>
     

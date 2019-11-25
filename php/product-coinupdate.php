@@ -1,14 +1,14 @@
 <?php
 session_start();
 $errMsg="";
-$coin = $_GET['type'];
+// $coin = $_GET['type'];
 $memNo=$_SESSION['memNo'];
 try{
   require_once("../connectdd103g3.php");
 
   $sql = "update `member` set coin=:coin where memNo=:memNo";
   $iscoin = $pdo->prepare($sql);
-  $iscoin->bindValue(":coin",$coin);
+  $iscoin->bindValue(":coin",$_GET['type'];
   $iscoin->bindValue(':memNo',$memNo);
   $iscoin->execute();
 

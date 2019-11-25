@@ -341,16 +341,11 @@
     <!------------------------------------------ js-start ------------------------------------------>
     <!-------------------- 頁面切換-start -------------------->
     <script>
-        $(document).ready(function () {
-            var list = $('#Pet-div1 ul li');
-            list.click(function () {
-                $($(this).find('a').attr('href')).show().siblings('.Pet-Content')
-                    .hide(); //頁面內容
-                $(this).addClass('pet-active-step').siblings('.pet-active-step ').removeClass(
-                    'pet-active-step'); //步驟顏色
-            });
-            $('li:nth-child(1)>a').trigger('click');
-
+        $('#Pet-div1 ul li').click(function () {
+            $($(this).find('a').attr('href')).show().siblings('.Pet-Content')
+                .hide(); //頁面內容
+            $(this).addClass('pet-active-step').siblings('.pet-active-step ').removeClass(
+                'pet-active-step'); //步驟顏色
         });
     </script>
     <!-------------------- 頁面切換-end ------------------------>
@@ -372,14 +367,23 @@
         var petUnknown = ['./img/pet-test-catfirst.png', './img/pet-test-catsencon.png', './img/pet-test-dogfirst.png',
             './img/pet-test-dogsencon.png'
         ];
-
         
-
+        if(window.location.search.indexOf("petType"))
+        {
+            homeCmd = window.location.search.split("=")[1];
+        }
         
-        //按鈕事件        
-        $(document).ready(function () {
+        $(document).ready(function () {   
+            if(homeCmd){
+                switchStep(2);
+                set(homeCmd);
+                show();
+            }else{
+                switchStep(1);
+                set('dog');
+            }
             
-            set('dog');
+            //第一步
             $('.pet-answer').click(function () {
                 //step1.偵測答案根據狗或貓 step2.加分
                 if ($(this).val() == 'cat') {
@@ -516,6 +520,7 @@
 
         }
 
+        //helper functions
         //////////////////////////////////////////////////讀取寵物元件
         function loadPetComponents(petType) {
             $('.pet-dogheads-pic').text("");
@@ -636,6 +641,12 @@
 
             xhr.open('POST', './php/beApetKeeper.php', true);
             xhr.send(formData);
+        }
+
+        //切換步驟
+        function switchStep(stepNumber)
+        {
+            $('li:nth-child('+stepNumber+')>a').trigger('click');
         }
     </script>
 
