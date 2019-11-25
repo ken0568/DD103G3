@@ -9,7 +9,7 @@ function init() {
       let prodCardSection = document.querySelector('.shop-cards');
 
       //產生商品卡片
-      for (var i = 0; i < products.length; i++) {
+      for (var i = 0; i < 3; i++) {
         allprodHTML += `
                 <div class="shop-card">
                 <img src="./backStage/images/${products[i].prodPic}">

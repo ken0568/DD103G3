@@ -34,7 +34,8 @@
 		
 	        // header("Location: ../home.html");
 	        echo "<script>alert('成功新增');</script>";
-	        echo "<script>history.go(-1)</script>";
+			// echo "<script>history.go(-1)</script>";
+			echo "<script>location.href='../question.php';</script>";
 
 		// }else{
 	 //        echo "<script>alert('帳號重複');</script>";
