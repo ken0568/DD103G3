@@ -5,6 +5,8 @@
   <title>Document</title>
 </head>
 <body>
+
+<!-- 上傳圖片與新增商品 -->
 <?php
 // $prodType=$_POST['type'];
 // $prodName=$_POST['pName'];
@@ -51,7 +53,7 @@ try {
 			$addProd -> execute();
 			// echo "新增成功~";
 			$pdo->commit();	
-			echo "<script>history.go(-1)</script>";		
+			header("location:../product.html");		
 		}else{
 			$pdo->rollBack();
 			// echo "<script>history.go(-1)</script>";	
