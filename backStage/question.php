@@ -13,7 +13,10 @@
   <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
   <!-- Main styles for this application-->
+  <script src="js/main.js"></script>
+  <script src="js/share_BSLogin.js"></script>
   <link href="css/style.css" rel="stylesheet">
+  <script src="../js/jquery-3.4.1.min.js"></script>
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -40,7 +43,8 @@
 
     <!-- 歡迎，登出 -->
     <ul class="nav navbar-nav ml-auto">
-     
+      <li id="adminName" class="nav-item mr-3"></li>
+      <a id="adminLogout" class="nav-item mr-3" href="../backStageLogin.html">登出</a>
     </ul>
 
   </header>
@@ -129,13 +133,13 @@
               ?>
 
 
-                <div class="col-lg-6">
+                <!-- <div class="col-lg-6">
                   <div class="card">
                     <div class="card-header">新增題目</div>
                     <div class="card-body">
                       <form action="php/questAdd.php" method="GET">
                         <table class="table">
-                          <!-- <tr>
+                           <tr>
                             <th>題目類別</th>
                             <td>
                               <select class="form-control equipClass">
@@ -152,11 +156,11 @@
                             </td>
                           </tr>
                           <tr>
-                            <th>選項A敘述</th>
+                            <th>正確選項</th>
                             <td><input type="text" name="ansAText"></td>
                           </tr>
                           <tr>
-                            <th>選項B敘述</th>
+                            <th>錯誤選項</th>
                             <td><input type="text" name="ansBText"></td>
                           </tr>
                           <!-- <tr>
@@ -199,7 +203,7 @@
 
                 <div class="col-lg-6">
                   <div class="card">
-                    <div class="card-header">題目編號<?=$quesNo?></div>
+                    <div class="card-header">題目編號#<?=$quesNo?></div>
                     <div class="card-body">
                       <form action="">
                         <table class="table">
@@ -220,11 +224,11 @@
                             </td>
                           </tr>
                           <tr>
-                            <th>選項A敘述</th>
+                            <th>正確選項</th>
                             <td><input type="text" value="<?=$ansAText?>"></td>
                           </tr>
                           <tr>
-                            <th>選項B敘述</th>
+                            <th>錯誤選項</th>
                             <td><input type="text" value="<?=$ansBText?>"></td>
                           </tr>
                           <tr>
