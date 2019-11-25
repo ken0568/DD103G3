@@ -1,5 +1,5 @@
 <?php
-$targetDir = dirname(__DIR__)."\\images\\";
+$targetDir = dirname(__DIR__)."/images/";
 $targetFile = $targetDir . basename($_FILES["img"]["name"]);
 
 $imageFileType = strtolower(pathinfo($targetFile,PATHINFO_EXTENSION));

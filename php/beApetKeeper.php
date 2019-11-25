@@ -4,7 +4,7 @@ require_once("../connectdd103g3.php");
 
 function saveImg($imgData, $userId)
 {
-    $targetDir = dirname(__DIR__)."\\img\\user\\";
+    $targetDir = dirname(__DIR__)."/img/user/";
     if (! file_exists($targetDir)) {
         mkdir($targetDir);
     }
