@@ -8,7 +8,7 @@ $(document).ready(function () {
         type: "GET",
 
         success: function (data) {
-            console.log(data);
+            // console.log(data);
 
 
             let result = JSON.parse(data);
@@ -31,10 +31,14 @@ $(document).ready(function () {
             $("#ph-times-1").text(result[0].times);
             $("#ph-times-2").text(result[0].times);
             $("#ph-times-3").text(result[0].times);
+ 
+            $("#pet-style-1").attr("src",`img/user/${result[0].petPic}`);
+            $("#pet-style-2").attr("src",`img/user/${result[0].petPic}`);
+            $("#pet-style-3").attr("src",`img/user/${result[0].petPic}`);
 
-            // $("#pet-style-1").text(`../result[0].petPic`);
-            // $("#pet-style-2").text(`../result[0].petPic`);
-            // $("#pet-style-3").text(`../result[0].petPic`);
+            $("#pet-color-1").css('filter',`hue-rotate(  ${result[0].petColor}deg)`);
+            $("#pet-color-2").css('filter',`hue-rotate(  ${result[0].petColor}deg)`);
+            $("#pet-color-3").css('filter',`hue-rotate(  ${result[0].petColor}deg)`);
 
             if (result[0].petType == 0) {
                 $(".ph-st-full").attr("src", "img/ph-shitBu-full.png");
@@ -61,7 +65,7 @@ $(document).ready(function () {
         type: "GET",
 
         success: function (data) {
-            console.log(data);
+            // console.log(data);
 
 
             let result = JSON.parse(data);
@@ -103,6 +107,87 @@ $(document).ready(function () {
             $("#ph-act-type-10").text(result[0].actType);
             $("#ph-act-type-11").text(result[1].actType);
             $("#ph-act-type-12").text(result[2].actType);
+        }
+    });
+    $.ajax({
+        url: "./php/pethouse-backpack.php",
+
+        datType: "json",
+
+        type: "GET",
+
+        success: function (data) {
+            // console.log(data);
+
+
+            let result = JSON.parse(data);
+            console.log(result);
+            for (var i = 0; i < result.length; i++) {
+                if (result[i].prodNo == 2) {
+                    $(".bg-li-eve").css("visibility", "visible");
+                    $(".bg-li-eve").css("order", "0");
+                    console.log("有買二");
+                    if (result[i].useStatus == 1) {
+                        $(".ph-clothes").css("display", "block");
+                        $('.bg-li-eve').addClass('bg-used');
+                    }else{
+                        $(".ph-clothes").css("display", "none");
+                        $('.bg-li-eve').removeClass('bg-used');
+                    }
+                }
+                if (result[i].prodNo == 3) {
+                    $(".bg-li-foodBox").css("visibility", "visible");
+                    $(".bg-li-foodBox").css("order", "0");
+                    console.log("有買三");
+                    if (result[i].useStatus == 1) {
+                        $(".ph-fd-no").attr("src", "img/shop-foodBowl.png");
+                        $(".ph-fd-before").attr("src", "img/shop-foodBowl.png");
+                        $(".ph-fd-after").attr("src", "img/ph-fdbox-1.png");
+                        $('.bg-li-foodBox').addClass('bg-used');
+                    } else {
+                        $(".ph-fd-no").attr("src", "img/foodbox.png");
+                        $(".ph-fd-before").attr("src", "img/foodbox.png");
+                        $(".ph-fd-after").attr("src", "img/foodbox-full.png");
+                        $('.bg-li-foodBox').removeClass('bg-used'); 
+                    }
+                }
+                if (result[i].prodNo == 4) {
+                    $(".bg-li-shitBox").css("visibility", "visible");
+                    $(".bg-li-shitBox").css("order", "0");
+                    console.log("有買四");
+                    if (result[i].useStatus == 1) {
+                        $(".ph-st-full").attr("src", "img/shitBox-h-full.png");
+                        $(".ph-st-before").attr("src", "img/shitBox-h-full.png");
+                        $(".ph-st-after").attr("src", "img/shop-catLitter.png");
+                        $(".ph-st-no").attr("src", "img/shop-catLitter.png");
+                        $('.bg-li-shitBox').addClass('bg-used');
+                    } else {
+                        $(".ph-st-full").attr("src", "img/shitbox-full.png");
+                        $(".ph-st-before").attr("src", "img/shitbox-full.png");
+                        $(".ph-st-after").attr("src", "img/shitbox.png");
+                        $(".ph-st-no").attr("src", "img/shitbox.png");
+                        $('.bg-li-shitBox').removeClass('bg-used'); 
+                    }
+                }
+                if (result[i].prodNo == 5) {
+                    $(".bg-li-shitBu").css("visibility", "visible");
+                    $(".bg-li-shitBu").css("order", "0");
+                    console.log("有買五");
+                    if (result[i].useStatus == 1) {
+                        $(".ph-st-full").attr("src", "img/ph-shitBu-h.png");
+                        $(".ph-st-before").attr("src", "img/ph-shitBu-h.png");
+                        $(".ph-st-after").attr("src", "img/ph-diaper-1.png");
+                        $(".ph-st-no").attr("src", "img/ph-diaper-1.png");
+                        $('.bg-li-shitBu').addClass('bg-used');
+                    } else {
+                        $(".ph-st-full").attr("src", "img/ph-shitBu-full.png");
+                        $(".ph-st-before").attr("src", "img/ph-shitBu-full.png");
+                        $(".ph-st-after").attr("src", "img/ph-shitBu.png");
+                        $(".ph-st-no").attr("src", "img/ph-shitBu.png");
+                        $('.bg-li-shitBu').removeClass('bg-used'); 
+                    }
+                }
+            };
         }
     });
 
@@ -234,7 +319,8 @@ $(document).ready(function () {
                 $("#ph-other-coin").text(result[0].coin);
                 $("#ph-other-memId").text(result[0].memNick);
                 $("#ph-other-memName").text(result[0].petName);
-                // $("#pet-style-4").text(`../result[0].petPic`);
+                $("#pet-style-4").attr("src",`img/user/${result[0].petPic}`);
+                $("#pet-color-4").css('filter', `hue-rotate(  ${result[0].petColor}deg)`);
                 sessionStorage["otherNo"]=result[0].memNo;
                 console.log(otherNo);
             }
@@ -258,7 +344,7 @@ $(document).ready(function () {
             type: "GET",
 
             success: function (data) {
-                console.log(data);
+                // console.log(data);
 
 
                 let result = JSON.parse(data);
@@ -464,13 +550,31 @@ $(document).ready(function () {
         $(".bg-eve-off").click(function () {
             $(".ph-clothes").css("display", "none");
             $(".bg-all-lightbox").css("display", "none");
-            $('.bg-li-eve').removeClass('bg-used');
+            $('.bg-li-eve').removeClass('bg-used'); 
+            var status = 0;
+            $.ajax({
+                type: 'GET',
+                url: `./php/pethouse-bagpack-useStatus-2.php?type=${status}`,
+                datatype: 'json',
+                success: function () {
+                    console.log('送出成功');
+                },
+            })
         });
 
         $(".bg-eve-on").click(function () {
             $(".ph-clothes").css("display", "block");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-eve').addClass('bg-used');
+            var status = 1;
+            $.ajax({
+                type: 'GET',
+                url: `./php/pethouse-bagpack-useStatus-2.php?type=${status}`,
+                datatype: 'json',
+                success: function () {
+                    console.log('送出成功');
+                },
+            })
         });
     });   
 
@@ -492,6 +596,15 @@ $(document).ready(function () {
             $(".ph-fd-after").attr("src","img/foodbox-full.png");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-foodBox').removeClass('bg-used'); 
+            var status = 0;
+            $.ajax({
+                type: 'GET',
+                url: `./php/pethouse-bagpack-useStatus-3.php?type=${status}`,
+                datatype: 'json',
+                success: function () {
+                    console.log('送出成功');
+                },
+            })
         });
 
         $(".bg-foodBox-on").click(function () {
@@ -500,6 +613,15 @@ $(document).ready(function () {
             $(".ph-fd-after").attr("src","img/ph-fdbox-1.png");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-foodBox').addClass('bg-used');
+            var status = 1;
+            $.ajax({
+                type: 'GET',
+                url: `./php/pethouse-bagpack-useStatus-3.php?type=${status}`,
+                datatype: 'json',
+                success: function () {
+                    console.log('送出成功');
+                },
+            })
         });
     });
 
@@ -521,6 +643,15 @@ $(document).ready(function () {
             $(".ph-st-no").attr("src","img/shitbox.png");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-shitBox').removeClass('bg-used'); 
+            var status = 0;
+            $.ajax({
+                type: 'GET',
+                url: `./php/pethouse-bagpack-useStatus-4.php?type=${status}`,
+                datatype: 'json',
+                success: function () {
+                    console.log('送出成功');
+                },
+            })
         });
 
         $(".bg-shitBox-on").click(function () {
@@ -530,6 +661,15 @@ $(document).ready(function () {
             $(".ph-st-no").attr("src","img/shop-catLitter.png");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-shitBox').addClass('bg-used');
+            var status = 1;
+            $.ajax({
+                type: 'GET',
+                url: `./php/pethouse-bagpack-useStatus-4.php?type=${status}`,
+                datatype: 'json',
+                success: function () {
+                    console.log('送出成功');
+                },
+            })
         });
     });
     $(".bg-li-shitBu").click(function () {
@@ -550,6 +690,15 @@ $(document).ready(function () {
             $(".ph-st-no").attr("src","img/ph-shitBu.png");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-shitBu').removeClass('bg-used'); 
+            var status = 0;
+            $.ajax({
+                type: 'GET',
+                url: `./php/pethouse-bagpack-useStatus-5.php?type=${status}`,
+                datatype: 'json',
+                success: function () {
+                    console.log('送出成功');
+                },
+            })
         });
 
         $(".bg-shitBu-on").click(function () {
@@ -559,7 +708,17 @@ $(document).ready(function () {
             $(".ph-st-no").attr("src","img/ph-diaper-1.png");
             $(".bg-all-lightbox").css("display", "none");
             $('.bg-li-shitBu').addClass('bg-used');
+            var status = 1;
+            $.ajax({
+                type: 'GET',
+                url: `./php/pethouse-bagpack-useStatus-5.php?type=${status}`,
+                datatype: 'json',
+                success: function () {
+                    console.log('送出成功');
+                },
+            })
         });
     });
+    
 
 });

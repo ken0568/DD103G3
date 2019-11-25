@@ -4,6 +4,7 @@
 }
 
 /* ---------------- 背包checkbox strat ---------------- */
+
 #bagPag-control {
     position: fixed;
     left: -9999px;
@@ -189,6 +190,7 @@
 #bagPag-control:checked~.ph-check .ph-all .bg-list-ul li:nth-of-type(6) {
     visibility: hidden;
 }
+
 /* ---------------- 東西沒了燈箱 開始 ---------------- */
 .ph-tips-lightBox{
     position: absolute;

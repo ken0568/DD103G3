@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['petType'])) {
 //創造寵物
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     session_start();
-    $sql = "Select memId FROM member WHERE memNo=?";
+    $sql = "Select memId FROM `member` WHERE memNo=?";
     
     try {
         $stmt = $pdo->prepare($sql);
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $petType = $_POST["petType"] === "dog" ? 0 : 1;
 
     //更新會員寵物欄位
-    $sql = "UPDATE member SET petName=?, petType=?, petPic=?, petColor=? WHERE memNo=?";
+    $sql = "UPDATE `member` SET petName=?, petType=?, petPic=?, petColor=? WHERE memNo=?";
 
     try {
         $stmt = $pdo->prepare($sql);

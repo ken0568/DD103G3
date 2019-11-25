@@ -6,7 +6,7 @@ try{
 
     require_once("../connectdd103g3.php");
     
-    $sql="select * from `questionandlibrary`";
+    $sql="select * from `questionandlibrary` where quesStatus = 0";
     $product=$pdo->query($sql);
 
     if($product->rowCount()==0){

@@ -6,9 +6,9 @@ try{
 
     require_once("../connectdd103g3.php");
     
-    $sql="select * from `member` where memNo != {$_SESSION["memNo"]} and petPic is NOT null and coin >=300";
-    $product=$pdo->prepare($sql);
-    $product->execute();
+    $sql="select * from backpack where memNo = {$_SESSION["memNo"]} order by prodNo asc";
+    $product=$pdo->query($sql);
+
     if($product->rowCount()==0){
           echo "找不到資料";
     }else{
@@ -22,9 +22,8 @@ try{
             $i++;
 
         };
-        
-        shuffle($arr);
-        echo json_encode( $arr,JSON_UNESCAPED_UNICODE);
+
+    echo json_encode( $arr,JSON_UNESCAPED_UNICODE);
 
     }
 
