@@ -14,6 +14,8 @@
   <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
   <!-- Main styles for this application-->
   <link href="css/style.css" rel="stylesheet">
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="./js/question.js"></script>
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -106,19 +108,10 @@
 
                 <div class="col-lg-6">
                   <div class="card">
-                    <div class="card-header">題目編號1</div>
-                    <div class="card-body">
-                      <form action="">
+                    <form action="question.php">
+                    <div class="card-header">新增題目</div>
+                    <div class="card-body">                      
                         <table class="table">
-                          <tr>
-                            <th>題目類別</th>
-                            <td>
-                              <select class="form-control equipClass">
-                                <option value="0">狗</option>
-                                <option value="1">貓</option>
-                              </select>
-                            </td>
-                          </tr>
                           <tr>
                             <th>題目內容</th>
                             <td>
@@ -150,27 +143,19 @@
                               </textarea>
                             </td>
                           </tr>
-                        </table>
-                      </form>
-                    </div>
+                        </table> 
+                    </div>                    
                   </div>
+                  <input type="submit" value="確定新增"  ></input>
+                  </form>
                 </div>
 
-                <div class="col-lg-6">
+                <!-- <div class="col-lg-6">
                   <div class="card">
                     <div class="card-header">題目編號1</div>
                     <div class="card-body">
                       <form action="">
                         <table class="table">
-                          <tr>
-                            <th>題目類別</th>
-                            <td>
-                              <select class="form-control equipClass">
-                                <option value="0">狗</option>
-                                <option value="1">貓</option>
-                              </select>
-                            </td>
-                          </tr>
                           <tr>
                             <th>題目內容</th>
                             <td>
@@ -215,15 +200,6 @@
                       <form action="">
                         <table class="table">
                           <tr>
-                            <th>題目類別</th>
-                            <td>
-                              <select class="form-control equipClass">
-                                <option value="0">狗</option>
-                                <option value="1">貓</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
                             <th>題目內容</th>
                             <td>
                               <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod hic voluptatum animi doloribus blanditiis, veritatis voluptate inventore asperiores ullam esse.
@@ -259,7 +235,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
 
             </div>

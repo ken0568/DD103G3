@@ -14,17 +14,10 @@
     // $user = "root";
     // $password = "root";
 
-<<<<<<< HEAD
-    // 齊豪
+    // 麒
     // $dsn = "mysql:host=localhost;port=3306;dbname=dd103g3;charset=utf8";
 	// $user = "root";
     // $password = "root";
-=======
-    // 麒
-    $dsn = "mysql:host=localhost;port=3306;dbname=dd103g3;charset=utf8";
-	$user = "root";
-    $password = "root";
->>>>>>> 3cc5840ed1b6ee714c99ebdeafd6285567adf81f
 
     // 徐浩
     // $dsn="mysql:host=localhost;port=3306;dbname=dd103g3;charest=utf8";
