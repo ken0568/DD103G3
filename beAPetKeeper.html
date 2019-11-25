@@ -171,11 +171,11 @@
 
                             <canvas id="pet-canvas" width="330px" height="200px" hidden></canvas>
                             <div class="pet-model Pets-Color" id="Pet-DogKeeper">
-                                <img class="pet-dress-head" src="/DD103G3/backStage/images/pet-stage-dogheadfirst.png"
+                                <img class="pet-dress-head" src="./backStage/images/pet-stage-dogheadfirst.png"
                                     alt="" id="Pet-HeadDog-One">
-                                <img class="pet-dress-body" src="/DD103G3/backStage/images/pet-stage-dogbody.png" alt=""
+                                <img class="pet-dress-body" src="./backStage/images/pet-stage-dogbody.png" alt=""
                                     id="Pet-BabyDog-One">
-                                <img class="pet-dress-tail" src="/DD103G3/backStage/images/pet-stage-dogtailfirst.png"
+                                <img class="pet-dress-tail" src="./backStage/images/pet-stage-dogtailfirst.png"
                                     alt="" id="Pet-TailDog-One">
                                 <img id="p" src="" alt="">
                             </div>
@@ -221,17 +221,11 @@
                         <div class="Pet-Content pet-select" id="pet-steptwo">
                             <div class="pet-dogheads">
                                 <p class="pet-doghead-two">頭部</p>
-                                <div class="pet-dogheads-pic">
-                                    <!-- <img src="/DD103G3/backStage/images/pet-stage-dogheadfirst.png" alt="" class="pet-heads">
-                                    <img src="/DD103G3/backStage/images/pet-stage-dogheadsencon.png" alt="" class="pet-heads"> -->
-                                </div>
+                                <div class="pet-dogheads-pic"></div>
                             </div>
                             <div class="pet-dogtails">
                                 <p class="pet-dogtail-two">尾巴</p>
-                                <div class="pet-dogtails-pic">
-                                    <!-- <img src="/DD103G3/backStage/images/pet-stage-dogtailfirst.png" alt="" class="pet-tails">
-                                    <img src="/DD103G3/backStage/images/pet-stage-dogtailsencon.png" alt="" class="pet-tails"> -->
-                                </div>
+                                <div class="pet-dogtails-pic"></div>
                             </div>
                         </div>
                         <!-- Step2第二步替換部位-end -->
@@ -298,9 +292,9 @@
                     <img class="pet-dress-paper" src="./img/pet-dress-paper.png" alt="">
 
                     <div class="pet-dress-pet">
-                        <img class="pet-dress-head" src="/DD103G3/backStage/images/pet-stage-dogheadfirst.png">
-                        <img class="pet-dress-body" src="/DD103G3/backStage/images/pet-stage-dogbody.png">
-                        <img class="pet-dress-tail" src="/DD103G3/backStage/images/pet-stage-dogtailfirst.png">
+                        <img class="pet-dress-head" src="./backStage/images/pet-stage-dogheadfirst.png">
+                        <img class="pet-dress-body" src="./backStage/images/pet-stage-dogbody.png">
+                        <img class="pet-dress-tail" src="./backStage/images/pet-stage-dogtailfirst.png">
                     </div>
                     <button class="pet-dress">去打造你的寵物</button>
                 </div>
@@ -342,8 +336,7 @@
     <!-------------------- 頁面切換-start -------------------->
     <script>
         $('#Pet-div1 ul li').click(function () {
-            $($(this).find('a').attr('href')).show().siblings('.Pet-Content')
-                .hide(); //頁面內容
+            $($(this).find('a').attr('href')).show().siblings('.Pet-Content').hide(); //頁面內容
             $(this).addClass('pet-active-step').siblings('.pet-active-step ').removeClass(
                 'pet-active-step'); //步驟顏色
         });
@@ -491,17 +484,17 @@
                 pet = petType;
 
                 if (pet == 'dog') {
-                    petArr[0] = '/DD103G3/backStage/images/pet-stage-dogheadfirst.png';
-                    petArr[1] = '/DD103G3/backStage/images/pet-stage-dogbody.png';
-                    petArr[2] = '/DD103G3/backStage/images/pet-stage-dogtailfirst.png';
+                    petArr[0] = './backStage/images/pet-stage-dogheadfirst.png';
+                    petArr[1] = './backStage/images/pet-stage-dogbody.png';
+                    petArr[2] = './backStage/images/pet-stage-dogtailfirst.png';
                     petArr[3] = -1;
                     $('.Pets-Color').css('filter', 'none');
                     return;
                 }
 
-                petArr[0] = '/DD103G3/backStage/images/pet-stage-catheadfirst.png';
-                petArr[1] = '/DD103G3/backStage/images/pet-stage-catbody.png';
-                petArr[2] = '/DD103G3/backStage/images/pet-stage-cattailfirst.png';
+                petArr[0] = './backStage/images/pet-stage-catheadfirst.png';
+                petArr[1] = './backStage/images/pet-stage-catbody.png';
+                petArr[2] = './backStage/images/pet-stage-cattailfirst.png';
                 petArr[3] = -1;
                 $('.Pets-Color').css('filter', 'none');
                 return;
@@ -646,7 +639,7 @@
         //切換步驟
         function switchStep(stepNumber)
         {
-            $('li:nth-child('+stepNumber+')>a').trigger('click');
+            $('#Pet-div1 ul li:nth-child('+stepNumber+')>a').trigger('click');
         }
     </script>
 
@@ -657,7 +650,7 @@
             $('.pet-dress').click(function () {
                 $('.pet-section-three').hide();
                 $('.pet-section-one').show();
-                $('li:nth-child(2)>a').trigger('click');
+                $('#Pet-div1 ul li:nth-child(2)>a').trigger('click');
 
             });
         });

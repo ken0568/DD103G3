@@ -4,7 +4,7 @@ require_once("../connectdd103g3.php");
 
 function saveImg($imgData, $userId)
 {
-    $targetDir = $_SERVER['DOCUMENT_ROOT']."/DD103G3/img/user/";
+    $targetDir = dirname(__DIR__)."\\img\\user\\";
     if (! file_exists($targetDir)) {
         mkdir($targetDir);
     }
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['petType'])) {
         $stmt->execute([$_GET['petType']]);
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach($data as $key => $arr){
-        $data[$key]['elePic'] =  "/DD103G3/backStage/images/".$data[$key]['elePic'];
+        $data[$key]['elePic'] =  "./backStage/images/".$data[$key]['elePic'];
         }
   } catch (Exception $e) {
       exit();
@@ -73,18 +73,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $petType = $_POST["petType"] === "dog" ? 0 : 1;
 
     //更新會員寵物欄位
-    $sql = "UPDATE `member` SET petName=?, petType=?, petPic=?, petColor=? WHERE memNo=?";
+    $sql = "UPDATE `member` SET petName=?, petType=?, petPic=?, petColor=?, coin=?, times=?, feedNum=? WHERE memNo=?";
 
     try {
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$_POST["petName"], $petType, $picPath, $_POST["petColor"], $_SESSION['memNo']]);
+        $stmt->execute([$_POST["petName"], $petType, $picPath, $_POST["petColor"], 500, 3, 2, $_SESSION['memNo']]);
     } catch (PDOException $e) {
         exit();
     }
 
     $data = [
       'petName' => $_POST["petName"],
-      'petPic' => "/DD103G3/img/user/".$picPath,
+      'petPic' => "./img/user/".$picPath,
       'petColor' => $_POST["petColor"],
   ];
 
