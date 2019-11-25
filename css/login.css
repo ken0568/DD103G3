@@ -63,8 +63,15 @@
 	right: 0;
 	bottom: 0;
 	margin: auto;
-	background-color: rgba(0,0,0,.5);
+	/*background-color: rgba(0,0,0,.5);*/
 	z-index: 999;
+
+	animation: loginback 1s forwards;
+}
+
+@keyframes loginback {
+	0%{background-color: rgba(0,0,0,0);}
+	100%{background-color: rgba(0,0,0,.8);}
 }
 
 .loginbox{
@@ -79,6 +86,13 @@
 	overflow: hidden;
 
 	position: relative;
+
+	animation: boxone .6s;
+}
+
+@keyframes boxone {
+	0%{transform:scale(0);}
+	100%{transform:scale(1);}
 }
 
 #login-close{
@@ -134,6 +148,9 @@ h6{
 	height: 40px;
 
 	font-size: 24px;
+	font-family: 'Noto Sans TC', 'Roboto Condensed', 'Roboto', sans-serif;
+	color: #fff;
+	line-height: 40px;
 
 	border: none;
 	border-radius: 5px;
@@ -142,9 +159,34 @@ h6{
 	margin: 15px auto;
 }
 
+#login-submit:hover{
+	animation: hoverone 1s forwards;
+}
+
+@keyframes hoverone{
+	0%{
+		border-radius: 50%;
+		background-color:#fff;		
+	}
+	100%{
+		border-radius: 5px;
+		background-color: #114b5f;
+		color:#ffc342;	
+	}
+}
+
 #registeredbtn{
 	display: block;
+	width: 80%;
+	height: 40px;
+	border-radius: 5px;
+	line-height: 40px;
+	margin: auto;
 	text-align: center;
+}
+
+#registeredbtn:hover{
+	animation: hoverone 1s forwards;
 }
 
 @media screen and (min-width: 768px){
@@ -153,12 +195,15 @@ h6{
 	}
 
 	#login-submit{
-		cursor: pointer;
+		cursor: pointer;		
 	}
 
+	
 	#registeredbtn{
 		cursor: pointer;
 	}
+
+	
 }
 
 /*===登入結束===*/
@@ -175,6 +220,7 @@ h6{
 	overflow: hidden;
 
 	position: relative;
+	animation: boxone .6s;
 }
 
 #registered-close{
@@ -202,12 +248,33 @@ h6{
 	height: 40px;
 
 	font-size: 24px;
+	font-family: 'Noto Sans TC', 'Roboto Condensed', 'Roboto', sans-serif;
+	color: #fff;
 
 	border: none;
 	border-radius: 5px;
 	background-color: #4a6e70;
+
+	
 	
 	margin: 15px auto;
+}
+
+#registered-submit:hover{
+	animation: hoverone 1s forwards;
+}
+@keyframes hoverone{
+	0%{
+		border-radius: 50%;
+		width:80%;
+		background-color:#fff;
+	}
+	100%{
+		border-radius: 5px;
+		width: 80%;
+		background-color: #114b5f;
+		color:#ffc342; 
+	}
 }
 
 .logInAlert{
@@ -232,5 +299,7 @@ h6{
 .disabled{
 	pointer-events: none !important;
 	cursor: default !important;
-	color: gray !important;
+	color: #c9c9c9 !important;
+	cursor:not-drop !important;
+	z-index:9999 !important;
 }

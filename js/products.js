@@ -23,7 +23,7 @@ function init() {
                                 <td>
                                     <span class="price">${products[i].price}</span>
                                     <div class="plus-minus"><input class="min" name="" type="button" value="-" />
-                                        <input class="text_box" name="" type="text" value="1" />
+                                        <input class="text_box" name="" type="text" value="0" />
                                         <input class="add" name="" type="button" value="+" /></div>
 
                                 </td>
@@ -142,8 +142,8 @@ function init() {
             $(".min").click(function () {
                 var t = $(this).parent().find('input[class*=text_box]');
                 t.val(parseInt(t.val()) - 1)
-                if (parseInt(t.val()) < 1) {
-                    t.val(1);
+                if (parseInt(t.val()) < 0) {
+                    t.val(0);
                 }
                 setTotal();
                 //foodNumUpdate();
