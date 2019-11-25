@@ -74,7 +74,7 @@
 
         </ul>
       </nav>
-      <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+      <button class="sidebar-minimizer brand-minimizer" type="submit"></button>
     </div>
     <main class="main">
       <!-- 中間內容 -->
@@ -94,12 +94,12 @@
                     <div class="card">
                       <div class="card-header">新增商品</div>
                       <div class="card-body">
-                        <form action="">
+                        <form action="./php/product.php" method="post" enctype="multipart/form-data">
                           <table class="table">
                             <tr>
                               <th>商品類別</th>
                               <td>
-                                <select class="form-control equipClass">
+                                <select class="form-control equipClass" name="type">
                                   <option value="1">飼料</option>
                                   <option value="2">穿戴</option>
                                   <option value="3">設備</option>
@@ -108,24 +108,25 @@
                             </tr>
                             <tr>
                               <th>商品名稱</th>
-                              <td><input id="pName" type="text" value=></td>
+                              <td><input id="pName" type="text" name="pName"></td>
                             </tr>
                             <tr>
                               <th>商品圖片</th>
                               <td>
                                 <img src="">
-                                <input id="pImg" type="file" class="equipSrc">
+                                <input id="pImg" type="file" class="equipSrc" name="upFile">
                               </td>
                             </tr>
                             <tr>
                               <th>商品價格</th>
-                              <td><input id="pPrice" type="text"></td>
+                              <td><input id="pPrice" type="text" name="pPrice"></td>
                             </tr>
                             <tr>
                               <th>商品狀態</th>
                               <td>
                                 <label class="switch switch-3d switch-success">
-                                  <input class="switch-input" type="checkbox" checked id="pStatus" value="0">
+                                  <input class="switch-input" type="checkbox" checked id="pStatus" value="0"
+                                    name="pStatus">
                                   <span class="switch-slider"></span>
                                 </label>
                               </td>
@@ -133,12 +134,12 @@
                             <tr>
                               <th>商品說明</th>
                               <td>
-                                <textarea id="pInfo" class="form-control" rows="3" value=""></textarea>
+                                <textarea id="pInfo" class="form-control" rows="3" value="" name="pInfo"></textarea>
                               </td>
                             </tr>
                             <td>
                               <div>
-                                <button id="insert" type="button" style="display: block;"
+                                <button id="insert" type="submit" style="display: block;" name="submit"
                                   class="btn btn-warning mr-1">新增商品</button>
                               </div>
                             </td>
@@ -147,7 +148,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-6">
+                  <!-- <div class="col-lg-6">
                     <div class="card">
                       <div class="card-header">商品編號1</div>
                       <div class="card-body">
@@ -197,7 +198,7 @@
                         </form>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
