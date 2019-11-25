@@ -23,7 +23,7 @@ function init() {
                                 <td>
                                     <span class="price">${products[i].price}</span>
                                     <div class="plus-minus"><input class="min" name="" type="button" value="-" />
-                                        <input class="text_box" name="" type="text" value="1" />
+                                        <input class="text_box" name="" type="text" value="0" />
                                         <input class="add" name="" type="button" value="+" /></div>
 
                                 </td>
@@ -88,14 +88,21 @@ function init() {
                 var money = parseInt($('.coin').find('p').text());
                 var price = parseInt($(this).find('label').text());
                 var total = money - price;
-                if (money >= price) {
-                    $('#henry').val(total);
-                    $('.coin').find('p').text(total);
+                if (price == "0") {
                     $('#myModal').css('display', 'block');
-                    coinUpdate();
-                    foodNumUpdate();
+                    $('#myModal').find('h4').text('購入失敗!');
+                    $('#myModal').find('p').text('請選擇購買數量!');
                 } else {
-                    $('#myModal3').css('display', 'block');
+                    if (money >= price) {
+                        $('#henry').val(total);
+                        $('.coin').find('p').text(total);
+                        $('#myModal').css('display', 'block');
+                        coinUpdate();
+                        foodNumUpdate();
+                    } else {
+                        $('#myModal3').css('display', 'block');
+                    };
+
                 };
             });
 
@@ -142,8 +149,8 @@ function init() {
             $(".min").click(function () {
                 var t = $(this).parent().find('input[class*=text_box]');
                 t.val(parseInt(t.val()) - 1)
-                if (parseInt(t.val()) < 1) {
-                    t.val(1);
+                if (parseInt(t.val()) < 0) {
+                    t.val(0);
                 }
                 setTotal();
                 //foodNumUpdate();

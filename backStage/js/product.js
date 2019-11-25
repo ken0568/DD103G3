@@ -1,24 +1,31 @@
-$('#insert').click(function () {
-    var prodType = $('.equipClass').val();
-    var prodName = $('#pName').val();
-    var img = document.getElementById('pImg').files[0];
-    var prodImg = img.name;
-    var prodPrice = parseInt($('#pPrice').val());
-    var prodInfo = $('#pInfo').val();
-    var prodStatus = parseInt($('#pStatus').val());
-    console.log(prodType, prodName, prodImg, prodPrice, prodInfo, prodStatus);
-    $.ajax({
-        type: 'POST',
-        url: './php/product.php',
-        data: {
-            type: prodType,
-            name: prodName,
-            img: prodImg,
-            price: prodPrice,
-            info: prodInfo
-        },
-        success: function (msg) {
-            console.log(msg);
-        },
-    })
-});
+function init() {
+
+    function products() {
+        function showAllproduct(jsonStr) {
+            var products = JSON.parse(jsonStr);
+            //console.log(products);
+            let allprodHTML = '';
+            console.log(allprodHTML);
+            let prodCardSection = document.querySelector('.col-lg-6');
+
+            //產生商品卡片
+            if () {
+
+            };
+        };
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                showAllproduct(xhr.responseText);
+            } else {
+                alert(xhr.status);
+            }
+        };
+
+        xhr.open("get", "./php/product-showData.php", true);
+        xhr.send(null);
+
+    };
+    products();
+};
+window.addEventListener("load", init, false);
