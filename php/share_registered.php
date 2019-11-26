@@ -21,6 +21,7 @@
     $_SESSION["memId"] = $_REQUEST["id"];
     $_SESSION["memName"] = $_REQUEST["name"];
     $_SESSION["memNick"] = $_REQUEST["nick"];
+    $_SESSION["petName"] = null;
     $_SESSION["memNo"] = $memNo;
 
     $resignResult = array("memName"=>$_REQUEST["name"],"memId"=>$_REQUEST["id"],"memNick"=>$_REQUEST["nick"]);
