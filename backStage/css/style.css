@@ -8865,7 +8865,7 @@ canvas {
   flex-direction: column;
   padding: 0;
   color: #fff;
-  background: #2f353a; }
+  background: #028090; }
   .sidebar .sidebar-close {
     position: absolute;
     right: 0;
@@ -8948,7 +8948,7 @@ canvas {
       margin-top: 2px; }
     .sidebar .nav-link.active {
       color: #fff;
-      background: #3a4248; }
+      background: #114b5f; }
       .sidebar .nav-link.active .nav-icon {
         color: #20a8d8; }
     .sidebar .nav-link:hover {

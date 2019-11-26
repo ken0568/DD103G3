@@ -122,14 +122,7 @@
                 $memback->bindColumn("adminId", $adminId);
                 $memback->bindColumn("adminPsw", $adminPsw);
                 $memback->bindColumn("adminStatus", $adminStatus);
-                // $memback->bindColumn("sex", $sex);
-                // $memback->bindColumn("petName", $petName);
-                // $memback->bindColumn("memNick", $memNick);
-                // $memback->bindColumn("email", $email);
-                // $memback->bindColumn("coin", $coin);
-                // $memback->bindColumn("status", $status);
-
-
+                
               ?>
               
               <table class="table text-center">
@@ -155,19 +148,23 @@
                       // }
                   ?>
                   <tr>
-                    <td><?=$adminNo?></td>
-                    <td><input class="adminId" type="text" value="<?=$adminId?>" disabled=""></td>
-                    <td><input class="adminPsw" type="password" value="<?=$adminPsw?>" disabled=""></td>
-                    <!-- <td>
-                      <select class="form-control" disabled=""><option selected="" value="0">唯讀</option><option value="1">管理員</option></select>
-                    </td> -->
-                    <td>
-                      <button type="button" class="editbtn btn btn-pill btn-primary btn-xl">編輯</button>
-                      <button style="display:none;" type="button" class="savebtn btn btn-pill btn-primary btn-xl">儲存</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-pill btn-danger btn-xl">刪除</button>
-                    </td>
+                    <form action="php/adminedit.php" method="GET">
+
+                      <td><?=$adminNo?></td>
+                      <td><input class="adminId" name="adminId" type="text" value="<?=$adminId?>" disabled=""></td>
+                      <td><input class="adminPsw" name="adminPsw" type="password" value="<?=$adminPsw?>" disabled=""></td>
+                      <!-- <td>
+                        <select class="form-control" disabled=""><option selected="" value="0">唯讀</option><option value="1">管理員</option></select>
+                      </td> -->
+                      <td>
+                        <button type="button" class="editbtn btn btn-pill btn-primary btn-xl">編輯</button>
+                        <button style="display:none;" type="submit" class="savebtn btn btn-pill btn-primary btn-xl">儲存</button>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-pill btn-danger btn-xl">刪除</button>
+                      </td>
+                      <input type="hidden" name="adminNo" value="<?=$adminNo?>">
+                    </form>
                   </tr>
                   <?php
                     }
@@ -189,8 +186,8 @@
                   e.target.style.display='none';
                   
                   let inputs = e.target.parentNode.parentNode.getElementsByTagName("input");
-                  inputs[0].disabled = true;
-                  inputs[1].disabled = true;
+                  // inputs[0].disabled = true;
+                  // inputs[1].disabled = true;
                 }
 
                 window.onload = function () {
