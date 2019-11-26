@@ -120,6 +120,16 @@
     <!--------------------------------- 背包checkBox --------------------------------->
     <input type="checkbox" id="bagPag-control">
     <!--------------------------------- 寵物家 開始 --------------------------------->
+    <div class="ph-mem-box-1">
+      <div class="ph-mem-text">
+        <p id="ph-memId-1"></p>
+        <p>寵物:<span id="ph-memName-1"></span></p>
+        <img src="img/ph-coin.png" alt="coin">
+        <div class="coin">
+          <p id="ph-coin-1"></p>
+        </div>
+      </div>
+    </div>
     <div class="ph-hs-sw ph-check">
       <div class="ph-all">
         <div class="ph-bgi">
@@ -170,16 +180,7 @@
         <div class="ph-sv-btn ph-all-style ph-sw-btn">
           <img src="img/shovel-off.png" alt="shovel-off">
         </div>
-        <div class="ph-mem-box">
-          <div class="ph-mem-text">
-            <p id="ph-memId-1"></p>
-            <p>寵物:<span id="ph-memName-1"></span></p>
-            <img src="img/ph-coin.png" alt="coin">
-            <div class="coin">
-              <p id="ph-coin-1"></p>
-            </div>
-          </div>
-        </div>
+        
         <div class="ph-ac-box">
           <p>推薦活動 | </p>
         </div>
@@ -187,16 +188,16 @@
           <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
             <ul>
               <li>
-                <a id="ph-act-date-1" href=" activityContent.html"></a> -- (<a id="ph-act-type-1" href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-1" ></a> -- View more
+                <a id="ph-act-date-1" href=" activityContent.html"></a> -- #<a id="ph-act-type-1" href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-1" ></a> -- View more
               </li>
               <li>
-                <a id="ph-act-date-2" href=" activityContent.html"></a> -- (<a id="ph-act-type-2"
-                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-2"></a> -- View
+                <a id="ph-act-date-2" href=" activityContent.html"></a> -- #<a id="ph-act-type-2"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-2"></a> -- View
                 more
               </li>
               <li>
-                <a id="ph-act-date-3" href=" activityContent.html"></a> -- (<a id="ph-act-type-3"
-                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-3"></a> -- View
+                <a id="ph-act-date-3" href=" activityContent.html"></a> -- #<a id="ph-act-type-3"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-3"></a> -- View
                 more
               </li>
             </ul>
@@ -256,35 +257,35 @@
               <p>敘述:毛小孩們的糧食</p>
           
             </li>
-            <li style="visibility: hidden; order: 1;" class="bg-li-foodBox">
+            <li style="display: none;" class="bg-li-foodBox">
               <div>
                 <img src="img/ph-fdbox-1.png" alt="">
               </div>
               <h5>高級食盆</h5>
               <p>敘述:一個大的食盆</p>
             </li>
-            <li style="visibility: hidden; order: 1;" class="bg-li-shitBox">
+            <li style="display: none;" class="bg-li-shitBox">
               <div>
                 <img src="img/ph-stbox-1.png" alt="">
               </div>
               <h5>高級屎盆</h5>
               <p>敘述:實用的貓砂盆</p>
             </li>
-            <li style="visibility: hidden; order: 1;" class="bg-li-eve">
+            <li style="display: none;" class="bg-li-eve">
               <div>
                 <img src="img/ph-eve.png" alt="">
               </div>
               <h5>寵物衣服</h5>
               <p>敘述:一件黃色的裙子</p>
             </li>
-            <li style="visibility: hidden; order: 1;" class="bg-li-shitBu">
+            <li style="display: none;" class="bg-li-shitBu">
               <div>
                 <img src="img/ph-diaper-1.png" alt="">
               </div>
               <h5>高級尿布</h5>
               <p>敘述:實用的狗尿布</p>
             </li>
-            <li style="visibility: hidden; order: 1;" class=""></li>
+            <li style="display: none;" class=""></li>
           </ul>
           <div class="bg-sh">
             <a href="products.html">
@@ -317,6 +318,7 @@
           <img class="ph-fd-before" src="img/foodbox.png" alt="ph-fd-before">
           <img class="ph-fd-after" src="img/foodbox-full.png" alt="foodbox-full">
         </div>
+        <div class="ph-coin-num ph-all-style">+250</div>
         <div class="ph-coin-plus ph-all-style">
           <img class="coin-plus" src="img/ph-coin-plus.png" alt="ph-coin-plus">
         </div>
@@ -343,16 +345,6 @@
         <div class="ph-sv-btn ph-all-style ph-sw-btn">
           <img src="img/shovel-off.png" alt="shovel-off">
         </div>
-        <div class="ph-mem-box">
-          <div class="ph-mem-text">
-            <p id="ph-memId-2"></p>
-            <p>寵物:<span id="ph-memName-2"></span></p>
-            <img src="img/ph-coin.png" alt="coin">
-            <div class="coin">
-              <p id="ph-coin-2"></p>
-            </div>
-          </div>
-        </div>
         <div class="ph-ac-box">
           <p>推薦活動 | </p>
         </div>
@@ -360,18 +352,18 @@
           <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
             <ul>
               <li>
-                <a id="ph-act-date-4" href=" activityContent.html"></a> -- (<a id="ph-act-type-4"
-                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-4"></a> -- View
+                <a id="ph-act-date-4" href=" activityContent.html"></a> -- #<a id="ph-act-type-4"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-4"></a> -- View
                 more
               </li>
               <li>
-                <a id="ph-act-date-5" href=" activityContent.html"></a> -- (<a id="ph-act-type-5"
-                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-5"></a> -- View
+                <a id="ph-act-date-5" href=" activityContent.html"></a> -- #<a id="ph-act-type-5"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-5"></a> -- View
                 more
               </li>
               <li>
-                <a id="ph-act-date-6" href=" activityContent.html"></a> -- (<a id="ph-act-type-6"
-                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-6"></a> -- View
+                <a id="ph-act-date-6" href=" activityContent.html"></a> -- #<a id="ph-act-type-6"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-6"></a> -- View
                 more
               </li>
             </ul>
@@ -431,35 +423,35 @@
               <p>敘述:毛小孩們的糧食</p>
           
             </li>
-            <li style="visibility: hidden; order: 1;" class="bg-li-foodBox">
+            <li style="display: none;" class="bg-li-foodBox">
               <div>
                 <img src="img/ph-fdbox-1.png" alt="">
               </div>
               <h5>高級食盆</h5>
               <p>敘述:一個大的食盆</p>
             </li>
-            <li style="visibility: hidden; order: 1;" class="bg-li-shitBox">
+            <li style="display: none;" class="bg-li-shitBox">
               <div>
                 <img src="img/ph-stbox-1.png" alt="">
               </div>
               <h5>高級屎盆</h5>
               <p>敘述:實用的貓砂盆</p>
             </li>
-            <li style="visibility: hidden; order: 1;" class="bg-li-eve">
+            <li style="display: none;" class="bg-li-eve">
               <div>
                 <img src="img/ph-eve.png" alt="">
               </div>
               <h5>寵物衣服</h5>
               <p>敘述:一件黃色的裙子</p>
             </li>
-            <li style="visibility: hidden; order: 1;" class="bg-li-shitBu">
+            <li style="display: none;" class="bg-li-shitBu">
               <div>
                 <img src="img/ph-diaper-1.png" alt="">
               </div>
               <h5>高級尿布</h5>
               <p>敘述:實用的狗尿布</p>
             </li>
-            <li style="visibility: hidden; order: 1;" class=""></li>
+            <li style="display: none;" class=""></li>
           </ul>
           <div class="bg-sh">
             <a href="products.html">
@@ -492,6 +484,7 @@
           <img class="ph-st-before" src="img/shitbox-full.png" alt="shitbox-full">
           <img class="ph-st-after" src="img/shitbox.png" alt="shitbox">
         </div>
+        <div class="ph-coin-num ph-all-style">+500</div>
         <div class="ph-coin-plus ph-all-style">
           <img class="coin-plus" src="img/ph-coin-plus.png" alt="ph-coin-plus">
         </div>
@@ -518,16 +511,6 @@
         <div class="ph-sv-btn ph-all-style ph-sw-btn">
           <img src="img/shovel-on.png" alt="shovel-off">
         </div>
-        <div class="ph-mem-box">
-          <div class="ph-mem-text">
-            <p id="ph-memId-3"></p>
-            <p>寵物:<span id="ph-memName-3"></span></p>
-            <img src="img/ph-coin.png" alt="coin">
-            <div class="coin">
-              <p id="ph-coin-3"></p>
-            </div>
-          </div>
-        </div>
         <div class="ph-ac-box">
           <p>推薦活動 | </p>
         </div>
@@ -535,18 +518,18 @@
           <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
             <ul>
               <li>
-                <a id="ph-act-date-7" href=" activityContent.html"></a> -- (<a id="ph-act-type-7"
-                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-7"></a> -- View
+                <a id="ph-act-date-7" href=" activityContent.html"></a> -- #<a id="ph-act-type-7"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-7"></a> -- View
                 more
               </li>
               <li>
-                <a id="ph-act-date-8" href=" activityContent.html"></a> -- (<a id="ph-act-type-8"
-                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-8"></a> -- View
+                <a id="ph-act-date-8" href=" activityContent.html"></a> -- #<a id="ph-act-type-8"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-8"></a> -- View
                 more
               </li>
               <li>
-                <a id="ph-act-date-9" href=" activityContent.html"></a> -- (<a id="ph-act-type-9"
-                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-9"></a> -- View
+                <a id="ph-act-date-9" href=" activityContent.html"></a> -- #<a id="ph-act-type-9"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-9"></a> -- View
                 more
               </li>
             </ul>
@@ -606,35 +589,35 @@
               <p>敘述:毛小孩們的糧食</p>
           
             </li>
-            <li style="visibility: hidden; order: 1;" class="bg-li-foodBox">
+            <li style="display: none;" class="bg-li-foodBox">
               <div>
                 <img src="img/ph-fdbox-1.png" alt="">
               </div>
               <h5>高級食盆</h5>
               <p>敘述:一個大的食盆</p>
             </li>
-            <li style="visibility: hidden; order: 1;" class="bg-li-shitBox">
+            <li style="display: none;" class="bg-li-shitBox">
               <div>
                 <img src="img/ph-stbox-1.png" alt="">
               </div>
               <h5>高級屎盆</h5>
               <p>敘述:實用的貓砂盆</p>
             </li>
-            <li style="visibility: hidden; order: 1;" class="bg-li-eve">
+            <li style="display: none;" class="bg-li-eve">
               <div>
                 <img src="img/ph-eve.png" alt="">
               </div>
               <h5>寵物衣服</h5>
               <p>敘述:一件黃色的裙子</p>
             </li>
-            <li style="visibility: hidden; order: 1;" class="bg-li-shitBu">
+            <li style="display: none;" class="bg-li-shitBu">
               <div>
                 <img src="img/ph-diaper-1.png" alt="">
               </div>
               <h5>高級尿布</h5>
               <p>敘述:實用的狗尿布</p>
             </li>
-            <li style="visibility: hidden; order: 1;" class=""></li>
+            <li style="display: none;" class=""></li>
           </ul>
           <div class="bg-sh">
             <a href="products.html">
@@ -655,7 +638,7 @@
         <div class="ph-bgi">
           <img src="img/ph-oh-bgi.png" alt="bgi">
         </div>
-        <div class="pet-img ph-all-style ph-oh-pet ph-pet-upDown">
+        <div class="pet-img ph-all-style ph-oh-pet ph-oh-petAni">
           <div id="pet-color-4">
             <img id="pet-style-4" src="img/ph-dog.png" alt="pet">
           </div>
@@ -676,7 +659,7 @@
         <div class="ph-safe-tip ph-all-style">
           <img src="img/ph-safe-tip.png" alt="">
         </div>
-        <div class="ph-mem-box">
+        <div class="ph-mem-box ph-mem-box-2">
           <div class="ph-mem-text">
             <p id="ph-other-memId"></p>
             <p>寵物:<span id="ph-other-memName"></span></p>
@@ -693,18 +676,18 @@
           <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
             <ul>
               <li>
-                <a id="ph-act-date-10" href=" activityContent.html"></a> -- (<a id="ph-act-type-10"
-                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-10"></a> -- View
+                <a id="ph-act-date-10" href=" activityContent.html"></a> -- #<a id="ph-act-type-10"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-10"></a> -- View
                 more
               </li>
               <li>
-                <a id="ph-act-date-11" href=" activityContent.html"></a> -- (<a id="ph-act-type-11"
-                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-11"></a> -- View
+                <a id="ph-act-date-11" href=" activityContent.html"></a> -- #<a id="ph-act-type-11"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-11"></a> -- View
                 more
               </li>
               <li>
-                <a id="ph-act-date-12" href=" activityContent.html"></a> -- (<a id="ph-act-type-12"
-                  href="activityContent.html"></a>) -- <a href=" activityContent.html" id="ph-act-text-12"></a> -- View
+                <a id="ph-act-date-12" href=" activityContent.html"></a> -- #<a id="ph-act-type-12"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-12"></a> -- View
                 more
               </li>
             </ul>
