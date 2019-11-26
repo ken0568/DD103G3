@@ -15,8 +15,15 @@
   <!-- Main styles for this application-->
   <script src="js/jquery-2.2.4.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/act_main.js"></script>
   <script src="js/share_BSLogin.js"></script>
   <link href="css/style.css" rel="stylesheet">
+  <style>
+    .table th{width: 16.666666%;}
+    .table td{width: 83.333333%;}
+    .table{width: 100%;}
+    .actPicSrc{width: 100%;}
+  </style>
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -89,240 +96,25 @@
     </div>
 
 
+    <!-- 左邊 -->
     <main class="main">
-
-
-      <!-- 中間內容 -->
       <div class="container-fluid">
-   
-       <!-- 中間內容 -->
-       <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            
-            <!-- card-header -->
-            <div class="card-header justify-content-end d-flex">
-
-            </div>
-
-            <div class="card-body">
-              
-              <div class="row">
-
-                <div class="col-lg-6">
-                  <div class="card">
-                    <div class="card-header">活動編號1</div>
-                    <div class="card-body">
-                      <form action="">
-                        <table class="table">
-                          <tr>
-                            <th>活動類別</th>
-                            <td>
-                              <select class="form-control equipClass">
-                                <option value="0">活動類別1</option>
-                                <option value="1">活動類別2</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>活動名稱</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>活動圖片</th>
-                            <td>
-                              <img src="">
-                              <input type="file" class="equipSrc">
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>活動日期</th>
-                            <td><input type="date"></td>
-                          </tr>
-                          <tr>
-                            <th>活動人數</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>截止日期</th>
-                            <td><input type="date"></td>
-                          </tr>
-                          <tr>
-                            <th>經度</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>緯度</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>活動狀態</th>
-                            <td>
-                              <label class="switch switch-3d switch-success">
-                                <input class="switch-input" type="checkbox">
-                                <span class="switch-slider"></span>
-                              </label>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>活動說明</th>
-                            <td>
-                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod hic voluptatum animi doloribus blanditiis, veritatis voluptate inventore asperiores ullam esse.
-                              </textarea>
-                            </td>
-                          </tr>
-                        </table>
-                      </form>
-                    </div>
-                  </div>
+        <!-- 左邊內容 -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <!-- 卡片放置區 -->
+                <div id="putActCard" class="row">
+                  <!-- 放置活動 -->
                 </div>
-
-                <div class="col-lg-6">
-                  <div class="card">
-                    <div class="card-header">活動編號1</div>
-                    <div class="card-body">
-                      <form action="">
-                        <table class="table">
-                          <tr>
-                            <th>活動類別</th>
-                            <td>
-                              <select class="form-control equipClass">
-                                <option value="0">活動類別1</option>
-                                <option value="1">活動類別2</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>活動名稱</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>活動圖片</th>
-                            <td>
-                              <img src="">
-                              <input type="file" class="equipSrc">
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>活動日期</th>
-                            <td><input type="date"></td>
-                          </tr>
-                          <tr>
-                            <th>活動人數</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>截止日期</th>
-                            <td><input type="date"></td>
-                          </tr>
-                          <tr>
-                            <th>經度</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>緯度</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>活動狀態</th>
-                            <td>
-                              <label class="switch switch-3d switch-success">
-                                <input class="switch-input" type="checkbox">
-                                <span class="switch-slider"></span>
-                              </label>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>活動說明</th>
-                            <td>
-                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolor consequuntur a veritatis nemo nam magni quasi voluptas ut laboriosam.
-                              </textarea>
-                            </td>
-                          </tr>
-                        </table>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-6">
-                  <div class="card">
-                    <div class="card-header">活動編號1</div>
-                    <div class="card-body">
-                      <form action="">
-                        <table class="table">
-                          <tr>
-                            <th>活動類別</th>
-                            <td>
-                              <select class="form-control equipClass">
-                                <option value="0">活動類別1</option>
-                                <option value="1">活動類別2</option>
-                              </select>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>活動名稱</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>活動圖片</th>
-                            <td>
-                              <img src="">
-                              <input type="file" class="equipSrc">
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>活動日期</th>
-                            <td><input type="date"></td>
-                          </tr>
-                          <tr>
-                            <th>活動人數</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>截止日期</th>
-                            <td><input type="date"></td>
-                          </tr>
-                          <tr>
-                            <th>經度</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>緯度</th>
-                            <td><input type="text"></td>
-                          </tr>
-                          <tr>
-                            <th>活動狀態</th>
-                            <td>
-                              <label class="switch switch-3d switch-success">
-                                <input class="switch-input" type="checkbox">
-                                <span class="switch-slider"></span>
-                              </label>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>活動說明</th>
-                            <td>
-                              <textarea class="form-control" rows="3" value="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque quod voluptatem, ipsam optio eveniet harum porro quibusdam nulla sunt!
-                              </textarea>
-                            </td>
-                          </tr>
-                        </table>
-                      </form>
-                    </div>
-                  </div>
-                </div>
+                <!-- 卡片放置區End -->
               </div>
-
-
             </div>
           </div>
         </div>
+        <!-- 左邊內容end -->
       </div>
-
-
-       
-      </div><!-- 中間內容end -->
     </main>
     
   </div>
