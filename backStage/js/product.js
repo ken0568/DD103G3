@@ -1,6 +1,6 @@
 function showAllproduct(jsonStr) {
-    var products = JSON.parse(jsonStr);
-    let allprodHTML = `<div class="col-lg-6">
+  var products = JSON.parse(jsonStr);
+  let allprodHTML = `<div class="col-lg-6">
     <div class="card">
       <div class="card-header">新增商品</div>
       <div class="card-body">
@@ -61,26 +61,26 @@ function showAllproduct(jsonStr) {
 
 
 
-    let prodCardSection = document.querySelector('.row');
-    for (i = 0; i < products.length; i++) {
-        // console.log(`<select class="form-control equipClass prodType">
-        // <option value="1" ${products[i].prodType == "1" ? "checked":""}>飼料</option>
-        // <option value="2" ${products[i].prodType == "2" ? "checked":""}>穿戴</option>
-        // <option value="3" ${products[i].prodType == "3" ? "checked":""}>設備</option>
-        // </select>`);
-        //產生商品卡片
-        let turn = "";
-        if (products[i].prodStatus == 0) {
-            turn = "checked";
-        } else {
-            turn = "";
-        }
+  let prodCardSection = document.querySelector('.row');
+  for (i = 0; i < products.length; i++) {
+    // console.log(`<select class="form-control equipClass prodType">
+    // <option value="1" ${products[i].prodType == "1" ? "checked":""}>飼料</option>
+    // <option value="2" ${products[i].prodType == "2" ? "checked":""}>穿戴</option>
+    // <option value="3" ${products[i].prodType == "3" ? "checked":""}>設備</option>
+    // </select>`);
+    //產生商品卡片
+    let turn = "";
+    if (products[i].prodStatus == 0) {
+      turn = "checked";
+    } else {
+      turn = "";
+    }
 
-        allprodHTML +=
-            `<div class="col-lg-6">
+    allprodHTML +=
+      `<div class="col-lg-6">
                 <div class="card">
                   <div class="card-body">
-                    <form action="./php/productUpdate.php" method='post' enctype="multipart/form-data">
+                    <form action="./php/productUpdate.php" method='get' enctype="multipart/form-data">
                       <table class="table">
                         <div class="card-header">商品編號${products[i].prodNo}</div>
                         <input name='prodNo' text="text" type='hidden' value="${products[i].prodNo}">
@@ -96,7 +96,7 @@ function showAllproduct(jsonStr) {
                         </tr>
                         <tr>
                           <th>商品名稱</th>
-                          <td><input type="text" name='pname' placeholder='${products[i].prodName}'></td>
+                          <td><input type="text" name='pname' value='${products[i].prodName}'></td>
                         </tr>
                         <tr>
                           <th>商品圖片</th>
@@ -106,7 +106,7 @@ function showAllproduct(jsonStr) {
                         </tr>
                         <tr>
                           <th>商品價格</th>
-                          <td><input type="text"placeholder='${products[i].price}' name='price'></td>
+                          <td><input type="text"value='${products[i].price}' name='price'></td>
                         </tr>
                         <tr>
                           <th>商品狀態</th>
@@ -135,16 +135,16 @@ function showAllproduct(jsonStr) {
                     </form>
                 </div>
               </div>`;
-    };
+  };
 
-    prodCardSection.innerHTML = allprodHTML;
+  prodCardSection.innerHTML = allprodHTML;
 
 };
 
 function updateProd(prodNo, prodStatus) {
-    prodStatus = prodStatus == false ? 1 : 0;
-    // console.log("./php/UpdateProd.php?prodNo=" + prodNo + "&prodStatus=" + prodStatus)
-    location.href = "./php/UpdateProd.php?prodNo=" + prodNo + "&prodStatus=" + prodStatus;
+  prodStatus = prodStatus == false ? 1 : 0;
+  // console.log("./php/UpdateProd.php?prodNo=" + prodNo + "&prodStatus=" + prodStatus)
+  location.href = "./php/UpdateProd.php?prodNo=" + prodNo + "&prodStatus=" + prodStatus;
 }
 
 function update() {
@@ -153,22 +153,22 @@ function update() {
 //-------------------------------------------
 function init() {
 
-    function products() {
+  function products() {
 
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function () {
-            if (xhr.status == 200) {
-                showAllproduct(xhr.responseText);
-            } else {
-                alert(xhr.status);
-            }
-        };
-
-        xhr.open("get", "./php/product-showData.php", true);
-        xhr.send(null);
-
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      if (xhr.status == 200) {
+        showAllproduct(xhr.responseText);
+      } else {
+        alert(xhr.status);
+      }
     };
-    products();
+
+    xhr.open("get", "./php/product-showData.php", true);
+    xhr.send(null);
+
+  };
+  products();
 
 
 };
