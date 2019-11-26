@@ -17,6 +17,7 @@
 
 #bagPag-control:checked~.ph-check .ph-all .bg-item {
     display: block;
+    animation: boxone .6s;
 }
 
 #bagPag-control:checked~.ph-check .ph-all .bg-bgc {
@@ -28,6 +29,7 @@
     z-index: 19;
     background-color: #333;
     opacity: 0.8;
+    animation: loginback 1s forwards;
 }
 
 #bagPag-control:checked~.ph-check .ph-all .bg-item {
@@ -95,7 +97,9 @@
     font-weight: bold;
     cursor: pointer;
 }
-
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li:hover{
+    border: 1px solid #00848B;
+}
 #bagPag-control:checked~.ph-check .ph-all .bg-sh {
     position: absolute;
     width: 90%;
@@ -125,6 +129,9 @@
     margin-right: 5%;
     line-height: 100%;
 }
+#bagPag-control:checked~.ph-check .ph-all .bg-sh a:hover{
+    color: #FB9860;
+}
 
 #bagPag-control:checked~.ph-check .ph-all .bg-sh-cr {
     background-color: #00848B;
@@ -133,7 +140,9 @@
     border-radius: 50%;
     position: absolute;
 }
-
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr:hover{
+    background-color: #FB9860;
+}
 #bagPag-control:checked~.ph-check .ph-all .bg-sh-cr span {
     background-color: #fff;
     display: block;
@@ -205,11 +214,22 @@
     background-color: #fff;
     border-radius: 10px;
     display: none;
+    animation: boxone .6s;
 }
+
+    @keyframes boxone {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
 .ph-tips-exit span{
     background-color: #00848B;
     width: 4%;
-    height: 3%;
+    height: 4%;
     display: block;
     position: absolute;
     top: 15%;
@@ -229,7 +249,6 @@
     font-size: 18px;
     text-align: center;
     line-height: 100px;
-    
 }
 .ph-tips-bgc{
     position: absolute;
@@ -240,6 +259,7 @@
     z-index: 19;
     background-color: #333;
     opacity: 0.8;
+    animation: loginback 1s forwards;
 }
 /* ---------------- 東西沒了燈箱 開始 ---------------- */
 /* ---------------- 去別人家提示燈箱 開始 ---------------- */
@@ -257,6 +277,7 @@
     border-radius: 10px;
     border: 1px solid #aaa;
     display: none;
+    animation: boxone .6s;
 }
 
 .ph-other-title {
@@ -281,6 +302,7 @@
     color: #fff;
     margin-top: 2%;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .ph-other-box h5 {
@@ -305,6 +327,7 @@
     border-radius: 10px;
     border:1px solid #aaa;
     display: none;
+    animation: boxone .6s;
 }
 .bg-all-title{
     width: 100%;
@@ -328,6 +351,11 @@
     color: #fff;
     margin-top: 2%;
     cursor: pointer;
+    border-radius: 5px;
+}
+.bg-all-box div:hover,
+.ph-other-box div:hover {
+    background-color: #114B5F;
 }
 .bg-all-box h5{
     font-size: 18px;
@@ -798,6 +826,17 @@
     background-color: #333;
     opacity: 0.8;
     display: none;
+    animation: loginback 1s forwards;
+}
+
+@keyframes loginback {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        background-color: rgba(0, 0, 0, .8);
+    }
 }
 
 .ph-qa-box {
@@ -813,6 +852,7 @@
     background-color: #fff;
     border-radius: 10px;
     display: none;
+    animation: boxone .6s;
 }
 
 .ph-qa-title {
@@ -881,6 +921,7 @@
     color: #fff;
     font-size: 24px;
     text-align: center;
+    border-radius: 5px;
 }
 
 .ph-qa-choose span:hover {
@@ -1225,6 +1266,10 @@
     .ph-tips-lightBox {
         width: 85%;
         height: 100px;
+    }
+    .ph-tips-exit span{
+        width: 7%;
+        height: 5%;
     }
 }
 
