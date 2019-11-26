@@ -19,6 +19,12 @@
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+
+  <?php
+  session_start();
+    require_once('../connectdd103g3.php');
+  ?>
+
  <!-- top_header -->
  <header class="app-header navbar">
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
@@ -50,7 +56,7 @@
       <li class="nav-title">後台管理</li>
       <!-- 管理員管理 -->
       <li class="nav-item">
-        <a class="nav-link" href="admin.html">
+      <a class="nav-link" href="admin.php">
           <i class="nav-icon icon-key"></i>管理員管理</a>
       </li>
 
@@ -104,6 +110,27 @@
             </div>
 
             <div class="card-body">
+
+              <?php
+              
+
+                $sql="SELECT * FROM `administrator`";
+
+                $memback = $pdo->query($sql);
+
+                $memback->bindColumn("adminNo", $adminNo);
+                $memback->bindColumn("adminId", $adminId);
+                $memback->bindColumn("adminPsw", $adminPsw);
+                $memback->bindColumn("adminStatus", $adminStatus);
+                // $memback->bindColumn("sex", $sex);
+                // $memback->bindColumn("petName", $petName);
+                // $memback->bindColumn("memNick", $memNick);
+                // $memback->bindColumn("email", $email);
+                // $memback->bindColumn("coin", $coin);
+                // $memback->bindColumn("status", $status);
+
+
+              ?>
               
               <table class="table text-center">
                 <thead>
@@ -111,56 +138,74 @@
                     <th>管理員編號</th>
                     <th>管理員名稱</th>
                     <th>管理員密碼</th>
-                    <th>管理員權限</th>
-                    <th>管理員權限設定</th>
+                    <!-- <th>管理員權限</th> -->
+                    <th>管理員編輯</th>
                     <th>管理員帳號刪除</th>
                   </tr>
                 </thead>
                 <tbody>
+
+                  <?php
+                    while($memback->fetch(PDO::FETCH_ASSOC)){
+                      // $checktype="";
+                      // if($status==1){
+                      //   $checktype="checked";
+                      // }else{
+                      //   $checktype="";
+                      // }
+                  ?>
                   <tr>
-                    <td>1</td>
-                    <td><input type="text" value="text1" disabled=""></td>
-                    <td><input type="password" value="1234" disabled=""></td>
-                    <td>
+                    <td><?=$adminNo?></td>
+                    <td><input class="adminId" type="text" value="<?=$adminId?>" disabled=""></td>
+                    <td><input class="adminPsw" type="password" value="<?=$adminPsw?>" disabled=""></td>
+                    <!-- <td>
                       <select class="form-control" disabled=""><option selected="" value="0">唯讀</option><option value="1">管理員</option></select>
-                    </td>
+                    </td> -->
                     <td>
-                      <button type="button" class="btn btn-pill btn-primary btn-xl">編輯</button>
+                      <button type="button" class="editbtn btn btn-pill btn-primary btn-xl">編輯</button>
+                      <button style="display:none;" type="button" class="savebtn btn btn-pill btn-primary btn-xl">儲存</button>
                     </td>
                     <td>
                       <button type="button" class="btn btn-pill btn-danger btn-xl">刪除</button>
                     </td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td><input type="text" value="text2" disabled=""></td>
-                    <td><input type="password" value="1234" disabled=""></td>
-                    <td>
-                      <select class="form-control" disabled=""><option selected="" value="0">唯讀</option><option value="1">管理員</option></select>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-pill btn-primary btn-xl">編輯</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-pill btn-danger btn-xl">刪除</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td><input type="text" value="text3" disabled=""></td>
-                    <td><input type="password" value="1234" disabled=""></td>
-                    <td>
-                      <select class="form-control" disabled=""><option selected="" value="0">唯讀</option><option value="1">管理員</option></select>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-pill btn-primary btn-xl">編輯</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-pill btn-danger btn-xl">刪除</button>
-                    </td>
-                  </tr>
+                  <?php
+                    }
+                  ?>
                 </tbody>
               </table>
+
+              <script>
+                function edit(e){
+                  e.target.nextElementSibling.style.display='';
+
+                  let inputs = e.target.parentNode.parentNode.getElementsByTagName("input");
+                  inputs[0].disabled=false;
+                  inputs[1].disabled = false;
+                }
+
+
+                function save(e){
+                  e.target.style.display='none';
+                  
+                  let inputs = e.target.parentNode.parentNode.getElementsByTagName("input");
+                  inputs[0].disabled = true;
+                  inputs[1].disabled = true;
+                }
+
+                window.onload = function () {
+                  let editbtns = document.getElementsByClassName("editbtn");
+                  for(let i=0; i<editbtns.length; i++){
+                    editbtns[i].onclick = edit;
+                  }
+
+                  let savebtns = document.getElementsByClassName("savebtn");
+                  for(let i=0; i<savebtns.length; i++){
+                    savebtns[i].onclick = save;
+                  }
+
+                };
+              </script>
 
 
             </div>

@@ -230,10 +230,10 @@
             <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
               <ul>
                 <li>
-                  <a href=" activityContent.html">2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾。</a>
+                  <a href=" activityContent.html">2019-12-28 寵物禮儀課程 在日常生活裡，要怎麼照顧牠們呢？SexFat醫師來告訴你！</a>
                 </li>
                 <li>
-                  <a href=" activityContent.html">2019.11.12 「韓總雞總統背後重要的三個女人」公仔製作計畫，無預警取消。</a>
+                  <a href=" activityContent.html">2019-12-18 我們了解主人們的困擾，選擇在動物醫院開設醫療身體照護課程，讓寵物熟悉醫生，不抗拒醫療身體照護的行為！</a>
                 </li>
               </ul>
             </marquee>
@@ -309,7 +309,7 @@
           </div>
           <div class="ph-ac-hide">
             <marquee height="50" direction="up" scrollamount="2">
-              <a href=" activityContent.html">2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾。</a></marquee>
+              <a href=" activityContent.html">2019-12-28 寵物禮儀課程 在日常生活裡，要怎麼照顧牠們呢？SexFat醫師來告訴你！</a></marquee>
           </div>
           <div class="bg-bgc"></div>
           <div class="bg-item">
@@ -381,7 +381,7 @@
           </div>
           <div class="ph-ac-hide">
             <marquee height="50" direction="up" scrollamount="2">
-              <a href=" activityContent.html">2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾。</a></marquee>
+              <a href=" activityContent.html">2019-12-28 寵物禮儀課程 在日常生活裡，要怎麼照顧牠們呢？SexFat醫師來告訴你！</a></marquee>
           </div>
         </div>
       </div>
@@ -429,7 +429,7 @@
           </div>
           <div class="ph-ac-hide">
             <marquee height="50" direction="up" scrollamount="2">
-              <a href="activityContent.html">2019.10.12 抵制香菜運動 台灣小吃店普遍愛加「香菜」已成社會亂象，造成民眾困擾。</a></marquee>
+              <a href="activityContent.html">2019-12-28 寵物禮儀課程 在日常生活裡，要怎麼照顧牠們呢？SexFat醫師來告訴你！</a></marquee>
           </div>
           <div class="ph-qa-bgc"></div>
           <div class="ph-qa-box">
@@ -515,9 +515,9 @@
           <img class="pet-dress-paper" src="./img/pet-dress-paper.png" alt="">
 
           <div class="pet-dress-pet">
-            <img class="pet-dress-head" src="./img/pet-stage-dogheadfirst.png">
-            <img class="pet-dress-body" src="./img/pet-stage-dogbody.png">
-            <img class="pet-dress-tail" src="./img/pet-stage-dogtailfirst.png">
+            <img class="pet-dress-head">
+            <img class="pet-dress-body">
+            <img class="pet-dress-tail">
           </div>
           <button class="pet-dress">去打造你的寵物</button>
         </div>
@@ -753,18 +753,18 @@
 
         if (pet == 'dog') {
 
-          petArr[0] = '/DD103G3/backStage/images/pet-stage-dogheadfirst.png';
-          petArr[1] = '/DD103G3/backStage/images/pet-stage-dogbody.png';
-          petArr[2] = '/DD103G3/backStage/images/pet-stage-dogtailfirst.png';
+          petArr[0] = './backStage/images/pet-stage-dogheadfirst.png';
+          petArr[1] = './backStage/images/pet-stage-dogbody.png';
+          petArr[2] = './backStage/images/pet-stage-dogtailfirst.png';
           petArr[3] = -1;
           $('.Pets-Color').css('filter', 'none');
 
           return;
         }
 
-        petArr[0] = '/DD103G3/backStage/images/pet-stage-catheadfirst.png';
-        petArr[1] = '/DD103G3/backStage/images/pet-stage-catbody.png';
-        petArr[2] = '/DD103G3/backStage/images/pet-stage-cattailfirst.png';
+        petArr[0] = './backStage/images/pet-stage-catheadfirst.png';
+        petArr[1] = './backStage/images/pet-stage-catbody.png';
+        petArr[2] = './backStage/images/pet-stage-cattailfirst.png';
         petArr[3] = -1;
         $('.Pets-Color').css('filter', 'none');
         return;
@@ -785,9 +785,9 @@
   <script>
     $(document).ready(function () {
       $('.pet-dress').click(function () {
-        if(window.sessionStorage.getItem('petName')==="null"||!window.sessionStorage.getItem('petName')){
-          location.href = "./beAPetKeeper.html?petType="+pet;
-				}
+        if (window.sessionStorage.getItem('petName') === "null" || !window.sessionStorage.getItem('petName')) {
+          location.href = "./beAPetKeeper.html?petType=" + pet;
+        }
       });
     });
   </script>

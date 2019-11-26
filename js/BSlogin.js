@@ -15,7 +15,7 @@ function checkAdmin() {
         }else if(xhr.responseText == "suspended"){
           alert("您沒有權限進入後台");
         }else{
-          location.href = "./backStage/admin.html";
+          location.href = "./backStage/admin.php";
         }
       } else {
         alert(xhr.status);
