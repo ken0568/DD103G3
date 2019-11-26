@@ -2,9 +2,12 @@ function init() {
     //產生商品卡片 start
     function product() {
         function showAllproduct(jsonStr) {
+
             var products = JSON.parse(jsonStr);
             let allprodHTML = "";
             let prodCardSection = document.querySelector('.product-cards');
+            var petType = sessionStorage['petType'];
+            console.log(petType);
 
             //產生商品卡片
             for (var i = 0; i < products.length; i++) {
@@ -46,6 +49,7 @@ function init() {
         </div>
         `;
                 } else {
+
                     allprodHTML += `
         <div class="product-card">
         <div class="product-img">
@@ -82,6 +86,7 @@ function init() {
             confirmLogin();
             foodNumUpdate();
             showMembers();
+
             //購買按鍵事件 愛心幣 開始
             $('.button').click(function () {
                 //check money is ok?
@@ -198,8 +203,8 @@ function init() {
             console.log(members);
             let memberHTML = "";
             let memMiddleSection = document.querySelector('.ph-mem-box');
+            sessionStorage['petType'] = `${members[0].petType}`;
             //產生BOX裡的資訊END
-
             memberHTML += `
             <div class="ph-mem-text">
             <p id="">${members[0].memName}</p>
@@ -214,6 +219,20 @@ function init() {
 
             memMiddleSection.innerHTML = memberHTML;
             //產生BOX裡的資訊END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         };
@@ -233,6 +252,7 @@ function init() {
         var signStatus = document.getElementsByClassName('getPrice');
         var memBox = document.querySelector('.ph-mem-box');
         var foodBtn = document.getElementById('foodBtn');
+
 
         if (signBoxText == '登入') {
             //未登入時

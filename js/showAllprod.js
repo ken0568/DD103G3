@@ -17,7 +17,7 @@ function init() {
                   <h4>${products[i].prodName}</h4>
                   <p>功能｜${products[i].prodText}</p>
                   <a href="products.html" class="btn">
-                    <p class="btnFz">${products[i].price}</p>
+                    <p class="btnFz">查看詳情</p>
                     <img src="img/coin.png" alt="" />
                   </a>
                 </div>
