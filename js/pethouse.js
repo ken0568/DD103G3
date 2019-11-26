@@ -322,7 +322,7 @@ $(document).ready(function () {
                 $("#pet-style-4").attr("src",`img/user/${result[0].petPic}`);
                 $("#pet-color-4").css('filter', `hue-rotate(  ${result[0].petColor}deg)`);
                 sessionStorage["otherNo"]=result[0].memNo;
-                console.log(otherNo);
+                console.log(sessionStorage["otherNo"]);
             }
         });
     });    
