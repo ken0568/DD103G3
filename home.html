@@ -515,9 +515,9 @@
           <img class="pet-dress-paper" src="./img/pet-dress-paper.png" alt="">
 
           <div class="pet-dress-pet">
-            <img class="pet-dress-head" src="./img/pet-stage-dogheadfirst.png">
-            <img class="pet-dress-body" src="./img/pet-stage-dogbody.png">
-            <img class="pet-dress-tail" src="./img/pet-stage-dogtailfirst.png">
+            <img class="pet-dress-head">
+            <img class="pet-dress-body">
+            <img class="pet-dress-tail">
           </div>
           <button class="pet-dress">去打造你的寵物</button>
         </div>
@@ -753,18 +753,18 @@
 
         if (pet == 'dog') {
 
-          petArr[0] = '/DD103G3/backStage/images/pet-stage-dogheadfirst.png';
-          petArr[1] = '/DD103G3/backStage/images/pet-stage-dogbody.png';
-          petArr[2] = '/DD103G3/backStage/images/pet-stage-dogtailfirst.png';
+          petArr[0] = './backStage/images/pet-stage-dogheadfirst.png';
+          petArr[1] = './backStage/images/pet-stage-dogbody.png';
+          petArr[2] = './backStage/images/pet-stage-dogtailfirst.png';
           petArr[3] = -1;
           $('.Pets-Color').css('filter', 'none');
 
           return;
         }
 
-        petArr[0] = '/DD103G3/backStage/images/pet-stage-catheadfirst.png';
-        petArr[1] = '/DD103G3/backStage/images/pet-stage-catbody.png';
-        petArr[2] = '/DD103G3/backStage/images/pet-stage-cattailfirst.png';
+        petArr[0] = './backStage/images/pet-stage-catheadfirst.png';
+        petArr[1] = './backStage/images/pet-stage-catbody.png';
+        petArr[2] = './backStage/images/pet-stage-cattailfirst.png';
         petArr[3] = -1;
         $('.Pets-Color').css('filter', 'none');
         return;

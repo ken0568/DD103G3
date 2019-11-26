@@ -88,14 +88,21 @@ function init() {
                 var money = parseInt($('.coin').find('p').text());
                 var price = parseInt($(this).find('label').text());
                 var total = money - price;
-                if (money >= price) {
-                    $('#henry').val(total);
-                    $('.coin').find('p').text(total);
+                if (price == "0") {
                     $('#myModal').css('display', 'block');
-                    coinUpdate();
-                    foodNumUpdate();
+                    $('#myModal').find('h4').text('購入失敗!');
+                    $('#myModal').find('p').text('請選擇購買數量!');
                 } else {
-                    $('#myModal3').css('display', 'block');
+                    if (money >= price) {
+                        $('#henry').val(total);
+                        $('.coin').find('p').text(total);
+                        $('#myModal').css('display', 'block');
+                        coinUpdate();
+                        foodNumUpdate();
+                    } else {
+                        $('#myModal3').css('display', 'block');
+                    };
+
                 };
             });
 

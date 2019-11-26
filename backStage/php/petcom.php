@@ -12,7 +12,7 @@ function loadComponents($pdo)
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach($data as $key => $arr){
-            $data[$key]['elePic'] =  "/DD103G3/backStage/images/".$data[$key]['elePic'];
+            $data[$key]['elePic'] =  "./images/".$data[$key]['elePic'];
         }
 
         return $data;
