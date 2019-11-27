@@ -11,7 +11,7 @@ function init() {
       //產生商品卡片
       for (var i = 0; i < 3; i++) {
         allprodHTML += `
-                <div class="shop-card wow flipInX hover" data-wow-duration="1s" data-wow-delay="0s">
+                <div class="shop-card wow flipInX hover" data-wow-duration="2s" data-wow-delay="0s">
                 <img src="./backStage/images/${products[i].prodPic}">
                 <div class="shop-text">
                   <h4>${products[i].prodName}</h4>
@@ -52,7 +52,7 @@ function init() {
       //產生卡片
       for (var i = 0; i < 3; i++) {
         allActHTML += `
-                <div class="activity-card wow flipInX hover" data-actno='${activity[i].actNo}' data-wow-duration="1s" data-wow-delay="0s">
+                <div class="activity-card wow flipInX hover" data-actno='${activity[i].actNo}' data-wow-duration="2s" data-wow-delay="0s">
                   <img src="./backStage/images/${activity[i].actPic}">
                   <div class="activity-text clearfix">
                     <p>${activity[i].actDate}</p>
