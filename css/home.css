@@ -168,7 +168,9 @@ button {
     margin: 10px 10px;
 }
 
-
+.shop-text h4 {
+    text-align: center;
+}
 
 .shop-card img:first-child {
     width: 100%;
@@ -301,7 +303,7 @@ button {
 }
 
 .view:hover {
-    background-color: #114b5f;
+    background-color: #028090;
     color: #fff;
 }
 
@@ -377,7 +379,7 @@ button {
     .pet-img+.pet-img {
         display: block;
         transform: rotateY(180deg);
-        animation: dog 10s infinite;
+        animation: dog 10s 0s 2;
     }
 
     @keyframes dog {
@@ -455,15 +457,79 @@ button {
         position: absolute;
         top: -30%;
         left: -4%;
+
+    }
+
+    .item .contain {
+        border-radius: 10px;
+    }
+
+    .item1 .mouse,
+    .item7 .mouse,
+    .item8 .mouse {
         animation: mouse-ani 1s infinite;
+    }
+
+    @keyframes mouse-ani {
+        0% {
+            transform: translateY(0);
+        }
+
+        25% {
+            transform: translateY(20px);
+        }
+
+        25% {
+            transform: translateY(0px);
+        }
+
+        75% {
+            transform: translateY(-10px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .item2 .mouse,
+    .item3 .mouse,
+    .item4 .mouse,
+    .item5 .mouse,
+    .item6 .mouse {
+        animation: mouse-ani1 1s infinite;
+    }
+
+    @keyframes mouse-ani1 {
+        0% {
+            transform: translateY(0) rotateX(180deg);
+        }
+
+        25% {
+            transform: translateY(50px) rotateX(180deg);
+        }
+
+        25% {
+            transform: translateY(0px) rotateX(180deg);
+        }
+
+        75% {
+            transform: translateY(-10px) rotateX(180deg);
+        }
+
+        100% {
+            transform: translateY(0) rotateX(180deg);
+        }
     }
 
     .pethouse-autoplay .item1 {
         z-index: 4;
+        left: 100px;
+        top: 200px;
     }
 
     .pethouse-autoplay .item2 {
-        bottom: -40%;
+        bottom: -30%;
         left: 5%;
         z-index: 3;
         display: none;
@@ -476,7 +542,7 @@ button {
     }
 
     .pethouse-autoplay .item3 {
-        bottom: -40%;
+        bottom: -30%;
         left: 13%;
         z-index: 3;
         display: none;
@@ -489,7 +555,7 @@ button {
     }
 
     .pethouse-autoplay .item4 {
-        bottom: -40%;
+        bottom: -30%;
         left: 21%;
         z-index: 6;
         display: none;
@@ -502,11 +568,10 @@ button {
     }
 
     .pethouse-autoplay .item5 {
-        bottom: -25%;
-        left: 0;
-        right: -12%;
+        bottom: -9%;
+        right: 5%;
         display: none;
-        z-index: 4;
+        z-index: 6;
     }
 
     .pethouse-autoplay .item5 .mouse {
@@ -516,9 +581,8 @@ button {
     }
 
     .pethouse-autoplay .item6 {
-        bottom: -24%;
-        left: 0;
-        right: -41%;
+        bottom: -9%;
+        right: -20%;
         display: none;
         z-index: 4;
     }
@@ -530,14 +594,14 @@ button {
     }
 
     .pethouse-autoplay .item7 {
-        top: 45%;
-        left: 30%;
+        top: 48%;
+        left: 20%;
         z-index: 3;
         display: none;
     }
 
     .pethouse-autoplay .item8 {
-        top: 45%;
+        top: 53%;
         left: 45%;
         z-index: 3;
         display: none;
@@ -555,9 +619,6 @@ button {
         color: #028090;
     }
 
-    /* .contain p img {
-        animation: mouse-ani 1s infinite;
-    } */
 
     /*樣品屋 autoplay 結束*/
     .qanda {
@@ -651,6 +712,7 @@ button {
     .activity-card {
         width: 33.33%;
         margin: 0 20px;
+        cursor: pointer;
     }
 
     .activity-card:hover {

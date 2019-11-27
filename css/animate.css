@@ -996,7 +996,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
-  animation-iteration-count: infinite;
+  /* animation-iteration-count: infinite; */
 }
 
 @-webkit-keyframes fadeInDown {
