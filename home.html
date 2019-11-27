@@ -14,6 +14,7 @@
   <!-- 把自己負責頁面的css檔案link：css/fontStyle.css前，ex.css/shopStyle.css -->
   <link rel="stylesheet" href="css/fontStyle.css" />
   <link rel="stylesheet" href="css/header-footer.css" />
+  <link rel="stylesheet" href="css/loadingPage.css">
   <link rel="stylesheet" href="css/rankingStyle.css">
   <link rel="stylesheet" href="css/index-ph-style.css">
   <link rel="stylesheet" href="css/animate.css">
@@ -22,8 +23,9 @@
   <link rel="stylesheet" href="css/ph-style.css">
   <link rel="stylesheet" href="css/login.css">
   <link rel="stylesheet" href="css/home.css" />
-  <script src="js/login.js"></script>
   <script src=" js/jquery-3.4.1.min.js"> </script>
+  <script src="js/loading.js"></script>
+  <script src="js/login.js"></script>
   <script src="js\burger.js"></script>
   <script src="js/pethouse.js"></script>
   <script src="js/wow.min.js"></script>
@@ -31,6 +33,25 @@
 </head>
 
 <body>
+  <!-- loaddingPage -->
+  <div id="loading">
+    <div class="loadingWrap">
+      <div class="loading-top">
+        <div class="logoLeft">
+          <object data="img/left_left.svg" type="image/svg+xml" id="logo_left_left"></object>
+          <object data="img/left_right.svg" type="image/svg+xml" id="logo_left_right"></object>
+        </div>
+        <div class="logoRight">
+          <object data="img/rigth.svg" type="image/svg+xml"></object>
+        </div>
+      </div>
+      <div class="loading-bottom">
+        <div class="bottomWrap">
+          <span class="loadingTextAlph">LOADING...</span>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- 登入 -->
   <div id="login" class="col-md-12" style="display: none;">
     <!-- loginbox開始 -->
@@ -125,7 +146,7 @@
   </header>
 
   <div class="wrap">
-    <div class="index-pethouse"">
+    <div class="index-pethouse">
       <!--------------------------------- 背包checkBox --------------------------------->
       <input type=" checkbox" id="bagPag-control">
       <!--------------------------------- 寵物家 開始 --------------------------------->
@@ -482,8 +503,8 @@
     <div class="pet-container pet-section-two" style="display: block;">
       <div class="row pet-section-qa">
         <div class="col-sm-12 col-md-4 ">
-          <div class="pet-unknown">
-            <img src="./img/pet-unknown.png" alt="">
+          <div class="pet-unknown wow fadeInLeft hover" data-wow-duration="1s" data-wow-delay="0.2s">
+            <img src="./img/pet-unknown.png" alt="" class="">
             <img class="pet-unknown-pet" src="img/pet-test-catfirst.png" alt="" style="z-index: 500;">
           </div>
         </div>
@@ -531,10 +552,10 @@
         <img src="./img/index-shopbg.png" alt="" />
       </div>
       <div class="shop-contain">
-        <h2>快速致富商品</h2>
+        <h2>寵物商品</h2>
         <div class="shop-cards">
         </div>
-        <a href="products.html" class="view">
+        <a href="products.html" class="view wow fadeIn hover" data-wow-duration="1s" data-wow-delay="1s">
           <div class="next-btn">
             <img src="img/index-nextbtn.png" alt="">
           </div>
@@ -546,8 +567,8 @@
     </div>
     <div class="index-activity">
       <div class="index-cloud">
-        <img src="./img/cloud.png" alt="" class="wow shake" data-wow-duration="20s">
-        <img src="./img/cloud1.png" alt="" class="wow shake" data-wow-duration="20s">
+        <img src="./img/cloud.png" alt="" class="wow shake" data-wow-duration="10s">
+        <img src="./img/cloud1.png" alt="" class="wow shake" data-wow-duration="20s" data-wow-delay="1s">
       </div>
       <h2>最新活動</h2>
       <div class="activity-cards">
@@ -601,7 +622,7 @@
       </a>
 
     </div>
-    <div class="index-skyline">
+    <div class="index-skyline wow fadeIn hover" data-wow-duration="2s" data-wow-delay="1s">
       <img src="./img/skyline.png" alt="">
     </div>
     <section class="rankingPet"
@@ -612,7 +633,7 @@
       <div class="rankCenter">
         <!-- 排行榜rankno2 開始-->
         <div class="rankno2">
-          <a href="#">
+          <a href="">
             <div class="rankno2_1">
               <img src="img/rank2.png">
             </div>
@@ -621,8 +642,8 @@
               <P>飼主 : 莎拉</P>
               <P>愛心幣 : 30000</P>
             </div>
-            <div class="rankno2_3 petPic">
-              <img src="img/rank_no2pet.png">
+            <div id="rankno2_1" class="rankno2_3 petPic">
+              <img src="img/rank_no2pet.png" class="wow bounce hover" data-wow-duration="1.5s" data-wow-delay=".5s">
             </div>
             <div class="rankno2_4">
               <img src="img/rank_no2$.png">
@@ -633,7 +654,7 @@
 
         <!-- 排行榜rankno1 開始 -->
         <div class="rankno1">
-          <a href="#">
+          <a href="">
             <div class="rankno1_1">
               <img src="img/rank1.png">
             </div>
@@ -642,8 +663,8 @@
               <P>飼主 : 艾倫</P>
               <P>愛心幣 : 70000</P>
             </div>
-            <div class="rankno1_3 petPic">
-              <img src="img/rank_no1pet.png">
+            <div id="rankno1_1" class="rankno1_3 petPic">
+              <img src="img/rank_no1pet.png" class="wow bounce hover" data-wow-duration="1s" data-wow-delay="0s">
             </div>
             <div class="rankno1_4">
               <img src="img/rank_no1$.png">
@@ -654,7 +675,7 @@
 
         <!-- 排行榜rankno3 開始 -->
         <div class="rankno3">
-          <a href="#">
+          <a href="">
             <div class="rankno3_1">
               <img src="img/rank3.png">
             </div>
@@ -663,8 +684,8 @@
               <P>飼主 : 馬克</P>
               <P>愛心幣 : 45000</P>
             </div>
-            <div class="rankno3_3 petPic">
-              <img src="img/rank_no3pet.png">
+            <div id="rankno3_1" class="rankno3_3 petPic">
+              <img src="img/rank_no3pet.png" class="wow bounce hover" data-wow-duration="2s" data-wow-delay="1s">
             </div>
             <div class="rankno3_4">
               <img src="img/rank_no3$.png">
@@ -842,28 +863,35 @@
       let petPics = document.querySelectorAll(".petPic");
       let memInfos = document.querySelectorAll(".memberInfo");
 
-      petPics[0].getElementsByTagName("img")[0].src = "img/user/"+member[1].petPic;
+      petPics[0].getElementsByTagName("img")[0].src = "img/user/" + member[1].petPic;
       memInfos[0].innerHTML = `<P>寵物 : ${member[1].petName}</P>
                             <P>飼主 : ${member[1].memName}</P>
                             <P>愛心幣 : ${member[1].coin}</P>`;
+      $("#rankno2_1").css('filter', `hue-rotate( ${member[1].petColor}deg)`);
       //--------------------------------------------------------------
-      petPics[1].getElementsByTagName("img")[0].src = "img/user/"+member[0].petPic;
+      petPics[1].getElementsByTagName("img")[0].src = "img/user/" + member[0].petPic;
       memInfos[1].innerHTML = `<P>寵物 : ${member[0].petName}</P>
                             <P>飼主 : ${member[0].memName}</P>
                             <P>愛心幣 : ${member[0].coin}</P>`;
+      $("#rankno1_1").css('filter', `hue-rotate( ${member[0].petColor}deg)`);
       //--------------------------------------------------------------                             
-      petPics[2].getElementsByTagName("img")[0].src = "img/user/"+member[2].petPic;
+      petPics[2].getElementsByTagName("img")[0].src = "img/user/" + member[2].petPic;
       memInfos[2].innerHTML = `<P>寵物 : ${member[2].petName}</P>
                             <P>飼主 : ${member[2].memName}</P>
                             <P>愛心幣 : ${member[2].coin}</P>`;
+      $("#rankno3_1").css('filter', `hue-rotate( ${member[2].petColor}deg)`);
       //--------------------------------------------------------------
       console.log("--------this is a book again 3------------")
     }
 
 
-    function  rankcolor(){
-      document.getElementsByClassName('rankno1_3').style.filter='hue-rotate(+$member[1].petColor+deg)';
+    function rankcolor() {
+      document.getElementsByClassName('rankno1_3').style.filter = 'hue-rotate(+$member[1].petColor+deg)';
     }
+  </script>
+
+  <script>
+    new WOW({}).init();
   </script>
 </body>
 

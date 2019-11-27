@@ -6,7 +6,7 @@
     $pdo->beginTransaction();
     //圖片上傳成功
     if( $_FILES["actPic"]["error"] == UPLOAD_ERR_OK){
-      $sql = "INSERT INTO `activity` (`actType`, `actText`, `actNum`, `actDate`, `actStatus`, `actName`, `deadline`, `actLoc`, `actPic`, `mapLat`, `mapLong`, `parNum`) VALUES (:actType,:actText,:actNum,:actDate,:actStatus,:actName,:deadline,:actLoc,'',:mapLat,:mapLong,1);";
+      $sql = "INSERT INTO `activity` (`actType`, `actText`, `actNum`, `actDate`, `actStatus`, `actName`, `deadline`, `actLoc`, `actPic`, `mapLat`, `mapLong`, `parNum`) VALUES (:actType,:actText,:actNum,:actDate,:actStatus,:actName,:deadline,:actLoc,'',:mapLat,:mapLong,0);";
       $insertAct = $pdo->prepare($sql);
       $insertAct->bindValue(":actType",$_POST['actType']);
       $insertAct->bindValue(":actText",$_POST['actText']);
