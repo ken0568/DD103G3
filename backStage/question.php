@@ -59,7 +59,7 @@
       <li class="nav-title">後台管理</li>
       <!-- 管理員管理 -->
       <li class="nav-item">
-        <a class="nav-link" href="admin.html">
+      <a class="nav-link" href="admin.php">
           <i class="nav-icon icon-key"></i>管理員管理</a>
       </li>
 
@@ -133,21 +133,12 @@
               ?>
 
 
-                <!-- <div class="col-lg-6">
+                <div class="col-lg-6">
                   <div class="card">
                     <div class="card-header">新增題目</div>
                     <div class="card-body">
                       <form action="php/questAdd.php" method="GET">
                         <table class="table">
-                           <tr>
-                            <th>題目類別</th>
-                            <td>
-                              <select class="form-control equipClass">
-                                <option value="0">狗</option>
-                                <option value="1">貓</option>
-                              </select>
-                            </td>
-                          </tr> -->
                           <tr>
                             <th>題目內容</th>
                             <td>
@@ -163,15 +154,6 @@
                             <th>錯誤選項</th>
                             <td><input type="text" name="ansBText"></td>
                           </tr>
-                          <!-- <tr>
-                            <th>題庫狀態</th>
-                            <td>
-                              <label class="switch switch-3d switch-success">
-                                <input class="switch-input" type="checkbox">
-                                <span class="switch-slider"></span>
-                              </label>
-                            </td>
-                          </tr> -->
                           <tr>
                             <th>正確答案</th>
                             <td>

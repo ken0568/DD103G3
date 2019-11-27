@@ -17,6 +17,7 @@
 
 #bagPag-control:checked~.ph-check .ph-all .bg-item {
     display: block;
+    animation: boxone .6s;
 }
 
 #bagPag-control:checked~.ph-check .ph-all .bg-bgc {
@@ -28,6 +29,7 @@
     z-index: 19;
     background-color: #333;
     opacity: 0.8;
+    animation: loginback 1s forwards;
 }
 
 #bagPag-control:checked~.ph-check .ph-all .bg-item {
@@ -79,10 +81,10 @@
     overflow: auto;
     display: flex;
     flex-flow: wrap row;
-    justify-content: space-around;
+    justify-content: flex-start;
     width: 100%;
     height: 78%;
-    margin: 4% 0 2%;
+    margin: 4% 0% 2%;
 }
 
 #bagPag-control:checked~.ph-check .ph-all .bg-list-ul li {
@@ -95,7 +97,9 @@
     font-weight: bold;
     cursor: pointer;
 }
-
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li:hover{
+    border: 1px solid #00848B;
+}
 #bagPag-control:checked~.ph-check .ph-all .bg-sh {
     position: absolute;
     width: 90%;
@@ -125,6 +129,9 @@
     margin-right: 5%;
     line-height: 100%;
 }
+#bagPag-control:checked~.ph-check .ph-all .bg-sh a:hover{
+    color: #FB9860;
+}
 
 #bagPag-control:checked~.ph-check .ph-all .bg-sh-cr {
     background-color: #00848B;
@@ -133,7 +140,9 @@
     border-radius: 50%;
     position: absolute;
 }
-
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr:hover{
+    background-color: #FB9860;
+}
 #bagPag-control:checked~.ph-check .ph-all .bg-sh-cr span {
     background-color: #fff;
     display: block;
@@ -205,11 +214,22 @@
     background-color: #fff;
     border-radius: 10px;
     display: none;
+    animation: boxone .6s;
 }
+
+    @keyframes boxone {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
 .ph-tips-exit span{
     background-color: #00848B;
     width: 4%;
-    height: 3%;
+    height: 4%;
     display: block;
     position: absolute;
     top: 15%;
@@ -229,7 +249,6 @@
     font-size: 18px;
     text-align: center;
     line-height: 100px;
-    
 }
 .ph-tips-bgc{
     position: absolute;
@@ -240,6 +259,7 @@
     z-index: 19;
     background-color: #333;
     opacity: 0.8;
+    animation: loginback 1s forwards;
 }
 /* ---------------- 東西沒了燈箱 開始 ---------------- */
 /* ---------------- 去別人家提示燈箱 開始 ---------------- */
@@ -257,6 +277,7 @@
     border-radius: 10px;
     border: 1px solid #aaa;
     display: none;
+    animation: boxone .6s;
 }
 
 .ph-other-title {
@@ -281,6 +302,7 @@
     color: #fff;
     margin-top: 2%;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .ph-other-box h5 {
@@ -305,6 +327,7 @@
     border-radius: 10px;
     border:1px solid #aaa;
     display: none;
+    animation: boxone .6s;
 }
 .bg-all-title{
     width: 100%;
@@ -328,6 +351,11 @@
     color: #fff;
     margin-top: 2%;
     cursor: pointer;
+    border-radius: 5px;
+}
+.bg-all-box div:hover,
+.ph-other-box div:hover {
+    background-color: #114B5F;
 }
 .bg-all-box h5{
     font-size: 18px;
@@ -498,8 +526,21 @@
     height: 13.3%;
     border-radius: 10px;
     background-color: rgba(16, 75, 95, .8);
+    /* background-color: rgba(242, 129, 35, .5); */
 }
-
+.ph-mem-box-2{
+    background-color: rgba(242, 129, 35, .5);
+}
+.ph-mem-box-1{
+    z-index: 3;
+    position: fixed;
+    top: 15%;
+    left: 3%;
+    width: 300px;
+    height: 120px;
+    border-radius: 10px;
+    background-color: rgba(16, 75, 95, .8);
+}
 .ph-mem-text {
     width: 90%;
     height: 90%;
@@ -615,6 +656,7 @@
         transform: translateY(0);
     }
 }
+
 /* ---------------- 寵物家結束 ---------------- */
 /* ---------------- 寵物家 餵食開始 ---------------- */
 .ph-fd-sw .ph-fd-pet {
@@ -634,6 +676,37 @@
     z-index: 6;
 }
 
+.ph-coin-num{
+    width: 10%;
+    height: 13%;
+    bottom: 30%;
+    right: 25%;
+    font-size: 36px;
+    opacity: 0;
+    z-index: 7;
+    font-weight: bold;
+    color: #f28123;
+}
+.coin-num-ani{
+    animation: coin-num-ani 2s .9s linear;
+}
+@keyframes coin-num-ani{
+    0% {        
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
 .coin-ani {
     animation: coin-ani 2s .9s linear;
 }
@@ -648,7 +721,7 @@
         opacity: 1;
     }
 
-    80% {
+    90% {
         opacity: 1;
     }
 
@@ -798,6 +871,17 @@
     background-color: #333;
     opacity: 0.8;
     display: none;
+    animation: loginback 1s forwards;
+}
+
+@keyframes loginback {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        background-color: rgba(0, 0, 0, .8);
+    }
 }
 
 .ph-qa-box {
@@ -813,6 +897,7 @@
     background-color: #fff;
     border-radius: 10px;
     display: none;
+    animation: boxone .6s;
 }
 
 .ph-qa-title {
@@ -881,6 +966,7 @@
     color: #fff;
     font-size: 24px;
     text-align: center;
+    border-radius: 5px;
 }
 
 .ph-qa-choose span:hover {
@@ -1082,8 +1168,8 @@
 
     #bagPag-control:checked~.ph-check .ph-all .bg-list-ul {
         height: 85%;
+        margin: 4% 8% 2%;        
     }
-
     #bagPag-control:checked~.ph-check .ph-all .bg-list-ul li {
         width: 80%;
         height: 60%;
@@ -1129,6 +1215,11 @@
     .ph-coin-plus {
         width: 20%;
         right: 39%;
+    }
+    .ph-coin-num {
+        bottom: 24%;
+        right: 31%;
+        font-size: 24px;      
     }
 
     .ph-fd-sw .ph-fd {
@@ -1199,6 +1290,7 @@
 
     .ph-qa-right img {
         width: 80%;
+        height: 20%;
     }
 
     .ph-qa-wrong img {
@@ -1219,12 +1311,22 @@
         width: 75%;
         height: 18%;
     }
-    .ph-hs-sw .pet-img{
+    .ph-hs-sw .pet-img,
+    .ph-oh-petAni {
         animation: pet-upDown-ani 1.5s infinite;
     }
     .ph-tips-lightBox {
         width: 85%;
         height: 100px;
+    }
+    .ph-tips-exit span{
+        width: 7%;
+        height: 5%;
+    }
+    .ph-mem-box-1 {
+        width: 280px;
+        height: 110px;
+        top: 12%;
     }
 }
 
@@ -1268,12 +1370,51 @@
     .ph-other-lightbox {
         width: 75%;
         height: 22%;
-    }
-    
+    }    
 }
 
 /* ------------------------------------only for windows------------------------------------- */
 @media screen and (min-width: 768px) {
+    .ph-oh-petAni {
+        animation: otherPet-ani 4s linear infinite;
+    }
+
+    @keyframes otherPet-ani {
+        0% {
+            transform: translateX(0);            
+        }
+        45%{
+            opacity: 1;
+        }
+        49% {
+            opacity: 0;
+            transform: rotateY(0deg) translateX(100%);
+        }
+        50% {
+            transform: rotateY(180deg) translateX(-100%);
+            opacity: 0;
+        }
+        51%{
+            transform: rotateY(180deg) translateX(-100%);
+            opacity: 0;
+        }
+        55% {
+            transform: rotateY(180deg) translateX(-90%);
+            opacity: 1;
+        }
+        95%{
+            transform: rotateY(180deg) translateX(-10%);
+            opacity: 1;
+        }
+        99%{
+            transform: rotateY(180deg) translateX(0);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 0;
+        }
+    }
     .ph-hs-sw .pet-img {
         animation: pet-ani 5s linear 2;
     }

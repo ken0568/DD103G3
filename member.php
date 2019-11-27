@@ -134,15 +134,29 @@
 		<!-- 會員開始 -->
 		<div class="member-wrap">
 			<div class="member">
+				<?php
+
+					$sql="select * from `member` where memNo={$_SESSION['memNo']}";
+					$member = $pdo->query($sql);
+					$member->bindColumn("petPic", $petPic);
+
+				?>
 
 				<div class="member-left col-12 col-md-3">
 					<!-- 會員左邊 -->
 
 					<div class="member-left-box">
 						<div class="member-left-bighead">
-							<img src="img/catprompt.png" alt="">
+							<?php
+							while($member->fetch(PDO::FETCH_ASSOC)){
+
+							?>
+							<img src="img/user/<?=$petPic?>" alt="">
+							<?php
+								}
+							?>
 						</div>
-						<span>可不可紅茶</span>
+						<span><?=$_SESSION['memNick']?></span>
 
 						<div class="member-left-page">
 							<span id="memberbtn1" style="color:#ffc342">個人資料</span>
@@ -159,22 +173,22 @@
 
 					<div class="member-right-box col-md-10">
 						<h2 id="member-right-title">個人資料</h2>
-
 						<?php
 
 							$sql="select * from `member` where memNo={$_SESSION['memNo']}";
 
-							$member = $pdo->query($sql);
+							$member2 = $pdo->query($sql);
 
-							$member->bindColumn("memName", $memName);
-							$member->bindColumn("memTel", $memTel);
-							$member->bindColumn("sex", $sex);
-							$member->bindColumn("petName", $petName);
-							$member->bindColumn("memNick", $memNick);
-							$member->bindColumn("email", $email);
-							$member->bindColumn("coin", $coin);
-
+							$member2->bindColumn("memName", $memName);
+							$member2->bindColumn("memTel", $memTel);
+							$member2->bindColumn("sex", $sex);
+							$member2->bindColumn("petName", $petName);
+							$member2->bindColumn("memNick", $memNick);
+							$member2->bindColumn("email", $email);
+							$member2->bindColumn("coin", $coin);
 						?>
+
+						
 
 						<?php
 							$sql="SELECT COUNT(*) FROM `member` WHERE `coin`> (SELECT `coin` FROM `member` WHERE memNo={$_SESSION['memNo']});";
@@ -188,7 +202,7 @@
 						<table id="member1">
 							
 							<?php
-								while($member->fetch(PDO::FETCH_ASSOC)){
+								while($member2->fetch(PDO::FETCH_ASSOC)){
 									$sexturn="";
 									if($sex==true){
 										$sexturn="女";
@@ -341,7 +355,6 @@
 
 		<footer>
 			<p>Copyright © 2019 PetKeepers</p>
-
 		</footer>
 	</div>
 	<!-- footer結束 -->
