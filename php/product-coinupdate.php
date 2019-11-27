@@ -8,7 +8,7 @@ try{
 
   $sql = "update `member` set coin=:coin where memNo=:memNo";
   $iscoin = $pdo->prepare($sql);
-  $iscoin->bindValue(":coin",$_GET['type'];
+  $iscoin->bindValue(":coin",$_GET['type']);
   $iscoin->bindValue(':memNo',$memNo);
   $iscoin->execute();
 
