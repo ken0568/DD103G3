@@ -102,6 +102,33 @@ $(document).ready(function () {
             $("#ph-act-type-12").text(result[2].actType);
         }
     });
+     $.ajax({
+         url: "./php/pethouse-bagpack-item.php",
+
+         datType: "json",
+
+         type: "GET",
+
+         success: function (data) {
+             // console.log(data);
+             let result = JSON.parse(data);
+             $("#ph-bg-fe-1").text(result[0].prodName);
+             $("#ph-bg-fe-2").text(result[0].prodName);
+             $("#ph-bg-fe-3").text(result[0].prodName);
+             $("#ph-bg-eve-1").text(result[1].prodName);
+             $("#ph-bg-eve-2").text(result[1].prodName);
+             $("#ph-bg-eve-3").text(result[1].prodName);
+             $("#ph-bg-sp-1").text(result[4].prodName);
+             $("#ph-bg-sp-2").text(result[4].prodName);
+             $("#ph-bg-sp-3").text(result[4].prodName);
+             $("#ph-bg-sb-1").text(result[3].prodName);
+             $("#ph-bg-sb-2").text(result[3].prodName);
+             $("#ph-bg-sb-3").text(result[3].prodName);
+             $("#ph-bg-cb-1").text(result[2].prodName);
+             $("#ph-bg-cb-2").text(result[2].prodName);
+             $("#ph-bg-cb-3").text(result[2].prodName);
+         }
+     });
     $.ajax({
         url: "./php/pethouse-backpack.php",
 
@@ -124,7 +151,7 @@ $(document).ready(function () {
                         $(".ph-clothes").css("display", "block");
                         $('.bg-li-eve').addClass('bg-used');
                     }else{
-                        $(".ph-clothes").css("display", "block");
+                        $(".ph-clothes").css("display", "none");
                         $('.bg-li-eve').removeClass('bg-used');
                     }
                 }
