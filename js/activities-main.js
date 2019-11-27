@@ -105,7 +105,7 @@ function showAllacts() {
     if (xhr.status == 200) {
       showAllActivity(xhr.responseText);
     } else {
-      alert(xhr.status);
+      console.log(xhr.status);
     }
   }
   xhr.open("get", "./php/activities_showAllact.php", true);
@@ -213,7 +213,7 @@ function changeActsSort() {
         if (xhr.status == 200) {
           selectActType(xhr.responseText);
         } else {
-          alert(xhr.status);
+          console.log(xhr.status);
         }
       }
       xhr.open("get", `./php/activities_selectActType.php?actType=${actType}`, true);
@@ -283,7 +283,7 @@ function clickActPage(pageType) {
         if (xhr.status == 200) {
           showPageActs(xhr.responseText);
         } else {
-          alert(xhr.status);
+          console.log(xhr.status);
         }
       }
       xhr.open("get", `./php/activities_showPageActs.php?pageNo=${pageNo}&actType=${actType}`, true);
@@ -304,9 +304,8 @@ function clickActCard() {
       xhr.onload = function () {
         if (xhr.status == 200) {
           location.href = "./activityContent.html";
-          //alert(xhr.responseText);
         } else {
-          alert(xhr.status);
+          console.log(xhr.status);
         }
       }
       xhr.open("get", `./php/activities_showAct.php?actNo=${actNo}`, true);
@@ -328,7 +327,7 @@ function clickActBanner() {
         if (xhr.status == 200) {
           location.href = "./activityContent.html";
         } else {
-          alert(xhr.status);
+          console.log(xhr.status);
         }
       }
       xhr.open("get", `./php/activities_showAct.php?actNo=${actNo}`, true);
@@ -474,7 +473,6 @@ function showAct() {
   //印出JSON於DOM
   function showActSession(jsonStr) {
     let activity = JSON.parse(jsonStr);
-    //alert(activity);
 
     //產生活動資訊
     for (var i = 0; i < activity.length; i++) {
@@ -544,7 +542,7 @@ function showAct() {
     if (xhr.status == 200) {
       showActSession(xhr.responseText);
     } else {
-      alert(xhr.status);
+      console.log(xhr.status);
     }
   };
   xhr.open("get", `./php/activities_showActSession.php?`, true);
@@ -554,19 +552,29 @@ function showAct() {
 //--------------------確認是否登陸
 function confirmLogin(){
   var signBoxInner = document.querySelector('#actSignBtn p');
-  if (id('loginopenbtn').innerText == "登入"){
-    /** 尚未登入 **/
-    id('actSignBtn').disabled = true; //按鈕不能點按
-    id('actSignBtn').style.backgroundColor = '#d8d8d8';
-    id('actSignBtn').style.cursor = 'default';
-    signBoxInner.innerText = "請先註冊";
-    showRegisterBox(); //點我註冊
-  }else{
-    /** 登入 **/
-    confirmActPart(); //確認是否有參加
-    //點我註冊消失
-    id('showRegisterBox').style.display = "none";
-  };
+  //送資料到後端
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    if (xhr.status == 200) {
+      console.log(xhr.responseText);
+      if (xhr.responseText == "login") {
+        /** 登入 **/
+        confirmActPart(); //確認是否有參加
+        id('showRegisterBox').style.display = "none"; //點我註冊消失
+      } else {
+        /** 尚未登入 **/
+        id('actSignBtn').disabled = true; //按鈕不能點按
+        id('actSignBtn').style.backgroundColor = '#d8d8d8';
+        id('actSignBtn').style.cursor = 'default';
+        signBoxInner.innerText = "請先註冊";
+        showRegisterBox(); //點我註冊
+      }
+    } else {
+      console.log(xhr.status);
+    }
+  }
+  xhr.open("get", `./php/activities_isLogin.php?`, true);
+  xhr.send(null);
 } //確認是否登陸End
 
 //--------------------人數顯示變化
@@ -580,7 +588,7 @@ function actFull(actNumStr, parNumStr) {
     id('actSignBtn').style.backgroundColor = '#d8d8d8';
     id('actSignBtn').style.cursor = 'default';
     signBoxInner.innerText = "已額滿";
-    id('thisActNowNum').style.color = "#f28123";
+    id('thisActNowNum').style.color = "#d8d8d8";
   } else if (parNum >= (actNum - 5)){
     id('thisActNowNum').style.color = "#f28123";
     document.querySelector('#thisActNowNum .actNum').style.color = "#d8d8d8";
@@ -605,7 +613,7 @@ function confirmActPart(){
     if (xhr.status == 200) {
       isActPart(xhr.responseText); //判斷是否報名
     } else {
-      alert(xhr.status);
+      console.log(xhr.status);
     }
   }
   xhr.open("get", `./php/activities_isActPart.php?`, true);
@@ -644,7 +652,7 @@ function actSignUp() {
         console.log("活動人數增加了");
         actAddMem(); //活動參加表單新增資料
       } else {
-        alert(xhr.status);
+        console.log(xhr.status);
       }
     }
     xhr.open("get", `./php/activities_addActParNum.php?`, true);
@@ -660,7 +668,7 @@ function actAddMem(){
     if (xhr.status == 200) {
       console.log("活動參加表單新增了");
     } else {
-      alert(xhr.status);
+      console.log(xhr.status);
     }
   }
   xhr.open("get", `./php/activities_memSignUp.php?`, true);
@@ -686,7 +694,7 @@ function showParNum(){
     if (xhr.status == 200) {
       printParNum(xhr.responseText);
     } else {
-      alert(xhr.status);
+      console.log(xhr.status);
     }
   };
   xhr.open("get", `./php/activities_showParNum.php?`, true);
@@ -837,11 +845,6 @@ function init(){
   
     case "活動內容--鏟屎官":
       showAct();  
-      // $(window).resize(function () {
-      //   var actionRange = document.querySelectorAll('.activityContent-actInfo .right')[0].offsetHeight;
-      //   var mapHeight = document.querySelectorAll('.activityContent-actInfo .map')[0].offsetHeight;
-      //   var signBoxHeight = document.querySelectorAll('.activityContent-actInfo .signBox')[0].offsetHeight;
-      // });
       pawsMove2();
       break;
   }
