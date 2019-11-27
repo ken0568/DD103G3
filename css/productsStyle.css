@@ -8,7 +8,10 @@
     left: 0;
     right: 0;
     margin: 50px auto;
-    border: 2px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 10px solid #028090;
     box-sizing: border-box;
     padding: 5px;
 }
@@ -29,8 +32,16 @@
 .product-text {
     box-sizing: border-box;
     padding: 10px;
-    background-color: #aaa;
 }
+
+.product-text h3 {
+    text-align: center;
+}
+
+/* .product-text p {
+    display: block;
+    min-height: 110px;
+} */
 
 .plus-minus {
     margin: 0 auto;
@@ -40,6 +51,11 @@
     display: none;
 }
 
+#tab {
+    margin: auto;
+    font-size: 20px;
+}
+
 .min,
 .add {
     width: 20px;
@@ -47,11 +63,15 @@
     border-radius: 2px;
     appearance: none;
     border: none;
+    font-size: 30px;
+    color: #028090;
 }
 
 .text_box {
     text-align: center;
     width: 30px;
+    font-size: 30px;
+    color: #028090;
 }
 
 
@@ -140,6 +160,11 @@
     .product-card {
         width: 30%;
         margin: 20px 25px;
+
+    }
+
+    .push {
+        margin-bottom: 32px;
     }
 
     .button,
@@ -153,7 +178,10 @@
         left: 0;
         right: 0;
         margin: 50px auto;
-        border: 2px solid #ccc;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 10px solid #028090;
         box-sizing: border-box;
         padding: 5px;
     }
@@ -174,16 +202,12 @@
     .product-text {
         box-sizing: border-box;
         padding: 10px;
-        background-color: #aaa;
     }
 
     .plus-minus {
         margin: 0 auto;
     }
 
-    #tab span {
-        display: none;
-    }
 
     .min,
     .add {
@@ -260,6 +284,8 @@
         cursor: pointer;
     }
 
+
+
     /* ----------------------------------------------- */
 
     /* 桌機 */
@@ -273,7 +299,7 @@
 
         .product-card {
             width: 30%;
-            margin: 20px 17px;
+            margin: 20px 1%;
         }
 
         .button,
@@ -294,5 +320,13 @@
     .button:hover,
     .getPrice:hover {
         background-color: #114b5f;
+    }
+
+    .product-card:hover {
+        border-bottom: 10px solid #f28123;
+    }
+
+    .product-card:hover.product-card .product-text {
+        color: #f28123;
     }
 }
