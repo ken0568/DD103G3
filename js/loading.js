@@ -5,7 +5,7 @@ window.addEventListener("load",function(){
     console.log("e.loaded:", e.loaded);
     console.log(e.total * 100 / e.loaded);
     var loadedCount = Math.floor(e.total * 100 / e.loaded);
-    $("#loadingPercent").html((loadedCount) + "%");
+    // $("#loadingPercent").html((loadedCount) + "%");
     $("#logo_left_left").css("left", -(loadedCount) + "%");
   }
 
