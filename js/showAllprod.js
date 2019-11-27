@@ -11,7 +11,7 @@ function init() {
       //產生商品卡片
       for (var i = 0; i < 3; i++) {
         allprodHTML += `
-                <div class="shop-card">
+                <div class="shop-card wow flipInX hover" data-wow-duration="1s" data-wow-delay="0s">
                 <img src="./backStage/images/${products[i].prodPic}">
                 <div class="shop-text">
                   <h4>${products[i].prodName}</h4>
@@ -52,8 +52,7 @@ function init() {
       //產生卡片
       for (var i = 0; i < 3; i++) {
         allActHTML += `
-                <div class="activity-card">
-                <a href="activityContent.html">
+                <div class="activity-card wow flipInX hover" data-actno='${activity[i].actNo}' data-wow-duration="1s" data-wow-delay="0s">
                   <img src="./backStage/images/${activity[i].actPic}">
                   <div class="activity-text clearfix">
                     <p>${activity[i].actDate}</p>
@@ -63,12 +62,12 @@ function init() {
                       <p>${activity[i].parNum}人已報名</p>
                     </div>
                   </div>
-                </a>
               </div>
               `;
       };
 
       actMiddleSection.innerHTML = allActHTML;
+      clickActCard();
     } //產生卡片End
 
     var xhr = new XMLHttpRequest();
@@ -87,7 +86,28 @@ function init() {
   };
   showActivity();
 
+  //---------------------點擊ActCard
+  function clickActCard() {
+    var actCards = document.getElementsByClassName('activity-card');
+    for (var i = 0; i < actCards.length; i++) {
+      actCards[i].addEventListener('click', function (e) {
+        var actNo = e.currentTarget.dataset.actno; //抓到data-actno
 
+        //AJAX串接資料
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+          if (xhr.status == 200) {
+            location.href = "./activityContent.html";
+            //alert(xhr.responseText);
+          } else {
+            alert(xhr.status);
+          }
+        }
+        xhr.open("get", `./php/activities_showAct.php?actNo=${actNo}`, true);
+        xhr.send(null); //AJAX串接資料End
+      });
+    }
+  } //點擊ActCardEnd
 
 }
 window.addEventListener("load", init, false);

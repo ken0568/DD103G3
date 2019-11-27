@@ -20,7 +20,7 @@ function init() {
                     </div>
                     <div class="product-text">
                         <h3>${products[i].prodName}</h3>
-                        <p>功能 | ${products[i].prodText}</p>
+                        <p >功能 | ${products[i].prodText}</p>
                         <table id="tab">
                             <tr>
                                 <td>
@@ -57,7 +57,7 @@ function init() {
         </div>
         <div class="product-text">
             <h3>${products[i].prodName}</h3>
-            <p>功能 | ${products[i].prodText}</p>
+            <p class='push'>功能 | ${products[i].prodText}</p>
             <button  class="getPrice" data-prodno="${products[i].prodNo}">
                 <label class="prodPrice">${products[i].price}</label>
                 <img src=" img/shop-dollars.png" alt=" myBtn">
