@@ -20,9 +20,9 @@
     // $password = "root";
 
     // 徐浩
- //    $dsn="mysql:host=localhost;port=3306;dbname=dd103g3;charest=utf8";
-	// $user="root";
-	// $password="henry830122";
+    $dsn="mysql:host=localhost;port=3306;dbname=dd103g3;charest=utf8";
+	$user="root";
+	$password="henry830122";
     
     // 安
 	// $dsn="mysql:host=localhost;port=3306;dbname=dd103g3;charest=utf8";
