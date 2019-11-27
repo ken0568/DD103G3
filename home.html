@@ -805,6 +805,10 @@
   <!--  第三頁-QA結束打造寵物頁面-Start-->
   <script>
     $(document).ready(function () {
+      if(window.sessionStorage.getItem('petName')!=="null"&&window.sessionStorage.getItem('petName')){
+        $('.pet-dress').prop('disabled', true);
+        $('.pet-dress').css('background-color', '#c9c9c9');
+      }
       $('.pet-dress').click(function () {
         if (window.sessionStorage.getItem('petName') === "null" || !window.sessionStorage.getItem('petName')) {
           location.href = "./beAPetKeeper.html?petType=" + pet;
