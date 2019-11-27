@@ -315,7 +315,8 @@
 						$mempart = $pdo->query($sql);
 						// $mempart->bindValue(":memNo",$_SESSION['memNo']);
 						// $mempart->execute();
-
+						$mempart->bindColumn("memNo", $memNo);
+						$mempart->bindColumn("actNo", $actNo);
 						$mempart->bindColumn("actName", $actName);
 						$mempart->bindColumn("actDate", $actDate);
 							
@@ -336,9 +337,15 @@
 							?>
 							
 							<tr>
-								<td><?=$actName?></td>
-								<td><?=$actDate?></td>
-								<td>尚未開始</td>
+								<form action="php/memberAct.php">
+									<input type="hidden" value="<?=$memNo?>" name="memNo">
+									<input type="hidden" value="<?=$actNo?>" name="actNo">
+									<td><?=$actName?></td>
+									<td><?=$actDate?></td>
+									<td>
+										<button class="memAct" type="submit">取消報名</button>
+									</td>
+								</form>
 							</tr>
 		
 							<?php

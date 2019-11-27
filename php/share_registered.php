@@ -4,7 +4,7 @@
 	try{
 		require_once('../connectdd103g3.php');
     
-    $sql="INSERT INTO `member` (`memId`,`memPsw`,`memName`,`memNick`,`sex`,`email`,`memTel`,`petType`,`petPic`,`status`,`petName`,`coin`,`Feelfull`,`feedNum`,`lastFeed`,`petColor`,`times`) VALUES (:memId,:memPsw,:memName,:memNick,:sex,:email,:memTel,null,null,1,null,0,null,0,null,null,0)";
+    $sql="INSERT INTO `member` (`memId`,`memPsw`,`memName`,`memNick`,`sex`,`email`,`memTel`,`petType`,`petPic`,`status`,`petName`,`coin`,`Feelfull`,`feedNum`,`lastFeed`,`petColor`,`times`) VALUES (:memId,:memPsw,:memName,:memNick,:sex,:email,:memTel,null,null,1,null,500,null,0,null,null,0)";
 
     $newMem=$pdo->prepare($sql);
     $newMem->bindValue(":memId",$_REQUEST["id"]);
