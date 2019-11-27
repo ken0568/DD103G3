@@ -844,7 +844,7 @@ function init(){
       break;
   
     case "活動內容--鏟屎官":
-      showAct();  
+      showAct(); 
       pawsMove2();
       break;
   }
