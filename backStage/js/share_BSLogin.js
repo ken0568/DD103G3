@@ -7,8 +7,8 @@ function adminLogin() {
   var xhr = new XMLHttpRequest();
   xhr.onload = function () {
     if (xhr.status == 200) {
-      var adminName = xhr.responseText;
-      id('adminName').innerHTML = `${adminName} 您好`;
+      var adminId = xhr.responseText;
+      id('adminName').innerHTML = `${adminId} 您好`;
     } else {
       console.log(xhr.status);
     }

@@ -971,6 +971,7 @@
 
 .ph-qa-choose span:hover {
     background-color: #114B5F;
+    cursor: pointer;
 }
 
 /* ---------------- 偷錢關卡 題目 結束 ---------------- */
