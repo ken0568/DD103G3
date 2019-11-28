@@ -117,16 +117,18 @@ $(document).ready(function () {
              $("#ph-bg-fe-3").text(result[0].prodName);
              $("#ph-bg-eve-1").text(result[1].prodName);
              $("#ph-bg-eve-2").text(result[1].prodName);
-             $("#ph-bg-eve-3").text(result[1].prodName);
-             $("#ph-bg-sp-1").text(result[4].prodName);
-             $("#ph-bg-sp-2").text(result[4].prodName);
-             $("#ph-bg-sp-3").text(result[4].prodName);
+             $("#ph-bg-eve-3").text(result[1].prodName);            
              $("#ph-bg-sb-1").text(result[3].prodName);
              $("#ph-bg-sb-2").text(result[3].prodName);
              $("#ph-bg-sb-3").text(result[3].prodName);
              $("#ph-bg-cb-1").text(result[2].prodName);
              $("#ph-bg-cb-2").text(result[2].prodName);
              $("#ph-bg-cb-3").text(result[2].prodName);
+             $("#ph-bg-sp-1").text(result[4].prodName);
+             $("#ph-bg-sp-2").text(result[4].prodName);
+             $("#ph-bg-sp-3").text(result[4].prodName);
+
+
          }
      });
     $.ajax({
